@@ -3006,6 +3006,9 @@ class Component extends DCLogic {
     const root = document.documentElement;
     const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
     const reduce = !!(mq && mq.matches);
+    // Writing a custom property on <html> restyles the whole page, so only write values that changed.
+    const last = {};
+    const setVar = (k, v) => { if (last[k] !== v) { last[k] = v; root.style.setProperty(k, v); } };
     this._tick = () => {
       this._raf = 0;
       const vh = window.innerHeight || 900;
@@ -3022,7 +3025,7 @@ class Component extends DCLogic {
         else p = -r.top / span;
         p = p < 0 ? 0 : p > 1 ? 1 : p;
         if (reduce) p = name === 'e1' ? .55 : 1;
-        root.style.setProperty('--' + name, p.toFixed(4));
+        setVar('--' + name, p.toFixed(4));
         const label = el.getAttribute('data-hud');
         if (label && r.top <= vh * 0.5 && r.bottom > vh * 0.5) hud = label;
       }
@@ -3031,10 +3034,15 @@ class Component extends DCLogic {
     this._on = () => { if (!this._raf) this._raf = requestAnimationFrame(this._tick); };
     this._move = (e) => {
       if (reduce) return;
-      const w = window.innerWidth || 1;
-      const h = window.innerHeight || 1;
-      root.style.setProperty('--emx', ((e.clientX / w) * 2 - 1).toFixed(3));
-      root.style.setProperty('--emy', ((e.clientY / h) * 2 - 1).toFixed(3));
+      this._pt = e;
+      if (this._mraf) return;
+      this._mraf = requestAnimationFrame(() => {
+        this._mraf = 0;
+        const w = window.innerWidth || 1;
+        const h = window.innerHeight || 1;
+        setVar('--emx', ((this._pt.clientX / w) * 2 - 1).toFixed(2));
+        setVar('--emy', ((this._pt.clientY / h) * 2 - 1).toFixed(2));
+      });
     };
     document.addEventListener('scroll', this._on, true);
     window.addEventListener('resize', this._on);
@@ -3047,6 +3055,7 @@ class Component extends DCLogic {
     document.removeEventListener('scroll', this._on, true);
     window.removeEventListener('resize', this._on);
     window.removeEventListener('pointermove', this._move);
+    if (this._mraf) cancelAnimationFrame(this._mraf);
     if (this._raf) cancelAnimationFrame(this._raf);
     clearTimeout(this._t2);
     clearTimeout(this._t3);
