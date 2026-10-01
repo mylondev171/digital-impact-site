@@ -3,62 +3,62 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/seo-lexington-ky.html",
+      "source": "/seo-lexington-ky",
       "destination": "/seolexingtonky",
       "permanent": true
     },
     {
-      "source": "/ppc-management-lexington-ky.html",
+      "source": "/ppc-management-lexington-ky",
       "destination": "/ppcmanagementlexingtonky",
       "permanent": true
     },
     {
-      "source": "/ai-digital-marketing-lexington-ky.html",
+      "source": "/ai-digital-marketing-lexington-ky",
       "destination": "/aidigitalmarketinglexingtonky",
       "permanent": true
     },
     {
-      "source": "/history-of-web-design.html",
+      "source": "/history-of-web-design",
       "destination": "/ahistoryofwebdesign",
       "permanent": true
     },
     {
-      "source": "/seo-louisville-ky.html",
+      "source": "/seo-louisville-ky",
       "destination": "/seolouisvilleky",
       "permanent": true
     },
     {
-      "source": "/aio-louisville-ky.html",
+      "source": "/aio-louisville-ky",
       "destination": "/aiolouisvilleky",
       "permanent": true
     },
     {
-      "source": "/aio-lexington-ky.html",
+      "source": "/aio-lexington-ky",
       "destination": "/aiolexingtonky",
       "permanent": true
     },
     {
-      "source": "/ai-services.html",
+      "source": "/ai-services",
       "destination": "/aiservices",
       "permanent": true
     },
     {
-      "source": "/ai-consulting.html",
+      "source": "/ai-consulting",
       "destination": "/aiconsulting",
       "permanent": true
     },
     {
-      "source": "/ai-transition-services.html",
+      "source": "/ai-transition-services",
       "destination": "/aitransitionservices",
       "permanent": true
     },
     {
-      "source": "/ai-app-development.html",
+      "source": "/ai-app-development",
       "destination": "/aiappdevelopment",
       "permanent": true
     },
     {
-      "source": "/aio-aeo-geo.html",
+      "source": "/aio-aeo-geo",
       "destination": "/aioaeogeo",
       "permanent": true
     }
