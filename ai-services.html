@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI services | Digital Impact</title>
+<meta name="description" content="Since 1998, our CEO Don Johnson has been at the forefront of every major digital revolution, from building search engines and pioneering e-commerce to mastering SEO. Today we bring that same pioneering spirit to AI, helping businesses across Lexington, Louisville and all of Kentucky drive growth, im">
+<link rel="icon" type="image/png" href="assets/img/digital-impact-logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&amp;family=Lato:wght@400;700;900&amp;family=Merriweather:ital,wght@1,400;1,700&amp;display=swap">
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #ffffff; color: #161515; font-family: Lato, "Helvetica Neue", Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+::selection { background: #161515; color: #ffffff; }
+button, input, textarea, select { font-family: inherit; }
+:focus-visible { outline: 3px solid #e44443; outline-offset: 3px; }
+.e-x { font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; font-feature-settings: "lnum" 1; font-variant-numeric: lining-nums; }
+.e-h1 { margin: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.035em; line-height: .88; font-feature-settings: "lnum" 1; text-wrap: balance; }
+.e-h2 { margin: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(32px, 4.2vw, 64px); line-height: .92; letter-spacing: -0.035em; text-wrap: balance; font-feature-settings: "lnum" 1; }
+.e-lede { margin: 0; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.6; max-width: 58ch; text-wrap: pretty; }
+.e-eb { font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; font-feature-settings: "lnum" 1; }
+.e-p { margin: 0; font-size: 17px; line-height: 1.75; color: #3b3636; max-width: 68ch; }
+.e-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 26px; border: 0; border-radius: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+.e-btn:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 999px rgba(22, 21, 21, .22); }
+.e-ghost { display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border: 2.5px solid currentColor; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; font-feature-settings: "lnum" 1; }
+.e-ghost:hover { box-shadow: inset 0 0 0 999px rgba(128, 128, 128, .18); }
+.e-pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 2px solid currentColor; font-family: Raleway, Lato, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
+a.e-pill:hover { box-shadow: inset 0 0 0 999px rgba(128, 128, 128, .2); }
+.e-card { display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.6vw, 36px); border-radius: 26px; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; }
+a.e-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(22, 21, 21, .22); }
+.e-li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: #f6f3f2; font-size: 15px; font-weight: 700; line-height: 1.45; }
+.e-li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 6px; background: #e44443; }
+.e-faqq { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 76px; padding: 18px 0; background: none; border: 0; color: #161515; text-align: left; cursor: pointer; font-family: Lato, sans-serif; }
+.e-faqq:hover .e-faqi { border-color: #e44443; }
+.e-faqi { flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; border: 2.5px solid #161515; font-size: 22px; font-weight: 900; line-height: 1; }
+.e-field { display: flex; flex-direction: column; gap: 6px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: #161515; }
+.e-field input, .e-field textarea { background: #ffffff; border: 2.5px solid #161515; border-radius: 0; color: #161515; font-family: Lato, sans-serif; font-size: 16px; letter-spacing: 0; text-transform: none; padding: 12px 14px; }
+.e-field input:focus, .e-field textarea:focus { border-color: #e44443; outline: none; }
+.e-chip { min-height: 48px; padding: 0 18px; border: 2.5px solid #161515; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.e-slot { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; border-radius: 26px; border: 2px dashed #bdb6b4; background: repeating-linear-gradient(135deg, #f1ecea 0 14px, #f8f6f5 14px 28px); overflow: hidden; }
+@keyframes e-rise { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.e-rise { animation: e-rise .8s cubic-bezier(.2, .8, .2, 1) both; }
+.e-vidplay { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding: clamp(14px, 2.4vw, 28px); border: 0; background: linear-gradient(to top, rgba(13, 12, 12, .9), rgba(13, 12, 12, .2) 55%, rgba(13, 12, 12, 0)); color: #ffffff; cursor: pointer; text-align: left; font: inherit; }
+.e-vidbtn { position: relative; flex: none; display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 6px rgba(228, 68, 67, .25); transition: transform .25s ease; }
+.e-vidbtn::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid #e44443; animation: e-vidping 2s ease-out infinite; }
+@keyframes e-vidping { from { transform: scale(1); opacity: .9; } to { transform: scale(1.6); opacity: 0; } }
+.e-vidplay:hover .e-vidbtn { transform: scale(1.08); }
+.e-vidplay:focus-visible { outline: 3px solid #ffffff; outline-offset: -8px; }
+@media (prefers-reduced-motion: reduce) { .e-vidbtn::after { animation: none; } }
+@media (max-width: 600px) { .e-vidbtn { width: 52px; height: 52px; } }
+.e-ddm { min-width: 300px !important; }
+.e-ddm a { display: flex !important; flex-direction: column; gap: 3px; text-decoration: none; }
+.e-ddm a strong { font-size: 13px; font-weight: 900; letter-spacing: .08em; color: #ffffff; }
+.e-ddm a span { font-family: Lato, sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; color: #a39c9c; }
+.e-ddm a:hover strong { color: #ff8a89; }
+.e-burger { display: none; width: 44px; height: 44px; padding: 0; border: 2px solid #3b3636; border-radius: 10px; background: none; cursor: pointer; place-content: center; gap: 5px; }
+.e-burger span { display: block; width: 20px; height: 2.5px; border-radius: 2px; background: #ffffff; transition: transform .25s ease, opacity .25s ease; }
+.e-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.e-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.e-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+.e-mmenu { position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 49; overflow-y: auto; display: flex; flex-direction: column; gap: 22px; padding: 20px clamp(16px, 5vw, 40px) 40px; background: #161515; border-top: 3px solid #e44443; }
+.e-mgroup { display: flex; flex-direction: column; }
+.e-mgroup h3 { margin: 0 0 6px; font-size: 12px; color: #ff8a89; }
+.e-mlink { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid #2e2a2a; color: #ffffff; text-decoration: none; font-family: Raleway, Lato, sans-serif; font-size: 17px; font-weight: 900; letter-spacing: .02em; text-transform: uppercase; }
+.e-mlink:hover { color: #ff8a89; }
+h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
+@media (max-width: 1240px) { .e-navphone span { display: none; } .e-navlinks { gap: 20px !important; } }
+@media (max-width: 600px) { .e-navq { display: none !important; } }
+@media (min-width: 901px) { .e-mmenu { display: none !important; } }
+.e-footcur { display: inline-flex; align-items: center; min-height: 32px; color: #ffffff; font-size: 15px; font-weight: 700; box-shadow: inset 0 -2px 0 #e44443; }
+.e-toc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.e-tocc { display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 18px; border: 2.5px solid #161515; border-radius: 18px; color: #161515; text-decoration: none; font-size: 16px; font-weight: 900; line-height: 1.3; transition: background .2s ease, color .2s ease; }
+.e-tocc:hover { background: #161515; color: #ffffff; }
+.e-tocc svg { flex: none; margin-left: auto; }
+.e-cols2 { columns: 2 320px; column-gap: 56px; }
+.e-cols2 p { margin: 0 0 18px; break-inside: avoid; font-size: 17px; line-height: 1.75; color: #cfc9c9; }
+.e-card2 { display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4vw, 32px); border-radius: 22px; background: #ffffff; box-shadow: 0 18px 40px rgba(22, 21, 21, .1); }
+.e-nav a { color: #ffffff; text-decoration: none; }
+.e-navlink { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 3px solid transparent; }
+.e-navlink:hover { border-bottom-color: #e44443; }
+.e-dd { position: relative; }
+.e-ddm { position: absolute; left: -18px; top: 100%; display: none; min-width: 260px; padding: 10px 0; background: #161515; border-top: 3px solid #e44443; box-shadow: 0 24px 48px rgba(0, 0, 0, .35); }
+.e-dd:hover .e-ddm, .e-dd:focus-within .e-ddm { display: block; }
+.e-ddm a { display: block; padding: 11px 18px; font-size: 13px; letter-spacing: .08em; }
+.e-ddm a:hover { background: #221f1f; }
+.e-navphone { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #ffffff; text-decoration: none; font-family: Raleway, Lato, sans-serif; font-feature-settings: "lnum" 1; font-size: 15px; font-weight: 900; letter-spacing: .03em; }
+.e-navphone:hover { color: #ff8a89; }
+.e-foot { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)); gap: clamp(28px, 3vw, 48px); max-width: 1280px; margin: 0 auto; }
+.e-foot h3 { margin: 0 0 16px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #ff8a89; }
+.e-foot ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.e-foot li a { display: inline-flex; align-items: center; min-height: 32px; color: #cfc9c9; text-decoration: none; font-size: 15px; }
+.e-foot li a:hover { color: #ffffff; text-decoration: underline; text-decoration-color: #e44443; text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+  .e-navlinks { display: none !important; }
+  .e-split { grid-template-columns: minmax(0, 1fr) !important; }
+  .e-heroart { display: none !important; }
+  .e-sticky { position: static !important; }
+  .e-faqa { margin: 0 0 22px 0 !important; }
+  .e-burger { display: grid; }
+  .e-logo { height: clamp(28px, 8.6vw, 44px) !important; }
+  .e-sticky { position: static !important; }
+  .e-h1 { font-size: clamp(32px, 9.4vw, 60px) !important; }
+  .e-h2 { font-size: clamp(26px, 7.4vw, 44px) !important; }
+  .e-foot li a { min-height: 44px; }
+  .e-bg12 > .e-gc { grid-column: 1 / -1 !important; }
+  .e-toc { grid-template-columns: minmax(0, 1fr); }
+  .e-tl { grid-template-columns: minmax(0, 1fr) !important; }
+  .e-tl > div:first-child { border-right: 0 !important; text-align: left !important; }
+  .e-foot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .e-footlead { grid-column: 1 / -1; }
+  .e-navphone span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .e-rise { animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="app">
+<div style="position: relative; width: 100%; min-height: 100vh; overflow-x: clip; background: #ffffff; color: #161515">
+<header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
+<a href="index.html" aria-label="Digital Impact home" style="display: flex; flex: none">
+<img class="e-logo" src="assets/img/digital-impact-logo.png" alt="Digital Impact" style="height: 44px; width: auto; display: block">
+</a>
+<nav class="e-navlinks" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase">
+<div class="e-dd"><a class="e-navlink" href="services.html">Services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="services.html"><strong>All services</strong><span>SEO, web, PPC, creative and social</span></a><a href="ppc-management-lexington-ky.html"><strong>PPC management</strong><span>Google Ads and Bing Ads</span></a><a href="seo-lexington-ky.html"><strong>SEO Lexington</strong><span>Local search in Lexington</span></a><a href="seo-louisville-ky.html"><strong>SEO Louisville</strong><span>Local search in Louisville</span></a><a href="ai-digital-marketing-lexington-ky.html"><strong>AI digital marketing</strong><span>AI-powered campaigns</span></a></div></div>
+<div class="e-dd"><a class="e-navlink" href="ai-services.html" style="border-bottom-color: #e44443">AI services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="ai-services.html"><strong>AI services</strong><span>Overview of our AI work</span></a><a href="ai-consulting.html"><strong>AI consulting</strong><span>Strategy and roadmaps</span></a><a href="ai-transition-services.html"><strong>AI transition services</strong><span>Move to AI-enhanced operations</span></a><a href="ai-app-development.html"><strong>AI app development</strong><span>Custom AI applications</span></a><a href="aio-aeo-geo.html"><strong>AIO / AEO / GEO</strong><span>Visibility in AI answers</span></a></div></div>
+<a class="e-navlink" href="about.html">About</a>
+<a class="e-navlink" href="contact.html">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px">
+<a class="e-navphone" href="tel:8593968606" aria-label="Call 859.396.8606"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#e44443" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg><span>859.396.8606</span></a>
+<a class="e-btn e-navq" href="get-a-quote.html" style="min-height: 44px; background: #d23a39; color: #ffffff">Get a quote</a>
+<button type="button" class="e-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+<!--if-->
+</header>
+<section style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #161515; color: #ffffff; overflow: hidden">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 80px); align-items: center; max-width: 1280px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<nav aria-label="Breadcrumb" class="e-eb" style="font-size: 12px; color: #cfc9c9"><a href="index.html" style="text-decoration: none">Home</a> <span aria-hidden="true">/</span> AI services</nav>
+<span class="e-eb e-rise" style="color: #ff8a89">AI services</span>
+<h1 class="e-h1 e-rise" style="font-size: clamp(44px, 6.4vw, 104px); animation-delay: .08s">AI that moves your bottom line.</h1>
+<p class="e-lede e-rise" style="color: #cfc9c9; animation-delay: .16s">Since 1998, our CEO Don Johnson has been at the forefront of every major digital revolution, from building search engines and pioneering e-commerce to mastering SEO. Today we bring that same pioneering spirit to AI, helping businesses across Lexington, Louisville and all of Kentucky drive growth, improve efficiency and stay competitive.</p>
+<div class="e-rise" style="display: flex; flex-wrap: wrap; gap: 12px; animation-delay: .25s"><a class="e-btn" href="get-a-quote.html" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="color: #ffffff">Call 859.396.8606</a></div>
+</div>
+<div class="e-heroart e-rise" style="display: grid; place-items: center; animation-delay: .2s"><img src="assets/img/ai-hero.jpg" alt="A glowing red neural network sphere above a dark reflective surface" style="display: block; width: 100%; max-width: 460px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 26px; box-shadow: 0 34px 70px rgba(0, 0, 0, .35)"></div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #ffffff">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #a42e2e">A fundamental shift</span>
+<h2 class="e-h2">Not a buzzword. Not a passing trend.</h2>
+
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><p class="e-p">Artificial intelligence represents a fundamental shift in how businesses operate, compete and serve customers. Whether you're a small local business looking to automate repetitive tasks, a mid-sized company optimizing your marketing, or an enterprise ready to deploy custom applications, our team can guide you through each step.</p><p class="e-p">Our AI services are built on the foundation that made us a trusted digital marketing partner throughout Kentucky: practical, results-driven strategies that deliver measurable ROI. We don't chase hype or implement technology for its own sake. We focus on your unique challenges and the AI solutions that make a genuine difference to your bottom line.</p></div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #161515; color: #ffffff">
+<div style="display: flex; flex-direction: column; gap: clamp(28px, 4vh, 48px); max-width: 1280px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 14px"><span class="e-eb" style="color: #ff8a89">What we offer</span><h2 class="e-h2">Four ways we put AI to work.</h2></div>
+<div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;"><div class="e-gc" style="grid-column: span 3; display: grid"><a href="ai-consulting.html" class="e-card" style="background: #ffffff; color: #161515; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #e44443">01</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AI consulting</strong><span style="font-size: 16px; line-height: 1.6; color: #3b3636">Assess your business, find where AI delivers the greatest impact, evaluate tools and build your roadmap.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #161515">Learn more</span></a></div><div class="e-gc" style="grid-column: span 3; display: grid"><a href="ai-transition-services.html" class="e-card" style="background: #e44443; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #161515">02</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AI transition services</strong><span style="font-size: 16px; line-height: 1.6; color: #161515">Workflow analysis, data migration, system integration, staff training, pilots and phased rollouts.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #ffffff">Learn more</span></a></div><div class="e-gc" style="grid-column: span 3; display: grid"><a href="ai-app-development.html" class="e-card" style="background: #7b0c13; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #ffc2c1">03</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AI app development</strong><span style="font-size: 16px; line-height: 1.6; color: #cfc9c9">Document processing, customer intelligence, chatbots, predictive analytics and more, built for you.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #ffffff">Learn more</span></a></div><div class="e-gc" style="grid-column: span 3; display: grid"><a href="aio-aeo-geo.html" class="e-card" style="background: #221f1f; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #e44443">04</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AIO / AEO / GEO</strong><span style="font-size: 16px; line-height: 1.6; color: #cfc9c9">Get cited by ChatGPT, Google AI Overviews, Perplexity, Claude and voice assistants.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #ffffff">Learn more</span></a></div></div>
+</div>
+</section>
+<div style="height: clamp(64px, 10vh, 110px)"></div><section style="background: #ffffff; padding: 0 clamp(20px, 5vw, 80px) clamp(56px, 8vh, 96px)"><figure style="max-width: 1280px; margin: 0 auto"><img src="assets/img/ai-banner.jpg" alt="A business owner at a laptop as red light lines flow into an AI network" style="display: block; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 26px; box-shadow: 0 30px 60px rgba(22, 21, 21, .18)"></figure></section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #ffffff">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #a42e2e">Why Digital Impact</span>
+<h2 class="e-h2">The right partner changes everything.</h2>
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45">An opportunity as significant as the early internet.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><p class="e-p">The wrong partner can waste your investment, frustrate your team and leave you worse off than when you started. The right one accelerates your progress, builds your capabilities and positions you for sustained competitive advantage.</p><p class="e-p">With over 25 years of digital experience, we've seen technologies come and go, hype cycles rise and fall, and genuine innovations emerge. We know how to separate substance from marketing spin, because we've lived through every major digital transformation since the early commercial internet.</p><p class="e-p">Our SEO roots give us particular strength in AI optimization. We understand how search systems work at a fundamental level, and our proven, sustainable techniques have delivered through every Google algorithm update and industry shift.</p><p class="e-p">We're based in Lexington and work with businesses across the state, from Louisville to the smaller communities that make up our region. Most importantly, we're genuinely passionate about helping businesses succeed with AI. We don't just implement technology. We build capabilities, transfer knowledge and create lasting value beyond any single engagement.</p></div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #f6f3f2">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(32px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 18px">
+<span class="e-eb" style="color: #a42e2e">FAQ</span>
+<h2 class="e-h2">Questions we hear a lot.</h2>
+<button type="button" class="e-eb" style="align-self: flex-start; min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2.5px solid #e44443; color: #161515; cursor: pointer">Expand all</button>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3b3636">Still have a question? Call <a href="tel:8593968606" style="color: #a42e2e; font-weight: 900">859.396.8606</a>.</p>
+</div>
+<div style="border-bottom: 2.5px solid #161515">
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="true">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">01</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What AI services does Digital Impact offer for businesses?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #161515; color: #ffffff">−</span>
+</button>
+
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch">Digital Impact offers four core AI services: AI Consulting, which provides strategic guidance on AI adoption and implementation; AI Transition Services, which guides businesses from traditional operations to AI-enhanced processes; AI App Development, which builds custom AI applications tailored to unique business challenges; and AIO/AEO/GEO (AI Optimization, Answer Engine Optimization, and Generative Engine Optimization), which ensures your content is visible in AI-powered search and discovery platforms. All services are backed by 25+ years of digital marketing experience.</p>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">02</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Who leads AI services at Digital Impact?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">03</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Why should my business invest in AI right now?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">04</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Does Digital Impact offer AI services for small businesses?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">05</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How does Digital Impact's SEO experience benefit their AI services?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">06</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What is the difference between AI consulting and AI transition services?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">07</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Can Digital Impact build custom AI applications for my company?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">08</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What does AIO/AEO/GEO mean?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">09</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Is Digital Impact based in Kentucky?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" aria-expanded="false">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">10</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How does Digital Impact approach AI implementation differently?</span>
+<span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
+</button>
+<!--if-->
+</div>
+<!--for-->
+</div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 130px) clamp(20px, 5vw, 80px) 0; background: #e44443; color: #161515">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 64px); align-items: end; max-width: 1280px; margin: 0 auto">
+<p class="e-h1" style="font-size: clamp(40px, 6vw, 96px); color: #ffffff">The top of Google.<br>The top of the answer.</p>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p class="e-x" style="margin: 0; font-size: clamp(22px, 2.2vw, 32px)">Let's get you there.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a class="e-btn" href="get-a-quote.html" style="background: #161515; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="color: #161515">859.396.8606</a></div>
+</div>
+</div>
+<footer style="margin: clamp(72px, 11vh, 120px) calc(-1 * clamp(20px, 5vw, 80px)) 0; position: relative; z-index: 45; padding: clamp(56px, 8vh, 88px) clamp(20px, 5vw, 80px) 28px; background: #161515; color: #cfc9c9">
+<div class="e-foot">
+<div class="e-footlead" style="display: flex; flex-direction: column; gap: 16px">
+<img src="assets/img/digital-impact-logo.png" alt="Digital Impact" style="height: 26px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: 17px; color: #ffffff">Because experience matters.</p>
+<a href="tel:8593968606" class="e-x" style="font-size: 26px; color: #ffffff; text-decoration: none">859.396.8606</a>
+<span style="font-size: 15px">Lexington, Kentucky. Serving Louisville and all of Kentucky.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; color: #ffffff"><a class="e-pill" href="https://www.facebook.com/profile.php?id=100093278650724">Facebook</a><a class="e-pill" href="https://www.linkedin.com/company/digital-impact-marketers/">LinkedIn</a></div>
+</div>
+<div><h3>Services</h3><ul><li><a href="services.html">All services</a></li><li><a href="ppc-management-lexington-ky.html">PPC management</a></li><li><a href="seo-lexington-ky.html">SEO Lexington</a></li><li><a href="seo-louisville-ky.html">SEO Louisville</a></li><li><a href="ai-digital-marketing-lexington-ky.html">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><span class="e-footcur" aria-current="page">AI services</span></li><li><a href="ai-consulting.html">AI consulting</a></li><li><a href="ai-transition-services.html">AI transition services</a></li><li><a href="ai-app-development.html">AI app development</a></li><li><a href="aio-aeo-geo.html">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="aio-lexington-ky.html">AIO Lexington</a></li><li><a href="aio-louisville-ky.html">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="get-a-quote.html">Get a quote</a></li><li><a href="history-of-web-design.html">History of web design</a></li><li><a href="privacy-policy.html">Privacy policy</a></li></ul></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<span>© Digital Impact. All rights reserved.</span>
+<a href="get-a-quote.html" style="color: #a39c9c">Get a quote</a>
+</div>
+</footer>
+</section>
+</div>
+</div>
+<template id="dc-tpl">
+<div style="position: relative; width: 100%; min-height: 100vh; overflow-x: clip; background: #ffffff; color: #161515">
+<header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
+<a href="index.html" aria-label="Digital Impact home" style="display: flex; flex: none">
+<img class="e-logo" src="assets/img/digital-impact-logo.png" alt="Digital Impact" style="height: 44px; width: auto; display: block">
+</a>
+<nav class="e-navlinks" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase">
+<div class="e-dd"><a class="e-navlink" href="services.html">Services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="services.html"><strong>All services</strong><span>SEO, web, PPC, creative and social</span></a><a href="ppc-management-lexington-ky.html"><strong>PPC management</strong><span>Google Ads and Bing Ads</span></a><a href="seo-lexington-ky.html"><strong>SEO Lexington</strong><span>Local search in Lexington</span></a><a href="seo-louisville-ky.html"><strong>SEO Louisville</strong><span>Local search in Louisville</span></a><a href="ai-digital-marketing-lexington-ky.html"><strong>AI digital marketing</strong><span>AI-powered campaigns</span></a></div></div>
+<div class="e-dd"><a class="e-navlink" href="ai-services.html" style="border-bottom-color: #e44443">AI services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="ai-services.html"><strong>AI services</strong><span>Overview of our AI work</span></a><a href="ai-consulting.html"><strong>AI consulting</strong><span>Strategy and roadmaps</span></a><a href="ai-transition-services.html"><strong>AI transition services</strong><span>Move to AI-enhanced operations</span></a><a href="ai-app-development.html"><strong>AI app development</strong><span>Custom AI applications</span></a><a href="aio-aeo-geo.html"><strong>AIO / AEO / GEO</strong><span>Visibility in AI answers</span></a></div></div>
+<a class="e-navlink" href="about.html">About</a>
+<a class="e-navlink" href="contact.html">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px">
+<a class="e-navphone" href="tel:8593968606" aria-label="Call 859.396.8606"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#e44443" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg><span>859.396.8606</span></a>
+<a class="e-btn e-navq" href="get-a-quote.html" style="min-height: 44px; background: #d23a39; color: #ffffff">Get a quote</a>
+<button type="button" class="e-burger" onClick="{{menuToggle}}" aria-expanded="{{menuExp}}" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><div class="e-mmenu" role="dialog" aria-label="Site menu"><div class="e-mgroup"><h3 class="e-eb">Services</h3><a class="e-mlink" href="services.html" onClick="{{menuClose}}">All services</a><a class="e-mlink" href="ppc-management-lexington-ky.html" onClick="{{menuClose}}">PPC management</a><a class="e-mlink" href="seo-lexington-ky.html" onClick="{{menuClose}}">SEO Lexington</a><a class="e-mlink" href="seo-louisville-ky.html" onClick="{{menuClose}}">SEO Louisville</a><a class="e-mlink" href="ai-digital-marketing-lexington-ky.html" onClick="{{menuClose}}">AI digital marketing</a></div><div class="e-mgroup"><h3 class="e-eb">AI services</h3><a class="e-mlink" href="ai-services.html" onClick="{{menuClose}}">AI services</a><a class="e-mlink" href="ai-consulting.html" onClick="{{menuClose}}">AI consulting</a><a class="e-mlink" href="ai-transition-services.html" onClick="{{menuClose}}">AI transition services</a><a class="e-mlink" href="ai-app-development.html" onClick="{{menuClose}}">AI app development</a><a class="e-mlink" href="aio-aeo-geo.html" onClick="{{menuClose}}">AIO / AEO / GEO</a><a class="e-mlink" href="aio-lexington-ky.html" onClick="{{menuClose}}">AIO Lexington</a><a class="e-mlink" href="aio-louisville-ky.html" onClick="{{menuClose}}">AIO Louisville</a></div><div class="e-mgroup"><h3 class="e-eb">Company</h3><a class="e-mlink" href="index.html" onClick="{{menuClose}}">Home</a><a class="e-mlink" href="about.html" onClick="{{menuClose}}">About</a><a class="e-mlink" href="contact.html" onClick="{{menuClose}}">Contact</a><a class="e-mlink" href="history-of-web-design.html" onClick="{{menuClose}}">History of web design</a><a class="e-mlink" href="privacy-policy.html" onClick="{{menuClose}}">Privacy policy</a></div><div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px"><a class="e-btn" href="get-a-quote.html" onClick="{{menuClose}}" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="justify-content: center; color: #ffffff">Call 859.396.8606</a></div></div></sc-if>
+</header>
+<section style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #161515; color: #ffffff; overflow: hidden">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 80px); align-items: center; max-width: 1280px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<nav aria-label="Breadcrumb" class="e-eb" style="font-size: 12px; color: #cfc9c9"><a href="index.html" style="text-decoration: none">Home</a> <span aria-hidden="true">/</span> AI services</nav>
+<span class="e-eb e-rise" style="color: #ff8a89">AI services</span>
+<h1 class="e-h1 e-rise" style="font-size: clamp(44px, 6.4vw, 104px); animation-delay: .08s">AI that moves your bottom line.</h1>
+<p class="e-lede e-rise" style="color: #cfc9c9; animation-delay: .16s">Since 1998, our CEO Don Johnson has been at the forefront of every major digital revolution, from building search engines and pioneering e-commerce to mastering SEO. Today we bring that same pioneering spirit to AI, helping businesses across Lexington, Louisville and all of Kentucky drive growth, improve efficiency and stay competitive.</p>
+<div class="e-rise" style="display: flex; flex-wrap: wrap; gap: 12px; animation-delay: .25s"><a class="e-btn" href="get-a-quote.html" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="color: #ffffff">Call 859.396.8606</a></div>
+</div>
+<div class="e-heroart e-rise" style="display: grid; place-items: center; animation-delay: .2s"><img src="assets/img/ai-hero.jpg" alt="A glowing red neural network sphere above a dark reflective surface" style="display: block; width: 100%; max-width: 460px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 26px; box-shadow: 0 34px 70px rgba(0, 0, 0, .35)"></div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #ffffff">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #a42e2e">A fundamental shift</span>
+<h2 class="e-h2">Not a buzzword. Not a passing trend.</h2>
+
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><p class="e-p">Artificial intelligence represents a fundamental shift in how businesses operate, compete and serve customers. Whether you're a small local business looking to automate repetitive tasks, a mid-sized company optimizing your marketing, or an enterprise ready to deploy custom applications, our team can guide you through each step.</p><p class="e-p">Our AI services are built on the foundation that made us a trusted digital marketing partner throughout Kentucky: practical, results-driven strategies that deliver measurable ROI. We don't chase hype or implement technology for its own sake. We focus on your unique challenges and the AI solutions that make a genuine difference to your bottom line.</p></div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #161515; color: #ffffff">
+<div style="display: flex; flex-direction: column; gap: clamp(28px, 4vh, 48px); max-width: 1280px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 14px"><span class="e-eb" style="color: #ff8a89">What we offer</span><h2 class="e-h2">Four ways we put AI to work.</h2></div>
+<div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;"><div class="e-gc" style="grid-column: span 3; display: grid"><a href="ai-consulting.html" class="e-card" style="background: #ffffff; color: #161515; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #e44443">01</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AI consulting</strong><span style="font-size: 16px; line-height: 1.6; color: #3b3636">Assess your business, find where AI delivers the greatest impact, evaluate tools and build your roadmap.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #161515">Learn more</span></a></div><div class="e-gc" style="grid-column: span 3; display: grid"><a href="ai-transition-services.html" class="e-card" style="background: #e44443; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #161515">02</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AI transition services</strong><span style="font-size: 16px; line-height: 1.6; color: #161515">Workflow analysis, data migration, system integration, staff training, pilots and phased rollouts.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #ffffff">Learn more</span></a></div><div class="e-gc" style="grid-column: span 3; display: grid"><a href="ai-app-development.html" class="e-card" style="background: #7b0c13; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #ffc2c1">03</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AI app development</strong><span style="font-size: 16px; line-height: 1.6; color: #cfc9c9">Document processing, customer intelligence, chatbots, predictive analytics and more, built for you.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #ffffff">Learn more</span></a></div><div class="e-gc" style="grid-column: span 3; display: grid"><a href="aio-aeo-geo.html" class="e-card" style="background: #221f1f; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .16)"><span class="e-x" style="font-size: 15px; color: #e44443">04</span><strong class="e-x" style="font-size: clamp(22px, 2vw, 30px); line-height: .95">AIO / AEO / GEO</strong><span style="font-size: 16px; line-height: 1.6; color: #cfc9c9">Get cited by ChatGPT, Google AI Overviews, Perplexity, Claude and voice assistants.</span><span class="e-eb" style="margin-top: auto; padding-top: 8px; color: #ffffff">Learn more</span></a></div></div>
+</div>
+</section>
+<div style="height: clamp(64px, 10vh, 110px)"></div><section style="background: #ffffff; padding: 0 clamp(20px, 5vw, 80px) clamp(56px, 8vh, 96px)"><figure style="max-width: 1280px; margin: 0 auto"><img src="assets/img/ai-banner.jpg" alt="A business owner at a laptop as red light lines flow into an AI network" style="display: block; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 26px; box-shadow: 0 30px 60px rgba(22, 21, 21, .18)"></figure></section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #ffffff">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #a42e2e">Why Digital Impact</span>
+<h2 class="e-h2">The right partner changes everything.</h2>
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45">An opportunity as significant as the early internet.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><p class="e-p">The wrong partner can waste your investment, frustrate your team and leave you worse off than when you started. The right one accelerates your progress, builds your capabilities and positions you for sustained competitive advantage.</p><p class="e-p">With over 25 years of digital experience, we've seen technologies come and go, hype cycles rise and fall, and genuine innovations emerge. We know how to separate substance from marketing spin, because we've lived through every major digital transformation since the early commercial internet.</p><p class="e-p">Our SEO roots give us particular strength in AI optimization. We understand how search systems work at a fundamental level, and our proven, sustainable techniques have delivered through every Google algorithm update and industry shift.</p><p class="e-p">We're based in Lexington and work with businesses across the state, from Louisville to the smaller communities that make up our region. Most importantly, we're genuinely passionate about helping businesses succeed with AI. We don't just implement technology. We build capabilities, transfer knowledge and create lasting value beyond any single engagement.</p></div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #f6f3f2">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(32px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 18px">
+<span class="e-eb" style="color: #a42e2e">FAQ</span>
+<h2 class="e-h2">Questions we hear a lot.</h2>
+<button type="button" onClick="{{faqAll}}" class="e-eb" style="align-self: flex-start; min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2.5px solid #e44443; color: #161515; cursor: pointer">{{faqAllLabel}}</button>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3b3636">Still have a question? Call <a href="tel:8593968606" style="color: #a42e2e; font-weight: 900">859.396.8606</a>.</p>
+</div>
+<div style="border-bottom: 2.5px solid #161515">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="4">
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" onClick="{{f.toggle}}" aria-expanded="{{f.exp}}">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">{{f.num}}</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">{{f.q}}</span>
+<span class="e-faqi" aria-hidden="true" style="background: {{f.ibg}}; color: {{f.ifg}}">{{f.icon}}</span>
+</button>
+<sc-if value="{{f.open}}" hint-placeholder-val="{{ true }}">
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch">{{f.a}}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 130px) clamp(20px, 5vw, 80px) 0; background: #e44443; color: #161515">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 64px); align-items: end; max-width: 1280px; margin: 0 auto">
+<p class="e-h1" style="font-size: clamp(40px, 6vw, 96px); color: #ffffff">The top of Google.<br>The top of the answer.</p>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p class="e-x" style="margin: 0; font-size: clamp(22px, 2.2vw, 32px)">Let's get you there.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a class="e-btn" href="get-a-quote.html" style="background: #161515; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="color: #161515">859.396.8606</a></div>
+</div>
+</div>
+<footer style="margin: clamp(72px, 11vh, 120px) calc(-1 * clamp(20px, 5vw, 80px)) 0; position: relative; z-index: 45; padding: clamp(56px, 8vh, 88px) clamp(20px, 5vw, 80px) 28px; background: #161515; color: #cfc9c9">
+<div class="e-foot">
+<div class="e-footlead" style="display: flex; flex-direction: column; gap: 16px">
+<img src="assets/img/digital-impact-logo.png" alt="Digital Impact" style="height: 26px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: 17px; color: #ffffff">Because experience matters.</p>
+<a href="tel:8593968606" class="e-x" style="font-size: 26px; color: #ffffff; text-decoration: none">859.396.8606</a>
+<span style="font-size: 15px">Lexington, Kentucky. Serving Louisville and all of Kentucky.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; color: #ffffff"><a class="e-pill" href="https://www.facebook.com/profile.php?id=100093278650724">Facebook</a><a class="e-pill" href="https://www.linkedin.com/company/digital-impact-marketers/">LinkedIn</a></div>
+</div>
+<div><h3>Services</h3><ul><li><a href="services.html">All services</a></li><li><a href="ppc-management-lexington-ky.html">PPC management</a></li><li><a href="seo-lexington-ky.html">SEO Lexington</a></li><li><a href="seo-louisville-ky.html">SEO Louisville</a></li><li><a href="ai-digital-marketing-lexington-ky.html">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><span class="e-footcur" aria-current="page">AI services</span></li><li><a href="ai-consulting.html">AI consulting</a></li><li><a href="ai-transition-services.html">AI transition services</a></li><li><a href="ai-app-development.html">AI app development</a></li><li><a href="aio-aeo-geo.html">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="aio-lexington-ky.html">AIO Lexington</a></li><li><a href="aio-louisville-ky.html">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="get-a-quote.html">Get a quote</a></li><li><a href="history-of-web-design.html">History of web design</a></li><li><a href="privacy-policy.html">Privacy policy</a></li></ul></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<span>© Digital Impact. All rights reserved.</span>
+<a href="get-a-quote.html" style="color: #a39c9c">Get a quote</a>
+</div>
+</footer>
+</section>
+</div>
+</template>
+<script type="text/x-dc" id="dc-logic">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.FAQ = [["What AI services does Digital Impact offer for businesses?", "Digital Impact offers four core AI services: AI Consulting, which provides strategic guidance on AI adoption and implementation; AI Transition Services, which guides businesses from traditional operations to AI-enhanced processes; AI App Development, which builds custom AI applications tailored to unique business challenges; and AIO/AEO/GEO (AI Optimization, Answer Engine Optimization, and Generative Engine Optimization), which ensures your content is visible in AI-powered search and discovery platforms. All services are backed by 25+ years of digital marketing experience."], ["Who leads AI services at Digital Impact?", "Digital Impact's AI services are led by CEO Don Johnson, who has been at the forefront of every major digital revolution since 1998. His career spans building search engines, pioneering e-commerce solutions, and mastering SEO. Today he applies that same pioneering spirit to AI integration, helping businesses across Lexington, Louisville, and all of Kentucky leverage artificial intelligence for growth, efficiency, and competitive advantage."], ["Why should my business invest in AI right now?", "AI represents a fundamental shift in how businesses operate, compete, and serve customers, comparable in significance to the early internet. Businesses that effectively leverage AI gain long-term advantages in efficiency, customer experience, and market positioning that are difficult for late adopters to overcome. Whether you are a small local business automating repetitive tasks, a mid-sized company optimizing marketing, or an enterprise deploying custom applications, early AI adoption builds knowledge, refines processes, and establishes competitive positions. Digital Impact focuses on practical, ROI-driven AI strategies rather than chasing hype."], ["Does Digital Impact offer AI services for small businesses?", "Yes. Digital Impact tailors AI services to businesses of all sizes across Kentucky. For small businesses, they focus on practical applications like automating repetitive tasks (data entry, scheduling, email responses, report generation), optimizing marketing efforts with AI-driven tools, and implementing solutions that deliver measurable ROI within realistic budgets. They start with quick wins that demonstrate value and build from there, rather than recommending expensive enterprise-level implementations."], ["How does Digital Impact's SEO experience benefit their AI services?", "Digital Impact's 25+ years of SEO expertise gives them a deep understanding of how search systems work at a fundamental level. They apply this understanding directly to AI optimization, helping businesses succeed in AI-mediated discovery across platforms like Google AI Overviews, ChatGPT, Perplexity, and Claude. Their proven techniques have delivered results through every Google algorithm update and industry shift, and they continue adapting those strategies as AI transforms the search and discovery landscape."], ["What is the difference between AI consulting and AI transition services?", "AI Consulting focuses on strategic guidance: assessing your business, identifying where AI can deliver the greatest impact, evaluating vendors and tools, building ROI projections, and developing an implementation roadmap. AI Transition Services is the hands-on execution phase: managing the actual shift from traditional to AI-enhanced operations, including workflow analysis, data migration, system integration, staff training, pilot programs, and phased rollouts. Think of consulting as the strategy and transition as the implementation."], ["Can Digital Impact build custom AI applications for my company?", "Yes, Digital Impact's AI App Development service builds bespoke AI applications tailored to your unique requirements. Examples include intelligent document processing systems, predictive maintenance applications, customer intelligence platforms, content generation tools, conversational AI chatbots, and predictive analytics engines. Their development process starts with deep discovery to understand your specific challenges, then designs, builds, integrates, and deploys a custom solution with ongoing support."], ["What does AIO/AEO/GEO mean?", "AIO stands for Artificial Intelligence Optimization, AEO stands for Answer Engine Optimization, and GEO stands for Generative Engine Optimization. While the acronyms have slightly different technical meanings, they all refer to optimizing your business content so it appears and gets cited by AI-powered platforms like ChatGPT, Google AI Overviews, Perplexity, Claude, and voice assistants, rather than only traditional Google search results. Digital Impact offers dedicated AIO/AEO/GEO services to help businesses stay visible as AI transforms how people find information."], ["Is Digital Impact based in Kentucky?", "Yes, Digital Impact is headquartered in Lexington, Kentucky, and serves businesses across the entire state including Louisville and smaller Kentucky communities. They understand the unique challenges and opportunities that Kentucky businesses face and tailor their digital marketing and AI services accordingly. You can reach them at 859.396.8606 or through their website at digitalimpactmarketers.com."], ["How does Digital Impact approach AI implementation differently?", "Digital Impact focuses on practical, results-driven AI strategies that deliver measurable ROI, rather than implementing technology for its own sake. Their approach begins with understanding each client's unique challenges, then identifying AI solutions that make a genuine difference to the bottom line. They prioritize starting with quick wins to demonstrate value and build momentum, use phased implementation with pilot programs to reduce risk, and provide ongoing advisory support as the AI landscape evolves. This grounded methodology comes from 25+ years of separating substance from marketing hype across every digital transformation since the early commercial internet."]];
+    this.state = { faqOpen: this.FAQ.map((f, i) => i === 0), sent: false, sel: [false, false, false, false, false, false], tl: -1, menuOpen: false, vidIdle: true };
+  }
+  componentDidMount() {
+    const v = document.querySelector('.e-vidv');
+    if (!v) return;
+    const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    v.muted = true;
+    v.loop = true;
+    v.playsInline = true;
+    if (mq && mq.matches) v.pause(); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    this._ended = () => {
+      v.controls = false; v.muted = true; v.loop = true; v.currentTime = 0;
+      if (!(mq && mq.matches)) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      this.setState({ vidIdle: true });
+    };
+    v.addEventListener('ended', this._ended);
+  }
+  componentWillUnmount() {
+    const v = document.querySelector('.e-vidv');
+    if (v && this._ended) v.removeEventListener('ended', this._ended);
+  }
+  renderVals() {
+    const s = this.state;
+    const allOpen = this.FAQ.length > 0 && s.faqOpen.every((x) => x);
+    const v = {
+      notSent: !s.sent,
+      sent: s.sent,
+      send: () => this.setState({ sent: true }),
+      faqAllLabel: allOpen ? 'Collapse all' : 'Expand all',
+      faqAll: () => this.setState({ faqOpen: this.FAQ.map(() => !allOpen) }),
+      faqs: this.FAQ.map((f, i) => {
+        const open = !!s.faqOpen[i];
+        return {
+          num: (i < 9 ? '0' : '') + (i + 1), q: f[0], a: f[1], open: open,
+          exp: open ? 'true' : 'false', icon: open ? '−' : '+',
+          ibg: open ? '#161515' : '#ffffff', ifg: open ? '#ffffff' : '#161515',
+          toggle: () => { const next = this.state.faqOpen.slice(); next[i] = !next[i]; this.setState({ faqOpen: next }); }
+        };
+      })
+    };
+    v.menuOpen = !!s.menuOpen;
+    v.vidIdle = s.vidIdle;
+    v.vidPlay = () => {
+      const el = document.querySelector('.e-vidv');
+      if (!el) return;
+      el.loop = false; el.muted = false; el.controls = true; el.currentTime = 0;
+      const p = el.play(); if (p && p.catch) p.catch(() => {});
+      this.setState({ vidIdle: false });
+    };
+    v.menuExp = s.menuOpen ? 'true' : 'false';
+    v.menuToggle = () => this.setState({ menuOpen: !this.state.menuOpen });
+    v.menuClose = () => this.setState({ menuOpen: false });
+    for (let i = 0; i < 6; i++) {
+      const on = !!s.sel[i];
+      v['q' + i] = () => { const next = this.state.sel.slice(); next[i] = !next[i]; this.setState({ sel: next }); };
+      v['qp' + i] = on ? 'true' : 'false';
+      v['qb' + i] = on ? '#161515' : '#ffffff';
+      v['qf' + i] = on ? '#ffffff' : '#161515';
+    }
+    for (let i = 0; i < 4; i++) {
+      const on = s.tl === i;
+      v['t' + i] = () => this.setState({ tl: i });
+      v['tp' + i] = on ? 'true' : 'false';
+      v['tb' + i] = on ? '#e44443' : '#ffffff';
+      v['tf' + i] = on ? '#ffffff' : '#161515';
+    }
+    return v;
+  }
+}
+</script>
+<script src="assets/js/dc-lite.js"></script>
+</body>
+</html>
