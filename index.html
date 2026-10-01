@@ -207,14 +207,18 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 .e-jumpk[aria-current="true"] { background: #e44443; }
 .e-jumpk[aria-current="true"] .e-x { color: #ffffff !important; }
 .e-aiM { display: none; }
+.e-aiP { display: none; }
 @keyframes e-aiflow { to { background-position: 0 14px; } }
 .e-aiMflow { animation: e-aiflow .8s linear infinite; }
 @media (max-width: 900px) {
   section[data-scene="e2"], section[data-scene="e6"], section[data-scene="e8"] { height: auto !important; }
   section[data-scene="e2"] > div, section[data-scene="e6"] > div, section[data-scene="e8"] > div { position: relative !important; height: auto !important; min-height: 100vh; overflow: visible !important; }
-  section[data-scene="e11"] { height: auto !important; }
-  section[data-scene="e11"] > div:first-child { display: none !important; }
-  .e-aiM { display: block; }
+  section[data-scene="e11"] > div:first-child { height: 100vh !important; height: 100svh !important; padding: 72px 16px 84px !important; }
+  section[data-scene="e11"] > div:first-child > div:first-child { padding: 72px 20px 24px !important; }
+  .e-aiIc, .e-aiHp { display: none !important; }
+  .e-aiHh { font-size: clamp(22px, 6.6vw, 30px) !important; }
+  .e-aiD { display: none !important; }
+  .e-aiP { display: block !important; }
 }
 @media (prefers-reduced-motion: reduce) { .e-aiMflow { animation: none; } }
 @media (max-width: 900px) {
@@ -632,7 +636,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <span class="e-eb" style="color: #ff8a89">AI + custom development</span>
 <h2 class="e-h2" style="font-size: clamp(44px, 6.8vw, 110px); max-width: 14ch">Built around your business.</h2>
 <p class="e-lede" style="max-width: 62ch; color: #e8e3e2">Off-the-shelf AI tools are made for everyone, so they only go so far. We connect AI to your data, your systems and the way you work, then build one custom app that fits your business like it was made for it. Because it was.</p>
-<div class="e-split" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 980px; margin-top: 6px; text-align: left">
+<div class="e-split e-aiIc" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 980px; margin-top: 6px; text-align: left">
 <div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; border-radius: 20px; background: #ffffff; color: #161515"><span class="e-x" style="font-size: 15px; color: #e44443">01</span><strong class="e-x" style="font-size: 20px">Off-the-shelf</strong><span style="font-size: 15px; line-height: 1.45; color: #3b3636">One size fits all. It only goes so far.</span></div>
 <div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; border-radius: 20px; background: #e44443; color: #ffffff"><span class="e-x" style="font-size: 15px; color: #161515">02</span><strong class="e-x" style="font-size: 20px">Your business</strong><span style="font-size: 15px; line-height: 1.45; font-weight: 700; color: #161515">Your data, systems and workflow plug in.</span></div>
 <div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; border-radius: 20px; background: #7b0c13; color: #ffffff"><span class="e-x" style="font-size: 15px; color: #ffc2c1">03</span><strong class="e-x" style="font-size: 20px">One custom AI app</strong><span style="font-size: 15px; line-height: 1.45; color: #f3e3e3">Built, integrated and supported after launch.</span></div>
@@ -644,12 +648,12 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 10px 32px; opacity: var(--e11h)">
 <div style="display: flex; flex-direction: column; gap: 10px">
 <span class="e-eb" style="color: #ff8a89">AI + custom development</span>
-<h2 class="e-h2" style="font-size: clamp(30px, 3.8vw, 60px)">Built around your business.</h2>
+<h2 class="e-h2 e-aiHh" style="font-size: clamp(30px, 3.8vw, 60px)">Built around your business.</h2>
 </div>
-<p style="margin: 0; max-width: 38ch; font-size: 16px; line-height: 1.5; color: #cfc9c9">Your data, your systems and your workflow, wired into one app that fits.</p>
+<p class="e-aiHp" style="margin: 0; max-width: 38ch; font-size: 16px; line-height: 1.5; color: #cfc9c9">Your data, your systems and your workflow, wired into one app that fits.</p>
 </div>
 <div style="flex: 1 1 auto; min-height: 0; display: grid; place-items: center">
-<div style="position: relative; width: min(100%, calc((100vh - 290px) * 2.143)); aspect-ratio: 1200 / 560; container-type: inline-size">
+<div class="e-aiD" style="position: relative; width: min(100%, calc((100vh - 290px) * 2.143)); aspect-ratio: 1200 / 560; container-type: inline-size">
 <div style="position: absolute; inset: 0; font-size: calc(100cqw / 120)">
 
 <svg viewBox="0 0 1200 560" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
@@ -714,6 +718,78 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <div style="position: absolute; left: 84em; top: 44em; display: flex; align-items: center; gap: 1em; padding: 1em 1.8em 1em 1.2em; border-radius: 99em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .3); opacity: var(--e11d); transform: translateY(calc((1 - var(--e11d)) * 2em))">
 <span style="display: grid; place-items: center; width: 2.6em; height: 2.6em; border-radius: 50%; background: #ffffff"><svg viewBox="0 0 20 20" style="width: 1.6em; height: 1.6em" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 <strong class="e-x" style="font-size: 1.9em">Deployed. Built your way.</strong>
+</div>
+
+</div>
+</div>
+<div class="e-aiP" style="position: relative; width: min(100%, calc((100svh - 260px) * .66)); aspect-ratio: 600 / 910; container-type: inline-size">
+<div style="position: absolute; inset: 0; font-size: calc(100cqw / 60)">
+
+<svg viewBox="0 0 600 910" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+<g fill="none" stroke="#e44443" stroke-width="4" stroke-linecap="round">
+<path d="M95 150 L300 280" stroke-dasharray="245" style="stroke-dashoffset: calc((1 - var(--e11l)) * 245px)"></path>
+<path d="M300 150 L300 280" stroke-dasharray="130" style="stroke-dashoffset: calc((1 - var(--e11l)) * 130px)"></path>
+<path d="M505 150 L300 280" stroke-dasharray="245" style="stroke-dashoffset: calc((1 - var(--e11l)) * 245px)"></path>
+</g>
+<g class="e-flow" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 34" style="opacity: var(--e11c)">
+<path d="M95 150 L300 280"></path>
+<path d="M300 150 L300 280"></path>
+<path d="M505 150 L300 280"></path>
+</g>
+<line x1="300" y1="458" x2="300" y2="490" stroke="#ffffff" stroke-width="3" stroke-dasharray="6 6" style="opacity: var(--e11k0)"></line>
+</svg>
+
+<div role="img" aria-label="Off-the-shelf tool: one size fits all, only goes so far" style="position: absolute; left: 3em; top: 18em; width: 54em; height: 24em; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 1.8em; padding: 3.4em; border-radius: 2.2em; background: #ffffff; color: #161515; box-shadow: 0 3em 6em rgba(0, 0, 0, .35); opacity: var(--e11o); transform: scale(calc(.94 + var(--e11o) * .06))">
+<span class="e-eb" style="font-size: 1.7em; color: #5f5959">Off-the-shelf tool</span>
+<strong class="e-x" style="font-size: 4.4em; line-height: .95">One size fits all</strong>
+<span style="display: block; height: 1.5em; background: #efeae9"><span style="display: block; height: 100%; width: 55%; background: #8d8686; transform: scaleX(var(--e11b)); transform-origin: left center"></span></span>
+<span class="e-x" style="position: absolute; right: 2.6em; bottom: 2.2em; padding: .45em .8em; border: .22em solid #e44443; color: #e44443; font-size: 2.2em; transform: rotate(-6deg) scale(calc(1.4 - var(--e11s) * .4)); opacity: var(--e11s)">Only goes so far</span>
+</div>
+
+<div style="position: absolute; left: 0em; top: 0; width: 19em; height: 15em; box-sizing: border-box; display: flex; flex-direction: column; gap: .9em; padding: 1.6em 1.5em; border-radius: 1.8em; background: #ffffff; color: #161515; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11n0); transform: translateY(calc((1 - var(--e11n0)) * -4em))">
+<span style="flex: none; display: grid; place-items: center; width: 4.4em; height: 4.4em; border-radius: 1.1em; background: #e44443"><svg viewBox="0 0 24 24" style="width: 2.5em; height: 2.5em" fill="none" stroke="#ffffff" stroke-width="2.2"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"></ellipse><path d="M4.5 5.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"></path><path d="M4.5 11.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"></path></svg></span>
+<strong class="e-x" style="font-size: 2.2em; line-height: 1">Your data</strong>
+<span style="font-size: 1.6em; line-height: 1.25; color: #3b3636">CRM, sales, documents</span>
+</div>
+<div style="position: absolute; left: 20.5em; top: 0; width: 19em; height: 15em; box-sizing: border-box; display: flex; flex-direction: column; gap: .9em; padding: 1.6em 1.5em; border-radius: 1.8em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11n1); transform: translateY(calc((1 - var(--e11n1)) * -4em))">
+<span style="flex: none; display: grid; place-items: center; width: 4.4em; height: 4.4em; border-radius: 1.1em; background: #161515"><svg viewBox="0 0 24 24" style="width: 2.5em; height: 2.5em" fill="none" stroke="#ffffff" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg></span>
+<strong class="e-x" style="font-size: 2.2em; line-height: 1">Your systems</strong>
+<span style="font-size: 1.6em; line-height: 1.25; font-weight: 700; color: #161515">ERP, email, website</span>
+</div>
+<div style="position: absolute; left: 41em; top: 0; width: 19em; height: 15em; box-sizing: border-box; display: flex; flex-direction: column; gap: .9em; padding: 1.6em 1.5em; border-radius: 1.8em; background: #7b0c13; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11n2); transform: translateY(calc((1 - var(--e11n2)) * -4em))">
+<span style="flex: none; display: grid; place-items: center; width: 4.4em; height: 4.4em; border-radius: 1.1em; background: #ffffff"><svg viewBox="0 0 24 24" style="width: 2.5em; height: 2.5em" fill="none" stroke="#7b0c13" stroke-width="2.2"><circle cx="5" cy="6" r="2.5"></circle><circle cx="19" cy="12" r="2.5"></circle><circle cx="5" cy="18" r="2.5"></circle><path d="M7.5 6h4a4 4 0 0 1 4 4v0M7.5 18h4a4 4 0 0 0 4-4v0"></path></svg></span>
+<strong class="e-x" style="font-size: 2.2em; line-height: 1">Your workflow</strong>
+<span style="font-size: 1.6em; line-height: 1.25; color: #f3e3e3">The way you work</span>
+</div>
+
+<div aria-hidden="true" style="position: absolute; left: 22em; top: 20em; width: 16em; height: 16em; opacity: var(--e11c); transform: scale(calc(.5 + var(--e11c) * .5))">
+<div class="e-orbit" style="position: absolute; inset: -2.6em; border-radius: 50%; border: .22em dashed rgba(255, 255, 255, .35)"><span style="position: absolute; left: 50%; top: -.7em; width: 1.2em; height: 1.2em; margin-left: -.6em; border-radius: 50%; background: #ffffff"></span></div>
+<div class="e-ping" style="position: absolute; inset: 0; border-radius: 50%; border: .3em solid #ffffff"></div>
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 2.4em 5em rgba(228, 68, 67, .45)"></div>
+<div style="position: absolute; inset: 11%; border-radius: 50%; background: #e44443"></div>
+<div style="position: absolute; inset: 22%; border-radius: 50%; background: #ffffff"></div>
+<div style="position: absolute; inset: 33%; border-radius: 50%; background: #e44443"></div>
+<div style="position: absolute; inset: 42%; border-radius: 50%; background: #161515"></div>
+</div>
+<div style="position: absolute; left: 13em; top: 38.6em; width: 34em; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: .4em; padding: 1.2em 1.4em; border-radius: 1.6em; background: #ffffff; color: #161515; text-align: center; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11c); transform: translateY(calc((1 - var(--e11c)) * 3em))">
+<strong class="e-x" style="font-size: 3.2em; line-height: 1">Custom AI app</strong>
+<span class="e-eb" style="font-size: 1.5em; color: #e44443">AI + development</span>
+</div>
+
+<div style="position: absolute; left: 0; top: 49em; width: 60em; box-sizing: border-box; border-radius: 1.8em; overflow: hidden; background: #0d0c0c; border: .2em solid #5f5959; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11k0)">
+<div style="display: flex; align-items: center; gap: .8em; padding: 1.1em 1.6em; background: #221f1f"><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #e44443"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><span style="margin-left: .8em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.6em; color: #a39c9c">custom-ai.js</span></div>
+<div style="display: flex; flex-direction: column; gap: .55em; padding: 1em 1.1em 1.1em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 2.3em; line-height: 1.3; color: #ffffff">
+<span style="white-space: pre; opacity: var(--e11k0)"><span style="color: #ff6d6c">const</span> app = <span style="color: #ff6d6c">new</span> CustomAI({</span>
+<span style="white-space: pre; opacity: var(--e11k1)">  <span style="color: #a39c9c">data:</span>     yourCRM,</span>
+<span style="white-space: pre; opacity: var(--e11k2)">  <span style="color: #a39c9c">systems:</span>  [erp, email, website],</span>
+<span style="white-space: pre; opacity: var(--e11k3)">  <span style="color: #a39c9c">workflow:</span> <span style="color: #ffc2c1">"built your way"</span>,</span>
+<span style="white-space: pre; opacity: var(--e11k4)">});</span>
+<span style="white-space: pre; opacity: var(--e11k5)">app.<span style="color: #ff6d6c">deploy</span>();</span>
+</div>
+</div>
+<div style="position: absolute; left: 50%; top: 84.5em; display: flex; align-items: center; gap: 1em; white-space: nowrap; padding: 1em 1.8em 1em 1.2em; border-radius: 99em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .3); opacity: var(--e11d); transform: translate(-50%, calc((1 - var(--e11d)) * 2em))">
+<span style="display: grid; place-items: center; width: 3em; height: 3em; border-radius: 50%; background: #ffffff"><svg viewBox="0 0 20 20" style="width: 1.8em; height: 1.8em" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+<strong class="e-x" style="font-size: 2.3em">Deployed. Built your way.</strong>
 </div>
 
 </div>
@@ -1901,7 +1977,7 @@ app.deploy();</pre>
 <span class="e-eb" style="color: #ff8a89">AI + custom development</span>
 <h2 class="e-h2" style="font-size: clamp(44px, 6.8vw, 110px); max-width: 14ch">Built around your business.</h2>
 <p class="e-lede" style="max-width: 62ch; color: #e8e3e2">Off-the-shelf AI tools are made for everyone, so they only go so far. We connect AI to your data, your systems and the way you work, then build one custom app that fits your business like it was made for it. Because it was.</p>
-<div class="e-split" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 980px; margin-top: 6px; text-align: left">
+<div class="e-split e-aiIc" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 980px; margin-top: 6px; text-align: left">
 <div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; border-radius: 20px; background: #ffffff; color: #161515"><span class="e-x" style="font-size: 15px; color: #e44443">01</span><strong class="e-x" style="font-size: 20px">Off-the-shelf</strong><span style="font-size: 15px; line-height: 1.45; color: #3b3636">One size fits all. It only goes so far.</span></div>
 <div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; border-radius: 20px; background: #e44443; color: #ffffff"><span class="e-x" style="font-size: 15px; color: #161515">02</span><strong class="e-x" style="font-size: 20px">Your business</strong><span style="font-size: 15px; line-height: 1.45; font-weight: 700; color: #161515">Your data, systems and workflow plug in.</span></div>
 <div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 22px; border-radius: 20px; background: #7b0c13; color: #ffffff"><span class="e-x" style="font-size: 15px; color: #ffc2c1">03</span><strong class="e-x" style="font-size: 20px">One custom AI app</strong><span style="font-size: 15px; line-height: 1.45; color: #f3e3e3">Built, integrated and supported after launch.</span></div>
@@ -1913,12 +1989,12 @@ app.deploy();</pre>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 10px 32px; opacity: var(--e11h)">
 <div style="display: flex; flex-direction: column; gap: 10px">
 <span class="e-eb" style="color: #ff8a89">AI + custom development</span>
-<h2 class="e-h2" style="font-size: clamp(30px, 3.8vw, 60px)">Built around your business.</h2>
+<h2 class="e-h2 e-aiHh" style="font-size: clamp(30px, 3.8vw, 60px)">Built around your business.</h2>
 </div>
-<p style="margin: 0; max-width: 38ch; font-size: 16px; line-height: 1.5; color: #cfc9c9">Your data, your systems and your workflow, wired into one app that fits.</p>
+<p class="e-aiHp" style="margin: 0; max-width: 38ch; font-size: 16px; line-height: 1.5; color: #cfc9c9">Your data, your systems and your workflow, wired into one app that fits.</p>
 </div>
 <div style="flex: 1 1 auto; min-height: 0; display: grid; place-items: center">
-<div style="position: relative; width: min(100%, calc((100vh - 290px) * 2.143)); aspect-ratio: 1200 / 560; container-type: inline-size">
+<div class="e-aiD" style="position: relative; width: min(100%, calc((100vh - 290px) * 2.143)); aspect-ratio: 1200 / 560; container-type: inline-size">
 <div style="position: absolute; inset: 0; font-size: calc(100cqw / 120)">
 
 <svg viewBox="0 0 1200 560" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
@@ -1983,6 +2059,78 @@ app.deploy();</pre>
 <div style="position: absolute; left: 84em; top: 44em; display: flex; align-items: center; gap: 1em; padding: 1em 1.8em 1em 1.2em; border-radius: 99em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .3); opacity: var(--e11d); transform: translateY(calc((1 - var(--e11d)) * 2em))">
 <span style="display: grid; place-items: center; width: 2.6em; height: 2.6em; border-radius: 50%; background: #ffffff"><svg viewBox="0 0 20 20" style="width: 1.6em; height: 1.6em" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 <strong class="e-x" style="font-size: 1.9em">Deployed. Built your way.</strong>
+</div>
+
+</div>
+</div>
+<div class="e-aiP" style="position: relative; width: min(100%, calc((100svh - 260px) * .66)); aspect-ratio: 600 / 910; container-type: inline-size">
+<div style="position: absolute; inset: 0; font-size: calc(100cqw / 60)">
+
+<svg viewBox="0 0 600 910" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+<g fill="none" stroke="#e44443" stroke-width="4" stroke-linecap="round">
+<path d="M95 150 L300 280" stroke-dasharray="245" style="stroke-dashoffset: calc((1 - var(--e11l)) * 245px)"></path>
+<path d="M300 150 L300 280" stroke-dasharray="130" style="stroke-dashoffset: calc((1 - var(--e11l)) * 130px)"></path>
+<path d="M505 150 L300 280" stroke-dasharray="245" style="stroke-dashoffset: calc((1 - var(--e11l)) * 245px)"></path>
+</g>
+<g class="e-flow" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 34" style="opacity: var(--e11c)">
+<path d="M95 150 L300 280"></path>
+<path d="M300 150 L300 280"></path>
+<path d="M505 150 L300 280"></path>
+</g>
+<line x1="300" y1="458" x2="300" y2="490" stroke="#ffffff" stroke-width="3" stroke-dasharray="6 6" style="opacity: var(--e11k0)"></line>
+</svg>
+
+<div role="img" aria-label="Off-the-shelf tool: one size fits all, only goes so far" style="position: absolute; left: 3em; top: 18em; width: 54em; height: 24em; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 1.8em; padding: 3.4em; border-radius: 2.2em; background: #ffffff; color: #161515; box-shadow: 0 3em 6em rgba(0, 0, 0, .35); opacity: var(--e11o); transform: scale(calc(.94 + var(--e11o) * .06))">
+<span class="e-eb" style="font-size: 1.7em; color: #5f5959">Off-the-shelf tool</span>
+<strong class="e-x" style="font-size: 4.4em; line-height: .95">One size fits all</strong>
+<span style="display: block; height: 1.5em; background: #efeae9"><span style="display: block; height: 100%; width: 55%; background: #8d8686; transform: scaleX(var(--e11b)); transform-origin: left center"></span></span>
+<span class="e-x" style="position: absolute; right: 2.6em; bottom: 2.2em; padding: .45em .8em; border: .22em solid #e44443; color: #e44443; font-size: 2.2em; transform: rotate(-6deg) scale(calc(1.4 - var(--e11s) * .4)); opacity: var(--e11s)">Only goes so far</span>
+</div>
+
+<div style="position: absolute; left: 0em; top: 0; width: 19em; height: 15em; box-sizing: border-box; display: flex; flex-direction: column; gap: .9em; padding: 1.6em 1.5em; border-radius: 1.8em; background: #ffffff; color: #161515; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11n0); transform: translateY(calc((1 - var(--e11n0)) * -4em))">
+<span style="flex: none; display: grid; place-items: center; width: 4.4em; height: 4.4em; border-radius: 1.1em; background: #e44443"><svg viewBox="0 0 24 24" style="width: 2.5em; height: 2.5em" fill="none" stroke="#ffffff" stroke-width="2.2"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"></ellipse><path d="M4.5 5.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"></path><path d="M4.5 11.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"></path></svg></span>
+<strong class="e-x" style="font-size: 2.2em; line-height: 1">Your data</strong>
+<span style="font-size: 1.6em; line-height: 1.25; color: #3b3636">CRM, sales, documents</span>
+</div>
+<div style="position: absolute; left: 20.5em; top: 0; width: 19em; height: 15em; box-sizing: border-box; display: flex; flex-direction: column; gap: .9em; padding: 1.6em 1.5em; border-radius: 1.8em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11n1); transform: translateY(calc((1 - var(--e11n1)) * -4em))">
+<span style="flex: none; display: grid; place-items: center; width: 4.4em; height: 4.4em; border-radius: 1.1em; background: #161515"><svg viewBox="0 0 24 24" style="width: 2.5em; height: 2.5em" fill="none" stroke="#ffffff" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg></span>
+<strong class="e-x" style="font-size: 2.2em; line-height: 1">Your systems</strong>
+<span style="font-size: 1.6em; line-height: 1.25; font-weight: 700; color: #161515">ERP, email, website</span>
+</div>
+<div style="position: absolute; left: 41em; top: 0; width: 19em; height: 15em; box-sizing: border-box; display: flex; flex-direction: column; gap: .9em; padding: 1.6em 1.5em; border-radius: 1.8em; background: #7b0c13; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11n2); transform: translateY(calc((1 - var(--e11n2)) * -4em))">
+<span style="flex: none; display: grid; place-items: center; width: 4.4em; height: 4.4em; border-radius: 1.1em; background: #ffffff"><svg viewBox="0 0 24 24" style="width: 2.5em; height: 2.5em" fill="none" stroke="#7b0c13" stroke-width="2.2"><circle cx="5" cy="6" r="2.5"></circle><circle cx="19" cy="12" r="2.5"></circle><circle cx="5" cy="18" r="2.5"></circle><path d="M7.5 6h4a4 4 0 0 1 4 4v0M7.5 18h4a4 4 0 0 0 4-4v0"></path></svg></span>
+<strong class="e-x" style="font-size: 2.2em; line-height: 1">Your workflow</strong>
+<span style="font-size: 1.6em; line-height: 1.25; color: #f3e3e3">The way you work</span>
+</div>
+
+<div aria-hidden="true" style="position: absolute; left: 22em; top: 20em; width: 16em; height: 16em; opacity: var(--e11c); transform: scale(calc(.5 + var(--e11c) * .5))">
+<div class="e-orbit" style="position: absolute; inset: -2.6em; border-radius: 50%; border: .22em dashed rgba(255, 255, 255, .35)"><span style="position: absolute; left: 50%; top: -.7em; width: 1.2em; height: 1.2em; margin-left: -.6em; border-radius: 50%; background: #ffffff"></span></div>
+<div class="e-ping" style="position: absolute; inset: 0; border-radius: 50%; border: .3em solid #ffffff"></div>
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 2.4em 5em rgba(228, 68, 67, .45)"></div>
+<div style="position: absolute; inset: 11%; border-radius: 50%; background: #e44443"></div>
+<div style="position: absolute; inset: 22%; border-radius: 50%; background: #ffffff"></div>
+<div style="position: absolute; inset: 33%; border-radius: 50%; background: #e44443"></div>
+<div style="position: absolute; inset: 42%; border-radius: 50%; background: #161515"></div>
+</div>
+<div style="position: absolute; left: 13em; top: 38.6em; width: 34em; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: .4em; padding: 1.2em 1.4em; border-radius: 1.6em; background: #ffffff; color: #161515; text-align: center; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11c); transform: translateY(calc((1 - var(--e11c)) * 3em))">
+<strong class="e-x" style="font-size: 3.2em; line-height: 1">Custom AI app</strong>
+<span class="e-eb" style="font-size: 1.5em; color: #e44443">AI + development</span>
+</div>
+
+<div style="position: absolute; left: 0; top: 49em; width: 60em; box-sizing: border-box; border-radius: 1.8em; overflow: hidden; background: #0d0c0c; border: .2em solid #5f5959; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11k0)">
+<div style="display: flex; align-items: center; gap: .8em; padding: 1.1em 1.6em; background: #221f1f"><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #e44443"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><span style="margin-left: .8em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.6em; color: #a39c9c">custom-ai.js</span></div>
+<div style="display: flex; flex-direction: column; gap: .55em; padding: 1em 1.1em 1.1em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 2.3em; line-height: 1.3; color: #ffffff">
+<span style="white-space: pre; opacity: var(--e11k0)"><span style="color: #ff6d6c">const</span> app = <span style="color: #ff6d6c">new</span> CustomAI({</span>
+<span style="white-space: pre; opacity: var(--e11k1)">  <span style="color: #a39c9c">data:</span>     yourCRM,</span>
+<span style="white-space: pre; opacity: var(--e11k2)">  <span style="color: #a39c9c">systems:</span>  [erp, email, website],</span>
+<span style="white-space: pre; opacity: var(--e11k3)">  <span style="color: #a39c9c">workflow:</span> <span style="color: #ffc2c1">"built your way"</span>,</span>
+<span style="white-space: pre; opacity: var(--e11k4)">});</span>
+<span style="white-space: pre; opacity: var(--e11k5)">app.<span style="color: #ff6d6c">deploy</span>();</span>
+</div>
+</div>
+<div style="position: absolute; left: 50%; top: 84.5em; display: flex; align-items: center; gap: 1em; white-space: nowrap; padding: 1em 1.8em 1em 1.2em; border-radius: 99em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .3); opacity: var(--e11d); transform: translate(-50%, calc((1 - var(--e11d)) * 2em))">
+<span style="display: grid; place-items: center; width: 3em; height: 3em; border-radius: 50%; background: #ffffff"><svg viewBox="0 0 20 20" style="width: 1.8em; height: 1.8em" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+<strong class="e-x" style="font-size: 2.3em">Deployed. Built your way.</strong>
 </div>
 
 </div>
