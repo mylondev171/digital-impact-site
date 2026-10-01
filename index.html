@@ -208,6 +208,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 .e-jumpk[aria-current="true"] .e-x { color: #ffffff !important; }
 .e-aiM { display: none; }
 .e-aiP { display: none; }
+.e-bP { display: none; }
 @keyframes e-aiflow { to { background-position: 0 14px; } }
 .e-aiMflow { animation: e-aiflow .8s linear infinite; }
 @media (max-width: 900px) {
@@ -219,6 +220,12 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
   .e-aiHh { font-size: clamp(22px, 6.6vw, 30px) !important; }
   .e-aiD { display: none !important; }
   .e-aiP { display: block !important; }
+  #e-bowl > div { padding-bottom: 84px !important; }
+  .e-bLede { max-height: calc((1 - var(--e5b)) * 16em); opacity: calc(1 - var(--e5b) * 3); overflow: hidden; margin-bottom: calc(var(--e5b) * -14px); }
+  .e-bStage { container-type: size; }
+  .e-bD { display: none !important; }
+  .e-bP { display: block !important; }
+  #e-bowl .e-dot { left: var(--ml) !important; top: var(--mt) !important; transform: translate(-50%, -50%) translate(calc(var(--mdx) * (1 - var(--e5g))), calc(var(--mdy) * (1 - var(--e5g)))) !important; }
 }
 @media (prefers-reduced-motion: reduce) { .e-aiMflow { animation: none; } }
 @media (max-width: 900px) {
@@ -1008,9 +1015,73 @@ app.deploy();</pre>
 <div style="display: flex; flex-direction: column; gap: 14px; padding: 0 clamp(20px, 5vw, 80px); position: relative; z-index: 2">
 <span class="e-eb" style="color: #ff8a89">SEO, the priority list</span>
 <h2 class="e-h2" style="max-width: 20ch; color: #ffffff">Bowling balls before ping pong balls.</h2>
-<p class="e-lede" style="color: #cfc9c9; font-weight: 700">Google's algorithm weighs hundreds of variables, and some weigh far more than others. We optimize the heaviest first for the biggest immediate impact, then work our way down.</p>
+<p class="e-lede e-bLede" style="color: #cfc9c9; font-weight: 700">Google's algorithm weighs hundreds of variables, and some weigh far more than others. We optimize the heaviest first for the biggest immediate impact, then work our way down.</p>
 </div>
-<div style="position: relative; flex: 1 1 auto; min-height: 280px">
+<div class="e-bStage" style="position: relative; flex: 1 1 auto; min-height: 280px">
+<div class="e-bP" style="position: absolute; top: 0; bottom: 0; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px)">
+<div style="position: absolute; left: 0; right: 0; top: 0; height: 12%; display: flex; flex-direction: column; justify-content: center; gap: 6px; opacity: var(--e5b)">
+<span class="e-eb" style="font-size: 12px; color: #a39c9c">Optimized in order of weight</span>
+<span class="e-eb" style="font-size: 12px; color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span>
+</div>
+<div style="position: absolute; left: 0; top: 20.25%; height: 72.5%; width: 3px; background: #2e2a2a; opacity: var(--e5b)"><div style="height: 100%; background: #e44443; transform: scaleY(var(--e5q)); transform-origin: top center"></div></div>
+<div style="position: absolute; left: 64px; top: 20.25%; width: min(13cqh, 110px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 calc(4px * var(--e5k0)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k0))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 34.75%; width: min(10.4cqh, 88px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e86563; box-shadow: 0 0 0 calc(3px * var(--e5k1)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k1))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 49.25%; width: min(8.2cqh, 70px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ee8886; box-shadow: 0 0 0 calc(3px * var(--e5k2)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k2))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 63.75%; width: min(6.4cqh, 54px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f3adac; box-shadow: 0 0 0 calc(3px * var(--e5k3)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k3))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 78.25%; width: min(4.8cqh, 40px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f8d2d1; box-shadow: 0 0 0 calc(3px * var(--e5k4)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k4))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 92.75%; width: min(3.4cqh, 28px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 calc(3px * var(--e5k5)) #ffffff"></div>
+
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 20.25%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 17px; color: #a39c9c">01</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Bowling ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Heavy. Biggest impact.</span>
+<span style="display: block; width: 100%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k0)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 34.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">02</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 78%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e86563; transform: scaleX(var(--e5k1)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 49.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">03</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 58%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #ee8886; transform: scaleX(var(--e5k2)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 63.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">04</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 42%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f3adac; transform: scaleX(var(--e5k3)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 78.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">05</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 28%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f8d2d1; transform: scaleX(var(--e5k4)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 92.75%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 17px; color: #a39c9c">06</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Ping pong ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Light. Fine tuning.</span>
+<span style="display: block; width: 16%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k5)); transform-origin: left center"></span></span></span>
+</div>
+<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 64px; top: calc(20.25% + var(--e5q) * 72.5%); width: min(17cqh, 140px); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
+</svg>
+</div>
 <p class="e-x" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 10%; margin: 0; text-align: center; font-size: clamp(18px, 2vw, 28px); color: #a39c9c; opacity: var(--e5c)">Hundreds of ranking variables</p>
 
 <span class="e-dot" style="left: calc(9% + -19.6px); top: calc(46% + -47.3px); width: 8.2px; height: 8.2px; background: #8d8686; transform: translate(-50%, -50%) translate(calc(-5.99vw * (1 - var(--e5g))), calc(-2.76vh * (1 - var(--e5g))))"></span>
@@ -1205,41 +1276,41 @@ app.deploy();</pre>
 
 <span class="e-dot" style="left: calc(81% + 1.2px); top: calc(46% + -7.4px); width: 4.2px; height: 4.2px; background: #8d8686; transform: translate(-50%, -50%) translate(calc(-7.41vw * (1 - var(--e5g))), calc(21.19vh * (1 - var(--e5g))))"></span>
 <!--for-->
-<div style="position: absolute; left: 9%; top: 46%; width: min(168px, 11.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 9%; top: 46%; width: min(168px, 11.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 calc(4px * var(--e5k0)) #ffffff"></div>
 <span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k0))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 23.4%; top: 46%; width: min(128px, 8.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 23.4%; top: 46%; width: min(128px, 8.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #e86563; box-shadow: 0 0 0 calc(3px * var(--e5k1)) #ffffff"></div>
 <span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k1))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 37.8%; top: 46%; width: min(98px, 6.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 37.8%; top: 46%; width: min(98px, 6.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #ee8886; box-shadow: 0 0 0 calc(3px * var(--e5k2)) #ffffff"></div>
 <span class="e-check" style="background: #ffffff; transform: scale(var(--e5k2))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 52.2%; top: 46%; width: min(74px, 5.2vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 52.2%; top: 46%; width: min(74px, 5.2vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #f3adac; box-shadow: 0 0 0 calc(3px * var(--e5k3)) #ffffff"></div>
 <span class="e-check" style="background: #ffffff; transform: scale(var(--e5k3))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 66.6%; top: 46%; width: min(54px, 3.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 66.6%; top: 46%; width: min(54px, 3.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #f8d2d1; box-shadow: 0 0 0 calc(3px * var(--e5k4)) #ffffff"></div>
 <span class="e-check" style="background: #ffffff; transform: scale(var(--e5k4))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 81%; top: 46%; width: min(36px, 2.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 81%; top: 46%; width: min(36px, 2.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 calc(3px * var(--e5k5)) #ffffff"></div>
 
 </div>
 
-<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: calc(9% + var(--e5q) * 72%); top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<svg class="e-bD" viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: calc(9% + var(--e5q) * 72%); top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
 <g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
 </svg>
-<div style="position: absolute; left: 9%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 9%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
 <strong class="e-x" style="font-size: 16px">Bowling ball</strong><span style="font-size: 14px; font-weight: 700; color: #a39c9c">Heavy. Biggest impact.</span>
 </div>
-<div style="position: absolute; left: 81%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 81%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
 <strong class="e-x" style="font-size: 16px">Ping pong ball</strong><span style="font-size: 14px; font-weight: 700; color: #a39c9c">Light. Fine tuning.</span>
 </div>
-<div style="position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6vh, 64px); display: flex; flex-direction: column; gap: 10px; opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6vh, 64px); display: flex; flex-direction: column; gap: 10px; opacity: var(--e5b)">
 <div class="e-eb" style="display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #a39c9c"><span>Optimized in order of weight</span><span style="color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span></div>
 <div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: calc(var(--e5q) * 100%); background: #e44443"></div></div>
 </div>
@@ -2365,48 +2436,112 @@ app.deploy();</pre>
 <div style="display: flex; flex-direction: column; gap: 14px; padding: 0 clamp(20px, 5vw, 80px); position: relative; z-index: 2">
 <span class="e-eb" style="color: #ff8a89">SEO, the priority list</span>
 <h2 class="e-h2" style="max-width: 20ch; color: #ffffff">Bowling balls before ping pong balls.</h2>
-<p class="e-lede" style="color: #cfc9c9; font-weight: 700">Google's algorithm weighs hundreds of variables, and some weigh far more than others. We optimize the heaviest first for the biggest immediate impact, then work our way down.</p>
+<p class="e-lede e-bLede" style="color: #cfc9c9; font-weight: 700">Google's algorithm weighs hundreds of variables, and some weigh far more than others. We optimize the heaviest first for the biggest immediate impact, then work our way down.</p>
 </div>
-<div style="position: relative; flex: 1 1 auto; min-height: 280px">
-<p class="e-x" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 10%; margin: 0; text-align: center; font-size: clamp(18px, 2vw, 28px); color: #a39c9c; opacity: var(--e5c)">Hundreds of ranking variables</p>
-<sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
-<span class="e-dot" style="left: {{d.l}}; top: {{d.t}}; width: {{d.s}}px; height: {{d.s}}px; background: #8d8686; transform: translate(-50%, -50%) translate(calc({{d.dx}} * (1 - var(--e5g))), calc({{d.dy}} * (1 - var(--e5g))))"></span>
-</sc-for>
-<div style="position: absolute; left: 9%; top: 46%; width: min(168px, 11.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div class="e-bStage" style="position: relative; flex: 1 1 auto; min-height: 280px">
+<div class="e-bP" style="position: absolute; top: 0; bottom: 0; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px)">
+<div style="position: absolute; left: 0; right: 0; top: 0; height: 12%; display: flex; flex-direction: column; justify-content: center; gap: 6px; opacity: var(--e5b)">
+<span class="e-eb" style="font-size: 12px; color: #a39c9c">Optimized in order of weight</span>
+<span class="e-eb" style="font-size: 12px; color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span>
+</div>
+<div style="position: absolute; left: 0; top: 20.25%; height: 72.5%; width: 3px; background: #2e2a2a; opacity: var(--e5b)"><div style="height: 100%; background: #e44443; transform: scaleY(var(--e5q)); transform-origin: top center"></div></div>
+<div style="position: absolute; left: 64px; top: 20.25%; width: min(13cqh, 110px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 calc(4px * var(--e5k0)) #ffffff"></div>
 <span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k0))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 23.4%; top: 46%; width: min(128px, 8.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; left: 64px; top: 34.75%; width: min(10.4cqh, 88px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #e86563; box-shadow: 0 0 0 calc(3px * var(--e5k1)) #ffffff"></div>
 <span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k1))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 37.8%; top: 46%; width: min(98px, 6.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; left: 64px; top: 49.25%; width: min(8.2cqh, 70px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #ee8886; box-shadow: 0 0 0 calc(3px * var(--e5k2)) #ffffff"></div>
 <span class="e-check" style="background: #ffffff; transform: scale(var(--e5k2))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 52.2%; top: 46%; width: min(74px, 5.2vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; left: 64px; top: 63.75%; width: min(6.4cqh, 54px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #f3adac; box-shadow: 0 0 0 calc(3px * var(--e5k3)) #ffffff"></div>
 <span class="e-check" style="background: #ffffff; transform: scale(var(--e5k3))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 66.6%; top: 46%; width: min(54px, 3.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; left: 64px; top: 78.25%; width: min(4.8cqh, 40px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #f8d2d1; box-shadow: 0 0 0 calc(3px * var(--e5k4)) #ffffff"></div>
 <span class="e-check" style="background: #ffffff; transform: scale(var(--e5k4))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
 </div>
-<div style="position: absolute; left: 81%; top: 46%; width: min(36px, 2.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; left: 64px; top: 92.75%; width: min(3.4cqh, 28px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 calc(3px * var(--e5k5)) #ffffff"></div>
+
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 20.25%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 17px; color: #a39c9c">01</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Bowling ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Heavy. Biggest impact.</span>
+<span style="display: block; width: 100%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k0)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 34.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">02</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 78%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e86563; transform: scaleX(var(--e5k1)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 49.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">03</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 58%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #ee8886; transform: scaleX(var(--e5k2)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 63.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">04</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 42%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f3adac; transform: scaleX(var(--e5k3)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 78.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">05</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 28%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f8d2d1; transform: scaleX(var(--e5k4)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 92.75%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 17px; color: #a39c9c">06</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Ping pong ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Light. Fine tuning.</span>
+<span style="display: block; width: 16%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k5)); transform-origin: left center"></span></span></span>
+</div>
+<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 64px; top: calc(20.25% + var(--e5q) * 72.5%); width: min(17cqh, 140px); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
+</svg>
+</div>
+<p class="e-x" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 10%; margin: 0; text-align: center; font-size: clamp(18px, 2vw, 28px); color: #a39c9c; opacity: var(--e5c)">Hundreds of ranking variables</p>
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
+<span class="e-dot" style="--ml: {{d.ml}}; --mt: {{d.mt}}; --mdx: {{d.mdx}}; --mdy: {{d.mdy}}; left: {{d.l}}; top: {{d.t}}; width: {{d.s}}px; height: {{d.s}}px; background: #8d8686; transform: translate(-50%, -50%) translate(calc({{d.dx}} * (1 - var(--e5g))), calc({{d.dy}} * (1 - var(--e5g))))"></span>
+</sc-for>
+<div class="e-bD" style="position: absolute; left: 9%; top: 46%; width: min(168px, 11.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 calc(4px * var(--e5k0)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k0))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 23.4%; top: 46%; width: min(128px, 8.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e86563; box-shadow: 0 0 0 calc(3px * var(--e5k1)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k1))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 37.8%; top: 46%; width: min(98px, 6.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ee8886; box-shadow: 0 0 0 calc(3px * var(--e5k2)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k2))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 52.2%; top: 46%; width: min(74px, 5.2vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f3adac; box-shadow: 0 0 0 calc(3px * var(--e5k3)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k3))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 66.6%; top: 46%; width: min(54px, 3.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f8d2d1; box-shadow: 0 0 0 calc(3px * var(--e5k4)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k4))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 81%; top: 46%; width: min(36px, 2.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 calc(3px * var(--e5k5)) #ffffff"></div>
 
 </div>
 
-<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: calc(9% + var(--e5q) * 72%); top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<svg class="e-bD" viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: calc(9% + var(--e5q) * 72%); top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
 <g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
 </svg>
-<div style="position: absolute; left: 9%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 9%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
 <strong class="e-x" style="font-size: 16px">Bowling ball</strong><span style="font-size: 14px; font-weight: 700; color: #a39c9c">Heavy. Biggest impact.</span>
 </div>
-<div style="position: absolute; left: 81%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: 81%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
 <strong class="e-x" style="font-size: 16px">Ping pong ball</strong><span style="font-size: 14px; font-weight: 700; color: #a39c9c">Light. Fine tuning.</span>
 </div>
-<div style="position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6vh, 64px); display: flex; flex-direction: column; gap: 10px; opacity: var(--e5b)">
+<div class="e-bD" style="position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6vh, 64px); display: flex; flex-direction: column; gap: 10px; opacity: var(--e5b)">
 <div class="e-eb" style="display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #a39c9c"><span>Optimized in order of weight</span><span style="color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span></div>
 <div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: calc(var(--e5q) * 100%); background: #e44443"></div></div>
 </div>
@@ -2915,6 +3050,7 @@ class Component extends DCLogic {
     const lefts = [9, 23.4, 37.8, 52.2, 66.6, 81];
     const share = [30, 22, 16, 12, 9, 7];
     const spread = [52, 40, 30, 22, 16, 10];
+    const MROWS = [20.25, 34.75, 49.25, 63.75, 78.25, 92.75];
     const out = [];
     share.forEach((n, k) => {
       for (let i = 0; i < n; i++) {
@@ -2927,7 +3063,11 @@ class Component extends DCLogic {
           t: 'calc(46% + ' + jy.toFixed(1) + 'px)',
           dx: (x0 - lefts[k]).toFixed(2) + 'vw',
           dy: y0.toFixed(2) + 'vh',
-          s: (3 + rnd() * 6).toFixed(1)
+          s: (3 + rnd() * 6).toFixed(1),
+          ml: 'calc(clamp(20px, 5vw, 80px) + 64px + ' + (jx * .55).toFixed(1) + 'px)',
+          mt: 'calc(' + MROWS[k] + '% + ' + (jy * .55).toFixed(1) + 'px)',
+          mdx: 'calc(' + x0.toFixed(2) + 'vw - 84px)',
+          mdy: ((50 - MROWS[k]) * .5 + y0).toFixed(2) + 'vh'
         });
       }
     });
