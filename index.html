@@ -2565,7 +2565,9 @@ app.deploy();</pre>
 <label class="e-field">Email<input type="email" name="email" autocomplete="email"></label>
 <label class="e-field">Phone<input type="tel" name="phone" autocomplete="tel"></label>
 <label class="e-field">Tell us about your project<textarea name="comments" rows="4"></textarea></label>
-<button type="button" class="e-btn" onClick="{{send}}" style="align-self: flex-start; background: #161515; color: #ffffff">Send message</button>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0">
+<button type="button" class="e-btn" onClick="{{send}}" disabled="{{sendBusy}}" style="align-self: flex-start; background: #161515; color: #ffffff">Send message</button>
+<sc-if value="{{sendErr}}"><p role="alert" style="margin: 0; font-size: 15px; color: #a42e2e">{{sendErr}}</p></sc-if>
 </div>
 </sc-if>
 <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
@@ -2784,6 +2786,13 @@ class Component extends DCLogic {
     this._dots = out;
     return out;
   }
+  submitForm(e) {
+    if (this.state.busy) return;
+    const btn = e.currentTarget;
+    this.setState({ busy: true, err: '' });
+    window.diSubmitForm(btn, { form: 'home' })
+      .then(() => this.setState({ sent: true, busy: false }), (err) => this.setState({ busy: false, err: err.message }));
+  }
   renderVals() {
     const s = this.state;
     const legs = s.legs;
@@ -2948,11 +2957,14 @@ class Component extends DCLogic {
       stoolColor: missing === 0 ? '#161515' : '#ffffff',
       notSent: !s.sent,
       sent: s.sent,
-      send: () => this.setState({ sent: true })
+      sendBusy: !!s.busy,
+      sendErr: s.err || '',
+      send: (e) => this.submitForm(e)
     }, legProps, kwProps, tabProps, faqProps);
   }
 }
 </script>
+<script src="assets/js/di-form.js"></script>
 <script src="assets/js/dc-lite.js"></script>
 </body>
 </html>

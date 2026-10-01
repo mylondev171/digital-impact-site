@@ -301,7 +301,9 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 
 <label class="e-field">Comments<textarea name="comments" rows="5"></textarea></label>
-<button type="button" class="e-btn" onClick="{{send}}" style="align-self: flex-start; background: #d23a39; color: #ffffff">Send message</button>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0">
+<button type="button" class="e-btn" onClick="{{send}}" disabled="{{sendBusy}}" style="align-self: flex-start; background: #d23a39; color: #ffffff">Send message</button>
+<sc-if value="{{sendErr}}"><p role="alert" style="margin: 0; font-size: 15px; color: #a42e2e">{{sendErr}}</p></sc-if>
 </div>
 </sc-if>
 <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
@@ -389,13 +391,22 @@ class Component extends DCLogic {
     const v = document.querySelector('.e-vidv');
     if (v && this._ended) v.removeEventListener('ended', this._ended);
   }
+  submitForm(e) {
+    if (this.state.busy) return;
+    const btn = e.currentTarget;
+    this.setState({ busy: true, err: '' });
+    window.diSubmitForm(btn, { form: 'contact' })
+      .then(() => this.setState({ sent: true, busy: false }), (err) => this.setState({ busy: false, err: err.message }));
+  }
   renderVals() {
     const s = this.state;
     const allOpen = this.FAQ.length > 0 && s.faqOpen.every((x) => x);
     const v = {
       notSent: !s.sent,
       sent: s.sent,
-      send: () => this.setState({ sent: true }),
+      sendBusy: !!s.busy,
+      sendErr: s.err || '',
+      send: (e) => this.submitForm(e),
       faqAllLabel: allOpen ? 'Collapse all' : 'Expand all',
       faqAll: () => this.setState({ faqOpen: this.FAQ.map(() => !allOpen) }),
       faqs: this.FAQ.map((f, i) => {
@@ -438,6 +449,7 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script src="assets/js/di-form.js"></script>
 <script src="assets/js/dc-lite.js"></script>
 </body>
 </html>

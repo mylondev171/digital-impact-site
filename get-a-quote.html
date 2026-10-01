@@ -275,7 +275,9 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 12px"><legend class="e-field" style="padding: 0; margin-bottom: 12px">What do you need? Choose all that apply</legend><div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" class="e-chip" onClick="{{q0}}" aria-pressed="{{qp0}}" style="background: {{qb0}}; color: {{qf0}}">AI services</button><button type="button" class="e-chip" onClick="{{q1}}" aria-pressed="{{qp1}}" style="background: {{qb1}}; color: {{qf1}}">SEO / AEO</button><button type="button" class="e-chip" onClick="{{q2}}" aria-pressed="{{qp2}}" style="background: {{qb2}}; color: {{qf2}}">Web development</button><button type="button" class="e-chip" onClick="{{q3}}" aria-pressed="{{qp3}}" style="background: {{qb3}}; color: {{qf3}}">Pay-per-click</button><button type="button" class="e-chip" onClick="{{q4}}" aria-pressed="{{qp4}}" style="background: {{qb4}}; color: {{qf4}}">Creative</button><button type="button" class="e-chip" onClick="{{q5}}" aria-pressed="{{qp5}}" style="background: {{qb5}}; color: {{qf5}}">Social media</button></div></fieldset><fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 12px"><legend class="e-field" style="padding: 0; margin-bottom: 12px">When would you like to start?</legend><div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" class="e-chip" onClick="{{t0}}" aria-pressed="{{tp0}}" style="background: {{tb0}}; color: {{tf0}}">As soon as possible</button><button type="button" class="e-chip" onClick="{{t1}}" aria-pressed="{{tp1}}" style="background: {{tb1}}; color: {{tf1}}">In 1 to 3 months</button><button type="button" class="e-chip" onClick="{{t2}}" aria-pressed="{{tp2}}" style="background: {{tb2}}; color: {{tf2}}">In 3 to 6 months</button><button type="button" class="e-chip" onClick="{{t3}}" aria-pressed="{{tp3}}" style="background: {{tb3}}; color: {{tf3}}">Just exploring</button></div></fieldset><label class="e-field">Company<input type="text" name="company" autocomplete="organization"></label>
 <label class="e-field">Project details<textarea name="comments" rows="5"></textarea></label>
-<button type="button" class="e-btn" onClick="{{send}}" style="align-self: flex-start; background: #d23a39; color: #ffffff">Request my quote</button>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0">
+<button type="button" class="e-btn" onClick="{{send}}" disabled="{{sendBusy}}" style="align-self: flex-start; background: #d23a39; color: #ffffff">Request my quote</button>
+<sc-if value="{{sendErr}}"><p role="alert" style="margin: 0; font-size: 15px; color: #a42e2e">{{sendErr}}</p></sc-if>
 </div>
 </sc-if>
 <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
@@ -364,13 +366,22 @@ class Component extends DCLogic {
     const v = document.querySelector('.e-vidv');
     if (v && this._ended) v.removeEventListener('ended', this._ended);
   }
+  submitForm(e) {
+    if (this.state.busy) return;
+    const btn = e.currentTarget;
+    this.setState({ busy: true, err: '' });
+    window.diSubmitForm(btn, { form: 'quote', services: ['AI services', 'SEO / AEO', 'Web development', 'Pay-per-click', 'Creative', 'Social media'].filter((x, i) => this.state.sel[i]), timeline: ['As soon as possible', 'In 1 to 3 months', 'In 3 to 6 months', 'Just exploring'][this.state.tl] || '' })
+      .then(() => this.setState({ sent: true, busy: false }), (err) => this.setState({ busy: false, err: err.message }));
+  }
   renderVals() {
     const s = this.state;
     const allOpen = this.FAQ.length > 0 && s.faqOpen.every((x) => x);
     const v = {
       notSent: !s.sent,
       sent: s.sent,
-      send: () => this.setState({ sent: true }),
+      sendBusy: !!s.busy,
+      sendErr: s.err || '',
+      send: (e) => this.submitForm(e),
       faqAllLabel: allOpen ? 'Collapse all' : 'Expand all',
       faqAll: () => this.setState({ faqOpen: this.FAQ.map(() => !allOpen) }),
       faqs: this.FAQ.map((f, i) => {
@@ -413,6 +424,7 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script src="assets/js/di-form.js"></script>
 <script src="assets/js/dc-lite.js"></script>
 </body>
 </html>
