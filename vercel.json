@@ -1,0 +1,66 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/seo-lexington-ky.html",
+      "destination": "/seolexingtonky",
+      "permanent": true
+    },
+    {
+      "source": "/ppc-management-lexington-ky.html",
+      "destination": "/ppcmanagementlexingtonky",
+      "permanent": true
+    },
+    {
+      "source": "/ai-digital-marketing-lexington-ky.html",
+      "destination": "/aidigitalmarketinglexingtonky",
+      "permanent": true
+    },
+    {
+      "source": "/history-of-web-design.html",
+      "destination": "/ahistoryofwebdesign",
+      "permanent": true
+    },
+    {
+      "source": "/seo-louisville-ky.html",
+      "destination": "/seolouisvilleky",
+      "permanent": true
+    },
+    {
+      "source": "/aio-louisville-ky.html",
+      "destination": "/aiolouisvilleky",
+      "permanent": true
+    },
+    {
+      "source": "/aio-lexington-ky.html",
+      "destination": "/aiolexingtonky",
+      "permanent": true
+    },
+    {
+      "source": "/ai-services.html",
+      "destination": "/aiservices",
+      "permanent": true
+    },
+    {
+      "source": "/ai-consulting.html",
+      "destination": "/aiconsulting",
+      "permanent": true
+    },
+    {
+      "source": "/ai-transition-services.html",
+      "destination": "/aitransitionservices",
+      "permanent": true
+    },
+    {
+      "source": "/ai-app-development.html",
+      "destination": "/aiappdevelopment",
+      "permanent": true
+    },
+    {
+      "source": "/aio-aeo-geo.html",
+      "destination": "/aioaeogeo",
+      "permanent": true
+    }
+  ]
+}

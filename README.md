@@ -4,39 +4,37 @@ Static website export of the Option B2 design: the home page plus 17 content pag
 
 ## View it on your computer
 
-Double-click `index.html` to open it in your browser. Every page, link, image and video works from the folder.
-
-If your browser blocks anything when opening files directly, run a tiny local server from this folder instead:
+Pages link to each other with clean, root-based URLs (`/about`, `/seolexingtonky`), matching the live site's addresses, so opening `index.html` directly from the folder won't follow links. Run a local server that supports clean URLs from this folder instead:
 
 ```
-python3 -m http.server 8000
+npx serve .
 ```
 
-Then visit http://localhost:8000.
+Then visit http://localhost:3000.
 
 ## Publish it
 
-Upload the whole folder, as is, to any static web host (for example Netlify, Vercel, Cloudflare Pages or your own server). `index.html` is the home page.
+The site is deployed on Vercel. `vercel.json` turns on clean URLs (so `about.html` is served at `/about`) and redirects the older `.html` page names. Any other host needs the same clean-URL setting (Netlify and Cloudflare Pages do this by default). `index.html` is the home page.
 
 ## Pages
 
-| File | Page |
+| File (URL) | Page |
 | --- | --- |
 | index.html | Home |
 | services.html | All services |
-| ai-services.html | AI services |
-| ai-consulting.html | AI consulting |
-| ai-transition-services.html | AI transition services |
-| ai-app-development.html | AI app development |
-| aio-aeo-geo.html | AIO / AEO / GEO |
-| ppc-management-lexington-ky.html | PPC management |
-| seo-lexington-ky.html | SEO Lexington |
-| seo-louisville-ky.html | SEO Louisville |
-| aio-lexington-ky.html | AIO Lexington |
-| aio-louisville-ky.html | AIO Louisville |
-| ai-digital-marketing-lexington-ky.html | AI digital marketing |
+| aiservices.html | AI services |
+| aiconsulting.html | AI consulting |
+| aitransitionservices.html | AI transition services |
+| aiappdevelopment.html | AI app development |
+| aioaeogeo.html | AIO / AEO / GEO |
+| ppcmanagementlexingtonky.html | PPC management |
+| seolexingtonky.html | SEO Lexington |
+| seolouisvilleky.html | SEO Louisville |
+| aiolexingtonky.html | AIO Lexington |
+| aiolouisvilleky.html | AIO Louisville |
+| aidigitalmarketinglexingtonky.html | AI digital marketing |
 | about.html | About (with the overview video) |
-| history-of-web-design.html | History of web design (with the history video) |
+| ahistoryofwebdesign.html | History of web design (with the history video) |
 | contact.html | Contact |
 | get-a-quote.html | Get a quote |
 | privacy-policy.html | Privacy policy |
