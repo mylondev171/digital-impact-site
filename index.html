@@ -16,7 +16,7 @@
 @font-face { font-family: 'Merriweather'; font-style: italic; font-weight: 400 700; font-display: swap; src: url(/assets/fonts/merriweather-italic.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 </style>
 <style>
-:root {
+:root, [data-scene] {
   --e0: 0; --e1: 0; --e2: 0; --e3: 0; --e4: 0; --e5: 0; --e6: 0; --e7: 0; --e8: 0; --e9: 0; --e10: 0;
   --emx: 0; --emy: 0;
   --e1l: clamp(0, var(--e1) / .26, 1);
@@ -217,6 +217,8 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 .e-aiM { display: none; }
 .e-aiP { display: none; }
 .e-bP { display: none; }
+.e-bStage { container-type: inline-size; }
+section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 @keyframes e-aiflow { to { background-position: 0 14px; } }
 .e-aiMflow { animation: e-aiflow .8s linear infinite; }
 @media (max-width: 900px) {
@@ -267,7 +269,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 @media (max-width: 900px) {
   .e-faqside { position: static !important; }
   .e-ptrack { left: 26px !important; right: auto !important; top: 28px !important; bottom: 28px !important; width: 3px !important; height: auto !important; }
-  .e-pfill { left: 26px !important; top: 28px !important; width: 3px !important; height: calc((100% - 56px) * var(--e9p)) !important; }
+  .e-pfill { left: 26px !important; top: 28px !important; width: 3px !important; height: calc(100% - 56px) !important; transform: scaleY(var(--e9p)) !important; transform-origin: top center !important; }
   .e-psteps { gap: 30px !important; }
   .e-psteps > li { display: grid !important; grid-template-columns: 56px minmax(0, 1fr); column-gap: 18px; row-gap: 6px; align-items: start; }
   .e-psteps > li > span:first-child { grid-row: 1 / span 2; }
@@ -288,7 +290,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </defs>
 </svg>
 
-<div aria-hidden="true" style="position: fixed; top: 0; left: 0; z-index: 60; height: 4px; width: calc(var(--e0) * 100%); background: #e44443"></div>
+<div class="e-prog" aria-hidden="true" style="position: fixed; top: 0; left: 0; z-index: 60; height: 4px; width: 100%; transform: scaleX(var(--e0)); transform-origin: left center; background: #e44443"></div>
 
 <header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
 <a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
@@ -1086,7 +1088,7 @@ app.deploy();</pre>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Ping pong ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Light. Fine tuning.</span>
 <span style="display: block; width: 16%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k5)); transform-origin: left center"></span></span></span>
 </div>
-<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 64px; top: calc(20.25% + var(--e5q) * 72.5%); width: min(17cqh, 140px); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 64px; top: 20.25%; width: min(17cqh, 140px); transform: translate(-50%, -50%) translateY(calc(var(--e5q) * 72.5cqh)); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
 <g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
 </svg>
 </div>
@@ -1309,7 +1311,7 @@ app.deploy();</pre>
 
 </div>
 
-<svg class="e-bD" viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: calc(9% + var(--e5q) * 72%); top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<svg class="e-bD" viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 9%; top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%) translateX(calc(var(--e5q) * 72cqw)); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
 <g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
 </svg>
 <div class="e-bD" style="position: absolute; left: 9%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
@@ -1320,7 +1322,7 @@ app.deploy();</pre>
 </div>
 <div class="e-bD" style="position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6vh, 64px); display: flex; flex-direction: column; gap: 10px; opacity: var(--e5b)">
 <div class="e-eb" style="display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #a39c9c"><span>Optimized in order of weight</span><span style="color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span></div>
-<div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: calc(var(--e5q) * 100%); background: #e44443"></div></div>
+<div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: 100%; transform: scaleX(var(--e5q)); transform-origin: left center; background: #e44443"></div></div>
 </div>
 </div>
 </div>
@@ -1520,7 +1522,7 @@ app.deploy();</pre>
 </div>
 <div style="position: relative">
 <div class="e-ptrack" aria-hidden="true" style="position: absolute; left: 28px; right: 28px; top: 27px; height: 3px; background: #3b3636"></div>
-<div class="e-pfill" aria-hidden="true" style="position: absolute; left: 28px; top: 27px; height: 3px; width: calc((100% - 56px) * var(--e9p)); background: #e44443"></div>
+<div class="e-pfill" aria-hidden="true" style="position: absolute; left: 28px; top: 27px; height: 3px; width: calc(100% - 56px); transform: scaleX(var(--e9p)); transform-origin: left center; background: #e44443"></div>
 <ol class="e-split e-psteps" style="position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px)">
 <li style="display: flex; flex-direction: column; gap: 12px; opacity: clamp(.3, calc(var(--e9p) * 8), 1)"><span class="e-x" style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #221f1f; color: #ffffff; border: 3px solid #e44443; font-size: 22px">1</span><strong class="e-x" style="font-size: 20px">Research</strong><span style="font-size: 16px; line-height: 1.5; color: #cfc9c9">Keywords, competitors and search results, analyzed in minutes instead of days.</span></li>
 <li style="display: flex; flex-direction: column; gap: 12px; opacity: clamp(.3, calc((var(--e9p) - .22) * 8), 1)"><span class="e-x" style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #221f1f; color: #ffffff; border: 3px solid #e44443; font-size: 22px">2</span><strong class="e-x" style="font-size: 20px">Optimize</strong><span style="font-size: 16px; line-height: 1.5; color: #cfc9c9">The heaviest ranking variables first, working down to the lightest.</span></li>
@@ -1721,7 +1723,7 @@ app.deploy();</pre>
 </defs>
 </svg>
 
-<div aria-hidden="true" style="position: fixed; top: 0; left: 0; z-index: 60; height: 4px; width: calc(var(--e0) * 100%); background: #e44443"></div>
+<div class="e-prog" aria-hidden="true" style="position: fixed; top: 0; left: 0; z-index: 60; height: 4px; width: 100%; transform: scaleX(var(--e0)); transform-origin: left center; background: #e44443"></div>
 
 <header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
 <a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
@@ -2507,7 +2509,7 @@ app.deploy();</pre>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Ping pong ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Light. Fine tuning.</span>
 <span style="display: block; width: 16%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k5)); transform-origin: left center"></span></span></span>
 </div>
-<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 64px; top: calc(20.25% + var(--e5q) * 72.5%); width: min(17cqh, 140px); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 64px; top: 20.25%; width: min(17cqh, 140px); transform: translate(-50%, -50%) translateY(calc(var(--e5q) * 72.5cqh)); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
 <g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
 </svg>
 </div>
@@ -2540,7 +2542,7 @@ app.deploy();</pre>
 
 </div>
 
-<svg class="e-bD" viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: calc(9% + var(--e5q) * 72%); top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<svg class="e-bD" viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 9%; top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%) translateX(calc(var(--e5q) * 72cqw)); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
 <g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
 </svg>
 <div class="e-bD" style="position: absolute; left: 9%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
@@ -2551,7 +2553,7 @@ app.deploy();</pre>
 </div>
 <div class="e-bD" style="position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6vh, 64px); display: flex; flex-direction: column; gap: 10px; opacity: var(--e5b)">
 <div class="e-eb" style="display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #a39c9c"><span>Optimized in order of weight</span><span style="color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span></div>
-<div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: calc(var(--e5q) * 100%); background: #e44443"></div></div>
+<div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: 100%; transform: scaleX(var(--e5q)); transform-origin: left center; background: #e44443"></div></div>
 </div>
 </div>
 </div>
@@ -2775,7 +2777,7 @@ app.deploy();</pre>
 </div>
 <div style="position: relative">
 <div class="e-ptrack" aria-hidden="true" style="position: absolute; left: 28px; right: 28px; top: 27px; height: 3px; background: #3b3636"></div>
-<div class="e-pfill" aria-hidden="true" style="position: absolute; left: 28px; top: 27px; height: 3px; width: calc((100% - 56px) * var(--e9p)); background: #e44443"></div>
+<div class="e-pfill" aria-hidden="true" style="position: absolute; left: 28px; top: 27px; height: 3px; width: calc(100% - 56px); transform: scaleX(var(--e9p)); transform-origin: left center; background: #e44443"></div>
 <ol class="e-split e-psteps" style="position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px)">
 <li style="display: flex; flex-direction: column; gap: 12px; opacity: clamp(.3, calc(var(--e9p) * 8), 1)"><span class="e-x" style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #221f1f; color: #ffffff; border: 3px solid #e44443; font-size: 22px">1</span><strong class="e-x" style="font-size: 20px">Research</strong><span style="font-size: 16px; line-height: 1.5; color: #cfc9c9">Keywords, competitors and search results, analyzed in minutes instead of days.</span></li>
 <li style="display: flex; flex-direction: column; gap: 12px; opacity: clamp(.3, calc((var(--e9p) - .22) * 8), 1)"><span class="e-x" style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #221f1f; color: #ffffff; border: 3px solid #e44443; font-size: 22px">2</span><strong class="e-x" style="font-size: 20px">Optimize</strong><span style="font-size: 16px; line-height: 1.5; color: #cfc9c9">The heaviest ranking variables first, working down to the lightest.</span></li>
@@ -3003,15 +3005,23 @@ class Component extends DCLogic {
     ];
   }
   componentDidMount() {
-    const root = document.documentElement;
     const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
     const reduce = !!(mq && mq.matches);
-    // Writing a custom property on <html> restyles the whole page, so only write values that changed.
-    const last = {};
-    const setVar = (k, v) => { if (last[k] !== v) { last[k] = v; root.style.setProperty(k, v); } };
+    // Each scene's progress is written on that scene (not <html>) so only its own subtree restyles,
+    // and only when the value changed.
+    const setVar = (el, k, v) => { const c = el.__dcv || (el.__dcv = {}); if (c[k] !== v) { c[k] = v; el.style.setProperty(k, v); } };
+    // Section heights are in CSS vh, which iOS Safari keeps fixed while its toolbar shows and hides;
+    // innerHeight changes with the toolbar, so measure the CSS 100vh instead (re-measured on width change).
+    const probe = document.createElement('div');
+    probe.setAttribute('aria-hidden', 'true');
+    probe.style.cssText = 'position: fixed; top: 0; left: 0; width: 0; height: 100vh; visibility: hidden; pointer-events: none';
+    document.body.appendChild(probe);
+    this._probe = probe;
+    let vhW = -1, vhH = 900;
+    const viewH = () => { const w = window.innerWidth; if (w !== vhW) { vhW = w; vhH = probe.offsetHeight || window.innerHeight || 900; } return vhH; };
     this._tick = () => {
       this._raf = 0;
-      const vh = window.innerHeight || 900;
+      const vh = viewH();
       const els = document.querySelectorAll('[data-scene^="e"]');
       let hud = null;
       for (let i = 0; i < els.length; i++) {
@@ -3025,7 +3035,9 @@ class Component extends DCLogic {
         else p = -r.top / span;
         p = p < 0 ? 0 : p > 1 ? 1 : p;
         if (reduce) p = name === 'e1' ? .55 : 1;
-        setVar('--' + name, p.toFixed(4));
+        const v = p.toFixed(4);
+        if (name === 'e0') { const bar = document.querySelector('.e-prog'); if (bar) setVar(bar, '--e0', v); }
+        else setVar(el, '--' + name, v);
         const label = el.getAttribute('data-hud');
         if (label && r.top <= vh * 0.5 && r.bottom > vh * 0.5) hud = label;
       }
@@ -3040,8 +3052,10 @@ class Component extends DCLogic {
         this._mraf = 0;
         const w = window.innerWidth || 1;
         const h = window.innerHeight || 1;
-        setVar('--emx', ((this._pt.clientX / w) * 2 - 1).toFixed(2));
-        setVar('--emy', ((this._pt.clientY / h) * 2 - 1).toFixed(2));
+        const hero = document.getElementById('e-top');
+        if (!hero) return;
+        setVar(hero, '--emx', ((this._pt.clientX / w) * 2 - 1).toFixed(2));
+        setVar(hero, '--emy', ((this._pt.clientY / h) * 2 - 1).toFixed(2));
       });
     };
     document.addEventListener('scroll', this._on, true);
@@ -3056,6 +3070,7 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this._on);
     window.removeEventListener('pointermove', this._move);
     if (this._mraf) cancelAnimationFrame(this._mraf);
+    if (this._probe) this._probe.remove();
     if (this._raf) cancelAnimationFrame(this._raf);
     clearTimeout(this._t2);
     clearTimeout(this._t3);
