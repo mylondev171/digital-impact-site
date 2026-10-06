@@ -53,6 +53,7 @@ function pageSchemas(slug, meta, faq) {
   const out = [orgSchema()];
   const url = urlFor(slug);
   const page = site.pages[slug] || {};
+  if (page.noindex) return out;
   if (slug === 'index') {
     out.push({ '@context': 'https://schema.org', '@type': 'WebSite', '@id': BASE + '/#website', url: BASE + '/', name: site.org.name, publisher: { '@id': BASE + '/#org' } });
   } else {
@@ -78,6 +79,7 @@ function pageSchemas(slug, meta, faq) {
 
 function headTags(slug, meta) {
   const url = urlFor(slug);
+  if ((site.pages[slug] || {}).noindex) return '<meta name="robots" content="noindex">';
   return [
     '<link rel="canonical" href="' + esc(url) + '">',
     '<meta property="og:type" content="website">',
@@ -134,7 +136,9 @@ for (const file of fs.readdirSync(SRC).filter((f) => f.endsWith('.html')).sort()
   const scripts = extra.map((s) => '<script src="' + s + '" defer></script>')
     .concat([
       '<script src="/assets/js/dc-lite.js?v=' + dcLiteV + '" defer></script>',
-      '<script src="/assets/js/pages/' + slug + '.js?v=' + hash(pageJs) + '" defer></script>'
+      '<script src="/assets/js/pages/' + slug + '.js?v=' + hash(pageJs) + '" defer></script>',
+      // Vercel Web Analytics (collects once Analytics is enabled on the Vercel project)
+      '<script src="/_vercel/insights/script.js" defer></script>'
     ]);
   const html = head + '\n' + headTags(slug, meta) + '\n' + pageSchemas(slug, meta, faq).map(ld).join('\n') +
     '\n</head>\n<body>\n<div id="app">' + markup + '</div>\n' + scripts.join('\n') + '\n</body>\n</html>\n';
@@ -144,7 +148,8 @@ for (const file of fs.readdirSync(SRC).filter((f) => f.endsWith('.html')).sort()
 
 // sitemap.xml (every page except the 404 page)
 const today = new Date().toISOString().slice(0, 10);
-const listed = built.filter((b) => !(site.pages[b.slug] || {}).noSitemap);
+const listed = built.filter((b) => !(site.pages[b.slug] || {}).noindex)
+  .sort((x, y) => (x.slug === 'index' ? -1 : y.slug === 'index' ? 1 : 0));
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   listed.map((b) => '  <url><loc>' + urlFor(b.slug) + '</loc><lastmod>' + today + '</lastmod></url>').join('\n') +
@@ -152,8 +157,10 @@ fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
 
 // llms.txt: a curated map of the site for AI tools
 const sections = {};
-for (const b of listed) {
-  const p = site.pages[b.slug] || {};
+for (const slug of Object.keys(site.pages)) {
+  const b = listed.find((x) => x.slug === slug);
+  if (!b) continue;
+  const p = site.pages[slug];
   if (!p.llms) continue;
   (sections[p.llms] = sections[p.llms] || []).push('- [' + p.name + '](' + urlFor(b.slug) + '): ' + decode(p.summary || b.meta.description));
 }

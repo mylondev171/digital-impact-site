@@ -8,14 +8,39 @@
     "telephone": "+1-859-396-8606",
     "description": "Digital marketing and AI services agency in Lexington, Kentucky, online since 1998: SEO, AI search optimization, PPC, web design, social media and creative.",
     "foundingDate": "1998",
-    "founder": { "name": "Don Johnson", "jobTitle": "Founder and CEO" },
-    "address": { "addressLocality": "Lexington", "addressRegion": "KY", "addressCountry": "US" },
+    "founder": {
+      "name": "Don Johnson",
+      "jobTitle": "Founder and CEO"
+    },
+    "address": {
+      "addressLocality": "Lexington",
+      "addressRegion": "KY",
+      "addressCountry": "US"
+    },
     "areaServed": [
-      { "@type": "City", "name": "Lexington, KY" },
-      { "@type": "City", "name": "Louisville, KY" },
-      { "@type": "State", "name": "Kentucky" }
+      {
+        "@type": "City",
+        "name": "Lexington, KY"
+      },
+      {
+        "@type": "City",
+        "name": "Louisville, KY"
+      },
+      {
+        "@type": "State",
+        "name": "Kentucky"
+      }
     ],
-    "knowsAbout": ["Search engine optimization", "Answer engine optimization", "Pay-per-click advertising", "Web design", "Social media marketing", "Branding", "AI consulting", "AI application development"],
+    "knowsAbout": [
+      "Search engine optimization",
+      "Answer engine optimization",
+      "Pay-per-click advertising",
+      "Web design",
+      "Social media marketing",
+      "Branding",
+      "AI consulting",
+      "AI application development"
+    ],
     "sameAs": [
       "https://www.facebook.com/profile.php?id=100093278650724",
       "https://www.linkedin.com/company/digital-impact-marketers/"
@@ -25,26 +50,107 @@
     "Lexington, Kentucky digital marketing and AI services agency, online since 1998.",
     "Serves Lexington, Louisville and all of Kentucky. Phone: 859.396.8606."
   ],
-  "llmsOrder": ["Services", "AI services", "Local pages", "Company", "Articles"],
+  "llmsOrder": [
+    "Services",
+    "AI services",
+    "Local pages",
+    "Company",
+    "Articles"
+  ],
   "pages": {
-    "index": { "name": "Home" },
-    "services": { "name": "Services", "llms": "Services" },
-    "seolexingtonky": { "name": "SEO Lexington", "llms": "Services" },
-    "seolouisvilleky": { "name": "SEO Louisville", "llms": "Services" },
-    "ppcmanagementlexingtonky": { "name": "Google Ads (PPC) management Lexington", "llms": "Services" },
-    "aiservices": { "name": "AI services", "llms": "AI services" },
-    "aiconsulting": { "name": "AI consulting", "parent": "aiservices", "llms": "AI services" },
-    "aitransitionservices": { "name": "AI transition services", "parent": "aiservices", "llms": "AI services" },
-    "aiappdevelopment": { "name": "AI app development", "parent": "aiservices", "llms": "AI services" },
-    "aioaeogeo": { "name": "AIO / AEO / GEO", "parent": "aiservices", "llms": "AI services" },
-    "aiolexingtonky": { "name": "AI search optimization Lexington", "llms": "Local pages" },
-    "aiolouisvilleky": { "name": "AI search optimization Louisville", "llms": "Local pages" },
-    "aidigitalmarketinglexingtonky": { "name": "AI digital marketing Lexington", "llms": "Local pages" },
-    "about": { "name": "About and team", "llms": "Company" },
-    "contact": { "name": "Contact", "llms": "Company" },
-    "get-a-quote": { "name": "Get a quote", "llms": "Company" },
-    "ahistoryofwebdesign": { "name": "The history of web design", "llms": "Articles" },
-    "privacy-policy": { "name": "Privacy policy" },
-    "404": { "name": "Page not found", "noSitemap": true }
+    "index": {
+      "name": "Home"
+    },
+    "services": {
+      "name": "Services",
+      "llms": "Services",
+      "summary": "All Digital Impact services: SEO, pay-per-click, web design, social media, creative and AI."
+    },
+    "seolexingtonky": {
+      "name": "SEO Lexington",
+      "llms": "Services",
+      "summary": "Search engine optimization for Lexington, KY businesses: technical fixes, content and links."
+    },
+    "seolouisvilleky": {
+      "name": "SEO Louisville",
+      "llms": "Services",
+      "summary": "Search engine optimization for Louisville, KY businesses."
+    },
+    "ppcmanagementlexingtonky": {
+      "name": "Google Ads (PPC) management Lexington",
+      "llms": "Services",
+      "summary": "Google Ads and Bing Ads (pay-per-click) campaign management in Lexington, KY."
+    },
+    "aiservices": {
+      "name": "AI services",
+      "llms": "AI services",
+      "summary": "Overview of our AI services: consulting, AI transition, custom AI apps and AI search optimization."
+    },
+    "aiconsulting": {
+      "name": "AI consulting",
+      "parent": "aiservices",
+      "llms": "AI services",
+      "summary": "AI strategy and implementation consulting for Lexington and Louisville businesses."
+    },
+    "aitransitionservices": {
+      "name": "AI transition services",
+      "parent": "aiservices",
+      "llms": "AI services",
+      "summary": "Moving a business from traditional to AI-enhanced operations, step by step."
+    },
+    "aiappdevelopment": {
+      "name": "AI app development",
+      "parent": "aiservices",
+      "llms": "AI services",
+      "summary": "Custom AI application design, development, integration and support."
+    },
+    "aioaeogeo": {
+      "name": "AIO / AEO / GEO",
+      "parent": "aiservices",
+      "llms": "AI services",
+      "summary": "What AIO, AEO and GEO (AI, answer and generative engine optimization) are and how we do them."
+    },
+    "aiolexingtonky": {
+      "name": "AI search optimization Lexington",
+      "llms": "Local pages",
+      "summary": "AI search optimization for Lexington businesses: visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews."
+    },
+    "aiolouisvilleky": {
+      "name": "AI search optimization Louisville",
+      "llms": "Local pages",
+      "summary": "AI search optimization for Louisville businesses: visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews."
+    },
+    "aidigitalmarketinglexingtonky": {
+      "name": "AI digital marketing Lexington",
+      "llms": "Local pages",
+      "summary": "How Lexington businesses use AI across digital marketing, from content to paid ads."
+    },
+    "about": {
+      "name": "About and team",
+      "llms": "Company",
+      "summary": "Our history (online since 1998), approach and team, led by founder and CEO Don Johnson."
+    },
+    "contact": {
+      "name": "Contact",
+      "llms": "Company",
+      "summary": "Call 859.396.8606 or send a message."
+    },
+    "get-a-quote": {
+      "name": "Get a quote",
+      "llms": "Company",
+      "summary": "Request a quote for SEO, PPC, web, creative, social media or AI work."
+    },
+    "ahistoryofwebdesign": {
+      "name": "The history of web design",
+      "llms": "Articles",
+      "summary": "Article: the history of web design from 1998 to 2025."
+    },
+    "privacy-policy": {
+      "name": "Privacy policy"
+    },
+    "404": {
+      "name": "Page not found",
+      "noindex": true
+    }
   }
 }
