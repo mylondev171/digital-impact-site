@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Digital Marketing Agency Lexington | SEO Lexington - Digital Impact</title>
 <meta name="description" content="Digital Impact is a Digital Marketing Agency in Lexington that specializes in SEO, PPC, Social Media, Creative, and Web Design. With over 25 years of digital marketing experience, we deliver results!">
-<link rel="icon" type="image/png" href="assets/img/digital-impact-logo.png">
+<link rel="icon" type="image/png" href="/assets/img/digital-impact-logo.png">
 <link rel="preload" href="/assets/fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -214,8 +214,14 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 .e-jumpk:hover { background: #2e2a2a; }
 .e-jumpk[aria-current="true"] { background: #e44443; }
 .e-jumpk[aria-current="true"] .e-x { color: #ffffff !important; }
-.e-aiM { display: none; }
 .e-aiP { display: none; }
+.e-reL { opacity: var(--e1l); }
+.e-hudwrap { transition: opacity .25s ease, visibility .25s; }
+@media (max-width: 900px) {
+  .e-reB { opacity: var(--e1l); }
+  .e-hudwrap[data-hero="true"] { opacity: 0; visibility: hidden; }
+}
+@media (max-width: 600px) { .e-scrollhint { display: none !important; } }
 .e-bP { display: none; }
 .e-bStage { container-type: inline-size; }
 section[data-scene] > div[style*="position: sticky"] { contain: layout; }
@@ -276,11 +282,23 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
   .e-psteps > li > strong { align-self: end; padding-top: 4px; }
 }
 </style>
+<style>
+/* Accessibility and evaluation fixes */
+.e-skip { position: fixed; left: 12px; top: -80px; z-index: 100; padding: 12px 18px; background: #ffffff; color: #161515; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, .3); transition: top .15s ease; }
+.e-skip:focus { top: 12px; }
+.e-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.e-faqa[hidden] { display: none !important; }
+nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-footbar a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-navphone { min-width: 44px; justify-content: center; }
+.e-cd::before { content: attr(data-t); }
+</style>
 </head>
 <body>
 <div id="app"></div>
 <template id="dc-tpl">
 <div data-scene="e0" style="position: relative; width: 100%; min-height: 100vh; overflow-x: clip; background: #161515; color: #ffffff">
+<a class="e-skip" href="#e-top">Skip to main content</a>
 
 <svg aria-hidden="true" focusable="false" style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
@@ -311,7 +329,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><div class="e-mmenu" role="dialog" aria-label="Site menu"><div class="e-mgroup"><h3 class="e-eb">Services</h3><a class="e-mlink" href="/services" onClick="{{menuClose}}">All services</a><a class="e-mlink" href="/ppcmanagementlexingtonky" onClick="{{menuClose}}">PPC management</a><a class="e-mlink" href="/seolexingtonky" onClick="{{menuClose}}">SEO Lexington</a><a class="e-mlink" href="/seolouisvilleky" onClick="{{menuClose}}">SEO Louisville</a><a class="e-mlink" href="/aidigitalmarketinglexingtonky" onClick="{{menuClose}}">AI digital marketing</a></div><div class="e-mgroup"><h3 class="e-eb">AI services</h3><a class="e-mlink" href="/aiservices" onClick="{{menuClose}}">AI services</a><a class="e-mlink" href="/aiconsulting" onClick="{{menuClose}}">AI consulting</a><a class="e-mlink" href="/aitransitionservices" onClick="{{menuClose}}">AI transition services</a><a class="e-mlink" href="/aiappdevelopment" onClick="{{menuClose}}">AI app development</a><a class="e-mlink" href="/aioaeogeo" onClick="{{menuClose}}">AIO / AEO / GEO</a><a class="e-mlink" href="/aiolexingtonky" onClick="{{menuClose}}">AIO Lexington</a><a class="e-mlink" href="/aiolouisvilleky" onClick="{{menuClose}}">AIO Louisville</a></div><div class="e-mgroup"><h3 class="e-eb">Company</h3><a class="e-mlink" href="/" onClick="{{menuClose}}">Home</a><a class="e-mlink" href="/about" onClick="{{menuClose}}">About</a><a class="e-mlink" href="/contact" onClick="{{menuClose}}">Contact</a><a class="e-mlink" href="/ahistoryofwebdesign" onClick="{{menuClose}}">History of web design</a><a class="e-mlink" href="/privacy-policy" onClick="{{menuClose}}">Privacy policy</a></div><div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px"><a class="e-btn" href="/get-a-quote" onClick="{{menuClose}}" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="justify-content: center; color: #ffffff">Call 859.396.8606</a></div></div></sc-if>
 </header>
 
-<div class="e-hudwrap" style="position: fixed; left: clamp(16px, 3vw, 40px); bottom: 24px; z-index: 46">
+<div class="e-hudwrap" data-hero="{{inHero}}" style="position: fixed; left: clamp(16px, 3vw, 40px); bottom: 24px; z-index: 46">
 <sc-if value="{{navOpen}}" hint-placeholder-val="{{ false }}">
 <nav aria-label="Jump to a section" style="position: absolute; left: 0; bottom: calc(100% + 10px); width: 280px; max-height: 70vh; overflow-y: auto; padding: 8px; background: #161515; border-radius: 18px; box-shadow: 0 24px 60px rgba(0, 0, 0, .4)">
 <sc-for list="{{rail}}" as="r" hint-placeholder-count="6">
@@ -366,21 +384,21 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <svg viewBox="-300 -300 600 600" aria-hidden="true" style="position: absolute; inset: -8%; width: 116%; height: 116%; overflow: visible; transform: translate(calc(var(--emx) * 34px * (1 - var(--e1l))), calc(var(--emy) * 34px * (1 - var(--e1l)))); opacity: min(calc(1 - var(--e1f) * .75), calc(1 - var(--e1z) * 6))">
 <g fill="none" stroke="#ffffff" stroke-width="1.8" style="opacity: calc(.9 - var(--e1l) * .5)">
 <circle r="288"></circle>
-<line x1="-330" y1="0" x2="-44" y2="0"></line>
+<line class="e-reL" x1="-330" y1="0" x2="-44" y2="0"></line>
 <line x1="44" y1="0" x2="330" y2="0"></line>
 <line x1="0" y1="-330" x2="0" y2="-44"></line>
-<line x1="0" y1="44" x2="0" y2="330"></line>
+<line class="e-reB" x1="0" y1="44" x2="0" y2="330"></line>
 </g>
 <g fill="none" stroke="#ffffff" stroke-width="7" style="opacity: calc(.9 - var(--e1l) * .5)">
-<line x1="-330" y1="0" x2="-210" y2="0"></line>
+<line class="e-reL" x1="-330" y1="0" x2="-210" y2="0"></line>
 <line x1="210" y1="0" x2="330" y2="0"></line>
-<line x1="0" y1="210" x2="0" y2="330"></line>
+<line class="e-reB" x1="0" y1="210" x2="0" y2="330"></line>
 </g>
 <g fill="#ffffff" style="opacity: calc(.85 - var(--e1l) * .45)">
-<circle cx="-168" cy="0" r="4"></circle><circle cx="-126" cy="0" r="4"></circle><circle cx="-84" cy="0" r="4"></circle>
+<circle class="e-reL" cx="-168" cy="0" r="4"></circle><circle class="e-reL" cx="-126" cy="0" r="4"></circle><circle class="e-reL" cx="-84" cy="0" r="4"></circle>
 <circle cx="84" cy="0" r="4"></circle><circle cx="126" cy="0" r="4"></circle><circle cx="168" cy="0" r="4"></circle>
 <circle cx="0" cy="-168" r="4"></circle><circle cx="0" cy="-126" r="4"></circle><circle cx="0" cy="-84" r="4"></circle>
-<circle cx="0" cy="84" r="4"></circle><circle cx="0" cy="126" r="4"></circle><circle cx="0" cy="168" r="4"></circle>
+<circle class="e-reB" cx="0" cy="84" r="4"></circle><circle class="e-reB" cx="0" cy="126" r="4"></circle><circle class="e-reB" cx="0" cy="168" r="4"></circle>
 </g>
 <g fill="none" stroke="#161515" stroke-width="6" style="opacity: var(--e1l)">
 <path d="M-120 -80 V-120 H-80"></path>
@@ -404,7 +422,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 </div>
 </div>
 
-<div aria-hidden="true" style="position: absolute; right: clamp(20px, 4vw, 56px); bottom: 5vh; display: flex; align-items: center; gap: 10px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #161515; opacity: calc(1 - var(--e1l) * 2)">
+<div class="e-scrollhint" aria-hidden="true" style="position: absolute; right: clamp(20px, 4vw, 56px); bottom: 5vh; display: flex; align-items: center; gap: 10px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #161515; opacity: calc(1 - var(--e1l) * 2)">
 <span>Scroll to take aim</span>
 <span class="e-hintdot" style="display: block; width: 9px; height: 9px; border-radius: 50%; background: #161515"></span>
 </div>
@@ -476,7 +494,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <button type="button" class="e-fcard" onClick="{{c0go}}" aria-label="AI services" aria-pressed="{{c0p}}" style="z-index: {{c0z}}; transform: rotate(calc({{c0d}}deg * var(--e14f))); transition: {{c0tr}}">
 <span class="e-fmid" style="transform: scale({{c0s}})">
 <span class="e-finner" style="background: #161515; color: #ffffff">
-<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">01</span><span class="e-eb" style="font-size: 11px; color: #a39c9c">Start here</span></span>
+<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">01</span><span class="e-eb" style="font-size: 12px; color: #a39c9c">Start here</span></span>
 <svg viewBox="0 0 240 200" aria-hidden="true" style="width: 100%; height: auto">
 <g fill="none" stroke="#3b3636" stroke-width="2"><circle cx="120" cy="100" r="86"></circle><circle cx="120" cy="100" r="56"></circle></g>
 <g stroke="#a39c9c" stroke-width="2"><line x1="40" y1="30" x2="120" y2="100"></line><line x1="200" y1="30" x2="120" y2="100"></line><line x1="40" y1="170" x2="120" y2="100"></line><line x1="200" y1="170" x2="120" y2="100"></line><line x1="120" y1="8" x2="120" y2="100"></line></g>
@@ -492,7 +510,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <button type="button" class="e-fcard" onClick="{{c1go}}" aria-label="SEO and AEO" aria-pressed="{{c1p}}" style="z-index: {{c1z}}; transform: rotate(calc({{c1d}}deg * var(--e14f))); transition: {{c1tr}}">
 <span class="e-fmid" style="transform: scale({{c1s}})">
 <span class="e-finner" style="background: #e44443; color: #ffffff">
-<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #161515">02</span><span class="e-eb" style="font-size: 11px; color: #161515">Since before Google</span></span>
+<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #161515">02</span><span class="e-eb" style="font-size: 12px; color: #161515">Since before Google</span></span>
 <svg viewBox="0 0 240 200" aria-hidden="true" style="width: 100%; height: auto">
 <rect x="14" y="10" width="212" height="32" fill="#ffffff"></rect>
 <circle cx="32" cy="26" r="7" fill="none" stroke="#161515" stroke-width="2.5"></circle><line x1="37" y1="31" x2="42" y2="36" stroke="#161515" stroke-width="2.5"></line>
@@ -515,7 +533,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <button type="button" class="e-fcard" onClick="{{c2go}}" aria-label="Web development" aria-pressed="{{c2p}}" style="z-index: {{c2z}}; transform: rotate(calc({{c2d}}deg * var(--e14f))); transition: {{c2tr}}">
 <span class="e-fmid" style="transform: scale({{c2s}})">
 <span class="e-finner" style="background: #ffffff; color: #161515; box-shadow: 0 30px 60px rgba(22, 21, 21, .18), inset 0 0 0 2px #161515">
-<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">03</span><span class="e-eb" style="font-size: 11px; color: #5f5959">Built to convert</span></span>
+<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">03</span><span class="e-eb" style="font-size: 12px; color: #5f5959">Built to convert</span></span>
 <svg viewBox="0 0 240 200" aria-hidden="true" style="width: 100%; height: auto">
 <rect x="12" y="10" width="216" height="172" fill="#ffffff" stroke="#161515" stroke-width="4"></rect>
 <rect x="12" y="10" width="216" height="24" fill="#161515"></rect>
@@ -534,7 +552,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <button type="button" class="e-fcard" onClick="{{c3go}}" aria-label="Pay-per-click" aria-pressed="{{c3p}}" style="z-index: {{c3z}}; transform: rotate(calc({{c3d}}deg * var(--e14f))); transition: {{c3tr}}">
 <span class="e-fmid" style="transform: scale({{c3s}})">
 <span class="e-finner" style="background: #161515; color: #ffffff">
-<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">04</span><span class="e-eb" style="font-size: 11px; color: #a39c9c">Since its inception</span></span>
+<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">04</span><span class="e-eb" style="font-size: 12px; color: #a39c9c">Since its inception</span></span>
 <svg viewBox="0 0 240 200" aria-hidden="true" style="width: 100%; height: auto">
 <g fill="none" stroke="#3b3636" stroke-width="2.5"><circle cx="120" cy="100" r="90"></circle><circle cx="120" cy="100" r="62"></circle><circle cx="120" cy="100" r="34"></circle></g>
 <circle cx="120" cy="100" r="12" fill="#e44443"></circle>
@@ -549,7 +567,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <button type="button" class="e-fcard" onClick="{{c4go}}" aria-label="Creative" aria-pressed="{{c4p}}" style="z-index: {{c4z}}; transform: rotate(calc({{c4d}}deg * var(--e14f))); transition: {{c4tr}}">
 <span class="e-fmid" style="transform: scale({{c4s}})">
 <span class="e-finner" style="background: #e44443; color: #ffffff">
-<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #161515">05</span><span class="e-eb" style="font-size: 11px; color: #161515">Ages well</span></span>
+<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #161515">05</span><span class="e-eb" style="font-size: 12px; color: #161515">Ages well</span></span>
 <svg viewBox="0 0 240 200" aria-hidden="true" style="width: 100%; height: auto">
 <path d="M120 4 L136 62 L190 30 L162 86 L230 94 L168 122 L206 176 L146 150 L138 198 L116 150 L70 192 L82 134 L10 136 L66 100 L22 52 L90 68 Z" fill="#161515"></path>
 <text x="120" y="118" text-anchor="middle" font-family="Raleway, Lato, sans-serif" font-size="52" font-weight="900" fill="#ffffff">Aa</text>
@@ -562,7 +580,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <button type="button" class="e-fcard" onClick="{{c5go}}" aria-label="Social media" aria-pressed="{{c5p}}" style="z-index: {{c5z}}; transform: rotate(calc({{c5d}}deg * var(--e14f))); transition: {{c5tr}}">
 <span class="e-fmid" style="transform: scale({{c5s}})">
 <span class="e-finner" style="background: #7b0c13; color: #ffffff">
-<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #ffc2c1">06</span><span class="e-eb" style="font-size: 11px; color: #ffc2c1">Right people, right time</span></span>
+<span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #ffc2c1">06</span><span class="e-eb" style="font-size: 12px; color: #ffc2c1">Right people, right time</span></span>
 <svg viewBox="0 0 240 200" aria-hidden="true" style="width: 100%; height: auto">
 <rect x="22" y="30" width="70" height="140" fill="#93222a" transform="rotate(-10 57 100)"></rect>
 <rect x="148" y="30" width="70" height="140" fill="#93222a" transform="rotate(10 183 100)"></rect>
@@ -600,7 +618,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45">{{svcKicker}}</p>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px">
 <sc-for list="{{svcLinks}}" as="l" hint-placeholder-count="2">
-<a class="e-btn" href="{{l.href}}" style="background: {{l.bg}}; color: #ffffff">{{l.label}}</a>
+<a class="e-btn" href="{{l.href}}" style="background: {{l.bg}}; color: #ffffff">{{l.label}}<span class="e-sr">{{l.sr}}</span></a>
 </sc-for>
 </div>
 </div>
@@ -638,11 +656,12 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 10px 32px; opacity: var(--e11h)">
 <div style="display: flex; flex-direction: column; gap: 10px">
 <span class="e-eb" style="color: #ff8a89">AI + custom development</span>
-<h2 class="e-h2 e-aiHh" style="font-size: clamp(30px, 3.8vw, 60px)">Built around your business.</h2>
+<p class="e-h2 e-aiHh" style="font-size: clamp(30px, 3.8vw, 60px)">Built around your business.</p>
 </div>
 <p class="e-aiHp" style="margin: 0; max-width: 38ch; font-size: 16px; line-height: 1.5; color: #cfc9c9">Your data, your systems and your workflow, wired into one app that fits.</p>
 </div>
 <div style="flex: 1 1 auto; min-height: 0; display: grid; place-items: center">
+<sc-if value="{{desk}}">
 <div class="e-aiD" style="position: relative; width: min(100%, calc((100vh - 290px) * 2.143)); aspect-ratio: 1200 / 560; container-type: inline-size">
 <div style="position: absolute; inset: 0; font-size: calc(100cqw / 120)">
 
@@ -695,14 +714,14 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 </div>
 
 <div style="position: absolute; left: 84em; top: 9em; width: 36em; box-sizing: border-box; border-radius: 2em; overflow: hidden; background: #0d0c0c; border: .2em solid #5f5959; box-shadow: 0 2.4em 5em rgba(0, 0, 0, .35); opacity: var(--e11k0)">
-<div style="display: flex; align-items: center; gap: .8em; padding: 1.1em 1.6em; background: #221f1f"><i style="width: 1em; height: 1em; border-radius: 50%; background: #e44443"></i><i style="width: 1em; height: 1em; border-radius: 50%; background: #5f5959"></i><i style="width: 1em; height: 1em; border-radius: 50%; background: #5f5959"></i><span style="margin-left: .8em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.3em; color: #a39c9c">custom-ai.js</span></div>
+<div style="display: flex; align-items: center; gap: .8em; padding: 1.1em 1.6em; background: #221f1f"><i style="width: 1em; height: 1em; border-radius: 50%; background: #e44443"></i><i style="width: 1em; height: 1em; border-radius: 50%; background: #5f5959"></i><i style="width: 1em; height: 1em; border-radius: 50%; background: #5f5959"></i><span style="margin-left: .8em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.3em; color: #a39c9c"><span class="e-cd" data-t="custom-ai.js"></span></span></div>
 <div style="display: flex; flex-direction: column; gap: .7em; padding: 2em 2.2em 2.4em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.65em; line-height: 1.3; color: #ffffff">
-<span style="white-space: pre; opacity: var(--e11k0)"><span style="color: #ff6d6c">const</span> app = <span style="color: #ff6d6c">new</span> CustomAI({</span>
-<span style="white-space: pre; opacity: var(--e11k1)">  <span style="color: #a39c9c">data:</span>     yourCRM,</span>
-<span style="white-space: pre; opacity: var(--e11k2)">  <span style="color: #a39c9c">systems:</span>  [erp, email, website],</span>
-<span style="white-space: pre; opacity: var(--e11k3)">  <span style="color: #a39c9c">workflow:</span> <span style="color: #ffc2c1">"built your way"</span>,</span>
-<span style="white-space: pre; opacity: var(--e11k4)">});</span>
-<span style="white-space: pre; opacity: var(--e11k5)">app.<span style="color: #ff6d6c">deploy</span>();</span>
+<span style="white-space: pre; opacity: var(--e11k0)"><span class="e-cd" style="color: #ff6d6c" data-t="const"></span><span class="e-cd" data-t=" app = "></span><span class="e-cd" style="color: #ff6d6c" data-t="new"></span><span class="e-cd" data-t=" CustomAI({"></span></span>
+<span style="white-space: pre; opacity: var(--e11k1)"><span class="e-cd" data-t="  "></span><span class="e-cd" style="color: #a39c9c" data-t="data:"></span><span class="e-cd" data-t="     yourCRM,"></span></span>
+<span style="white-space: pre; opacity: var(--e11k2)"><span class="e-cd" data-t="  "></span><span class="e-cd" style="color: #a39c9c" data-t="systems:"></span><span class="e-cd" data-t="  [erp, email, website],"></span></span>
+<span style="white-space: pre; opacity: var(--e11k3)"><span class="e-cd" data-t="  "></span><span class="e-cd" style="color: #a39c9c" data-t="workflow:"></span><span class="e-cd" data-t=" "></span><span class="e-cd" style="color: #ffc2c1" data-t="&quot;built your way&quot;"></span><span class="e-cd" data-t=","></span></span>
+<span style="white-space: pre; opacity: var(--e11k4)"><span class="e-cd" data-t="});"></span></span>
+<span style="white-space: pre; opacity: var(--e11k5)"><span class="e-cd" data-t="app."></span><span class="e-cd" style="color: #ff6d6c" data-t="deploy"></span><span class="e-cd" data-t="();"></span></span>
 </div>
 </div>
 <div style="position: absolute; left: 84em; top: 44em; display: flex; align-items: center; gap: 1em; padding: 1em 1.8em 1em 1.2em; border-radius: 99em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .3); opacity: var(--e11d); transform: translateY(calc((1 - var(--e11d)) * 2em))">
@@ -712,6 +731,8 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 
 </div>
 </div>
+</sc-if>
+<sc-if value="{{mob}}">
 <div class="e-aiP" style="position: relative; width: min(100%, calc((100svh - 260px) * .66)); aspect-ratio: 600 / 910; container-type: inline-size">
 <div style="position: absolute; inset: 0; font-size: calc(100cqw / 60)">
 
@@ -730,7 +751,7 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 </svg>
 
 <div role="img" aria-label="Off-the-shelf tool: one size fits all, only goes so far" style="position: absolute; left: 3em; top: 18em; width: 54em; height: 24em; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 1.8em; padding: 3.4em; border-radius: 2.2em; background: #ffffff; color: #161515; box-shadow: 0 3em 6em rgba(0, 0, 0, .35); opacity: var(--e11o); transform: scale(calc(.94 + var(--e11o) * .06))">
-<span class="e-eb" style="font-size: 1.7em; color: #5f5959">Off-the-shelf tool</span>
+<span class="e-eb" style="font-size: 2em; color: #5f5959">Off-the-shelf tool</span>
 <strong class="e-x" style="font-size: 4.4em; line-height: .95">One size fits all</strong>
 <span style="display: block; height: 1.5em; background: #efeae9"><span style="display: block; height: 100%; width: 55%; background: #8d8686; transform: scaleX(var(--e11b)); transform-origin: left center"></span></span>
 <span class="e-x" style="position: absolute; right: 2.6em; bottom: 2.2em; padding: .45em .8em; border: .22em solid #e44443; color: #e44443; font-size: 2.2em; transform: rotate(-6deg) scale(calc(1.4 - var(--e11s) * .4)); opacity: var(--e11s)">Only goes so far</span>
@@ -763,18 +784,18 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 </div>
 <div style="position: absolute; left: 13em; top: 38.6em; width: 34em; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: .4em; padding: 1.2em 1.4em; border-radius: 1.6em; background: #ffffff; color: #161515; text-align: center; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11c); transform: translateY(calc((1 - var(--e11c)) * 3em))">
 <strong class="e-x" style="font-size: 3.2em; line-height: 1">Custom AI app</strong>
-<span class="e-eb" style="font-size: 1.5em; color: #e44443">AI + development</span>
+<span class="e-eb" style="font-size: 2em; color: #e44443">AI + development</span>
 </div>
 
 <div style="position: absolute; left: 0; top: 49em; width: 60em; box-sizing: border-box; border-radius: 1.8em; overflow: hidden; background: #0d0c0c; border: .2em solid #5f5959; box-shadow: 0 2em 4em rgba(0, 0, 0, .35); opacity: var(--e11k0)">
-<div style="display: flex; align-items: center; gap: .8em; padding: 1.1em 1.6em; background: #221f1f"><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #e44443"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><span style="margin-left: .8em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.6em; color: #a39c9c">custom-ai.js</span></div>
+<div style="display: flex; align-items: center; gap: .8em; padding: 1.1em 1.6em; background: #221f1f"><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #e44443"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><i style="width: 1.1em; height: 1.1em; border-radius: 50%; background: #5f5959"></i><span style="margin-left: .8em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.6em; color: #a39c9c"><span class="e-cd" data-t="custom-ai.js"></span></span></div>
 <div style="display: flex; flex-direction: column; gap: .55em; padding: 1em 1.1em 1.1em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 2.3em; line-height: 1.3; color: #ffffff">
-<span style="white-space: pre; opacity: var(--e11k0)"><span style="color: #ff6d6c">const</span> app = <span style="color: #ff6d6c">new</span> CustomAI({</span>
-<span style="white-space: pre; opacity: var(--e11k1)">  <span style="color: #a39c9c">data:</span>     yourCRM,</span>
-<span style="white-space: pre; opacity: var(--e11k2)">  <span style="color: #a39c9c">systems:</span>  [erp, email, website],</span>
-<span style="white-space: pre; opacity: var(--e11k3)">  <span style="color: #a39c9c">workflow:</span> <span style="color: #ffc2c1">"built your way"</span>,</span>
-<span style="white-space: pre; opacity: var(--e11k4)">});</span>
-<span style="white-space: pre; opacity: var(--e11k5)">app.<span style="color: #ff6d6c">deploy</span>();</span>
+<span style="white-space: pre; opacity: var(--e11k0)"><span class="e-cd" style="color: #ff6d6c" data-t="const"></span><span class="e-cd" data-t=" app = "></span><span class="e-cd" style="color: #ff6d6c" data-t="new"></span><span class="e-cd" data-t=" CustomAI({"></span></span>
+<span style="white-space: pre; opacity: var(--e11k1)"><span class="e-cd" data-t="  "></span><span class="e-cd" style="color: #a39c9c" data-t="data:"></span><span class="e-cd" data-t="     yourCRM,"></span></span>
+<span style="white-space: pre; opacity: var(--e11k2)"><span class="e-cd" data-t="  "></span><span class="e-cd" style="color: #a39c9c" data-t="systems:"></span><span class="e-cd" data-t="  [erp, email, website],"></span></span>
+<span style="white-space: pre; opacity: var(--e11k3)"><span class="e-cd" data-t="  "></span><span class="e-cd" style="color: #a39c9c" data-t="workflow:"></span><span class="e-cd" data-t=" "></span><span class="e-cd" style="color: #ffc2c1" data-t="&quot;built your way&quot;"></span><span class="e-cd" data-t=","></span></span>
+<span style="white-space: pre; opacity: var(--e11k4)"><span class="e-cd" data-t="});"></span></span>
+<span style="white-space: pre; opacity: var(--e11k5)"><span class="e-cd" data-t="app."></span><span class="e-cd" style="color: #ff6d6c" data-t="deploy"></span><span class="e-cd" data-t="();"></span></span>
 </div>
 </div>
 <div style="position: absolute; left: 50%; top: 84.5em; display: flex; align-items: center; gap: 1em; white-space: nowrap; padding: 1em 1.8em 1em 1.2em; border-radius: 99em; background: #e44443; color: #ffffff; box-shadow: 0 2em 4em rgba(0, 0, 0, .3); opacity: var(--e11d); transform: translate(-50%, calc((1 - var(--e11d)) * 2em))">
@@ -784,29 +805,9 @@ section[data-scene] > div[style*="position: sticky"] { contain: layout; }
 
 </div>
 </div>
+</sc-if>
 </div>
 </div>
-</div>
-<div class="e-aiM" style="padding: 96px clamp(16px, 5vw, 40px) 72px; background: #161515; color: #ffffff">
-<span class="e-eb" style="color: #ff8a89">AI + custom development</span>
-<h2 class="e-h2" style="margin-top: 14px">Built around your business.</h2>
-<p class="e-lede" style="margin-top: 14px; color: #e8e3e2">Off-the-shelf tools are built for everyone, so they only go so far. We build AI around your data, your systems and the way you already work.</p>
-<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 28px">
-<div style="display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border-radius: 18px; background: #ffffff; color: #161515"><strong class="e-x" style="font-size: 20px">Your data</strong><span style="font-size: 15px; color: #3b3636">CRM, sales, documents</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border-radius: 18px; background: #e44443; color: #ffffff"><strong class="e-x" style="font-size: 20px">Your systems</strong><span style="font-size: 15px; font-weight: 700; color: #161515">ERP, email, website</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border-radius: 18px; background: #7b0c13; color: #ffffff"><strong class="e-x" style="font-size: 20px">Your workflow</strong><span style="font-size: 15px; color: #f3e3e3">The way you work</span></div>
-</div>
-<div aria-hidden="true" class="e-aiMflow" style="width: 4px; height: 56px; margin: 6px auto; border-radius: 2px; background-image: radial-gradient(circle, #ffffff 2px, transparent 2.5px); background-size: 4px 14px"></div>
-<div style="display: flex; align-items: center; gap: 18px; padding: 20px; border-radius: 22px; background: #221f1f; border: 2px solid #e44443">
-<span aria-hidden="true" style="position: relative; flex: none; width: 76px; height: 76px; border-radius: 50%; background: #ffffff"><span style="position: absolute; inset: 11%; border-radius: 50%; background: #e44443"></span><span style="position: absolute; inset: 24%; border-radius: 50%; background: #ffffff"></span><span style="position: absolute; inset: 36%; border-radius: 50%; background: #e44443"></span><span style="position: absolute; inset: 44%; border-radius: 50%; background: #161515"></span></span>
-<span style="display: flex; flex-direction: column; gap: 4px"><strong class="e-x" style="font-size: 24px">Custom AI app</strong><span class="e-eb" style="font-size: 11px; color: #ff8a89">AI + development</span></span>
-</div>
-<pre style="margin: 14px 0 0; padding: 18px; border-radius: 16px; background: #0d0c0c; border: 1px solid #3b3636; color: #f6f3f2; font-size: 13px; line-height: 1.7; overflow-x: auto"><span style="color: #e44443">const</span> app = <span style="color: #e44443">new</span> CustomAI({
-  data:     yourCRM,
-  systems:  [erp, email, website],
-  workflow: <span style="color: #ff8a89">"built your way"</span>,
-});
-app.deploy();</pre>
 </div>
 </section>
 
@@ -848,25 +849,25 @@ app.deploy();</pre>
 <span class="e-x" style="font-size: 15px; color: #e44443">01</span>
 <h4 class="e-x" style="margin: 0; font-size: clamp(24px, 2.2vw, 32px)">AI consulting</h4>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #cfc9c9">Navigating the AI landscape can feel overwhelming. With new tools, platforms and capabilities emerging almost daily, it's easy to become paralyzed by choice or invest in solutions that don't fit your business. We assess your business, identify where AI can deliver the greatest impact, evaluate vendors and tools, build ROI projections and develop your implementation roadmap.</p>
-<a href="/aiconsulting" class="e-eb" style="margin-top: auto; color: #ffffff">Learn more</a>
+<a href="/aiconsulting" class="e-eb" style="margin-top: auto; display: inline-flex; align-items: center; min-height: 24px; color: #ffffff">Learn more<span class="e-sr"> about AI consulting</span></a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3vw, 40px); background: #161515">
 <span class="e-x" style="font-size: 15px; color: #e44443">02</span>
 <h4 class="e-x" style="margin: 0; font-size: clamp(24px, 2.2vw, 32px)">AI transition services</h4>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #cfc9c9">The hands-on execution phase. We manage the actual shift from traditional to AI-enhanced operations: workflow analysis, data migration, system integration, staff training, pilot programs and phased rollouts. We start with quick wins that prove value, then build momentum.</p>
-<a href="/aitransitionservices" class="e-eb" style="margin-top: auto; color: #ffffff">Learn more</a>
+<a href="/aitransitionservices" class="e-eb" style="margin-top: auto; display: inline-flex; align-items: center; min-height: 24px; color: #ffffff">Learn more<span class="e-sr"> about AI transition services</span></a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3vw, 40px); background: #161515">
 <span class="e-x" style="font-size: 15px; color: #e44443">03</span>
 <h4 class="e-x" style="margin: 0; font-size: clamp(24px, 2.2vw, 32px)">AI app development</h4>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #cfc9c9">Bespoke AI applications built for your unique requirements, like intelligent document processing, predictive maintenance, customer intelligence platforms, content generation tools, conversational AI chatbots and predictive analytics engines. We start with deep discovery, then design, build, integrate and deploy, with ongoing support.</p>
-<a href="/aiappdevelopment" class="e-eb" style="margin-top: auto; color: #ffffff">Learn more</a>
+<a href="/aiappdevelopment" class="e-eb" style="margin-top: auto; display: inline-flex; align-items: center; min-height: 24px; color: #ffffff">Learn more<span class="e-sr"> about AI app development</span></a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3vw, 40px); background: #161515">
 <span class="e-x" style="font-size: 15px; color: #e44443">04</span>
 <h4 class="e-x" style="margin: 0; font-size: clamp(24px, 2.2vw, 32px)">AIO / AEO / GEO</h4>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #cfc9c9">Artificial intelligence optimization, answer engine optimization and generative engine optimization make sure your content appears, and gets cited, in ChatGPT, Google AI Overviews, Perplexity, Claude and voice assistants, not only in traditional search results.</p>
-<a href="/aioaeogeo" class="e-eb" style="margin-top: auto; color: #ffffff">Learn more</a>
+<a href="/aioaeogeo" class="e-eb" style="margin-top: auto; display: inline-flex; align-items: center; min-height: 24px; color: #ffffff">Learn more<span class="e-sr"> about AIO, AEO and GEO</span></a>
 </div>
 </div>
 </div>
@@ -891,7 +892,7 @@ app.deploy();</pre>
 <strong class="e-x" style="font-size: clamp(26px, 2.4vw, 36px); line-height: .95">{{csTitle}}</strong>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3b3636">{{csText}}</p>
 <div style="display: flex; flex-wrap: wrap; gap: 6px">
-<sc-for list="{{csTags}}" as="t" hint-placeholder-count="3"><span class="e-eb" style="padding: 6px 10px; border: 2px solid #161515; font-size: 11px">{{t.t}}</span></sc-for>
+<sc-for list="{{csTags}}" as="t" hint-placeholder-count="3"><span class="e-eb" style="padding: 6px 10px; border: 2px solid #161515; font-size: 12px">{{t.t}}</span></sc-for>
 </div>
 <a class="e-btn" href="{{csHref}}" style="align-self: flex-start; background: #d23a39; color: #ffffff">{{csCta}}</a>
 </div>
@@ -903,7 +904,7 @@ app.deploy();</pre>
 <div style="height: 14px; background: #2e2a2a"><div class="e-barA" style="height: 100%; width: 60%; background: #e44443"></div></div>
 <div style="font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase">Handicapper picks</div>
 <div style="height: 14px; background: #2e2a2a"><div class="e-barB" style="height: 100%; width: 60%; background: #ffffff"></div></div>
-<span class="e-eb" style="font-size: 11px; color: #a39c9c">Real-time comparison</span>
+<span class="e-eb" style="font-size: 12px; color: #a39c9c">Real-time comparison</span>
 </div>
 </sc-if>
 <sc-if value="{{isCs1}}" hint-placeholder-val="{{ false }}">
@@ -917,9 +918,9 @@ app.deploy();</pre>
 <sc-if value="{{isCs2}}" hint-placeholder-val="{{ false }}">
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; align-items: center">
 <img src="assets/img/app-hero-920.webp" srcset="assets/img/app-hero-480.webp 480w, assets/img/app-hero-920.webp 920w" sizes="(max-width: 900px) calc(100vw - 40px), 320px" width="920" height="1142" loading="lazy" decoding="async" alt="A laptop and phone showing a custom app dashboard" style="height: auto; display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 14px; grid-column: 1 / -1; aspect-ratio: 16 / 9">
-<span style="padding: 12px 8px; border-radius: 12px; background: #ffffff; color: #161515; text-align: center; font-family: Raleway, Lato, sans-serif; font-size: 11px; font-weight: 900; text-transform: uppercase">Your data</span>
-<span style="padding: 12px 8px; border-radius: 12px; background: #e44443; text-align: center; font-family: Raleway, Lato, sans-serif; font-size: 11px; font-weight: 900; text-transform: uppercase">Your systems</span>
-<span style="padding: 12px 8px; border-radius: 12px; background: #7b0c13; text-align: center; font-family: Raleway, Lato, sans-serif; font-size: 11px; font-weight: 900; text-transform: uppercase">Your workflow</span>
+<span style="padding: 12px 8px; border-radius: 12px; background: #ffffff; color: #161515; text-align: center; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; text-transform: uppercase">Your data</span>
+<span style="padding: 12px 8px; border-radius: 12px; background: #e44443; text-align: center; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; text-transform: uppercase">Your systems</span>
+<span style="padding: 12px 8px; border-radius: 12px; background: #7b0c13; text-align: center; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; text-transform: uppercase">Your workflow</span>
 <span style="grid-column: 1 / -1; justify-self: center; width: 2px; height: 22px; background: #ffffff"></span>
 <span style="grid-column: 1 / -1; justify-self: center; padding: 12px 18px; border-radius: 99px; border: 2px dashed #ffffff; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase">Your custom AI app</span>
 </div>
@@ -1017,6 +1018,7 @@ app.deploy();</pre>
 <p class="e-lede e-bLede" style="color: #cfc9c9; font-weight: 700">Google's algorithm weighs hundreds of variables, and some weigh far more than others. We optimize the heaviest first for the biggest immediate impact, then work our way down.</p>
 </div>
 <div class="e-bStage" style="position: relative; flex: 1 1 auto; min-height: 280px">
+<sc-if value="{{mob}}">
 <div class="e-bP" style="position: absolute; top: 0; bottom: 0; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px)">
 <div style="position: absolute; left: 0; right: 0; top: 0; height: 12%; display: flex; flex-direction: column; justify-content: center; gap: 6px; opacity: var(--e5b)">
 <span class="e-eb" style="font-size: 12px; color: #a39c9c">Optimized in order of weight</span>
@@ -1048,32 +1050,32 @@ app.deploy();</pre>
 
 </div>
 <div style="position: absolute; left: 124px; right: 0; top: 20.25%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
-<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 17px; color: #a39c9c">01</span>
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 17px; color: #a39c9c">01</span>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Bowling ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Heavy. Biggest impact.</span>
 <span style="display: block; width: 100%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k0)); transform-origin: left center"></span></span></span>
 </div>
 <div style="position: absolute; left: 124px; right: 0; top: 34.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
-<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">02</span>
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">02</span>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <span style="display: block; width: 78%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e86563; transform: scaleX(var(--e5k1)); transform-origin: left center"></span></span></span>
 </div>
 <div style="position: absolute; left: 124px; right: 0; top: 49.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
-<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">03</span>
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">03</span>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <span style="display: block; width: 58%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #ee8886; transform: scaleX(var(--e5k2)); transform-origin: left center"></span></span></span>
 </div>
 <div style="position: absolute; left: 124px; right: 0; top: 63.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
-<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">04</span>
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">04</span>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <span style="display: block; width: 42%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f3adac; transform: scaleX(var(--e5k3)); transform-origin: left center"></span></span></span>
 </div>
 <div style="position: absolute; left: 124px; right: 0; top: 78.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
-<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 1; color: #a39c9c">05</span>
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">05</span>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <span style="display: block; width: 28%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f8d2d1; transform: scaleX(var(--e5k4)); transform-origin: left center"></span></span></span>
 </div>
 <div style="position: absolute; left: 124px; right: 0; top: 92.75%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
-<span class="e-eb" style="flex: none; width: 22px; font-size: 11px; line-height: 17px; color: #a39c9c">06</span>
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 17px; color: #a39c9c">06</span>
 <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Ping pong ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Light. Fine tuning.</span>
 <span style="display: block; width: 16%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k5)); transform-origin: left center"></span></span></span>
 </div>
@@ -1081,10 +1083,12 @@ app.deploy();</pre>
 <g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
 </svg>
 </div>
+</sc-if>
 <p class="e-x" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 10%; margin: 0; text-align: center; font-size: clamp(18px, 2vw, 28px); color: #a39c9c; opacity: var(--e5c)">Hundreds of ranking variables</p>
 <sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
 <span class="e-dot" style="--ml: {{d.ml}}; --mt: {{d.mt}}; --mdx: {{d.mdx}}; --mdy: {{d.mdy}}; left: {{d.l}}; top: {{d.t}}; width: {{d.s}}px; height: {{d.s}}px; background: #8d8686; transform: translate(-50%, -50%) translate(calc({{d.dx}} * (1 - var(--e5g))), calc({{d.dy}} * (1 - var(--e5g))))"></span>
 </sc-for>
+<sc-if value="{{desk}}">
 <div class="e-bD" style="position: absolute; left: 9%; top: 46%; width: min(168px, 11.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
 <div style="position: absolute; inset: 0; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 calc(4px * var(--e5k0)) #ffffff"></div>
 <span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k0))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
@@ -1123,6 +1127,7 @@ app.deploy();</pre>
 <div class="e-eb" style="display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #a39c9c"><span>Optimized in order of weight</span><span style="color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span></div>
 <div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: 100%; transform: scaleX(var(--e5q)); transform-origin: left center; background: #e44443"></div></div>
 </div>
+</sc-if>
 </div>
 </div>
 </section>
@@ -1376,14 +1381,12 @@ app.deploy();</pre>
 <div style="border-bottom: 2.5px solid #161515">
 <sc-for list="{{faqs}}" as="f" hint-placeholder-count="4">
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" onClick="{{f.toggle}}" aria-expanded="{{f.exp}}">
+<button type="button" class="e-faqq" onClick="{{f.toggle}}" aria-expanded="{{f.exp}}" aria-controls="faq-a-{{f.num}}">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">{{f.num}}</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">{{f.q}}</span>
 <span class="e-faqi" aria-hidden="true" style="background: {{f.ibg}}; color: {{f.ifg}}">{{f.icon}}</span>
 </button>
-<sc-if value="{{f.open}}" hint-placeholder-val="{{ true }}">
-<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch">{{f.a}}</p>
-</sc-if>
+<p class="e-faqa" id="faq-a-{{f.num}}" hidden="{{f.hid}}" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch">{{f.a}}</p>
 </div>
 </sc-for>
 </div>
@@ -1451,7 +1454,7 @@ app.deploy();</pre>
 </div>
 <div><h3>Services</h3><ul><li><a href="/services">All services</a></li><li><a href="/ppcmanagementlexingtonky">PPC management</a></li><li><a href="/seolexingtonky">SEO Lexington</a></li><li><a href="/seolouisvilleky">SEO Louisville</a></li><li><a href="/aidigitalmarketinglexingtonky">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><a href="/aiservices">AI services</a></li><li><a href="/aiconsulting">AI consulting</a></li><li><a href="/aitransitionservices">AI transition services</a></li><li><a href="/aiappdevelopment">AI app development</a></li><li><a href="/aioaeogeo">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="/aiolexingtonky">AIO Lexington</a></li><li><a href="/aiolouisvilleky">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><span class="e-footcur" aria-current="page">Home</span></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/get-a-quote">Get a quote</a></li><li><a href="/ahistoryofwebdesign">History of web design</a></li><li><a href="/privacy-policy">Privacy policy</a></li></ul></div>
 </div>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<div class="e-footbar" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
 <span>© Digital Impact. All rights reserved.</span>
 <a href="/get-a-quote" style="color: #a39c9c">Get a quote</a>
 </div>
@@ -1464,7 +1467,9 @@ app.deploy();</pre>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { hud: 'Taking aim', kw: 0, legs: [true, true, true], tab: 0, sent: false, wobKey: 0, cs: 0, svc: 0, prevSvc: 0, faqCat: 'all', faqOpen: [true, false, false, false, false, false, false, false, false, false] };
+    const mq = window.matchMedia ? window.matchMedia('(max-width: 900px)') : null;
+    this._mq = mq;
+    this.state = { mob: !!(mq && mq.matches), inHero: true, hud: 'Taking aim', kw: 0, legs: [true, true, true], tab: 0, sent: false, wobKey: 0, cs: 0, svc: 0, prevSvc: 0, faqCat: 'all', faqOpen: [true, false, false, false, false, false, false, false, false, false] };
     this.SVC = [
       {
         title: 'AI services',
@@ -1575,6 +1580,10 @@ class Component extends DCLogic {
   componentDidMount() {
     const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
     const reduce = !!(mq && mq.matches);
+    if (this._mq) {
+      this._bp = () => this.setState({ mob: this._mq.matches });
+      if (this._mq.addEventListener) this._mq.addEventListener('change', this._bp); else this._mq.addListener(this._bp);
+    }
     // Each scene's progress is written on that scene (not <html>) so only its own subtree restyles,
     // and only when the value changed.
     const setVar = (el, k, v) => { const c = el.__dcv || (el.__dcv = {}); if (c[k] !== v) { c[k] = v; el.style.setProperty(k, v); } };
@@ -1610,6 +1619,9 @@ class Component extends DCLogic {
         if (label && r.top <= vh * 0.5 && r.bottom > vh * 0.5) hud = label;
       }
       if (hud && hud !== this.state.hud) this.setState({ hud: hud });
+      const top = document.getElementById('e-top');
+      const inHero = !!top && top.getBoundingClientRect().bottom > vh * 1.02;
+      if (inHero !== this.state.inHero) this.setState({ inHero: inHero });
     };
     this._on = () => { if (!this._raf) this._raf = requestAnimationFrame(this._tick); };
     this._move = (e) => {
@@ -1785,7 +1797,7 @@ class Component extends DCLogic {
     faqProps.svcKicker = svcData.kicker;
     faqProps.svcParas = svcData.paras.map((t) => ({ t: t }));
     faqProps.svcList = svcData.list.map((t) => ({ t: t }));
-    faqProps.svcLinks = svcData.links.map((l, k) => ({ label: l[0], href: l[1], bg: k === 0 ? '#d23a39' : '#161515' }));
+    faqProps.svcLinks = svcData.links.map((l, k) => ({ label: l[0], href: l[1], sr: l[0] === 'Learn more' ? ' about ' + svcData.title + ' services' : '', bg: k === 0 ? '#d23a39' : '#161515' }));
 
     const cats = ['all', 'about', 'services', 'start'];
     const cat = s.faqCat;
@@ -1812,6 +1824,7 @@ class Component extends DCLogic {
         q: x.f.q,
         a: x.f.a,
         open: open,
+          hid: !open,
         exp: open ? 'true' : 'false',
         icon: open ? '−' : '+',
         ibg: open ? '#161515' : '#ffffff',
@@ -1837,6 +1850,9 @@ class Component extends DCLogic {
     faqProps.menuClose = () => this.setState({ menuOpen: false });
     return Object.assign({
       hud: s.hud,
+      mob: !!s.mob,
+      desk: !s.mob,
+      inHero: s.inHero ? 'true' : 'false',
       dots: this.makeDots(),
       tilt: tilt,
       tiltOrigin: origin,
@@ -1852,7 +1868,7 @@ class Component extends DCLogic {
   }
 }
 </script>
-<script src="assets/js/di-form.js" defer></script>
+<script src="/assets/js/di-form.js" defer></script>
 <script src="assets/js/dc-lite.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Consulting, AI Strategy &amp; Implementation Services in Lexington &amp; Louisville | Digital Impact</title>
 <meta name="description" content="AI consulting, AI strategy consulting, and AI transitioning services support smarter AI adoption for Lexington and Louisville businesses through Digital Impact.">
-<link rel="icon" type="image/png" href="assets/img/digital-impact-logo.png">
+<link rel="icon" type="image/png" href="/assets/img/digital-impact-logo.png">
 <link rel="preload" href="/assets/fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -124,6 +124,17 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
   .e-rise { animation: none !important; }
 }
 </style>
+<style>
+/* Accessibility and evaluation fixes */
+.e-skip { position: fixed; left: 12px; top: -80px; z-index: 100; padding: 12px 18px; background: #ffffff; color: #161515; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, .3); transition: top .15s ease; }
+.e-skip:focus { top: 12px; }
+.e-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.e-faqa[hidden] { display: none !important; }
+nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-footbar a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-navphone { min-width: 44px; justify-content: center; }
+.e-cd::before { content: attr(data-t); }
+</style>
 <link rel="canonical" href="https://www.digitalimpactmarketers.com/aiconsulting">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Digital Impact">
@@ -146,6 +157,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <body>
 <div id="app">
 <div style="position: relative; width: 100%; min-height: 100vh; overflow-x: clip; background: #ffffff; color: #161515">
+<a class="e-skip" href="#main">Skip to main content</a>
 <header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
 <a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
 <img class="e-logo" src="assets/img/digital-impact-logo-544.webp" width="544" height="88" alt="Digital Impact" style="height: 44px; width: auto; display: block">
@@ -163,7 +175,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 <!--[if--><!--]if-->
 </header>
-<section style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #e44443; color: #ffffff; overflow: hidden">
+<section id="main" style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #e44443; color: #ffffff; overflow: hidden">
 <div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 80px); align-items: center; max-width: 1280px; margin: 0 auto">
 <div style="display: flex; flex-direction: column; gap: 22px">
 <nav aria-label="Breadcrumb" class="e-eb" style="font-size: 12px; color: #161515"><a href="/" style="text-decoration: none">Home</a> <span aria-hidden="true">/</span> <a href="/aiservices" style="text-decoration: none">AI services</a> <span aria-hidden="true">/</span> AI consulting</nav>
@@ -213,95 +225,93 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <div style="border-bottom: 2.5px solid #161515">
 <!--[for--><!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="true">
+<button type="button" class="e-faqq" aria-expanded="true" aria-controls="faq-a-01">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">01</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What does an AI consulting engagement with Digital Impact look like?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #161515; color: #ffffff">−</span>
 </button>
-<!--[if-->
-<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch">An AI consulting engagement begins with a comprehensive assessment of your current operations, challenges, and goals. Digital Impact examines your business through multiple lenses including customer experience, internal operations, marketing, sales, financial processes, and competitive positioning. From this deep-dive, they identify specific areas where AI can deliver the greatest impact, then develop a prioritized implementation roadmap customized to your budget, timeline, technical capabilities, and organizational readiness.</p>
-<!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-01">An AI consulting engagement begins with a comprehensive assessment of your current operations, challenges, and goals. Digital Impact examines your business through multiple lenses including customer experience, internal operations, marketing, sales, financial processes, and competitive positioning. From this deep-dive, they identify specific areas where AI can deliver the greatest impact, then develop a prioritized implementation roadmap customized to your budget, timeline, technical capabilities, and organizational readiness.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-02">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">02</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How can AI automation save my business time and money?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-02" hidden="">AI-powered automation can handle repetitive tasks like data entry, scheduling, email responses, and report generation faster and more accurately than manual processes. This frees your staff to focus on higher-value work requiring creativity, judgment, and personal interaction. Digital Impact's consulting process identifies your biggest time sinks and builds realistic ROI projections based on potential time savings, error reduction, revenue opportunities, and competitive advantages, creating a clear business case before you invest.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-03">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">03</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How does Digital Impact help choose the right AI tools?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-03" hidden="">Digital Impact provides objective vendor and tool evaluations as a key component of their AI consulting service. With the market saturated with AI products claiming unique capabilities, they assess the best tools for your specific needs, whether that is a customer service chatbot, content generation platform, predictive analytics solution, or custom machine learning model. They help you understand the tradeoffs between platforms and make decisions aligned with your long-term strategy, avoiding costly mismatches.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-04">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">04</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What is an AI implementation roadmap?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-04" hidden="">An AI implementation roadmap is a prioritized, phased plan for adopting artificial intelligence across your business. Digital Impact creates customized roadmaps that consider your budget, timeline, technical infrastructure, and organizational readiness. The roadmap typically begins with quick wins that demonstrate value and build team confidence, then progressively tackles more complex implementations. It includes vendor recommendations, ROI projections, risk mitigation strategies, and change management plans.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-05">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">05</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How do I calculate ROI on AI investments?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-05" hidden="">Digital Impact's consulting team helps you build realistic ROI projections by analyzing potential time savings from automation, error reduction in manual processes, new revenue opportunities enabled by AI insights, and long-term competitive advantages from early adoption. They also factor in less tangible benefits like improved customer experience and employee satisfaction. The goal is to create a data-driven business case that justifies your AI investment based on your specific circumstances.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-06">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">06</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What are the risks of AI adoption and how do you manage them?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-06" hidden="">Common AI adoption risks include data privacy concerns, algorithmic bias, employee resistance to change, and integration challenges with existing systems. Digital Impact's consulting services include thorough risk assessment and mitigation planning that addresses each of these before they become problems. They also develop change management strategies with communication plans, training programs, and incentive structures that help your team embrace AI as a tool that enhances rather than threatens their work.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-07">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">07</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Does Digital Impact offer ongoing AI advisory support?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-07" hidden="">Yes. The AI landscape evolves rapidly, and capabilities that were cutting-edge six months ago may already be obsolete. Because of this, Digital Impact's consulting relationships extend beyond initial implementation to provide ongoing advisory support. They keep you informed about relevant developments, help evaluate new opportunities as they emerge, and ensure your AI strategy stays aligned with your evolving business objectives over time.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-08">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">08</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Is AI consulting worth it for a mid-sized company?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-08" hidden="">Yes. Mid-sized companies often have the most to gain from AI consulting because they face competitive pressure from both larger enterprises and agile startups. Digital Impact helps mid-sized businesses identify the specific AI applications that will deliver the greatest impact, such as marketing optimization, customer service automation, predictive analytics, or workflow automation, without the wasted investment that comes from trying to implement everything at once. Their phased approach with quick wins first is particularly well-suited to mid-sized budgets.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-09">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">09</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How does AI consulting address employee concerns about job replacement?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-09" hidden="">Digital Impact's consulting approach includes comprehensive change management that positions AI as a tool enhancing employee capabilities rather than replacing jobs. They develop communication strategies that clearly explain how AI will automate tedious, repetitive tasks so employees can focus on higher-value work requiring creativity, judgment, and personal interaction. Training programs build confidence and competence, while incentive structures encourage adoption and demonstrate the personal benefits of AI-enhanced workflows.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-10">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">10</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Where do I start with AI for my business?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-10" hidden="">Start with an AI consulting assessment. Digital Impact recommends beginning with a comprehensive evaluation of your current operations to identify where AI can deliver the greatest impact with the least disruption. They examine customer experience, internal operations, marketing, sales, and competitive positioning to find practical automation opportunities. From there, they build a prioritized roadmap starting with quick wins that demonstrate value. Contact Digital Impact at 859.396.8606 or digitalimpactmarketers.com to schedule a consultation.</p>
 </div>
 <!--]for-->
 </div>
@@ -326,7 +336,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 <div><h3>Services</h3><ul><li><a href="/services">All services</a></li><li><a href="/ppcmanagementlexingtonky">PPC management</a></li><li><a href="/seolexingtonky">SEO Lexington</a></li><li><a href="/seolouisvilleky">SEO Louisville</a></li><li><a href="/aidigitalmarketinglexingtonky">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><a href="/aiservices">AI services</a></li><li><span class="e-footcur" aria-current="page">AI consulting</span></li><li><a href="/aitransitionservices">AI transition services</a></li><li><a href="/aiappdevelopment">AI app development</a></li><li><a href="/aioaeogeo">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="/aiolexingtonky">AIO Lexington</a></li><li><a href="/aiolouisvilleky">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/get-a-quote">Get a quote</a></li><li><a href="/ahistoryofwebdesign">History of web design</a></li><li><a href="/privacy-policy">Privacy policy</a></li></ul></div>
 </div>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<div class="e-footbar" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
 <span>© Digital Impact. All rights reserved.</span>
 <a href="/get-a-quote" style="color: #a39c9c">Get a quote</a>
 </div>
@@ -335,6 +345,6 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 </div>
 <script src="/assets/js/dc-lite.js?v=61e904266c" defer></script>
-<script src="/assets/js/pages/aiconsulting.js?v=6bd16207ed" defer></script>
+<script src="/assets/js/pages/aiconsulting.js?v=00577d440a" defer></script>
 </body>
 </html>

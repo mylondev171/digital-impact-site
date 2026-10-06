@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SEO Lexington KY | Web Design Lexington | Social Media Management - Digital Impact</title>
 <meta name="description" content="Digital Impact is a Digital Marketing Agency that specializes in SEO, PPC, Social Media Management, Creative Services, and Web Design in Lexington, KY.">
-<link rel="icon" type="image/png" href="assets/img/digital-impact-logo.png">
+<link rel="icon" type="image/png" href="/assets/img/digital-impact-logo.png">
 <link rel="preload" href="/assets/fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -124,6 +124,17 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
   .e-rise { animation: none !important; }
 }
 </style>
+<style>
+/* Accessibility and evaluation fixes */
+.e-skip { position: fixed; left: 12px; top: -80px; z-index: 100; padding: 12px 18px; background: #ffffff; color: #161515; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, .3); transition: top .15s ease; }
+.e-skip:focus { top: 12px; }
+.e-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.e-faqa[hidden] { display: none !important; }
+nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-footbar a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-navphone { min-width: 44px; justify-content: center; }
+.e-cd::before { content: attr(data-t); }
+</style>
 <link rel="canonical" href="https://www.digitalimpactmarketers.com/services">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Digital Impact">
@@ -146,6 +157,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <body>
 <div id="app">
 <div style="position: relative; width: 100%; min-height: 100vh; overflow-x: clip; background: #ffffff; color: #161515">
+<a class="e-skip" href="#main">Skip to main content</a>
 <header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
 <a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
 <img class="e-logo" src="assets/img/digital-impact-logo-544.webp" width="544" height="88" alt="Digital Impact" style="height: 44px; width: auto; display: block">
@@ -163,7 +175,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 <!--[if--><!--]if-->
 </header>
-<section style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #161515; color: #ffffff; overflow: hidden">
+<section id="main" style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #161515; color: #ffffff; overflow: hidden">
 <div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 80px); align-items: center; max-width: 1280px; margin: 0 auto">
 <div style="display: flex; flex-direction: column; gap: 22px">
 <nav aria-label="Breadcrumb" class="e-eb" style="font-size: 12px; color: #cfc9c9"><a href="/" style="text-decoration: none">Home</a> <span aria-hidden="true">/</span> Services</nav>
@@ -243,95 +255,93 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <div style="border-bottom: 2.5px solid #161515">
 <!--[for--><!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="true">
+<button type="button" class="e-faqq" aria-expanded="true" aria-controls="faq-a-01">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">01</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What is SEO and why does my business need it?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #161515; color: #ffffff">−</span>
 </button>
-<!--[if-->
-<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch">SEO stands for Search Engine Optimization. It is the process of improving your website's visibility and ranking on search engine results pages. It involves on-page optimization (making your site crawlable, fast-loading, and mobile-friendly), content writing, and off-page optimization (building high-quality backlinks). Your business needs SEO because it increases organic, non-paid traffic from Google, Bing, and other search engines, driving more visitors, conversions, and revenue over time. Digital Impact has been perfecting SEO for over 25 years.</p>
-<!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-01">SEO stands for Search Engine Optimization. It is the process of improving your website's visibility and ranking on search engine results pages. It involves on-page optimization (making your site crawlable, fast-loading, and mobile-friendly), content writing, and off-page optimization (building high-quality backlinks). Your business needs SEO because it increases organic, non-paid traffic from Google, Bing, and other search engines, driving more visitors, conversions, and revenue over time. Digital Impact has been perfecting SEO for over 25 years.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-02">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">02</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How does Pay-Per-Click advertising work?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-02" hidden="">PPC (Pay-Per-Click) is a form of online advertising where you pay each time someone clicks your ad. Advertisers bid on keywords relevant to their business, and ads appear on search engine results pages or social media platforms like Google Ads, Bing Ads, and Facebook Ads. You only pay when a user actually clicks, making it a highly measurable and controllable advertising model. PPC campaigns can be precisely targeted by demographics, location, and budget, making them an effective strategy for driving traffic and conversions quickly.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-03">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">03</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What creative and branding services does Digital Impact provide?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-03" hidden="">Digital Impact offers a comprehensive range of creative services including logo design, full branding packages, print pieces, and digital advertisements. Their creative team is skilled in both design and functionality, creating compelling work that drives sales. They emphasize branding as essential for differentiation from competitors, building trust with customers, creating loyalty through emotional connection, and maintaining consistency across all channels to increase brand recognition and recall.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-04">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">04</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What social media platforms does Digital Impact manage?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-04" hidden="">Digital Impact manages social media marketing campaigns on platforms including Meta (Facebook), Instagram, and TikTok. Their approach combines creative content development with strategic media buying to craft compelling ads targeted at the right audience. Services span paid advertising campaigns, organic content creation, customer engagement through comments and messages, and influencer marketing strategies, all designed to build brand awareness, increase reach, and drive conversions.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-05">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">05</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Why is professional web design important for my business?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-05" hidden="">A well-designed website serves as your most important sales tool. Good web design ensures a great user experience with clear navigation, establishes trust and credibility through professional layouts and consistent branding, improves search engine rankings through mobile-friendliness and fast load speeds, and provides responsive design that works across all devices from desktops to smartphones. A poorly designed website can make your business appear unreliable and drive customers to competitors. Digital Impact brings 25 years of web design experience to every project.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-06">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">06</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Does Digital Impact offer PPC management in Lexington, KY?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-06" hidden="">Yes, Digital Impact provides professional PPC management services in Lexington, Kentucky. Their specialists have extensive experience with Google Ads and Bing Ads since the inception of pay-per-click advertising. They handle campaign setup, keyword bidding strategy, audience targeting, budget optimization, and performance tracking to ensure your ad spend drives measurable results and a strong return on investment.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-07">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">07</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">How does SEO differ from PPC?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-07" hidden="">SEO focuses on improving your organic (unpaid) search rankings through website optimization, content creation, and backlink building. This delivers long-term, sustainable traffic growth. PPC delivers immediate visibility through paid ads where you bid on keywords and pay per click. SEO takes longer to show results but provides compounding returns over time, while PPC delivers instant traffic but stops when you stop paying. Most businesses benefit from combining both strategies, which is exactly what Digital Impact recommends as part of their integrated marketing approach.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-08">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">08</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Can Digital Impact redesign my existing website?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-08" hidden="">Yes, Digital Impact provides website redesign services built on 25 years of web design experience. They approach every project with a brand-first methodology, ensuring your redesigned site captures attention with visually stunning, innovative, and user-friendly experiences. Their custom development process means your new website will be tailored to your specific business needs and processes rather than built from a generic template, with full attention to SEO, mobile responsiveness, and conversion optimization.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-09">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">09</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">What should I look for in a social media marketing agency?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-09" hidden="">Look for an agency that combines creative talent with strategic media buying expertise, understands your target audience and their behavior on each platform, creates compelling and relevant content, and tracks performance to optimize results. Digital Impact offers all of these capabilities, with a team experienced in running paid campaigns on Meta, Instagram, and TikTok, as well as organic content strategies and audience engagement, all tied into a broader integrated marketing approach for maximum ROI.</p>
 </div>
 <!--[i-->
 <div style="border-top: 2.5px solid #161515">
-<button type="button" class="e-faqq" aria-expanded="false">
+<button type="button" class="e-faqq" aria-expanded="false" aria-controls="faq-a-10">
 <span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">10</span>
 <span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">Does Digital Impact offer SEO services in Louisville, KY?</span>
 <span class="e-faqi" aria-hidden="true" style="background: #ffffff; color: #161515">+</span>
 </button>
-<!--[if--><!--]if-->
+<p class="e-faqa" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch" id="faq-a-10" hidden="">Yes, Digital Impact provides SEO services for businesses in Louisville, Kentucky, in addition to their Lexington headquarters. With over 25 years of SEO expertise predating Google itself, they deliver comprehensive search engine optimization including on-page optimization, content strategy, backlink building, and technical SEO for Louisville businesses looking to increase their organic visibility and drive more traffic and revenue.</p>
 </div>
 <!--]for-->
 </div>
@@ -356,7 +366,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 <div><h3>Services</h3><ul><li><span class="e-footcur" aria-current="page">All services</span></li><li><a href="/ppcmanagementlexingtonky">PPC management</a></li><li><a href="/seolexingtonky">SEO Lexington</a></li><li><a href="/seolouisvilleky">SEO Louisville</a></li><li><a href="/aidigitalmarketinglexingtonky">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><a href="/aiservices">AI services</a></li><li><a href="/aiconsulting">AI consulting</a></li><li><a href="/aitransitionservices">AI transition services</a></li><li><a href="/aiappdevelopment">AI app development</a></li><li><a href="/aioaeogeo">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="/aiolexingtonky">AIO Lexington</a></li><li><a href="/aiolouisvilleky">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/get-a-quote">Get a quote</a></li><li><a href="/ahistoryofwebdesign">History of web design</a></li><li><a href="/privacy-policy">Privacy policy</a></li></ul></div>
 </div>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<div class="e-footbar" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
 <span>© Digital Impact. All rights reserved.</span>
 <a href="/get-a-quote" style="color: #a39c9c">Get a quote</a>
 </div>
@@ -365,6 +375,6 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 </div>
 <script src="/assets/js/dc-lite.js?v=61e904266c" defer></script>
-<script src="/assets/js/pages/services.js?v=4d6f7c2f13" defer></script>
+<script src="/assets/js/pages/services.js?v=48c8c3f423" defer></script>
 </body>
 </html>
