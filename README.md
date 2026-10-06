@@ -41,16 +41,30 @@ The site is deployed on Vercel. `vercel.json` turns on clean URLs (so `about.htm
 
 ## Folder layout
 
-- `assets/img` holds the logo, the generated images and the video posters.
+- `src/pages` holds the page sources. **Edit these, not the root `.html` files**, then run the build.
+- `tools/build.js` builds the site (see below); `tools/site.json` holds the site URL, organization details for schema, and page names for breadcrumbs and `llms.txt`.
+- `assets/js/dc-lite.js` is the small runtime that runs each page's interactions (menus, FAQs, the services fan, scroll animations, video play buttons). It hydrates the pre-rendered HTML instead of rebuilding the page.
+- `assets/js/pages/<page>.js` is generated: each page's template and logic, loaded after the HTML.
+- `assets/img` holds the logo, the generated images, the video posters and the 1200x630 share image (`og-1200x630.jpg`).
 - `assets/video` holds the overview and history videos.
-- `assets/js/dc-lite.js` is the small script that runs each page's interactions (menus, FAQs, the services fan, scroll animations, video play buttons).
 
-## Before going live
+## Building
 
-- **Forms:** The contact and quote forms show a thank-you message but do not send anywhere yet. Connect them to your form handler or CRM before launch.
-- **Fonts:** Raleway, Lato and Merriweather load from Google Fonts.
-- **Search engines:** Each page ships with its full content already in the HTML, so crawlers and AI assistants can read it without running JavaScript.
+```
+cd tools
+npm install
+npm run build
+```
+
+For every `src/pages/<page>.html` the build pre-renders the page (so crawlers and AI assistants get the full content, including every FAQ answer, without running JavaScript), writes `<page>.html` at the root with canonical, Open Graph/Twitter tags and JSON-LD (organization, breadcrumbs, FAQ), writes `assets/js/pages/<page>.js`, and regenerates `sitemap.xml` and `llms.txt`. Commit the generated files; Vercel serves them as-is (`src/` and `tools/` are excluded by `.vercelignore`).
 
 ## Editing
 
-Each page's markup lives inside `<template id="dc-tpl">`, and its behavior in the `<script id="dc-logic">` block below it. Text can be edited directly in the template. Values written as `{{name}}` are filled in by that page's script.
+Each source page's markup lives inside `<template id="dc-tpl">`, and its behavior in the `<script id="dc-logic">` block below it. Text can be edited directly in the template. Values written as `{{name}}` are filled in by that page's script. Rebuild after editing.
+
+## SEO notes
+
+- Canonicals point at `https://www.digitalimpactmarketers.com` (set in `tools/site.json`). The `digital-impact-site.vercel.app` host sends `X-Robots-Tag: noindex` (see `vercel.json`) so it never competes with the live domain.
+- `robots.txt` welcomes AI crawlers and points at the sitemap. `404.html` is the branded not-found page (noindex).
+- Add `streetAddress` and `postalCode` to `org.address` in `tools/site.json` once an address is published; they must match the Google Business Profile exactly.
+- Vercel Web Analytics is tagged on every page; it starts collecting once Analytics is enabled on the Vercel project.
