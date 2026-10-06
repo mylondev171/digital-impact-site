@@ -174,6 +174,15 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 @media (max-width: 900px) {
   .e-row { grid-template-columns: 72px minmax(0, 1fr) 48px 48px; font-size: 14px; }
 }
+.e-kwhead { grid-column: 2 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 18px; }
+.e-kwkey { display: inline-flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 18px; margin-left: auto; }
+.e-kwkey > span { display: inline-flex; align-items: center; gap: 8px; }
+.e-kwkey i { display: block; width: 18px; height: 6px; }
+@media (max-width: 900px) {
+  .e-row.e-eb { row-gap: 8px; }
+  .e-kwhead { display: contents; }
+  .e-kwkey { grid-column: 1 / -1; justify-content: flex-end; }
+}
 @media (prefers-reduced-motion: reduce) {
   .e-line > span, .e-hintdot, .e-wobA, .e-wobB, .e-flow, .e-glow, .e-barA, .e-barB, .e-orbit, .e-ping { animation: none !important; }
 }
@@ -608,7 +617,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 <h2 class="e-h2" style="color: #161515">Aim at the whole board.</h2>
 <p class="e-lede" style="color: #3b3636">The bullseye is your highest-traffic, most competitive phrase. Around it sit the 20, 18 and 17: related phrases with less competition that are easier to win. We target them all and build a page around each one.</p>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<div class="e-row e-eb" aria-hidden="true" style="min-height: 26px; padding-top: 0; padding-bottom: 0; font-size: 11px; color: #5f5959; cursor: default"><span>Target</span><span>Keyword phrase</span><span>Traffic</span><span>Competition</span></div>
+<div class="e-row e-eb" aria-hidden="true" style="box-sizing: border-box; min-height: 26px; padding-top: 0; padding-bottom: 0; font-size: 12px; color: #5f5959; cursor: default"><span>Target</span><span class="e-kwhead"><span>Keyword phrase</span><span class="e-kwkey"><span><i style="background: #e44443"></i>Traffic</span><span><i style="background: #5f5959"></i>Competition</span></span></span></div>
 <button type="button" class="e-row" aria-pressed="true" style="background: #fdecec; border-color: #e44443; color: #161515; opacity: calc(.3 + .7 * var(--e6d0))">
 <span class="e-x" style="justify-self: start; padding: 5px 10px; background: #d23a39; color: #ffffff; font-size: 12px; letter-spacing: .04em">Bullseye</span>
 <span style="font-weight: 700">roofer Lexington KY</span>
@@ -785,7 +794,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 </div>
 </div>
 <script src="/assets/js/dc-lite.js?v=61e904266c" defer></script>
-<script src="/assets/js/pages/fundamentals-of-seo.js?v=5652e421e7" defer></script>
+<script src="/assets/js/pages/fundamentals-of-seo.js?v=0567d9dc3c" defer></script>
 <script src="/_vercel/insights/script.js" defer></script>
 </body>
 </html>
