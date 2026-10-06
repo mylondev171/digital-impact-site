@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fundamentals of SEO: How Search Rankings Work - Digital Impact</title>
+<meta name="description" content="A plain-English guide to SEO from a Lexington, KY team doing search since 1998: how search engines rank pages, the three legs of SEO, keyword targeting and local SEO.">
+<link rel="icon" type="image/png" href="/assets/img/digital-impact-logo.png">
+<link rel="preload" href="/assets/fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Raleway'; font-style: normal; font-weight: 700 900; font-display: swap; src: url(/assets/fonts/raleway.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/lato-400.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/lato-700.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 900; font-display: swap; src: url(/assets/fonts/lato-900.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Merriweather'; font-style: italic; font-weight: 400 700; font-display: swap; src: url(/assets/fonts/merriweather-italic.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+</style>
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #ffffff; color: #161515; font-family: Lato, "Helvetica Neue", Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+::selection { background: #161515; color: #ffffff; }
+button, input, textarea, select { font-family: inherit; }
+:focus-visible { outline: 3px solid #e44443; outline-offset: 3px; }
+.e-x { font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; font-feature-settings: "lnum" 1; font-variant-numeric: lining-nums; }
+.e-h1 { margin: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.035em; line-height: .88; font-feature-settings: "lnum" 1; text-wrap: balance; }
+.e-h2 { margin: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(32px, 4.2vw, 64px); line-height: .92; letter-spacing: -0.035em; text-wrap: balance; font-feature-settings: "lnum" 1; }
+.e-lede { margin: 0; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.6; max-width: 58ch; text-wrap: pretty; }
+.e-eb { font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; font-feature-settings: "lnum" 1; }
+.e-p { margin: 0; font-size: 17px; line-height: 1.75; color: #3b3636; max-width: 68ch; }
+.e-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 26px; border: 0; border-radius: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+.e-btn:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 999px rgba(22, 21, 21, .22); }
+.e-ghost { display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border: 2.5px solid currentColor; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; font-feature-settings: "lnum" 1; }
+.e-ghost:hover { box-shadow: inset 0 0 0 999px rgba(128, 128, 128, .18); }
+.e-pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 2px solid currentColor; font-family: Raleway, Lato, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
+a.e-pill:hover { box-shadow: inset 0 0 0 999px rgba(128, 128, 128, .2); }
+.e-card { display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.6vw, 36px); border-radius: 26px; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; }
+a.e-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(22, 21, 21, .22); }
+.e-li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: #f6f3f2; font-size: 15px; font-weight: 700; line-height: 1.45; }
+.e-li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 6px; background: #e44443; }
+.e-faqq { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 76px; padding: 18px 0; background: none; border: 0; color: #161515; text-align: left; cursor: pointer; font-family: Lato, sans-serif; }
+.e-faqq:hover .e-faqi { border-color: #e44443; }
+.e-faqi { flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; border: 2.5px solid #161515; font-size: 22px; font-weight: 900; line-height: 1; }
+.e-field { display: flex; flex-direction: column; gap: 6px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: #161515; }
+.e-field input, .e-field textarea { background: #ffffff; border: 2.5px solid #161515; border-radius: 0; color: #161515; font-family: Lato, sans-serif; font-size: 16px; letter-spacing: 0; text-transform: none; padding: 12px 14px; }
+.e-field input:focus, .e-field textarea:focus { border-color: #e44443; outline: none; }
+.e-chip { min-height: 48px; padding: 0 18px; border: 2.5px solid #161515; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.e-slot { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; border-radius: 26px; border: 2px dashed #bdb6b4; background: repeating-linear-gradient(135deg, #f1ecea 0 14px, #f8f6f5 14px 28px); overflow: hidden; }
+@keyframes e-rise { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.e-rise { animation: e-rise .8s cubic-bezier(.2, .8, .2, 1) both; }
+.e-vidplay { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding: clamp(14px, 2.4vw, 28px); border: 0; background: linear-gradient(to top, rgba(13, 12, 12, .9), rgba(13, 12, 12, .2) 55%, rgba(13, 12, 12, 0)); color: #ffffff; cursor: pointer; text-align: left; font: inherit; }
+.e-vidbtn { position: relative; flex: none; display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 6px rgba(228, 68, 67, .25); transition: transform .25s ease; }
+.e-vidbtn::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid #e44443; animation: e-vidping 2s ease-out infinite; }
+@keyframes e-vidping { from { transform: scale(1); opacity: .9; } to { transform: scale(1.6); opacity: 0; } }
+.e-vidplay:hover .e-vidbtn { transform: scale(1.08); }
+.e-vidplay:focus-visible { outline: 3px solid #ffffff; outline-offset: -8px; }
+@media (prefers-reduced-motion: reduce) { .e-vidbtn::after { animation: none; } }
+@media (max-width: 600px) { .e-vidbtn { width: 52px; height: 52px; } }
+.e-ddm { min-width: 300px !important; }
+.e-ddm a { display: flex !important; flex-direction: column; gap: 3px; text-decoration: none; }
+.e-ddm a strong { font-size: 13px; font-weight: 900; letter-spacing: .08em; color: #ffffff; }
+.e-ddm a span { font-family: Lato, sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; color: #a39c9c; }
+.e-ddm a:hover strong { color: #ff8a89; }
+.e-burger { display: none; width: 44px; height: 44px; padding: 0; border: 2px solid #3b3636; border-radius: 10px; background: none; cursor: pointer; place-content: center; gap: 5px; }
+.e-burger span { display: block; width: 20px; height: 2.5px; border-radius: 2px; background: #ffffff; transition: transform .25s ease, opacity .25s ease; }
+.e-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.e-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.e-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+.e-mmenu { position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 49; overflow-y: auto; display: flex; flex-direction: column; gap: 22px; padding: 20px clamp(16px, 5vw, 40px) 40px; background: #161515; border-top: 3px solid #e44443; }
+.e-mgroup { display: flex; flex-direction: column; }
+.e-mgroup h3 { margin: 0 0 6px; font-size: 12px; color: #ff8a89; }
+.e-mlink { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid #2e2a2a; color: #ffffff; text-decoration: none; font-family: Raleway, Lato, sans-serif; font-size: 17px; font-weight: 900; letter-spacing: .02em; text-transform: uppercase; }
+.e-mlink:hover { color: #ff8a89; }
+h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
+@media (max-width: 1240px) { .e-navphone span { display: none; } .e-navlinks { gap: 20px !important; } }
+@media (max-width: 600px) { .e-navq { display: none !important; } }
+@media (min-width: 901px) { .e-mmenu { display: none !important; } }
+.e-footcur { display: inline-flex; align-items: center; min-height: 32px; color: #ffffff; font-size: 15px; font-weight: 700; box-shadow: inset 0 -2px 0 #e44443; }
+.e-toc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.e-tocc { display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 18px; border: 2.5px solid #161515; border-radius: 18px; color: #161515; text-decoration: none; font-size: 16px; font-weight: 900; line-height: 1.3; transition: background .2s ease, color .2s ease; }
+.e-tocc:hover { background: #161515; color: #ffffff; }
+.e-tocc svg { flex: none; margin-left: auto; }
+.e-cols2 { columns: 2 320px; column-gap: 56px; }
+.e-cols2 p { margin: 0 0 18px; break-inside: avoid; font-size: 17px; line-height: 1.75; color: #cfc9c9; }
+.e-card2 { display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4vw, 32px); border-radius: 22px; background: #ffffff; box-shadow: 0 18px 40px rgba(22, 21, 21, .1); }
+.e-nav a { color: #ffffff; text-decoration: none; }
+.e-navlink { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 3px solid transparent; }
+.e-navlink:hover { border-bottom-color: #e44443; }
+.e-dd { position: relative; }
+.e-ddm { position: absolute; left: -18px; top: 100%; display: none; min-width: 260px; padding: 10px 0; background: #161515; border-top: 3px solid #e44443; box-shadow: 0 24px 48px rgba(0, 0, 0, .35); }
+.e-dd:hover .e-ddm, .e-dd:focus-within .e-ddm { display: block; }
+.e-ddm a { display: block; padding: 11px 18px; font-size: 13px; letter-spacing: .08em; }
+.e-ddm a:hover { background: #221f1f; }
+.e-navphone { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #ffffff; text-decoration: none; font-family: Raleway, Lato, sans-serif; font-feature-settings: "lnum" 1; font-size: 15px; font-weight: 900; letter-spacing: .03em; }
+.e-navphone:hover { color: #ff8a89; }
+.e-foot { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)); gap: clamp(28px, 3vw, 48px); max-width: 1280px; margin: 0 auto; }
+.e-foot h3 { margin: 0 0 16px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #ff8a89; }
+.e-foot ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.e-foot li a { display: inline-flex; align-items: center; min-height: 32px; color: #cfc9c9; text-decoration: none; font-size: 15px; }
+.e-foot li a:hover { color: #ffffff; text-decoration: underline; text-decoration-color: #e44443; text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+  .e-navlinks { display: none !important; }
+  .e-split { grid-template-columns: minmax(0, 1fr) !important; }
+  .e-heroart { display: none !important; }
+  .e-sticky { position: static !important; }
+  .e-faqa { margin: 0 0 22px 0 !important; }
+  .e-burger { display: grid; }
+  .e-logo { height: clamp(28px, 8.6vw, 44px) !important; }
+  .e-sticky { position: static !important; }
+  .e-h1 { font-size: clamp(32px, 9.4vw, 60px) !important; }
+  .e-h2 { font-size: clamp(26px, 7.4vw, 44px) !important; }
+  .e-foot li a { min-height: 44px; }
+  .e-bg12 > .e-gc { grid-column: 1 / -1 !important; }
+  .e-toc { grid-template-columns: minmax(0, 1fr); }
+  .e-tl { grid-template-columns: minmax(0, 1fr) !important; }
+  .e-tl > div:first-child { border-right: 0 !important; text-align: left !important; }
+  .e-foot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .e-footlead { grid-column: 1 / -1; }
+  .e-navphone span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .e-rise { animation: none !important; }
+}
+</style>
+<style>
+/* Scroll scenes shared with the home page (stool, bowling balls, dartboard) */
+:root, [data-scene] {
+  --e4: 0; --e5: 0; --e6: 0;
+  --e4l0: clamp(0, (var(--e4) - .25) / .15, 1);
+  --e4l1: clamp(0, (var(--e4) - .4) / .15, 1);
+  --e4l2: clamp(0, (var(--e4) - .55) / .15, 1);
+  --e5c: calc(1 - clamp(0, (var(--e5) - .16) / .1, 1));
+  --e5g: clamp(0, (var(--e5) - .1) / .28, 1);
+  --e5d: calc(1 - clamp(0, (var(--e5) - .36) / .06, 1));
+  --e5b: clamp(0, (var(--e5) - .33) / .12, 1);
+  --e5q: clamp(0, (var(--e5) - .5) / .38, 1);
+  --e5k0: clamp(0, (var(--e5) - .51) / .025, 1);
+  --e5k1: clamp(0, (var(--e5) - .586) / .025, 1);
+  --e5k2: clamp(0, (var(--e5) - .662) / .025, 1);
+  --e5k3: clamp(0, (var(--e5) - .738) / .025, 1);
+  --e5k4: clamp(0, (var(--e5) - .814) / .025, 1);
+  --e5k5: clamp(0, (var(--e5) - .87) / .025, 1);
+  --e5e: clamp(0, (var(--e5) - .9) / .07, 1);
+  --e6d0: clamp(0, (var(--e6) - .1) / .12, 1);
+  --e6d1: clamp(0, (var(--e6) - .28) / .12, 1);
+  --e6d2: clamp(0, (var(--e6) - .46) / .12, 1);
+  --e6d3: clamp(0, (var(--e6) - .64) / .12, 1);
+  --e6e: clamp(0, (var(--e6) - .82) / .1, 1);
+  --e4s: clamp(0, (var(--e4) - .6) / .14, 1);
+}
+.e-dot { position: absolute; border-radius: 50%; opacity: calc(.85 * var(--e5d)); }
+.e-check { position: absolute; top: 2%; right: 2%; width: 28%; min-width: 18px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; }
+.e-row { display: grid; grid-template-columns: 96px minmax(0, 1fr) 72px 72px; gap: 14px; align-items: center; width: 100%; min-height: 56px; padding: 10px 14px; border: 2px solid transparent; border-radius: 0; font-size: 16px; text-align: left; cursor: pointer; }
+.e-bar { height: 6px; overflow: hidden; }
+@keyframes e-hint { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+@keyframes e-wobA { 0% { transform: rotate(0deg); } 30% { transform: rotate(-4deg); } 60% { transform: rotate(3deg); } 100% { transform: rotate(0deg); } }
+@keyframes e-wobB { 0% { transform: rotate(0deg); } 30% { transform: rotate(-4deg); } 60% { transform: rotate(3deg); } 100% { transform: rotate(0deg); } }
+.e-wobA { animation: e-wobA .7s ease-in-out 2; transform-origin: 240px 398px; }
+.e-wobB { animation: e-wobB .7s ease-in-out 2; transform-origin: 240px 398px; }
+.e-bP { display: none; }
+.e-bStage { container-type: inline-size; }
+@media (max-width: 900px) {
+  section[data-scene="e2"], section[data-scene="e6"], section[data-scene="e8"] { height: auto !important; }
+  section[data-scene="e2"] > div, section[data-scene="e6"] > div, section[data-scene="e8"] > div { position: relative !important; height: auto !important; min-height: 100vh; overflow: visible !important; }
+  #e-bowl > div { padding-bottom: 84px !important; }
+  .e-bLede { max-height: calc((1 - var(--e5b)) * 16em); opacity: calc(1 - var(--e5b) * 3); overflow: hidden; margin-bottom: calc(var(--e5b) * -14px); }
+  .e-bStage { container-type: size; }
+  .e-bD { display: none !important; }
+  .e-bP { display: block !important; }
+  #e-bowl .e-dot { left: var(--ml) !important; top: var(--mt) !important; transform: translate(-50%, -50%) translate(calc(var(--mdx) * (1 - var(--e5g))), calc(var(--mdy) * (1 - var(--e5g)))) !important; }
+}
+@media (max-width: 900px) {
+  .e-row { grid-template-columns: 72px minmax(0, 1fr) 48px 48px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .e-line > span, .e-hintdot, .e-wobA, .e-wobB, .e-flow, .e-glow, .e-barA, .e-barB, .e-orbit, .e-ping { animation: none !important; }
+}
+
+</style>
+<style>
+/* Accessibility and evaluation fixes */
+.e-skip { position: fixed; left: 12px; top: -80px; z-index: 100; padding: 12px 18px; background: #ffffff; color: #161515; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, .3); transition: top .15s ease; }
+.e-skip:focus { top: 12px; }
+.e-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.e-faqa[hidden] { display: none !important; }
+nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-footbar a { display: inline-flex; align-items: center; min-height: 24px; }
+.e-navphone { min-width: 44px; justify-content: center; }
+.e-cd::before { content: attr(data-t); }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc-tpl">
+<div style="position: relative; width: 100%; min-height: 100vh; overflow-x: clip; background: #ffffff; color: #161515">
+<a class="e-skip" href="#main">Skip to main content</a>
+<header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
+<a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
+<img class="e-logo" src="/assets/img/digital-impact-logo-544.webp" width="544" height="88" alt="Digital Impact" style="height: 44px; width: auto; display: block">
+</a>
+<nav class="e-navlinks" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase">
+<div class="e-dd"><a class="e-navlink" href="/services" style="border-bottom-color: #e44443">Services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="/services"><strong>All services</strong><span>SEO, web, PPC, creative and social</span></a><a href="/ppcmanagementlexingtonky"><strong>PPC management</strong><span>Google Ads and Bing Ads</span></a><a href="/seolexingtonky"><strong>SEO Lexington</strong><span>Local search in Lexington</span></a><a href="/seolouisvilleky"><strong>SEO Louisville</strong><span>Local search in Louisville</span></a><a href="/fundamentals-of-seo"><strong>Fundamentals of SEO</strong><span>How search rankings work</span></a><a href="/aidigitalmarketinglexingtonky"><strong>AI digital marketing</strong><span>AI-powered campaigns</span></a></div></div>
+<div class="e-dd"><a class="e-navlink" href="/aiservices">AI services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="/aiservices"><strong>AI services</strong><span>Overview of our AI work</span></a><a href="/aiconsulting"><strong>AI consulting</strong><span>Strategy and roadmaps</span></a><a href="/aitransitionservices"><strong>AI transition services</strong><span>Move to AI-enhanced operations</span></a><a href="/aiappdevelopment"><strong>AI app development</strong><span>Custom AI applications</span></a><a href="/aioaeogeo"><strong>AIO / AEO / GEO</strong><span>Visibility in AI answers</span></a></div></div>
+<a class="e-navlink" href="/about">About</a>
+<a class="e-navlink" href="/contact">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px">
+<a class="e-navphone" href="tel:8593968606" aria-label="Call 859.396.8606"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#e44443" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg><span>859.396.8606</span></a>
+<a class="e-btn e-navq" href="/get-a-quote" style="min-height: 44px; background: #d23a39; color: #ffffff">Get a quote</a>
+<button type="button" class="e-burger" onClick="{{menuToggle}}" aria-expanded="{{menuExp}}" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><div class="e-mmenu" role="dialog" aria-label="Site menu"><div class="e-mgroup"><h3 class="e-eb">Services</h3><a class="e-mlink" href="/services" onClick="{{menuClose}}">All services</a><a class="e-mlink" href="/ppcmanagementlexingtonky" onClick="{{menuClose}}">PPC management</a><a class="e-mlink" href="/seolexingtonky" onClick="{{menuClose}}">SEO Lexington</a><a class="e-mlink" href="/seolouisvilleky" onClick="{{menuClose}}">SEO Louisville</a><a class="e-mlink" href="/fundamentals-of-seo" onClick="{{menuClose}}">Fundamentals of SEO</a><a class="e-mlink" href="/aidigitalmarketinglexingtonky" onClick="{{menuClose}}">AI digital marketing</a></div><div class="e-mgroup"><h3 class="e-eb">AI services</h3><a class="e-mlink" href="/aiservices" onClick="{{menuClose}}">AI services</a><a class="e-mlink" href="/aiconsulting" onClick="{{menuClose}}">AI consulting</a><a class="e-mlink" href="/aitransitionservices" onClick="{{menuClose}}">AI transition services</a><a class="e-mlink" href="/aiappdevelopment" onClick="{{menuClose}}">AI app development</a><a class="e-mlink" href="/aioaeogeo" onClick="{{menuClose}}">AIO / AEO / GEO</a><a class="e-mlink" href="/aiolexingtonky" onClick="{{menuClose}}">AIO Lexington</a><a class="e-mlink" href="/aiolouisvilleky" onClick="{{menuClose}}">AIO Louisville</a></div><div class="e-mgroup"><h3 class="e-eb">Company</h3><a class="e-mlink" href="/" onClick="{{menuClose}}">Home</a><a class="e-mlink" href="/about" onClick="{{menuClose}}">About</a><a class="e-mlink" href="/contact" onClick="{{menuClose}}">Contact</a><a class="e-mlink" href="/ahistoryofwebdesign" onClick="{{menuClose}}">History of web design</a><a class="e-mlink" href="/privacy-policy" onClick="{{menuClose}}">Privacy policy</a></div><div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px"><a class="e-btn" href="/get-a-quote" onClick="{{menuClose}}" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="justify-content: center; color: #ffffff">Call 859.396.8606</a></div></div></sc-if>
+</header>
+<svg aria-hidden="true" focusable="false" style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<g id="e-wa"><path d="M-15.49 -97.78A99 99 0 0 1 15.49 -97.78L2.5 -15.8A16 16 0 0 0 -2.5 -15.8Z" fill="#161515"></path><path d="M-16.74 -105.68A107 107 0 0 1 16.74 -105.68L15.49 -97.78A99 99 0 0 0 -15.49 -97.78Z" fill="#e44443"></path><path d="M-25.34 -160.01A162 162 0 0 1 25.34 -160.01L16.74 -105.68A107 107 0 0 0 -16.74 -105.68Z" fill="#161515"></path><path d="M-26.59 -167.91A170 170 0 0 1 26.59 -167.91L25.34 -160.01A162 162 0 0 0 -25.34 -160.01Z" fill="#e44443"></path></g>
+<g id="e-wb"><path d="M-15.49 -97.78A99 99 0 0 1 15.49 -97.78L2.5 -15.8A16 16 0 0 0 -2.5 -15.8Z" fill="#f4efee"></path><path d="M-16.74 -105.68A107 107 0 0 1 16.74 -105.68L15.49 -97.78A99 99 0 0 0 -15.49 -97.78Z" fill="#7b0c13"></path><path d="M-25.34 -160.01A162 162 0 0 1 25.34 -160.01L16.74 -105.68A107 107 0 0 0 -16.74 -105.68Z" fill="#f4efee"></path><path d="M-26.59 -167.91A170 170 0 0 1 26.59 -167.91L25.34 -160.01A162 162 0 0 0 -25.34 -160.01Z" fill="#7b0c13"></path></g>
+<path id="e-hw" d="M-26.59 -167.91A170 170 0 0 1 26.59 -167.91L2.5 -15.8A16 16 0 0 0 -2.5 -15.8Z"></path>
+<g id="e-dart"><g transform="rotate(-24)" opacity=".26"><path d="M0 0 L21 -1.6 L27 -3.6 L55 -3.6 L71 -1.3 L85 -12.5 L102 -12.5 L96 0 L102 12.5 L85 12.5 L71 1.3 L55 3.6 L27 3.6 L21 1.6 Z" fill="#000000"></path></g><g transform="rotate(-35)"><path d="M0 0 L19 -1.25 L19 1.25 Z" fill="#bdb6b4"></path><path d="M0 0 L19 -1.25 L19 0 Z" fill="#ffffff"></path><rect x="19" y="-1.8" width="2.5" height="3.6" fill="#5f5959"></rect><path d="M21.5 -2.3 L27 -3.6 L50 -3.6 L55 -2.5 L55 2.5 L50 3.6 L27 3.6 L21.5 2.3 Z" fill="#161515"></path><path d="M27 -3.6 L50 -3.6 L51.5 -2.3 L25.5 -2.3 Z" fill="#5f5959"></path><g stroke="#3b3636" stroke-width=".9"><line x1="30.5" y1="-2" x2="30.5" y2="3.4"></line><line x1="33" y1="-2" x2="33" y2="3.4"></line><line x1="35.5" y1="-2" x2="35.5" y2="3.4"></line><line x1="38" y1="-2" x2="38" y2="3.4"></line><line x1="40.5" y1="-2" x2="40.5" y2="3.4"></line></g><rect x="44.5" y="-3.6" width="2" height="7.2" fill="#e44443"></rect><rect x="55" y="-1.3" width="22" height="2.6" fill="#2a2626"></rect><rect x="55" y="-1.3" width="22" height=".9" fill="#8d8686"></rect><path d="M71 -.8 L85 -12.5 L102 -12.5 L96 -.8 Z" fill="#e44443"></path><path d="M71 .8 L85 12.5 L102 12.5 L96 .8 Z" fill="#a42e2e"></path><path d="M85 -12.5 L102 -12.5 L101 -10.8 L86.8 -10.8 Z" fill="#ffffff" opacity=".4"></path><line x1="71" y1="0" x2="98" y2="0" stroke="#7b0c13" stroke-width="1.2"></line></g></g>
+</defs>
+</svg>
+<section id="main" style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #161515; color: #ffffff; overflow: hidden">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 80px); align-items: center; max-width: 1280px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<nav aria-label="Breadcrumb" class="e-eb" style="font-size: 12px; color: #cfc9c9"><a href="/" style="text-decoration: none">Home</a> <span aria-hidden="true">/</span> <a href="/services" style="text-decoration: none">Services</a> <span aria-hidden="true">/</span> Fundamentals of SEO</nav>
+<span class="e-eb e-rise" style="color: #ff8a89">SEO, the fundamentals</span>
+<h1 class="e-h1 e-rise" style="font-size: clamp(44px, 6.4vw, 104px); animation-delay: .08s">Fundamentals of SEO.</h1>
+<p class="e-lede e-rise" style="color: #cfc9c9; animation-delay: .16s">How search engines decide who shows up first, the three things every ranking stands on, and how we aim at the searches that bring in customers. A plain-English guide from a Lexington team that has been doing search since 1998.</p>
+<div class="e-rise" style="display: flex; flex-wrap: wrap; gap: 12px; animation-delay: .25s"><a class="e-btn" href="/get-a-quote" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="color: #ffffff">Call 859.396.8606</a></div>
+</div>
+<div class="e-heroart e-rise" style="display: grid; place-items: center; animation-delay: .2s"><img src="/assets/img/seolex-hero-920.webp" srcset="/assets/img/seolex-hero-480.webp 480w, /assets/img/seolex-hero-920.webp 920w" sizes="(max-width: 900px) calc(100vw - 40px), 460px" width="920" height="1142" fetchpriority="high" alt="A Kentucky horse farm fence at golden hour" style="height: auto; display: block; width: 100%; max-width: 460px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 26px; box-shadow: 0 34px 70px rgba(0, 0, 0, .35)"></div>
+</div>
+</section>
+<section id="how-search-works" style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #ffffff">
+<div style="display: flex; flex-direction: column; gap: clamp(28px, 4vh, 48px); max-width: 1280px; margin: 0 auto">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: end">
+<div style="display: flex; flex-direction: column; gap: 14px"><span class="e-eb" style="color: #a42e2e">How search engines work</span><h2 class="e-h2">Crawl. Index. Rank.</h2></div>
+<p class="e-lede" style="color: #3b3636">Every search engine does the same three jobs before anyone sees a result. SEO is the work of making each one easy for your website.</p>
+</div>
+<div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px"><div class="e-gc" style="grid-column: span 4; display: grid"><div class="e-card" style="background: #ffffff; color: #161515; box-shadow: 0 20px 44px rgba(22, 21, 21, .12)"><span class="e-x" style="font-size: 15px; color: #e44443">01</span><h3 class="e-x" style="margin: 0; font-size: clamp(22px, 2vw, 30px); line-height: .95">Crawl</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3b3636">Search engines send automated crawlers to discover pages by following links and reading sitemaps. If a crawler can't reach a page, that page can't rank.</p></div></div><div class="e-gc" style="grid-column: span 4; display: grid"><div class="e-card" style="background: #e44443; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .12)"><span class="e-x" style="font-size: 15px; color: #161515">02</span><h3 class="e-x" style="margin: 0; font-size: clamp(22px, 2vw, 30px); line-height: .95">Index</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #161515">Each page that gets crawled is analyzed and stored: what it's about, who it's for and how it relates to other pages. Pages that are slow, duplicated or thin may be left out.</p></div></div><div class="e-gc" style="grid-column: span 4; display: grid"><div class="e-card" style="background: #161515; color: #ffffff; box-shadow: 0 20px 44px rgba(22, 21, 21, .12)"><span class="e-x" style="font-size: 15px; color: #ff8a89">03</span><h3 class="e-x" style="margin: 0; font-size: clamp(22px, 2vw, 30px); line-height: .95">Rank</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #cfc9c9">When someone searches, the engine pulls the most relevant, trustworthy pages from its index and puts them in order. Google weighs hundreds of signals, and some weigh far more than others.</p></div></div></div>
+</div>
+</section>
+<section id="e-seo" data-scene="e4" data-mode="reveal" data-hud="SEO" style="position: relative; padding: clamp(96px, 14vh, 160px) clamp(20px, 5vw, 80px); background: #e44443; color: #161515">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; max-width: 1280px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<span class="e-eb" style="color: #161515">SEO, the foundation</span>
+<h2 class="e-h2" style="color: #ffffff">SEO stands on three legs.</h2>
+<p class="e-lede" style="color: #161515; font-weight: 700">SEO improves your visibility on search results pages and grows organic, non-paid traffic. It stands on three legs: technical optimization, content creation and link building. Remove one and the whole thing wobbles. Go ahead, pull a leg out.</p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<button type="button" onClick="{{leg0}}" aria-pressed="{{legP0}}" style="display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 12px 16px; background: {{legBg0}}; border: 2.5px solid {{legBd0}}; border-radius: 0; color: {{legFg0}}; text-align: left; cursor: pointer">
+<span style="flex: none; width: 16px; height: 16px; border: 2.5px solid #ffffff; background: {{legDot0}}"></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong class="e-x" style="font-size: 18px">Technical</strong><span style="font-size: 14px; color: {{legSub0}}">Site speed, structure, meta data and crawlability</span></span>
+</button>
+<button type="button" onClick="{{leg1}}" aria-pressed="{{legP1}}" style="display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 12px 16px; background: {{legBg1}}; border: 2.5px solid {{legBd1}}; border-radius: 0; color: {{legFg1}}; text-align: left; cursor: pointer">
+<span style="flex: none; width: 16px; height: 16px; border: 2.5px solid #ffffff; background: {{legDot1}}"></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong class="e-x" style="font-size: 18px">Content creation</strong><span style="font-size: 14px; color: {{legSub1}}">Pages written around researched keywords</span></span>
+</button>
+<button type="button" onClick="{{leg2}}" aria-pressed="{{legP2}}" style="display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 12px 16px; background: {{legBg2}}; border: 2.5px solid {{legBd2}}; border-radius: 0; color: {{legFg2}}; text-align: left; cursor: pointer">
+<span style="flex: none; width: 16px; height: 16px; border: 2.5px solid #ffffff; background: {{legDot2}}"></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong class="e-x" style="font-size: 18px">Link building</strong><span style="font-size: 14px; color: {{legSub2}}">Authority earned from trusted websites</span></span>
+</button>
+</div>
+<p role="status" class="e-x" style="margin: 0; font-size: 19px; color: {{stoolColor}}">{{stoolMsg}}</p>
+</div>
+<svg viewBox="0 0 480 452" style="width: 100%; max-width: 560px; justify-self: center; overflow: visible" aria-label="A three-legged stool with a target on the seat. The legs are technical, content creation and link building." role="img">
+<ellipse cx="240" cy="404" rx="196" ry="20" fill="rgba(22, 21, 21, .22)"></ellipse>
+<g style="transform: {{tilt}}; transform-origin: {{tiltOrigin}}; transition: transform .6s cubic-bezier(.3, 1.4, .5, 1), transform-origin 0s">
+<g class="{{wob}}">
+<g fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="6 6">
+<path d="M232 150 L248 150 L245.06 356 Q245 360 241 360 L239 360 Q235 360 234.94 356 Z" opacity="{{legGhost1}}"></path>
+<path d="M150.35 155.39 L169.65 160.61 L102.17 394.77 Q100.79 399.57 96.93 398.52 L93.07 397.48 Q89.21 396.43 90.44 391.58 Z" opacity="{{legGhost0}}"></path>
+<path d="M310.35 160.61 L329.65 155.39 L389.56 391.58 Q390.79 396.43 386.93 397.48 L383.07 398.52 Q379.21 399.57 377.83 394.77 Z" opacity="{{legGhost2}}"></path>
+</g>
+<path d="M122 300 A118 30 0 0 1 358 300" fill="none" stroke="#161515" stroke-width="8" style="opacity: var(--e4s)"></path>
+<g style="opacity: calc(var(--e4l1) * {{legO1}}); transform: translateY(calc((1 - var(--e4l1)) * -30px + {{legY1}}px)); transition: opacity .35s ease, transform .35s ease">
+<path d="M232 150 L248 150 L245.06 356 Q245 360 241 360 L239 360 Q235 360 234.94 356 Z" fill="#161515"></path>
+<path d="M232 150 L240 150 L240 360 L239 360 Q235 360 234.94 356 Z" fill="#2e2a2a"></path>
+</g>
+<path d="M122 300 A118 30 0 0 0 358 300" fill="none" stroke="#161515" stroke-width="8" style="opacity: var(--e4s)"></path>
+<path d="M126 309 A116 27 0 0 0 354 309" fill="none" stroke="#3b3636" stroke-width="2" style="opacity: var(--e4s)"></path>
+<g style="opacity: calc(var(--e4l0) * {{legO0}}); transform: translateY(calc((1 - var(--e4l0)) * -30px + {{legY0}}px)); transition: opacity .35s ease, transform .35s ease">
+<path d="M150.35 155.39 L169.65 160.61 L102.17 394.77 Q100.79 399.57 96.93 398.52 L93.07 397.48 Q89.21 396.43 90.44 391.58 Z" fill="#161515"></path>
+<path d="M150.35 155.39 L160 158 L95 398 L93.07 397.48 Q89.21 396.43 90.44 391.58 Z" fill="#3b3636"></path>
+</g>
+<g style="opacity: calc(var(--e4l2) * {{legO2}}); transform: translateY(calc((1 - var(--e4l2)) * -30px + {{legY2}}px)); transition: opacity .35s ease, transform .35s ease">
+<path d="M310.35 160.61 L329.65 155.39 L389.56 391.58 Q390.79 396.43 386.93 397.48 L383.07 398.52 Q379.21 399.57 377.83 394.77 Z" fill="#161515"></path>
+<path d="M310.35 160.61 L320 158 L385 398 L383.07 398.52 Q379.21 399.57 377.83 394.77 Z" fill="#3b3636"></path>
+</g>
+<g style="transform: translateY(calc((1 - var(--e4s)) * -70px)); opacity: var(--e4s)">
+<path d="M90 120 L90 146 A150 42 0 0 0 390 146 L390 120 A150 42 0 0 1 90 120 Z" fill="#161515"></path>
+<path d="M300 184.5 A150 42 0 0 0 390 146 L390 120 A150 42 0 0 1 300 158.5 Z" fill="#2e2a2a"></path>
+<text x="240" y="181" text-anchor="middle" font-size="16" font-weight="900" font-family="Raleway, Lato, sans-serif" letter-spacing="6" fill="#ffffff">SEO</text>
+<ellipse cx="240" cy="120" rx="150" ry="42" fill="#ffffff"></ellipse>
+<ellipse cx="240" cy="120" rx="120" ry="33.6" fill="#e44443"></ellipse>
+<ellipse cx="240" cy="120" rx="90" ry="25.2" fill="#ffffff"></ellipse>
+<ellipse cx="240" cy="120" rx="60" ry="16.8" fill="#e44443"></ellipse>
+<ellipse cx="240" cy="120" rx="30" ry="8.4" fill="#161515"></ellipse>
+</g>
+</g>
+</g>
+<g font-family="Raleway, Lato, sans-serif" font-size="14" font-weight="900" letter-spacing="1.5" text-anchor="middle" fill="#161515">
+<text x="95" y="442" style="opacity: calc(var(--e4l0) * {{legLbl0}})"><tspan fill="#ffffff">01 </tspan>TECHNICAL</text>
+<text x="240" y="442" style="opacity: calc(var(--e4l1) * {{legLbl1}})"><tspan fill="#ffffff">02 </tspan>CONTENT</text>
+<text x="385" y="442" style="opacity: calc(var(--e4l2) * {{legLbl2}})"><tspan fill="#ffffff">03 </tspan>LINKS</text>
+</g>
+</svg>
+</div>
+</section>
+<section id="three-legs" style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #f6f3f2">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #a42e2e">The three legs, up close</span>
+<h2 class="e-h2">What each leg actually involves.</h2>
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45">Strong on all three, steady in the rankings.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><h3 class="e-x" style="margin: 0; font-size: clamp(20px, 1.8vw, 26px)">01 Technical optimization</h3><p class="e-p">Technical SEO makes sure search engines can find, read and trust every page. It's the leg most people never see, and the one that quietly holds the others up.</p><div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; margin-top: 6px"><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Fast load times on phones and desktops</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">A clean site structure with clear internal links</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Crawlable pages, an XML sitemap and a robots.txt file</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Secure (HTTPS), mobile-friendly pages</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Structured data that labels your business, services and FAQs</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Fixing broken links, redirect chains and duplicate pages</div></div></div><h3 class="e-x" style="margin: 16px 0 0; font-size: clamp(20px, 1.8vw, 26px)">02 Content creation</h3><p class="e-p">Content is how a search engine learns what you do and who you do it for. Each page should answer one search clearly and completely, in the words your customers actually use.</p><div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; margin-top: 6px"><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Keyword research before a single word is written</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">One focused page for each service and each location</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Titles, headings and descriptions that match the search</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Answers to the questions customers ask before they call</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Updates as your services, prices and markets change</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Writing for people first, search engines second</div></div></div><h3 class="e-x" style="margin: 16px 0 0; font-size: clamp(20px, 1.8vw, 26px)">03 Link building</h3><p class="e-p">Links from other trusted websites act as votes of confidence. A few links from relevant, respected sites are worth far more than a pile of links from anywhere.</p><div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; margin-top: 6px"><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Local directories, chambers of commerce and associations</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Industry publications, suppliers and partners</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Earned mentions from news, sponsorships and events</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">No paid link schemes that can trigger penalties</div></div></div></div>
+</div>
+</section>
+<section id="e-bowl" data-scene="e5" data-hud="Bowling balls first" style="position: relative; height: 340vh; background: #161515">
+<div style="position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; padding-top: clamp(88px, 12vh, 120px); box-sizing: border-box; background: #161515; color: #ffffff">
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 0 clamp(20px, 5vw, 80px); position: relative; z-index: 2">
+<span class="e-eb" style="color: #ff8a89">SEO, the priority list</span>
+<h2 class="e-h2" style="max-width: 20ch; color: #ffffff">Bowling balls before ping pong balls.</h2>
+<p class="e-lede e-bLede" style="color: #cfc9c9; font-weight: 700">Google's algorithm weighs hundreds of variables, and some weigh far more than others. We optimize the heaviest first for the biggest immediate impact, then work our way down.</p>
+</div>
+<div class="e-bStage" style="position: relative; flex: 1 1 auto; min-height: 280px">
+<sc-if value="{{mob}}">
+<div class="e-bP" style="position: absolute; top: 0; bottom: 0; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px)">
+<div style="position: absolute; left: 0; right: 0; top: 0; height: 12%; display: flex; flex-direction: column; justify-content: center; gap: 6px; opacity: var(--e5b)">
+<span class="e-eb" style="font-size: 12px; color: #a39c9c">Optimized in order of weight</span>
+<span class="e-eb" style="font-size: 12px; color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span>
+</div>
+<div style="position: absolute; left: 0; top: 20.25%; height: 72.5%; width: 3px; background: #2e2a2a; opacity: var(--e5b)"><div style="height: 100%; background: #e44443; transform: scaleY(var(--e5q)); transform-origin: top center"></div></div>
+<div style="position: absolute; left: 64px; top: 20.25%; width: min(13cqh, 110px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 calc(4px * var(--e5k0)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k0))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 34.75%; width: min(10.4cqh, 88px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e86563; box-shadow: 0 0 0 calc(3px * var(--e5k1)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k1))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 49.25%; width: min(8.2cqh, 70px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ee8886; box-shadow: 0 0 0 calc(3px * var(--e5k2)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k2))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 63.75%; width: min(6.4cqh, 54px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f3adac; box-shadow: 0 0 0 calc(3px * var(--e5k3)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k3))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 78.25%; width: min(4.8cqh, 40px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f8d2d1; box-shadow: 0 0 0 calc(3px * var(--e5k4)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k4))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div style="position: absolute; left: 64px; top: 92.75%; width: min(3.4cqh, 28px); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 calc(3px * var(--e5k5)) #ffffff"></div>
+
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 20.25%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 17px; color: #a39c9c">01</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Bowling ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Heavy. Biggest impact.</span>
+<span style="display: block; width: 100%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k0)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 34.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">02</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 78%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e86563; transform: scaleX(var(--e5k1)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 49.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">03</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 58%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #ee8886; transform: scaleX(var(--e5k2)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 63.75%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">04</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 42%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f3adac; transform: scaleX(var(--e5k3)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 78.25%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 1; color: #a39c9c">05</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="display: block; width: 28%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #f8d2d1; transform: scaleX(var(--e5k4)); transform-origin: left center"></span></span></span>
+</div>
+<div style="position: absolute; left: 124px; right: 0; top: 92.75%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 12px; opacity: var(--e5b)">
+<span class="e-eb" style="flex: none; width: 22px; font-size: 12px; line-height: 17px; color: #a39c9c">06</span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px"><strong class="e-x" style="font-size: 17px; line-height: 1">Ping pong ball</strong><span style="font-size: 13px; font-weight: 700; line-height: 1.2; color: #a39c9c">Light. Fine tuning.</span>
+<span style="display: block; width: 16%; height: 6px; background: #2e2a2a"><span style="display: block; height: 100%; background: #e44443; transform: scaleX(var(--e5k5)); transform-origin: left center"></span></span></span>
+</div>
+<svg viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 64px; top: 20.25%; width: min(17cqh, 140px); transform: translate(-50%, -50%) translateY(calc(var(--e5q) * 72.5cqh)); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
+</svg>
+</div>
+</sc-if>
+<p class="e-x" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 10%; margin: 0; text-align: center; font-size: clamp(18px, 2vw, 28px); color: #a39c9c; opacity: var(--e5c)">Hundreds of ranking variables</p>
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
+<span class="e-dot" style="--ml: {{d.ml}}; --mt: {{d.mt}}; --mdx: {{d.mdx}}; --mdy: {{d.mdy}}; left: {{d.l}}; top: {{d.t}}; width: {{d.s}}px; height: {{d.s}}px; background: #8d8686; transform: translate(-50%, -50%) translate(calc({{d.dx}} * (1 - var(--e5g))), calc({{d.dy}} * (1 - var(--e5g))))"></span>
+</sc-for>
+<sc-if value="{{desk}}">
+<div class="e-bD" style="position: absolute; left: 9%; top: 46%; width: min(168px, 11.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e44443; box-shadow: 0 0 0 calc(4px * var(--e5k0)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k0))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 23.4%; top: 46%; width: min(128px, 8.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #e86563; box-shadow: 0 0 0 calc(3px * var(--e5k1)) #ffffff"></div>
+<span style="position: absolute; left: 30%; top: 26%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 48%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span style="position: absolute; left: 42%; top: 42%; width: 14%; aspect-ratio: 1; border-radius: 50%; background: #7b0c13"></span><span class="e-check" style="background: #ffffff; transform: scale(var(--e5k1))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 37.8%; top: 46%; width: min(98px, 6.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ee8886; box-shadow: 0 0 0 calc(3px * var(--e5k2)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k2))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 52.2%; top: 46%; width: min(74px, 5.2vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f3adac; box-shadow: 0 0 0 calc(3px * var(--e5k3)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k3))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 66.6%; top: 46%; width: min(54px, 3.8vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #f8d2d1; box-shadow: 0 0 0 calc(3px * var(--e5k4)) #ffffff"></div>
+<span class="e-check" style="background: #ffffff; transform: scale(var(--e5k4))"><svg viewBox="0 0 20 20" width="60%" height="60%" fill="none" stroke="#e44443" stroke-width="3"><path d="M4 10 L8 14 L16 6"></path></svg></span>
+</div>
+<div class="e-bD" style="position: absolute; left: 81%; top: 46%; width: min(36px, 2.6vw); aspect-ratio: 1; transform: translate(-50%, -50%) scale(calc(.25 + .75 * var(--e5b))); opacity: var(--e5b)">
+<div style="position: absolute; inset: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 0 0 calc(3px * var(--e5k5)) #ffffff"></div>
+
+</div>
+
+<svg class="e-bD" viewBox="-60 -60 120 120" aria-hidden="true" style="position: absolute; left: 9%; top: 46%; width: min(220px, 15vw); transform: translate(-50%, -50%) translateX(calc(var(--e5q) * 72cqw)); overflow: visible; opacity: min(var(--e5b), calc(1 - var(--e5e)))">
+<g fill="none" stroke="#e44443" stroke-width="2.2"><circle r="50"></circle><line x1="-60" y1="0" x2="-14" y2="0"></line><line x1="14" y1="0" x2="60" y2="0"></line><line x1="0" y1="-60" x2="0" y2="-14"></line><line x1="0" y1="14" x2="0" y2="60"></line></g>
+</svg>
+<div class="e-bD" style="position: absolute; left: 9%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
+<strong class="e-x" style="font-size: 16px">Bowling ball</strong><span style="font-size: 14px; font-weight: 700; color: #a39c9c">Heavy. Biggest impact.</span>
+</div>
+<div class="e-bD" style="position: absolute; left: 81%; top: calc(46% + min(104px, 7.4vw)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; opacity: var(--e5b)">
+<strong class="e-x" style="font-size: 16px">Ping pong ball</strong><span style="font-size: 14px; font-weight: 700; color: #a39c9c">Light. Fine tuning.</span>
+</div>
+<div class="e-bD" style="position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6vh, 64px); display: flex; flex-direction: column; gap: 10px; opacity: var(--e5b)">
+<div class="e-eb" style="display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #a39c9c"><span>Optimized in order of weight</span><span style="color: #ffffff; opacity: var(--e5e)">Then we do it all again.</span></div>
+<div style="height: 8px; background: #2e2a2a; overflow: hidden"><div style="height: 100%; width: 100%; transform: scaleX(var(--e5q)); transform-origin: left center; background: #e44443"></div></div>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+<section id="keyword-targets" data-scene="e6" data-hud="Keyword targets" style="position: relative; height: 280vh; background: #ffffff">
+<div style="position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; padding: 80px clamp(20px, 5vw, 80px) 32px; box-sizing: border-box; background: #ffffff; color: #161515">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: center; width: 100%; max-width: 1320px; margin: 0 auto">
+<svg viewBox="-240 -240 480 480" style="width: min(70vh, 100%, 600px); justify-self: center; overflow: visible" role="img" aria-label="Dartboard with darts in the bullseye, 20, 18 and 17">
+<circle r="234" fill="#161515" stroke="#161515" stroke-width="2"></circle>
+<g stroke="#8d8686" stroke-width=".6">
+<use href="#e-wa"></use><use href="#e-wb" transform="rotate(18)"></use><use href="#e-wa" transform="rotate(36)"></use><use href="#e-wb" transform="rotate(54)"></use><use href="#e-wa" transform="rotate(72)"></use><use href="#e-wb" transform="rotate(90)"></use><use href="#e-wa" transform="rotate(108)"></use><use href="#e-wb" transform="rotate(126)"></use><use href="#e-wa" transform="rotate(144)"></use><use href="#e-wb" transform="rotate(162)"></use><use href="#e-wa" transform="rotate(180)"></use><use href="#e-wb" transform="rotate(198)"></use><use href="#e-wa" transform="rotate(216)"></use><use href="#e-wb" transform="rotate(234)"></use><use href="#e-wa" transform="rotate(252)"></use><use href="#e-wb" transform="rotate(270)"></use><use href="#e-wa" transform="rotate(288)"></use><use href="#e-wb" transform="rotate(306)"></use><use href="#e-wa" transform="rotate(324)"></use><use href="#e-wb" transform="rotate(342)"></use>
+</g>
+<circle r="16" fill="#7b0c13" stroke="#8d8686" stroke-width=".6"></circle>
+<circle r="6.4" fill="#e44443"></circle>
+<g fill="#ffffff" font-size="20" font-weight="900" font-family="Raleway, Lato, sans-serif" text-anchor="middle" dominant-baseline="central" style="font-feature-settings: 'lnum' 1">
+<text x="0" y="-201">20</text><text x="62.1" y="-191.2">1</text><text x="118.1" y="-162.6">18</text><text x="162.6" y="-118.1">4</text><text x="191.2" y="-62.1">13</text><text x="201" y="0">6</text><text x="191.2" y="62.1">10</text><text x="162.6" y="118.1">15</text><text x="118.1" y="162.6">2</text><text x="62.1" y="191.2">17</text><text x="0" y="201">3</text><text x="-62.1" y="191.2">19</text><text x="-118.1" y="162.6">7</text><text x="-162.6" y="118.1">16</text><text x="-191.2" y="62.1">8</text><text x="-201" y="0">11</text><text x="-191.2" y="-62.1">14</text><text x="-162.6" y="-118.1">9</text><text x="-118.1" y="-162.6">12</text><text x="-62.1" y="-191.2">5</text>
+</g>
+<use href="#e-hw" fill="rgba(228, 68, 67, .32)" stroke="#e44443" stroke-width="4" opacity="{{h1}}"></use>
+<use href="#e-hw" transform="rotate(36)" fill="rgba(228, 68, 67, .32)" stroke="#e44443" stroke-width="4" opacity="{{h2}}"></use>
+<use href="#e-hw" transform="rotate(162)" fill="rgba(228, 68, 67, .32)" stroke="#e44443" stroke-width="4" opacity="{{h3}}"></use>
+<circle r="24" fill="none" stroke="#ffffff" stroke-width="4" opacity="{{h0}}"></circle>
+<g style="transform: translate(calc(3px + (1 - var(--e6d0)) * 426px), calc(-2px - (1 - var(--e6d0)) * 298px)); opacity: min(1, calc(var(--e6d0) * 8))"><use href="#e-dart"></use></g>
+<g style="transform: translate(calc(0px + (1 - var(--e6d1)) * 426px), calc(-103px - (1 - var(--e6d1)) * 298px)); opacity: min(1, calc(var(--e6d1) * 8))"><use href="#e-dart"></use></g>
+<g style="transform: translate(calc(60.5px + (1 - var(--e6d2)) * 426px), calc(-83.3px - (1 - var(--e6d2)) * 298px)); opacity: min(1, calc(var(--e6d2) * 8))"><use href="#e-dart"></use></g>
+<g style="transform: translate(calc(31.8px + (1 - var(--e6d3)) * 426px), calc(98px - (1 - var(--e6d3)) * 298px)); opacity: min(1, calc(var(--e6d3) * 8))"><use href="#e-dart"></use></g>
+</svg>
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span class="e-eb" style="color: #a42e2e">SEO, the dartboard technique</span>
+<h2 class="e-h2" style="color: #161515">Aim at the whole board.</h2>
+<p class="e-lede" style="color: #3b3636">The bullseye is your highest-traffic, most competitive phrase. Around it sit the 20, 18 and 17: related phrases with less competition that are easier to win. We target them all and build a page around each one.</p>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div class="e-row e-eb" aria-hidden="true" style="min-height: 26px; padding-top: 0; padding-bottom: 0; font-size: 11px; color: #5f5959; cursor: default"><span>Target</span><span>Keyword phrase</span><span>Traffic</span><span>Competition</span></div>
+<button type="button" class="e-row" onClick="{{kw0}}" aria-pressed="{{kp0}}" style="background: {{kb0}}; border-color: {{kd0}}; color: #161515; opacity: calc(.3 + .7 * var(--e6d0))">
+<span class="e-x" style="justify-self: start; padding: 5px 10px; background: #d23a39; color: #ffffff; font-size: 12px; letter-spacing: .04em">Bullseye</span>
+<span style="font-weight: 700">roofer Lexington KY</span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 95%; background: #e44443"></span></span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 92%; background: #5f5959"></span></span>
+</button>
+<button type="button" class="e-row" onClick="{{kw1}}" aria-pressed="{{kp1}}" style="background: {{kb1}}; border-color: {{kd1}}; color: #161515; opacity: calc(.3 + .7 * var(--e6d1))">
+<span class="e-x" style="font-size: 24px">20</span>
+<span style="font-weight: 700">roof replacement Lexington</span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 70%; background: #e44443"></span></span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 58%; background: #5f5959"></span></span>
+</button>
+<button type="button" class="e-row" onClick="{{kw2}}" aria-pressed="{{kp2}}" style="background: {{kb2}}; border-color: {{kd2}}; color: #161515; opacity: calc(.3 + .7 * var(--e6d2))">
+<span class="e-x" style="font-size: 24px">18</span>
+<span style="font-weight: 700">metal roofing contractor</span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 56%; background: #e44443"></span></span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 38%; background: #5f5959"></span></span>
+</button>
+<button type="button" class="e-row" onClick="{{kw3}}" aria-pressed="{{kp3}}" style="background: {{kb3}}; border-color: {{kd3}}; color: #161515; opacity: calc(.3 + .7 * var(--e6d3))">
+<span class="e-x" style="font-size: 24px">17</span>
+<span style="font-weight: 700">storm damage roof repair</span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 48%; background: #e44443"></span></span>
+<span class="e-bar" style="background: #efeae9"><span style="display: block; height: 100%; width: 26%; background: #5f5959"></span></span>
+</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #5f5959">
+<span>Example keyword map for a Lexington roofing company. Select a row to find it on the board.</span>
+<strong class="e-x" style="color: #161515; opacity: var(--e6e)">Less competition. Easier wins. All on target.</strong>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="local-seo" style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #ffffff">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #a42e2e">Local SEO</span>
+<h2 class="e-h2">Winning the map.</h2>
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45">Relevance, distance and prominence.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><p class="e-p">For a business that serves Lexington, Louisville or anywhere in Kentucky, the map results often matter more than the blue links below them. Google ranks local results on three things: how well a business matches the search, how close it is to the searcher, and how well known and well reviewed it is.</p><div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; margin-top: 6px"><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">A complete, accurate Google Business Profile: categories, hours, services and photos</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">The same business name, address and phone number everywhere you are listed</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">A steady flow of reviews, with thoughtful responses to each one</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Location pages with real local content, not copies with the city name swapped</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Links and mentions from local organizations and news</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Posts and updates that keep your profile active</div></div></div></div>
+</div>
+</section>
+<section id="seo-and-ai" style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #161515; color: #ffffff">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #ff8a89">SEO and AI answers</span>
+<h2 class="e-h2">SEO in the age of AI answers.</h2>
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45">Same foundation, new places to show up.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><p class="e-p" style="color: #cfc9c9">ChatGPT, Google AI Overviews, Perplexity and Claude increasingly answer questions directly instead of listing links. They still lean on the same foundations: pages they can crawl, content that answers a question clearly, and signals that a business is trustworthy.</p><p class="e-p" style="color: #cfc9c9">That makes strong SEO the base that answer engine optimization builds on. Get the fundamentals right and you're in a position to be the answer, not just a result.</p><div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px"><a class="e-pill" href="/aioaeogeo">AIO / AEO / GEO explained</a><a class="e-pill" href="/aiolexingtonky">AI search optimization Lexington</a></div></div>
+</div>
+</section>
+<section id="timing" style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #f6f3f2">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px">
+<span class="e-eb" style="color: #a42e2e">Results</span>
+<h2 class="e-h2">How long it takes, and how we measure it.</h2>
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45">SEO compounds.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px"><p class="e-p">Technical fixes can show up within weeks, once search engines recrawl your pages. New content and links usually take several months to build momentum, and the most competitive phrases take longer still. Rankings earned this way keep working without a cost per click.</p><p class="e-p">No one can guarantee a number one ranking, because no one but Google controls Google. What we do instead is set clear targets, do the work in order of impact, and report what's moving.</p><div class="e-bg12" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; margin-top: 6px"><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Rankings for the keyword phrases we target</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Organic traffic, and the pages it lands on</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Calls, form fills and quote requests from search</div></div><div class="e-gc" style="grid-column: span 6; display: grid"><div class="e-li">Google Business Profile views, calls and direction requests</div></div></div></div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px); background: #ffffff">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(32px, 5vw, 80px); max-width: 1280px; margin: 0 auto; align-items: start">
+<div class="e-sticky" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 18px">
+<span class="e-eb" style="color: #a42e2e">FAQ</span>
+<h2 class="e-h2">SEO questions, answered.</h2>
+<button type="button" onClick="{{faqAll}}" class="e-eb" style="align-self: flex-start; min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 2.5px solid #e44443; color: #161515; cursor: pointer">{{faqAllLabel}}</button>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3b3636">Still have a question? Call <a href="tel:8593968606" style="color: #a42e2e; font-weight: 900">859.396.8606</a>.</p>
+</div>
+<div style="border-bottom: 2.5px solid #161515">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="4">
+<div style="border-top: 2.5px solid #161515">
+<button type="button" class="e-faqq" onClick="{{f.toggle}}" aria-expanded="{{f.exp}}" aria-controls="faq-a-{{f.num}}">
+<span class="e-x" style="flex: none; min-width: 36px; font-size: 15px; color: #e44443">{{f.num}}</span>
+<span style="flex: 1; font-size: clamp(17px, 1.4vw, 20px); font-weight: 900; line-height: 1.35">{{f.q}}</span>
+<span class="e-faqi" aria-hidden="true" style="background: {{f.ibg}}; color: {{f.ifg}}">{{f.icon}}</span>
+</button>
+<p class="e-faqa" id="faq-a-{{f.num}}" hidden="{{f.hid}}" style="margin: 0 56px 26px 52px; padding-left: 18px; border-left: 4px solid #e44443; font-size: 17px; line-height: 1.7; color: #3b3636; max-width: 70ch">{{f.a}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+<section style="padding: clamp(80px, 12vh, 130px) clamp(20px, 5vw, 80px) 0; background: #e44443; color: #161515">
+<div class="e-split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 64px); align-items: end; max-width: 1280px; margin: 0 auto">
+<p class="e-h1" style="font-size: clamp(40px, 6vw, 96px); color: #ffffff">The top of Google.<br>The top of the answer.</p>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p class="e-x" style="margin: 0; font-size: clamp(22px, 2.2vw, 32px)">Let's get you there.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a class="e-btn" href="/get-a-quote" style="background: #161515; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="color: #161515">859.396.8606</a></div>
+</div>
+</div>
+<footer style="margin: clamp(72px, 11vh, 120px) calc(-1 * clamp(20px, 5vw, 80px)) 0; position: relative; z-index: 45; padding: clamp(56px, 8vh, 88px) clamp(20px, 5vw, 80px) 28px; background: #161515; color: #cfc9c9">
+<div class="e-foot">
+<div class="e-footlead" style="display: flex; flex-direction: column; gap: 16px">
+<img src="/assets/img/digital-impact-logo-544.webp" width="544" height="88" alt="Digital Impact" style="height: 26px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: 17px; color: #ffffff">Because experience matters.</p>
+<a href="tel:8593968606" class="e-x" style="font-size: 26px; color: #ffffff; text-decoration: none">859.396.8606</a>
+<span style="font-size: 15px">Lexington, Kentucky. Serving Louisville and all of Kentucky.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; color: #ffffff"><a class="e-pill" href="https://www.facebook.com/profile.php?id=100093278650724">Facebook</a><a class="e-pill" href="https://www.linkedin.com/company/digital-impact-marketers/">LinkedIn</a></div>
+</div>
+<div><h3>Services</h3><ul><li><a href="/services">All services</a></li><li><a href="/ppcmanagementlexingtonky">PPC management</a></li><li><a href="/seolexingtonky">SEO Lexington</a></li><li><a href="/seolouisvilleky">SEO Louisville</a></li><li><span class="e-footcur" aria-current="page">Fundamentals of SEO</span></li><li><a href="/aidigitalmarketinglexingtonky">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><a href="/aiservices">AI services</a></li><li><a href="/aiconsulting">AI consulting</a></li><li><a href="/aitransitionservices">AI transition services</a></li><li><a href="/aiappdevelopment">AI app development</a></li><li><a href="/aioaeogeo">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="/aiolexingtonky">AIO Lexington</a></li><li><a href="/aiolouisvilleky">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/get-a-quote">Get a quote</a></li><li><a href="/ahistoryofwebdesign">History of web design</a></li><li><a href="/privacy-policy">Privacy policy</a></li></ul></div>
+</div>
+<div class="e-footbar" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<span>© Digital Impact. All rights reserved.</span>
+<a href="/get-a-quote" style="color: #a39c9c">Get a quote</a>
+</div>
+</footer>
+</section>
+</div>
+</template>
+<script type="text/x-dc" id="dc-logic">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.FAQ = [
+      [
+            "What is SEO?",
+            "SEO, or search engine optimization, is the work of improving a website so it appears higher in unpaid search results on Google, Bing and other search engines. It stands on three legs: technical optimization, content creation and link building."
+      ],
+      [
+            "How long does SEO take to work?",
+            "Technical fixes can show results within weeks, once search engines recrawl your pages. New content and links usually take several months to build momentum, and highly competitive keyword phrases take longer. SEO compounds: the work keeps paying off after it's done."
+      ],
+      [
+            "What is the difference between SEO and PPC?",
+            "Pay-per-click (PPC) ads appear at the top of search results right away, and you pay each time someone clicks. SEO earns unpaid rankings that take longer to build but keep bringing in traffic without a cost per click. Many businesses run PPC for immediate leads while their SEO grows."
+      ],
+      [
+            "What is local SEO?",
+            "Local SEO helps a business show up for searches in its area, including the map results. It depends on a complete Google Business Profile, a consistent name, address and phone number across the web, reviews, and pages with real local content."
+      ],
+      [
+            "What is a keyword phrase?",
+            "A keyword phrase is the set of words someone types or speaks into a search engine, like \"roof replacement Lexington.\" We research which phrases your customers use, how often they're searched and how hard they are to win, then build a page around each one."
+      ],
+      [
+            "Do I need a blog for SEO?",
+            "Not necessarily. What you need is a clear page for each thing your customers search for: your services, your locations and their most common questions. Articles help when they answer real questions; publishing for its own sake doesn't."
+      ],
+      [
+            "Can anyone guarantee a number one ranking on Google?",
+            "No. Google controls its rankings and changes them constantly, so no honest agency can guarantee a position. Be wary of anyone who does. A good SEO partner sets clear targets, does the highest-impact work first and shows you what is moving."
+      ],
+      [
+            "Does SEO still matter now that AI tools answer questions?",
+            "Yes. AI tools like ChatGPT, Google AI Overviews and Perplexity draw on pages they can crawl and trust, so the fundamentals of SEO are what put your business in a position to be cited. Answer engine optimization builds on that foundation."
+      ]
+    ];
+    const mq = window.matchMedia ? window.matchMedia('(max-width: 900px)') : null;
+    this._mq = mq;
+    this.state = { mob: !!(mq && mq.matches), faqOpen: this.FAQ.map((f, i) => i === 0), menuOpen: false, kw: 0, legs: [true, true, true], wobKey: 0 };
+  }
+  componentDidMount() {
+    const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    const reduce = !!(mq && mq.matches);
+    if (this._mq) {
+      this._bp = () => this.setState({ mob: this._mq.matches });
+      if (this._mq.addEventListener) this._mq.addEventListener('change', this._bp); else this._mq.addListener(this._bp);
+    }
+    // Same scroll-scene driver as the home page: each scene's progress is written on that scene.
+    const setVar = (el, k, v) => { const c = el.__dcv || (el.__dcv = {}); if (c[k] !== v) { c[k] = v; el.style.setProperty(k, v); } };
+    const probe = document.createElement('div');
+    probe.setAttribute('aria-hidden', 'true');
+    probe.style.cssText = 'position: fixed; top: 0; left: 0; width: 0; height: 100vh; visibility: hidden; pointer-events: none';
+    document.body.appendChild(probe);
+    let vhW = -1, vhH = 900;
+    const viewH = () => { const w = window.innerWidth; if (w !== vhW) { vhW = w; vhH = probe.offsetHeight || window.innerHeight || 900; } return vhH; };
+    this._tick = () => {
+      this._raf = 0;
+      const vh = viewH();
+      const els = document.querySelectorAll('[data-scene^="e"]');
+      for (let i = 0; i < els.length; i++) {
+        const el = els[i];
+        const r = el.getBoundingClientRect();
+        const span = r.height - vh;
+        let p = (el.getAttribute('data-mode') === 'reveal' || span <= 2) ? (vh - r.top) / (vh * 0.8) : -r.top / span;
+        p = p < 0 ? 0 : p > 1 ? 1 : p;
+        if (reduce) p = 1;
+        setVar(el, '--' + el.getAttribute('data-scene'), p.toFixed(4));
+      }
+    };
+    this._on = () => { if (!this._raf) this._raf = requestAnimationFrame(this._tick); };
+    document.addEventListener('scroll', this._on, true);
+    window.addEventListener('resize', this._on);
+    this._tick();
+    this._t2 = setTimeout(this._tick, 400);
+  }
+  makeDots() {
+    if (this._dots) return this._dots;
+    let seed = 11;
+    const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+    const lefts = [9, 23.4, 37.8, 52.2, 66.6, 81];
+    const share = [30, 22, 16, 12, 9, 7];
+    const spread = [52, 40, 30, 22, 16, 10];
+    const MROWS = [20.25, 34.75, 49.25, 63.75, 78.25, 92.75];
+    const out = [];
+    share.forEach((n, k) => {
+      for (let i = 0; i < n; i++) {
+        const x0 = 3 + rnd() * 94;
+        const y0 = (rnd() * 2 - 1) * 26;
+        const jx = (rnd() * 2 - 1) * spread[k];
+        const jy = (rnd() * 2 - 1) * spread[k];
+        out.push({
+          l: 'calc(' + lefts[k] + '% + ' + jx.toFixed(1) + 'px)',
+          t: 'calc(46% + ' + jy.toFixed(1) + 'px)',
+          dx: (x0 - lefts[k]).toFixed(2) + 'vw',
+          dy: y0.toFixed(2) + 'vh',
+          s: (3 + rnd() * 6).toFixed(1),
+          ml: 'calc(clamp(20px, 5vw, 80px) + 64px + ' + (jx * .55).toFixed(1) + 'px)',
+          mt: 'calc(' + MROWS[k] + '% + ' + (jy * .55).toFixed(1) + 'px)',
+          mdx: 'calc(' + x0.toFixed(2) + 'vw - 84px)',
+          mdy: ((50 - MROWS[k]) * .5 + y0).toFixed(2) + 'vh'
+        });
+      }
+    });
+    this._dots = out;
+    return out;
+  }
+  renderVals() {
+    const s = this.state;
+    const legs = s.legs;
+    const missing = legs.filter((x) => !x).length;
+    let tilt = 'rotate(0deg)';
+    let origin = '240px 398px';
+    if (missing === 1) {
+      if (!legs[0]) { tilt = 'rotate(-11deg)'; origin = '385px 398px'; }
+      else if (!legs[2]) { tilt = 'rotate(11deg)'; origin = '95px 398px'; }
+      else { tilt = 'rotate(-4deg)'; origin = '240px 398px'; }
+    } else if (missing === 2) {
+      if (legs[0]) { tilt = 'rotate(24deg)'; origin = '95px 398px'; }
+      else if (legs[2]) { tilt = 'rotate(-24deg)'; origin = '385px 398px'; }
+      else { tilt = 'rotate(-20deg)'; origin = '240px 398px'; }
+    } else if (missing === 3) {
+      tilt = 'translateY(205px) rotate(-8deg)'; origin = '240px 398px';
+    }
+    const toggleLeg = (i) => () => {
+      const next = legs.slice();
+      next[i] = !next[i];
+      this.setState({ legs: next, wobKey: s.wobKey + 1 });
+    };
+    const legProps = {};
+    [0, 1, 2].forEach((i) => {
+      const on = legs[i];
+      legProps['leg' + i] = toggleLeg(i);
+      legProps['legP' + i] = on ? 'true' : 'false';
+      legProps['legBg' + i] = on ? '#161515' : 'transparent';
+      legProps['legBd' + i] = on ? '#161515' : '#161515';
+      legProps['legDot' + i] = on ? '#e44443' : 'transparent';
+      legProps['legFg' + i] = on ? '#ffffff' : '#161515';
+      legProps['legSub' + i] = on ? '#cfc9c9' : '#161515';
+      legProps['legO' + i] = on ? 1 : 0.06;
+      legProps['legY' + i] = on ? 0 : 40;
+      legProps['legGhost' + i] = on ? 0 : 0.9;
+      legProps['legLbl' + i] = on ? 1 : 0.35;
+    });
+    const kwProps = {};
+    [0, 1, 2, 3].forEach((i) => {
+      const on = s.kw === i;
+      kwProps['kw' + i] = () => this.setState({ kw: i });
+      kwProps['kp' + i] = on ? 'true' : 'false';
+      kwProps['kb' + i] = on ? '#fdecec' : '#ffffff';
+      kwProps['kd' + i] = on ? '#e44443' : '#d8d2d0';
+      kwProps['h' + i] = on ? 1 : 0;
+    });
+    const allOpen = this.FAQ.length > 0 && s.faqOpen.every((x) => x);
+    return Object.assign({
+      mob: !!s.mob,
+      desk: !s.mob,
+      dots: this.makeDots(),
+      tilt: tilt,
+      tiltOrigin: origin,
+      wob: missing > 0 && missing < 3 ? (s.wobKey % 2 === 0 ? 'e-wobA' : 'e-wobB') : '',
+      stoolMsg: missing === 0 ? 'Stable. All three legs working together.' : missing === 3 ? 'No legs, no rankings. Put them back.' : 'Wobbling. Put the leg back to steady it.',
+      stoolColor: missing === 0 ? '#161515' : '#ffffff',
+      faqAllLabel: allOpen ? 'Collapse all' : 'Expand all',
+      faqAll: () => this.setState({ faqOpen: this.FAQ.map(() => !allOpen) }),
+      faqs: this.FAQ.map((f, i) => {
+        const open = !!s.faqOpen[i];
+        return {
+          num: (i < 9 ? '0' : '') + (i + 1), q: f[0], a: f[1], open: open,
+          hid: !open,
+          exp: open ? 'true' : 'false', icon: open ? '−' : '+',
+          ibg: open ? '#161515' : '#ffffff', ifg: open ? '#ffffff' : '#161515',
+          toggle: () => { const next = this.state.faqOpen.slice(); next[i] = !next[i]; this.setState({ faqOpen: next }); }
+        };
+      }),
+      menuOpen: !!s.menuOpen,
+      menuExp: s.menuOpen ? 'true' : 'false',
+      menuToggle: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      menuClose: () => this.setState({ menuOpen: false })
+    }, legProps, kwProps);
+  }
+}
+</script>
+<script src="/assets/js/dc-lite.js"></script>
+</body>
+</html>

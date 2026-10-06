@@ -76,6 +76,12 @@
       "llms": "Services",
       "summary": "Search engine optimization for Louisville, KY businesses."
     },
+    "fundamentals-of-seo": {
+      "name": "Fundamentals of SEO",
+      "parent": "services",
+      "llms": "Services",
+      "summary": "Plain-English guide to how search engines rank pages, the three legs of SEO, keyword targeting and local SEO."
+    },
     "ppcmanagementlexingtonky": {
       "name": "Google Ads (PPC) management Lexington",
       "llms": "Services",

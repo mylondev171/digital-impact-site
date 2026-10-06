@@ -8,6 +8,7 @@
 - [Services](https://www.digitalimpactmarketers.com/services): All Digital Impact services: SEO, pay-per-click, web design, social media, creative and AI.
 - [SEO Lexington](https://www.digitalimpactmarketers.com/seolexingtonky): Search engine optimization for Lexington, KY businesses: technical fixes, content and links.
 - [SEO Louisville](https://www.digitalimpactmarketers.com/seolouisvilleky): Search engine optimization for Louisville, KY businesses.
+- [Fundamentals of SEO](https://www.digitalimpactmarketers.com/fundamentals-of-seo): Plain-English guide to how search engines rank pages, the three legs of SEO, keyword targeting and local SEO.
 - [Google Ads (PPC) management Lexington](https://www.digitalimpactmarketers.com/ppcmanagementlexingtonky): Google Ads and Bing Ads (pay-per-click) campaign management in Lexington, KY.
 
 ## AI services
