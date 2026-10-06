@@ -1,0 +1,50 @@
+{
+  "baseUrl": "https://www.digitalimpactmarketers.com",
+  "ogImage": "/assets/img/og-1200x630.jpg",
+  "ogImageAlt": "Digital Impact, a Lexington, Kentucky digital marketing and AI agency",
+  "org": {
+    "name": "Digital Impact",
+    "logo": "/assets/img/digital-impact-logo.png",
+    "telephone": "+1-859-396-8606",
+    "description": "Digital marketing and AI services agency in Lexington, Kentucky, online since 1998: SEO, AI search optimization, PPC, web design, social media and creative.",
+    "foundingDate": "1998",
+    "founder": { "name": "Don Johnson", "jobTitle": "Founder and CEO" },
+    "address": { "addressLocality": "Lexington", "addressRegion": "KY", "addressCountry": "US" },
+    "areaServed": [
+      { "@type": "City", "name": "Lexington, KY" },
+      { "@type": "City", "name": "Louisville, KY" },
+      { "@type": "State", "name": "Kentucky" }
+    ],
+    "knowsAbout": ["Search engine optimization", "Answer engine optimization", "Pay-per-click advertising", "Web design", "Social media marketing", "Branding", "AI consulting", "AI application development"],
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100093278650724",
+      "https://www.linkedin.com/company/digital-impact-marketers/"
+    ]
+  },
+  "llmsIntro": [
+    "Lexington, Kentucky digital marketing and AI services agency, online since 1998.",
+    "Serves Lexington, Louisville and all of Kentucky. Phone: 859.396.8606."
+  ],
+  "llmsOrder": ["Services", "AI services", "Local pages", "Company", "Articles"],
+  "pages": {
+    "index": { "name": "Home" },
+    "services": { "name": "Services", "llms": "Services" },
+    "seolexingtonky": { "name": "SEO Lexington", "llms": "Services" },
+    "seolouisvilleky": { "name": "SEO Louisville", "llms": "Services" },
+    "ppcmanagementlexingtonky": { "name": "Google Ads (PPC) management Lexington", "llms": "Services" },
+    "aiservices": { "name": "AI services", "llms": "AI services" },
+    "aiconsulting": { "name": "AI consulting", "parent": "aiservices", "llms": "AI services" },
+    "aitransitionservices": { "name": "AI transition services", "parent": "aiservices", "llms": "AI services" },
+    "aiappdevelopment": { "name": "AI app development", "parent": "aiservices", "llms": "AI services" },
+    "aioaeogeo": { "name": "AIO / AEO / GEO", "parent": "aiservices", "llms": "AI services" },
+    "aiolexingtonky": { "name": "AI search optimization Lexington", "llms": "Local pages" },
+    "aiolouisvilleky": { "name": "AI search optimization Louisville", "llms": "Local pages" },
+    "aidigitalmarketinglexingtonky": { "name": "AI digital marketing Lexington", "llms": "Local pages" },
+    "about": { "name": "About and team", "llms": "Company" },
+    "contact": { "name": "Contact", "llms": "Company" },
+    "get-a-quote": { "name": "Get a quote", "llms": "Company" },
+    "ahistoryofwebdesign": { "name": "The history of web design", "llms": "Articles" },
+    "privacy-policy": { "name": "Privacy policy" },
+    "404": { "name": "Page not found", "noSitemap": true }
+  }
+}

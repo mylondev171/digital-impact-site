@@ -124,26 +124,10 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
   .e-rise { animation: none !important; }
 }
 </style>
-<link rel="canonical" href="https://www.digitalimpactmarketers.com/ahistoryofwebdesign">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Digital Impact">
-<meta property="og:locale" content="en_US">
-<meta property="og:title" content="The History of Web Design (1998–2025): From HTML Basics to AI-Powered Platforms - Digital Impact">
-<meta property="og:description" content="Discover the evolution of web design from 1998 to 2025; tracing the shift from hand-coded HTML and table layouts to responsive design, no-code platforms, and AI-driven tools shaping the future of web development.">
-<meta property="og:url" content="https://www.digitalimpactmarketers.com/ahistoryofwebdesign">
-<meta property="og:image" content="https://www.digitalimpactmarketers.com/assets/img/og-1200x630.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Digital Impact, a Lexington, Kentucky digital marketing and AI agency">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The History of Web Design (1998–2025): From HTML Basics to AI-Powered Platforms - Digital Impact">
-<meta name="twitter:description" content="Discover the evolution of web design from 1998 to 2025; tracing the shift from hand-coded HTML and table layouts to responsive design, no-code platforms, and AI-driven tools shaping the future of web development.">
-<meta name="twitter:image" content="https://www.digitalimpactmarketers.com/assets/img/og-1200x630.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://www.digitalimpactmarketers.com/#org","name":"Digital Impact","url":"https://www.digitalimpactmarketers.com/","logo":"https://www.digitalimpactmarketers.com/assets/img/digital-impact-logo.png","image":"https://www.digitalimpactmarketers.com/assets/img/og-1200x630.jpg","telephone":"+1-859-396-8606","description":"Digital marketing and AI services agency in Lexington, Kentucky, online since 1998: SEO, AI search optimization, PPC, web design, social media and creative.","foundingDate":"1998","founder":{"@type":"Person","@id":"https://www.digitalimpactmarketers.com/about#don-johnson","name":"Don Johnson","jobTitle":"Founder and CEO"},"address":{"@type":"PostalAddress","addressLocality":"Lexington","addressRegion":"KY","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Lexington, KY"},{"@type":"City","name":"Louisville, KY"},{"@type":"State","name":"Kentucky"}],"knowsAbout":["Search engine optimization","Answer engine optimization","Pay-per-click advertising","Web design","Social media marketing","Branding","AI consulting","AI application development"],"sameAs":["https://www.facebook.com/profile.php?id=100093278650724","https://www.linkedin.com/company/digital-impact-marketers/"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.digitalimpactmarketers.com/"},{"@type":"ListItem","position":2,"name":"The history of web design","item":"https://www.digitalimpactmarketers.com/ahistoryofwebdesign"}]}</script>
 </head>
 <body>
-<div id="app">
+<div id="app"></div>
+<template id="dc-tpl">
 <div style="position: relative; width: 100%; min-height: 100vh; overflow-x: clip; background: #ffffff; color: #161515">
 <header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
 <a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
@@ -158,9 +142,9 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <div style="display: flex; align-items: center; gap: 14px">
 <a class="e-navphone" href="tel:8593968606" aria-label="Call 859.396.8606"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#e44443" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg><span>859.396.8606</span></a>
 <a class="e-btn e-navq" href="/get-a-quote" style="min-height: 44px; background: #d23a39; color: #ffffff">Get a quote</a>
-<button type="button" class="e-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<button type="button" class="e-burger" onClick="{{menuToggle}}" aria-expanded="{{menuExp}}" aria-label="Menu"><span></span><span></span><span></span></button>
 </div>
-<!--[if--><!--]if-->
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><div class="e-mmenu" role="dialog" aria-label="Site menu"><div class="e-mgroup"><h3 class="e-eb">Services</h3><a class="e-mlink" href="/services" onClick="{{menuClose}}">All services</a><a class="e-mlink" href="/ppcmanagementlexingtonky" onClick="{{menuClose}}">PPC management</a><a class="e-mlink" href="/seolexingtonky" onClick="{{menuClose}}">SEO Lexington</a><a class="e-mlink" href="/seolouisvilleky" onClick="{{menuClose}}">SEO Louisville</a><a class="e-mlink" href="/aidigitalmarketinglexingtonky" onClick="{{menuClose}}">AI digital marketing</a></div><div class="e-mgroup"><h3 class="e-eb">AI services</h3><a class="e-mlink" href="/aiservices" onClick="{{menuClose}}">AI services</a><a class="e-mlink" href="/aiconsulting" onClick="{{menuClose}}">AI consulting</a><a class="e-mlink" href="/aitransitionservices" onClick="{{menuClose}}">AI transition services</a><a class="e-mlink" href="/aiappdevelopment" onClick="{{menuClose}}">AI app development</a><a class="e-mlink" href="/aioaeogeo" onClick="{{menuClose}}">AIO / AEO / GEO</a><a class="e-mlink" href="/aiolexingtonky" onClick="{{menuClose}}">AIO Lexington</a><a class="e-mlink" href="/aiolouisvilleky" onClick="{{menuClose}}">AIO Louisville</a></div><div class="e-mgroup"><h3 class="e-eb">Company</h3><a class="e-mlink" href="/" onClick="{{menuClose}}">Home</a><a class="e-mlink" href="/about" onClick="{{menuClose}}">About</a><a class="e-mlink" href="/contact" onClick="{{menuClose}}">Contact</a><a class="e-mlink" href="/ahistoryofwebdesign" onClick="{{menuClose}}">History of web design</a><a class="e-mlink" href="/privacy-policy" onClick="{{menuClose}}">Privacy policy</a></div><div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px"><a class="e-btn" href="/get-a-quote" onClick="{{menuClose}}" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="justify-content: center; color: #ffffff">Call 859.396.8606</a></div></div></sc-if>
 </header>
 <section style="position: relative; padding: calc(64px + clamp(72px, 12vh, 128px)) clamp(20px, 5vw, 80px) clamp(72px, 11vh, 120px); background: #161515; color: #ffffff; overflow: hidden">
 <div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); align-items: center; max-width: 1280px; margin: 0 auto">
@@ -171,7 +155,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 <p class="e-lede e-rise" style="color: #cfc9c9; animation-delay: .16s">Web design has undergone a remarkable transformation since the late 1990s.</p>
 <div class="e-rise" style="display: flex; flex-wrap: wrap; gap: 12px; animation-delay: .25s"><a class="e-btn" href="/get-a-quote" style="background: #d23a39; color: #ffffff">Get a quote</a><a class="e-ghost" href="tel:8593968606" style="color: #ffffff">Call 859.396.8606</a></div>
 </div>
-<div class="e-heroart e-rise" style="display: grid; place-items: center; animation-delay: .2s"><div style="position: relative; width: 100%"><div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 20px; background: #0d0c0c; border: 1px solid #2e2a2a; box-shadow: 0 40px 90px rgba(0, 0, 0, .5)"><video class="e-vidv" src="assets/video/history-of-web-design-loop.mp4" data-loop="assets/video/history-of-web-design-loop.mp4" data-full="assets/video/history-of-web-design.mp4" poster="assets/img/history-poster-1600.webp" muted="muted" autoplay="autoplay" loop="loop" playsinline="playsinline" preload="metadata" aria-label="A history of web design video" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video><!--[if--><button type="button" class="e-vidplay" aria-label="Play the A history of web design video with sound"><span style="display: flex; align-items: center; gap: 16px"><span class="e-vidbtn" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5 L19 12 L8 19 Z" fill="#ffffff"></path></svg></span><span style="display: flex; flex-direction: column; gap: 4px"><strong class="e-x" style="font-size: clamp(16px, 1.5vw, 21px); line-height: 1">Watch the history</strong><span style="font-size: 14px; color: #cfc9c9">From Notepad to AI, 1998 to today</span></span></span><span class="e-eb" style="flex: none; padding: 6px 10px; border-radius: 999px; background: rgba(22, 21, 21, .8); color: #ffffff; font-size: 11px">2:00</span></button><!--]if--></div></div></div>
+<div class="e-heroart e-rise" style="display: grid; place-items: center; animation-delay: .2s"><div style="position: relative; width: 100%"><div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 20px; background: #0d0c0c; border: 1px solid #2e2a2a; box-shadow: 0 40px 90px rgba(0, 0, 0, .5)"><video class="e-vidv" src="assets/video/history-of-web-design-loop.mp4" data-loop="assets/video/history-of-web-design-loop.mp4" data-full="assets/video/history-of-web-design.mp4" poster="assets/img/history-poster-1600.webp" muted="muted" autoplay="autoplay" loop="loop" playsinline="playsinline" preload="metadata" aria-label="A history of web design video" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video><sc-if value="{{vidIdle}}" hint-placeholder-val="{{ true }}"><button type="button" class="e-vidplay" onClick="{{vidPlay}}" aria-label="Play the A history of web design video with sound"><span style="display: flex; align-items: center; gap: 16px"><span class="e-vidbtn" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5 L19 12 L8 19 Z" fill="#ffffff"></path></svg></span><span style="display: flex; flex-direction: column; gap: 4px"><strong class="e-x" style="font-size: clamp(16px, 1.5vw, 21px); line-height: 1">Watch the history</strong><span style="font-size: 14px; color: #cfc9c9">From Notepad to AI, 1998 to today</span></span></span><span class="e-eb" style="flex: none; padding: 6px 10px; border-radius: 999px; background: rgba(22, 21, 21, .8); color: #ffffff; font-size: 11px">2:00</span></button></sc-if></div></div></div>
 </div>
 </section>
 <section style="padding: clamp(72px, 10vh, 120px) clamp(20px, 5vw, 80px) clamp(56px, 8vh, 96px); background: #ffffff">
@@ -191,7 +175,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 <div class="e-split e-tl" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(20px, 4vw, 56px)">
 <div style="position: relative; border-right: 3px solid #e44443"><span aria-hidden="true" style="position: absolute; right: -8px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #ffffff; border: 3px solid #e44443; box-sizing: border-box"></span></div>
-<div style="display: flex; flex-direction: column; gap: 14px; padding-bottom: clamp(36px, 5vh, 56px)"><h3 class="e-x" style="margin: 0; font-size: clamp(19px, 1.7vw, 24px); line-height: 1.1">The Old School: Hard-Coding with Notepad</h3><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">Back in 1998, when the web was still relatively new to the masses, web designers often crafted their sites manually. There were few, if any, advanced tools to help streamline the process. For many, the creation of a website began with writing raw HTML code. A simple web page could be created by opening Notepad, writing a few lines of HTML, and saving the file with a .html extension. This was the first step in the evolution of web design.</p><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">The websites of this era were basic, with limited multimedia content and a heavy reliance on text-based elements. The main focus was on content, rather than aesthetics. HTML was mostly used to structure the layout of the page, and rudimentary styling was applied via inline attributes, such as &lt;font&gt; and &lt;center&gt;.</p><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">For developers who wanted to upload their work to the internet, FTP (File Transfer Protocol) programs like WS-FTP were indispensable. These tools allowed designers to transfer their local files onto a remote server, making them accessible to anyone with an internet connection. Uploading files via FTP was often done manually, requiring designers to connect to their hosting account and drag-and-drop HTML files to the server.</p></div>
+<div style="display: flex; flex-direction: column; gap: 14px; padding-bottom: clamp(36px, 5vh, 56px)"><h3 class="e-x" style="margin: 0; font-size: clamp(19px, 1.7vw, 24px); line-height: 1.1">The Old School: Hard-Coding with Notepad</h3><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">Back in 1998, when the web was still relatively new to the masses, web designers often crafted their sites manually. There were few, if any, advanced tools to help streamline the process. For many, the creation of a website began with writing raw HTML code. A simple web page could be created by opening Notepad, writing a few lines of HTML, and saving the file with a .html extension. This was the first step in the evolution of web design.</p><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">The websites of this era were basic, with limited multimedia content and a heavy reliance on text-based elements. The main focus was on content, rather than aesthetics. HTML was mostly used to structure the layout of the page, and rudimentary styling was applied via inline attributes, such as &lt;font> and &lt;center>.</p><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">For developers who wanted to upload their work to the internet, FTP (File Transfer Protocol) programs like WS-FTP were indispensable. These tools allowed designers to transfer their local files onto a remote server, making them accessible to anyone with an internet connection. Uploading files via FTP was often done manually, requiring designers to connect to their hosting account and drag-and-drop HTML files to the server.</p></div>
 </div>
 <div id="ch2" class="e-split e-tl" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(20px, 4vw, 56px)">
 <div style="position: relative; padding: 4px 30px 0 0; border-right: 3px solid #e44443; text-align: right"><span class="e-x" style="display: block; font-size: clamp(32px, 3.4vw, 52px); line-height: 1; color: #e44443">2000</span><span style="display: block; margin-top: 6px; font-size: 14px; font-weight: 700; color: #5f5959">to 2005</span><span aria-hidden="true" style="position: absolute; right: -11px; top: 12px; width: 19px; height: 19px; border-radius: 50%; background: #e44443; border: 4px solid #ffffff; box-sizing: border-box; box-shadow: 0 0 0 2px #e44443"></span></div>
@@ -215,7 +199,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </div>
 <div class="e-split e-tl" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(20px, 4vw, 56px)">
 <div style="position: relative; border-right: 3px solid #e44443"><span aria-hidden="true" style="position: absolute; right: -8px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: #ffffff; border: 3px solid #e44443; box-sizing: border-box"></span></div>
-<div style="display: flex; flex-direction: column; gap: 14px; padding-bottom: clamp(36px, 5vh, 56px)"><h3 class="e-x" style="margin: 0; font-size: clamp(19px, 1.7vw, 24px); line-height: 1.1">HTML5 and Responsive Design</h3><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">HTML5 introduced new semantic elements like &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, and &lt;section&gt;, which improved the structure and accessibility of websites. These elements provided a cleaner, more meaningful way to organize content, as opposed to relying on generic &lt;div&gt; elements.</p><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">One of the most significant advancements in web design was the rise of responsive design, which HTML5 played a key role in enabling. Responsive web design ensures that websites adapt seamlessly to different screen sizes and devices, from desktop computers to smartphones and tablets. The inclusion of media queries in CSS allowed designers to set breakpoints for different screen widths, ensuring that websites looked great on any device. This shift toward mobile-first design was driven by the explosive growth of smartphones and tablets, making it essential for websites to be easily accessible across multiple platforms.</p></div>
+<div style="display: flex; flex-direction: column; gap: 14px; padding-bottom: clamp(36px, 5vh, 56px)"><h3 class="e-x" style="margin: 0; font-size: clamp(19px, 1.7vw, 24px); line-height: 1.1">HTML5 and Responsive Design</h3><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">HTML5 introduced new semantic elements like &lt;header>, &lt;footer>, &lt;article>, and &lt;section>, which improved the structure and accessibility of websites. These elements provided a cleaner, more meaningful way to organize content, as opposed to relying on generic &lt;div> elements.</p><p style="margin: 0; max-width: 68ch; font-size: 17px; line-height: 1.75; color: #3b3636">One of the most significant advancements in web design was the rise of responsive design, which HTML5 played a key role in enabling. Responsive web design ensures that websites adapt seamlessly to different screen sizes and devices, from desktop computers to smartphones and tablets. The inclusion of media queries in CSS allowed designers to set breakpoints for different screen widths, ensuring that websites looked great on any device. This shift toward mobile-first design was driven by the explosive growth of smartphones and tablets, making it essential for websites to be easily accessible across multiple platforms.</p></div>
 </div>
 <div id="ch5" class="e-split e-tl" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(20px, 4vw, 56px)">
 <div style="position: relative; padding: 4px 30px 0 0; border-right: 3px solid #e44443; text-align: right"><span class="e-x" style="display: block; font-size: clamp(32px, 3.4vw, 52px); line-height: 1; color: #e44443">2015</span><span style="display: block; margin-top: 6px; font-size: 14px; font-weight: 700; color: #5f5959">to 2020</span><span aria-hidden="true" style="position: absolute; right: -11px; top: 12px; width: 19px; height: 19px; border-radius: 50%; background: #e44443; border: 4px solid #ffffff; box-sizing: border-box; box-shadow: 0 0 0 2px #e44443"></span></div>
@@ -261,8 +245,84 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 </footer>
 </section>
 </div>
-</div>
-<script src="/assets/js/dc-lite.js?v=61e904266c" defer></script>
-<script src="/assets/js/pages/ahistoryofwebdesign.js?v=491d72619e" defer></script>
+</template>
+<script type="text/x-dc" id="dc-logic">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.FAQ = [];
+    this.state = { faqOpen: this.FAQ.map((f, i) => i === 0), sent: false, sel: [false, false, false, false, false, false], tl: -1, menuOpen: false, vidIdle: true };
+  }
+  componentDidMount() {
+    const v = document.querySelector('.e-vidv');
+    if (!v) return;
+    const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    v.muted = true;
+    v.loop = true;
+    v.playsInline = true;
+    if (mq && mq.matches) v.pause(); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    this._ended = () => {
+      if (v.dataset.loop) v.src = v.dataset.loop;
+      v.controls = false; v.muted = true; v.loop = true; v.currentTime = 0;
+      if (!(mq && mq.matches)) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      this.setState({ vidIdle: true });
+    };
+    v.addEventListener('ended', this._ended);
+  }
+  componentWillUnmount() {
+    const v = document.querySelector('.e-vidv');
+    if (v && this._ended) v.removeEventListener('ended', this._ended);
+  }
+  renderVals() {
+    const s = this.state;
+    const allOpen = this.FAQ.length > 0 && s.faqOpen.every((x) => x);
+    const v = {
+      notSent: !s.sent,
+      sent: s.sent,
+      send: () => this.setState({ sent: true }),
+      faqAllLabel: allOpen ? 'Collapse all' : 'Expand all',
+      faqAll: () => this.setState({ faqOpen: this.FAQ.map(() => !allOpen) }),
+      faqs: this.FAQ.map((f, i) => {
+        const open = !!s.faqOpen[i];
+        return {
+          num: (i < 9 ? '0' : '') + (i + 1), q: f[0], a: f[1], open: open,
+          exp: open ? 'true' : 'false', icon: open ? '−' : '+',
+          ibg: open ? '#161515' : '#ffffff', ifg: open ? '#ffffff' : '#161515',
+          toggle: () => { const next = this.state.faqOpen.slice(); next[i] = !next[i]; this.setState({ faqOpen: next }); }
+        };
+      })
+    };
+    v.menuOpen = !!s.menuOpen;
+    v.vidIdle = s.vidIdle;
+    v.vidPlay = () => {
+      const el = document.querySelector('.e-vidv');
+      if (!el) return;
+      if (el.dataset.full) el.src = el.dataset.full;
+      el.loop = false; el.muted = false; el.controls = true; el.currentTime = 0;
+      const p = el.play(); if (p && p.catch) p.catch(() => {});
+      this.setState({ vidIdle: false });
+    };
+    v.menuExp = s.menuOpen ? 'true' : 'false';
+    v.menuToggle = () => this.setState({ menuOpen: !this.state.menuOpen });
+    v.menuClose = () => this.setState({ menuOpen: false });
+    for (let i = 0; i < 6; i++) {
+      const on = !!s.sel[i];
+      v['q' + i] = () => { const next = this.state.sel.slice(); next[i] = !next[i]; this.setState({ sel: next }); };
+      v['qp' + i] = on ? 'true' : 'false';
+      v['qb' + i] = on ? '#161515' : '#ffffff';
+      v['qf' + i] = on ? '#ffffff' : '#161515';
+    }
+    for (let i = 0; i < 4; i++) {
+      const on = s.tl === i;
+      v['t' + i] = () => this.setState({ tl: i });
+      v['tp' + i] = on ? 'true' : 'false';
+      v['tb' + i] = on ? '#e44443' : '#ffffff';
+      v['tf' + i] = on ? '#ffffff' : '#161515';
+    }
+    return v;
+  }
+}
+</script>
+<script src="assets/js/dc-lite.js"></script>
 </body>
 </html>
