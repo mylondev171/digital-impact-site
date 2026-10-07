@@ -82,10 +82,34 @@
       "llms": "Services",
       "summary": "Plain-English guide to how search engines rank pages, the three legs of SEO, keyword targeting and local SEO."
     },
+    "web-design-lexington-ky": {
+      "name": "Web design Lexington",
+      "parent": "services",
+      "llms": "Services",
+      "summary": "Custom, mobile-friendly website design, redesigns and builds for Lexington, KY businesses."
+    },
+    "social-media-marketing-lexington-ky": {
+      "name": "Social media marketing Lexington",
+      "parent": "services",
+      "llms": "Services",
+      "summary": "Paid and organic social media on Facebook, Instagram, TikTok and LinkedIn for Lexington businesses."
+    },
+    "creative-branding": {
+      "name": "Creative and branding",
+      "parent": "services",
+      "llms": "Services",
+      "summary": "Logo design, brand identity, print pieces and digital ads."
+    },
     "ppcmanagementlexingtonky": {
       "name": "Google Ads (PPC) management Lexington",
       "llms": "Services",
       "summary": "Google Ads and Bing Ads (pay-per-click) campaign management in Lexington, KY."
+    },
+    "ppc-management-louisville-ky": {
+      "name": "Google Ads (PPC) management Louisville",
+      "parent": "services",
+      "llms": "Services",
+      "summary": "Google Ads and Bing Ads campaign management for Louisville, KY businesses, with conversion tracking and reporting."
     },
     "aiservices": {
       "name": "AI services",
