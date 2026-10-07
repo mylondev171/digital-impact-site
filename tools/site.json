@@ -100,16 +100,11 @@
       "llms": "Services",
       "summary": "Logo design, brand identity, print pieces and digital ads."
     },
-    "ppcmanagementlexingtonky": {
-      "name": "Google Ads (PPC) management Lexington",
-      "llms": "Services",
-      "summary": "Google Ads and Bing Ads (pay-per-click) campaign management in Lexington, KY."
-    },
-    "ppc-management-louisville-ky": {
-      "name": "Google Ads (PPC) management Louisville",
+    "ppc-management": {
+      "name": "PPC management",
       "parent": "services",
       "llms": "Services",
-      "summary": "Google Ads and Bing Ads campaign management for Louisville, KY businesses, with conversion tracking and reporting."
+      "summary": "Google Ads and Bing Ads (pay-per-click) campaign management: how the ad auction works, ad types, what we manage and a brief history of PPC."
     },
     "aiservices": {
       "name": "AI services",

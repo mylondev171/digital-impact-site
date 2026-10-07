@@ -27,7 +27,7 @@ The site is deployed on Vercel. `vercel.json` turns on clean URLs (so `about.htm
 | aitransitionservices.html | AI transition services |
 | aiappdevelopment.html | AI app development |
 | aioaeogeo.html | AIO / AEO / GEO |
-| ppcmanagementlexingtonky.html | PPC management |
+| ppc-management.html | PPC management (old /ppcmanagementlexingtonky and /ppc-management-louisville-ky redirect here) |
 | seolexingtonky.html | SEO Lexington |
 | seolouisvilleky.html | SEO Louisville |
 | aiolexingtonky.html | AIO Lexington |

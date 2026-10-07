@@ -3,13 +3,23 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/seo-lexington-ky",
-      "destination": "/seolexingtonky",
+      "source": "/ppcmanagementlexingtonky",
+      "destination": "/ppc-management",
       "permanent": true
     },
     {
       "source": "/ppc-management-lexington-ky",
-      "destination": "/ppcmanagementlexingtonky",
+      "destination": "/ppc-management",
+      "permanent": true
+    },
+    {
+      "source": "/ppc-management-louisville-ky",
+      "destination": "/ppc-management",
+      "permanent": true
+    },
+    {
+      "source": "/seo-lexington-ky",
+      "destination": "/seolexingtonky",
       "permanent": true
     },
     {
