@@ -227,6 +227,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
   .rk-card b { font-size: calc(var(--u) * 1.4); }
   .rk-card span { font-size: calc(var(--u) * 1.15); }
   /* Slider on a phone: the copy has to fit the visible right half */
+  .rk-flip .rk-hero { align-items: center; min-height: calc(var(--u) * 34); }
   .rk-flip .rk-copy { width: 54%; margin-left: auto; gap: calc(var(--u) * 1.6); padding: calc(var(--u) * 3) calc(var(--u) * 2.6); }
   .rk-flip .rk-h { font-size: calc(var(--u) * 2.3); }
   .rk-flip .rk-sub, .rk-flip .rk-rating, .rk-flip .rk-ghost { display: none; }
@@ -237,6 +238,9 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 .wd-dev { position: relative; margin: 0 auto; border: 10px solid #2e2a2a; border-radius: 24px; background: #ffffff; overflow: hidden; container-type: inline-size; transition: width .6s cubic-bezier(.2, .8, .2, 1); }
 .wd-devbtns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 @media (max-width: 900px) {
+  .wd-legend { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
   .wd-ba { aspect-ratio: 4 / 5; }
   .wd-o-body { grid-template-columns: 1fr; font-size: 3cqw; }
   .wd-o-body > .wd-o-col:first-child, .wd-o-body > .wd-o-col:last-child { display: none; }
@@ -245,7 +249,6 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
   .wd-o-banner { font-size: 4.4cqw; }
   .wd-o-logo { font-size: 3.6cqw; }
   .wd-o-nav { font-size: 2.6cqw; }
-  .wd-legend { grid-template-columns: minmax(0, 1fr); }
 }
 </style>
 <style>
