@@ -162,6 +162,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 
 /* Built for you (the "after"): a fictional Lexington roofer's homepage, reused by the responsive demo */
 .rk { --u: 1cqw; --slate: #1e2a30; --copper: #b8622b; --stone: #f4f3ef; display: flex; flex-direction: column; min-height: 100%; background: var(--stone); color: var(--slate); font-family: Lato, sans-serif; text-align: left; }
+.rk, .rk * { box-sizing: border-box; }
 .rk-nav { display: flex; align-items: center; gap: calc(var(--u) * 2.2); padding: calc(var(--u) * 1.3) calc(var(--u) * 3); background: #ffffff; border-bottom: 1px solid #e3e6e6; }
 .rk-logo { display: flex; align-items: center; gap: calc(var(--u) * .8); }
 .rk-logo svg { width: calc(var(--u) * 3.4); height: calc(var(--u) * 3.4); flex: none; }
@@ -194,6 +195,7 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 .rk-card span { padding: 0 calc(var(--u) * 1.5) calc(var(--u) * 1.4); font-size: calc(var(--u) * 1.1); line-height: 1.5; color: #56646b; }
 /* In the slider only the right half shows at first, so the copy sits on the right there */
 .rk-flip .rk-hero { justify-content: flex-end; }
+.rk-flip .rk-copy { width: 46%; }
 .rk-flip .rk-hero img { object-position: 30% 60%; transform: scaleX(-1); }
 .rk-flip .rk-hero::before { background: linear-gradient(270deg, rgba(18, 27, 31, .9) 0%, rgba(18, 27, 31, .74) 40%, rgba(18, 27, 31, .05) 72%); }
 @container (max-width: 700px) {
@@ -224,6 +226,12 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
   .rk-cards .rk-card:nth-child(3) { display: flex; }
   .rk-card b { font-size: calc(var(--u) * 1.4); }
   .rk-card span { font-size: calc(var(--u) * 1.15); }
+  /* Slider on a phone: the copy has to fit the visible right half */
+  .rk-flip .rk-copy { width: 54%; margin-left: auto; gap: calc(var(--u) * 1.6); padding: calc(var(--u) * 3) calc(var(--u) * 2.6); }
+  .rk-flip .rk-h { font-size: calc(var(--u) * 2.3); }
+  .rk-flip .rk-sub, .rk-flip .rk-rating, .rk-flip .rk-ghost { display: none; }
+  .rk-flip .rk-kicker { font-size: calc(var(--u) * 1.05); }
+  .rk-flip .rk-btns .rk-btn { padding: calc(var(--u) * 1) calc(var(--u) * 1.2); font-size: calc(var(--u) * 1.05); }
 }
 .wd-legend { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 1120px; margin: 0 auto; width: 100%; }
 .wd-dev { position: relative; margin: 0 auto; border: 10px solid #2e2a2a; border-radius: 24px; background: #ffffff; overflow: hidden; container-type: inline-size; transition: width .6s cubic-bezier(.2, .8, .2, 1); }
