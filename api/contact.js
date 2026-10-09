@@ -1,5 +1,5 @@
 // Receives website form submissions, emails them to the team, and keeps a copy in Supabase.
-const LIMITS = { first: 100, last: 100, email: 254, phone: 40, comments: 5000, page: 200, timeline: 60 };
+const LIMITS = { first: 100, last: 100, email: 254, phone: 40, company: 200, comments: 5000, page: 200, timeline: 60 };
 const FORMS = ['contact', 'quote', 'home'];
 
 function clean(body) {
@@ -17,7 +17,7 @@ async function sendEmail(d) {
   if (!key) throw new Error('RESEND_API_KEY not set');
   const name = `${d.first} ${d.last}`.trim();
   const rows = [
-    ['Form', d.form], ['Name', name], ['Email', d.email], ['Phone', d.phone],
+    ['Form', d.form], ['Name', name], ['Company', d.company], ['Email', d.email], ['Phone', d.phone],
     ['Services', d.services.join(', ')], ['Timeline', d.timeline], ['Page', d.page]
   ].filter(([, v]) => v);
   const html = `<h2>New ${esc(d.form)} form submission</h2><table cellpadding="6">${rows.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${esc(v)}</td></tr>`).join('')}</table>`
@@ -48,7 +48,7 @@ async function saveCopy(d, emailError) {
       Prefer: 'return=minimal'
     },
     body: JSON.stringify({
-      form: d.form, first_name: d.first, last_name: d.last, email: d.email, phone: d.phone || null,
+      form: d.form, first_name: d.first, last_name: d.last, email: d.email, phone: d.phone || null, company: d.company || null,
       comments: d.comments || null, services: d.services, timeline: d.timeline || null, page: d.page || null,
       email_sent: !emailError, email_error: emailError ? emailError.slice(0, 500) : null
     })
