@@ -22,6 +22,7 @@
 @font-face { font-family: 'Lato'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/fonts/lato-700.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Lato'; font-style: normal; font-weight: 900; font-display: swap; src: url(/assets/fonts/lato-900.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Merriweather'; font-style: italic; font-weight: 400 700; font-display: swap; src: url(/assets/fonts/merriweather-italic.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Merriweather'; font-style: normal; font-weight: 900; font-display: swap; src: url(/assets/fonts/merriweather-900.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212; }
 </style>
 <style>
 html { scroll-behavior: smooth; }
@@ -142,78 +143,100 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
 .wd-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); z-index: 4; width: 4px; margin-left: -2px; background: #e44443; pointer-events: none; }
 .wd-handle span { position: absolute; top: 50%; left: 50%; display: grid; place-items: center; width: 48px; height: 48px; margin: -24px 0 0 -24px; border-radius: 50%; background: #e44443; color: #ffffff; box-shadow: 0 8px 24px rgba(0, 0, 0, .3); }
 .wd-range { position: absolute; inset: 0; z-index: 5; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
-.wd-o-top { display: flex; align-items: center; gap: 1.2cqw; padding: 1.4cqw 2cqw; background: #2f4f7f; }
-.wd-o-logo { width: 9cqw; height: 3.4cqw; background: #f3d34a; }
-.wd-o-nav { display: flex; flex-wrap: wrap; gap: .6cqw; flex: 1; }
-.wd-o-nav i { width: 4.6cqw; height: 1.4cqw; background: #8fa8cf; }
-.wd-o-banner { padding: 1.2cqw 2cqw; background: #f3d34a; color: #2f4f7f; font-family: "Times New Roman", serif; font-size: 2.4cqw; font-weight: 700; text-align: center; white-space: nowrap; overflow: hidden; }
-.wd-o-body { flex: 1; display: grid; grid-template-columns: 1fr 2.2fr 1fr; gap: 1.4cqw; padding: 1.6cqw 2cqw; background: #e9e6e1; }
-.wd-o-col { display: flex; flex-direction: column; gap: .7cqw; }
-.wd-o-col i { height: 1cqw; background: #b9b3ab; }
-.wd-o-col i:nth-child(3n) { width: 70%; }
-.wd-o-slide { height: 17cqw; background: repeating-linear-gradient(45deg, #9aa5b5 0 1.2cqw, #aab4c3 1.2cqw 2.4cqw); }
-.wd-o-box { padding: .8cqw; border: 2px dashed #8f8a83; }
-.wd-o-cta { align-self: flex-start; padding: .4cqw .8cqw; background: #2f4f7f; color: #ffffff; font-size: 1.3cqw; }
-.wd-n-top { display: flex; align-items: center; gap: 2.4cqw; padding: 1.6cqw 3cqw; background: #161515; }
-.wd-n-logo { width: 10cqw; height: 2.6cqw; border-radius: .6cqw; background: #ffffff; }
-.wd-n-nav { display: flex; gap: 2cqw; flex: 1; }
-.wd-n-nav i { width: 6cqw; height: 1.2cqw; border-radius: 1cqw; background: #5f5959; }
-.wd-n-btn { padding: 1cqw 2cqw; background: #e44443; color: #ffffff; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 1.4cqw; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
-.wd-n-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 6cqw; align-items: center; padding: 4cqw 3cqw; background: #f6f3f2; }
-.wd-n-h { margin: 0 0 1.4cqw; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 3.9cqw; line-height: .95; letter-spacing: -.03em; text-transform: uppercase; color: #161515; }
-.wd-n-sub { width: 85%; height: 1.2cqw; margin-bottom: .8cqw; border-radius: 1cqw; background: #cfc9c9; }
-.wd-n-img { aspect-ratio: 4 / 3; border-radius: 1.6cqw; background: radial-gradient(circle at 50% 50%, #e44443 0 18%, #ffffff 18% 34%, #e44443 34% 50%, #161515 50%); }
-.wd-n-trust { display: flex; gap: 1.4cqw; margin-top: 1.6cqw; }
-.wd-n-trust i { padding: .5cqw 1.1cqw; border: 2px solid #161515; border-radius: 999px; font-style: normal; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 1.1cqw; text-transform: uppercase; }
-.wd-n-cards { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6cqw; padding: 2.4cqw 3cqw; background: #ffffff; }
-.wd-n-cards i { border-radius: 1.4cqw; background: #f6f3f2; border-top: .6cqw solid #e44443; }
-.wd-legend { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 1120px; margin: 0 auto; width: 100%; }
-.wd-dev { position: relative; margin: 0 auto; border: 10px solid #2e2a2a; border-radius: 24px; background: #ffffff; overflow: hidden; container-type: inline-size; transition: width .6s cubic-bezier(.2, .8, .2, 1); }
-.wd-site { display: flex; flex-direction: column; gap: 14px; padding: 16px; color: #161515; font-family: Lato, sans-serif; }
-.wd-s-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.wd-s-top b { width: 96px; height: 22px; border-radius: 6px; background: #161515; }
-.wd-s-nav { display: flex; gap: 10px; }
-.wd-s-nav i { width: 52px; height: 10px; border-radius: 6px; background: #cfc9c9; }
-.wd-s-burger { display: none; width: 28px; height: 20px; background: linear-gradient(#161515 0 3px, transparent 3px 8px, #161515 8px 11px, transparent 11px 16px, #161515 16px 19px); }
-.wd-s-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; align-items: center; padding: 22px; border-radius: 16px; background: #f6f3f2; }
-.wd-s-h { margin: 0 0 10px; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 28px; line-height: .95; text-transform: uppercase; }
-.wd-s-btn { display: inline-block; margin-top: 8px; padding: 10px 16px; background: #e44443; color: #ffffff; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-.wd-s-img { aspect-ratio: 4 / 3; border-radius: 12px; background: radial-gradient(circle, #e44443 0 18%, #ffffff 18% 34%, #e44443 34% 50%, #161515 50%); }
-.wd-s-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.wd-s-cards i { height: 90px; border-radius: 12px; background: #f6f3f2; border-top: 5px solid #e44443; }
+/* Generic template (the "before") */
+.wd-o-top { display: flex; align-items: center; gap: 1.4cqw; padding: 1cqw 2cqw; background: #2f4f7f; }
+.wd-o-logo { flex: none; padding: .5cqw 1cqw; background: #f3d34a; color: #b8231b; font-family: "Comic Sans MS", "Comic Sans", cursive; font-weight: 700; font-size: 1.6cqw; line-height: 1; }
+.wd-o-nav { display: flex; flex-wrap: wrap; gap: .3cqw 1cqw; flex: 1; font-family: Arial, sans-serif; font-size: 1.05cqw; color: #dce6f5; text-decoration: underline; }
+.wd-o-banner { padding: 1cqw 2cqw; background: #f3d34a; color: #2f4f7f; font-family: "Times New Roman", serif; font-size: 2.3cqw; font-weight: 700; text-align: center; white-space: nowrap; overflow: hidden; }
+.wd-o-body { flex: 1; display: grid; grid-template-columns: 1fr 2.2fr 1fr; gap: 1.6cqw; padding: 1.6cqw 2cqw; background: #e9e6e1; color: #333333; font-family: "Times New Roman", serif; font-size: 1.15cqw; line-height: 1.35; overflow: hidden; }
+.wd-o-col { display: flex; flex-direction: column; gap: 1cqw; min-width: 0; }
+.wd-o-col p { margin: 0; }
+.wd-o-box { padding: .8cqw 1cqw; border: 2px dashed #8f8a83; background: #f7f5f1; }
+.wd-o-box b { display: block; margin-bottom: .4cqw; color: #2f4f7f; font-family: Arial, sans-serif; font-size: 1.15cqw; }
+.wd-o-box ul { margin: 0; padding-left: 1.4cqw; }
+.wd-o-slide { position: relative; height: 18cqw; overflow: hidden; background: #9aa5b5; }
+.wd-o-slide img { width: 100%; height: 100%; object-fit: cover; opacity: .55; display: block; }
+.wd-o-slide span { position: absolute; left: 0; right: 0; bottom: 0; padding: .4cqw; background: rgba(0, 0, 0, .55); color: #ffffff; font-family: Arial, sans-serif; font-size: 1cqw; text-align: center; }
+.wd-o-cta { color: #1a3fb0; text-decoration: underline; }
+.wd-o-count { align-self: flex-start; padding: .2cqw .6cqw; background: #000000; color: #39ff14; font-family: "Courier New", monospace; font-size: 1.05cqw; }
+
+/* Built for you (the "after"): a fictional Lexington roofer's homepage, reused by the responsive demo */
+.rk { --u: 1cqw; --slate: #1e2a30; --copper: #b8622b; --stone: #f4f3ef; display: flex; flex-direction: column; min-height: 100%; background: var(--stone); color: var(--slate); font-family: Lato, sans-serif; text-align: left; }
+.rk-nav { display: flex; align-items: center; gap: calc(var(--u) * 2.2); padding: calc(var(--u) * 1.3) calc(var(--u) * 3); background: #ffffff; border-bottom: 1px solid #e3e6e6; }
+.rk-logo { display: flex; align-items: center; gap: calc(var(--u) * .8); }
+.rk-logo svg { width: calc(var(--u) * 3.4); height: calc(var(--u) * 3.4); flex: none; }
+.rk-logo b { display: block; font-family: Merriweather, Georgia, serif; font-weight: 900; font-size: calc(var(--u) * 1.75); line-height: 1; letter-spacing: -.01em; }
+.rk-logo small { display: block; margin-top: calc(var(--u) * .3); font-size: calc(var(--u) * .9); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--copper); }
+.rk-links { display: flex; gap: calc(var(--u) * 2.2); margin-left: auto; font-size: calc(var(--u) * 1.25); font-weight: 700; }
+.rk-phone { font-size: calc(var(--u) * 1.3); font-weight: 900; white-space: nowrap; }
+.rk-btn { display: inline-flex; align-items: center; padding: calc(var(--u) * 1) calc(var(--u) * 1.7); border-radius: calc(var(--u) * .5); background: var(--copper); color: #ffffff; font-size: calc(var(--u) * 1.25); font-weight: 900; white-space: nowrap; }
+.rk-btn.rk-ghost { background: transparent; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .75); }
+.rk-short, .rk-burger { display: none; }
+.rk-burger { width: calc(var(--u) * 6); height: calc(var(--u) * 4.4); background: linear-gradient(var(--slate) 0 18%, transparent 18% 41%, var(--slate) 41% 59%, transparent 59% 82%, var(--slate) 82%); }
+.rk-hero { position: relative; display: flex; align-items: center; min-height: calc(var(--u) * 30); overflow: hidden; color: #ffffff; }
+.rk-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 60%; }
+.rk-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(18, 27, 31, .9) 0%, rgba(18, 27, 31, .74) 40%, rgba(18, 27, 31, .05) 72%); }
+.rk-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: calc(var(--u) * 1.3); width: 48%; padding: calc(var(--u) * 3.4) calc(var(--u) * 3); }
+.rk-kicker { font-size: calc(var(--u) * 1.25); font-weight: 700; color: #f1c19c; }
+.rk-h { margin: 0; font-family: Merriweather, Georgia, serif; font-weight: 900; font-size: calc(var(--u) * 3.9); line-height: 1.1; letter-spacing: -.015em; }
+.rk-sub { margin: 0; max-width: 34em; font-size: calc(var(--u) * 1.4); line-height: 1.55; color: #e2e8ea; }
+.rk-btns { display: flex; flex-wrap: wrap; gap: calc(var(--u) * 1); }
+.rk-rating { display: flex; align-items: center; gap: calc(var(--u) * .7); font-size: calc(var(--u) * 1.15); color: #e2e8ea; }
+.rk-stars { color: #f2b544; font-size: calc(var(--u) * 1.35); letter-spacing: .08em; }
+.rk-trust { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--slate); color: #ffffff; }
+.rk-trust span { display: flex; align-items: center; gap: calc(var(--u) * .8); padding: calc(var(--u) * 1.4) calc(var(--u) * 2.2); border-left: 1px solid rgba(255, 255, 255, .12); font-size: calc(var(--u) * 1.2); font-weight: 700; line-height: 1.25; }
+.rk-trust span:first-child { border-left: 0; }
+.rk-trust svg { flex: none; width: calc(var(--u) * 2); height: calc(var(--u) * 2); color: #e8a06a; }
+.rk-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: calc(var(--u) * 1.8); padding: calc(var(--u) * 2.2) calc(var(--u) * 3) calc(var(--u) * 2.6); }
+.rk-card { display: flex; flex-direction: column; overflow: hidden; border-radius: calc(var(--u) * .9); background: #ffffff; box-shadow: 0 calc(var(--u) * .4) calc(var(--u) * 1.6) rgba(30, 42, 48, .09); }
+.rk-card img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; }
+.rk-card b { padding: calc(var(--u) * 1.2) calc(var(--u) * 1.5) calc(var(--u) * .35); font-family: Merriweather, Georgia, serif; font-size: calc(var(--u) * 1.45); font-weight: 900; }
+.rk-card span { padding: 0 calc(var(--u) * 1.5) calc(var(--u) * 1.4); font-size: calc(var(--u) * 1.1); line-height: 1.5; color: #56646b; }
+/* In the slider only the right half shows at first, so the copy sits on the right there */
+.rk-flip .rk-hero { justify-content: flex-end; }
+.rk-flip .rk-hero img { object-position: 30% 60%; transform: scaleX(-1); }
+.rk-flip .rk-hero::before { background: linear-gradient(270deg, rgba(18, 27, 31, .9) 0%, rgba(18, 27, 31, .74) 40%, rgba(18, 27, 31, .05) 72%); }
 @container (max-width: 700px) {
-  .wd-s-cards { grid-template-columns: repeat(2, 1fr); }
-  .wd-s-h { font-size: 24px; }
+  .rk { --u: 1.6cqw; }
+  .rk-links { display: none; }
+  .rk-phone { margin-left: auto; }
+  .rk-copy { width: 72%; }
+  .rk-trust { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rk-trust span:nth-child(3) { border-left: 0; }
+  .rk-trust span:nth-child(n + 3) { border-top: 1px solid rgba(255, 255, 255, .12); }
+  .rk-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rk-cards .rk-card:nth-child(3) { display: none; }
 }
 @container (max-width: 460px) {
-  .wd-s-nav { display: none; }
-  .wd-s-burger { display: block; }
-  .wd-s-hero { grid-template-columns: 1fr; }
-  .wd-s-cards { grid-template-columns: 1fr; }
-  .wd-s-cards i { height: 60px; }
+  .rk { --u: 2.9cqw; }
+  .rk-nav { gap: calc(var(--u) * 1.6); padding: calc(var(--u) * 2) calc(var(--u) * 3.2); }
+  .rk-phone, .rk-nav .rk-long { display: none; }
+  .rk-short { display: inline; }
+  .rk-nav .rk-btn { margin-left: auto; }
+  .rk-burger { display: block; }
+  .rk-hero { align-items: flex-end; min-height: calc(var(--u) * 46); }
+  .rk-hero::before, .rk-flip .rk-hero::before { background: linear-gradient(0deg, rgba(18, 27, 31, .94) 0%, rgba(18, 27, 31, .8) 55%, rgba(18, 27, 31, .15) 100%); }
+  .rk-copy { width: 100%; padding: calc(var(--u) * 4) calc(var(--u) * 3.2); }
+  .rk-h { font-size: calc(var(--u) * 3.3); }
+  .rk-sub { font-size: calc(var(--u) * 1.3); }
+  .rk-trust span { padding: calc(var(--u) * 1.6) calc(var(--u) * 2); font-size: calc(var(--u) * 1.1); }
+  .rk-cards { grid-template-columns: minmax(0, 1fr); padding: calc(var(--u) * 3) calc(var(--u) * 3.2); }
+  .rk-cards .rk-card:nth-child(3) { display: flex; }
+  .rk-card b { font-size: calc(var(--u) * 1.4); }
+  .rk-card span { font-size: calc(var(--u) * 1.15); }
 }
+.wd-legend { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 1120px; margin: 0 auto; width: 100%; }
+.wd-dev { position: relative; margin: 0 auto; border: 10px solid #2e2a2a; border-radius: 24px; background: #ffffff; overflow: hidden; container-type: inline-size; transition: width .6s cubic-bezier(.2, .8, .2, 1); }
 .wd-devbtns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 @media (max-width: 900px) {
   .wd-ba { aspect-ratio: 4 / 5; }
-  .wd-o-body { grid-template-columns: 1fr; }
+  .wd-o-body { grid-template-columns: 1fr; font-size: 3cqw; }
   .wd-o-body > .wd-o-col:first-child, .wd-o-body > .wd-o-col:last-child { display: none; }
   .wd-o-slide { height: 40cqw; }
+  .wd-o-slide span { font-size: 2.6cqw; }
   .wd-o-banner { font-size: 4.4cqw; }
-  .wd-o-nav i { width: 9cqw; height: 2.6cqw; }
-  .wd-o-logo { width: 18cqw; height: 6cqw; }
-  .wd-o-col i { height: 2.4cqw; }
-  .wd-o-cta { font-size: 3.4cqw; padding: 1cqw 2cqw; }
-  .wd-n-top { padding: 3cqw 4cqw; }
-  .wd-n-logo { width: 20cqw; height: 5.4cqw; }
-  .wd-n-nav { display: none; }
-  .wd-n-btn { font-size: 3.2cqw; padding: 2cqw 3cqw; margin-left: auto; }
-  .wd-n-hero { grid-template-columns: 1fr; padding: 8cqw 5cqw 8cqw 55cqw; }
-  .wd-n-h { font-size: 6.6cqw; }
-  .wd-n-trust { flex-wrap: wrap; gap: 1.6cqw; }
-  .wd-n-sub { height: 2.6cqw; }
-  .wd-n-trust i { font-size: 2.8cqw; padding: 1cqw 2.4cqw; }
-  .wd-n-img { display: none; }
-  .wd-n-cards { grid-template-columns: 1fr; padding: 4cqw 5cqw; }
+  .wd-o-logo { font-size: 3.6cqw; }
+  .wd-o-nav { font-size: 2.6cqw; }
   .wd-legend { grid-template-columns: minmax(0, 1fr); }
 }
 </style>
@@ -267,22 +290,8 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 <div style="display: flex; flex-direction: column; gap: clamp(28px, 4vh, 48px); max-width: 1280px; margin: 0 auto">
 <div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: end"><div style="display: flex; flex-direction: column; gap: 14px"><span class="e-eb" style="color: #a42e2e">See the difference</span><h2 class="e-h2">Template vs. built for you.</h2></div><p class="e-lede" style="color: #3b3636">Drag the handle across the page. Same business, same homepage: one is a generic template, the other is built around the one thing a visitor came to do.</p></div>
 <div class="wd-ba" style="--pos: {{baPos}}%">
-<div class="wd-pane wd-old" aria-hidden="true">
-<span class="wd-tag" style="left: 14px; background: #2f4f7f; color: #ffffff">Generic template</span>
-<div class="wd-o-top"><span class="wd-o-logo"></span><span class="wd-o-nav"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-<div class="wd-o-banner">Welcome to our website!!! Quality service since forever</div>
-<div class="wd-o-body">
-<div class="wd-o-col"><div class="wd-o-box"><i></i><i></i><i></i></div><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="wd-o-col"><div class="wd-o-slide"></div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="wd-o-cta">click here</span></div>
-<div class="wd-o-col"><div class="wd-o-box"><i></i><i></i></div><i></i><i></i><i></i><div class="wd-o-box"><i></i><i></i><i></i></div><i></i><i></i></div>
-</div>
-</div>
-<div class="wd-pane wd-new" aria-hidden="true">
-<span class="wd-tag" style="right: 14px; background: #e44443; color: #ffffff">Built for you</span>
-<div class="wd-n-top"><span class="wd-n-logo"></span><span class="wd-n-nav"><i></i><i></i><i></i></span><span class="wd-n-btn">Free estimate</span></div>
-<div class="wd-n-hero"><div class="wd-n-img"></div><div><p class="wd-n-h">Roof repair you can count on.</p><div class="wd-n-sub"></div><div class="wd-n-sub" style="width: 60%"></div><div class="wd-n-trust"><i>Licensed</i><i>Insured</i><i>Local</i></div></div></div>
-<div class="wd-n-cards"><i></i><i></i><i></i></div>
-</div>
+<div class="wd-pane wd-old" aria-hidden="true"><span class="wd-tag" style="left: 14px; background: #2f4f7f; color: #ffffff">Generic template</span><div class="wd-o-top"><span class="wd-o-logo">ABC Roofing</span><span class="wd-o-nav"><span>Home</span><span>About Us</span><span>Services</span><span>Gallery</span><span>Testimonials</span><span>Specials</span><span>Blog</span><span>FAQ</span><span>Links</span><span>Careers</span><span>Our Team</span><span>Contact Us</span></span></div><div class="wd-o-banner">Welcome to our website!!! Quality service since forever</div><div class="wd-o-body"><div class="wd-o-col"><div class="wd-o-box"><b>Our Services</b><ul><li>Roofing</li><li>Siding</li><li>Gutters</li><li>Windows</li><li>Decks</li><li>And much more!</li></ul></div><p>We have been in business for many years and we take pride in our work. Call today!</p></div><div class="wd-o-col"><div class="wd-o-slide"><img src="/assets/img/wd-mock-replace-480.webp" width="480" height="358" alt="" loading="lazy" decoding="async"><span>&#9664; Slide 1 of 7 &#9654;</span></div><p>Welcome to ABC Roofing! We are a full service roofing company serving the greater Lexington area and surrounding areas. We do roofing, siding, gutters, windows and much more. Our team is committed to excellence and customer satisfaction is our number one priority.</p><p>Please browse our website to learn more about our company and the services we offer. For more information <span class="wd-o-cta">click here</span>.</p></div><div class="wd-o-col"><div class="wd-o-box"><b>Hours</b>Mon - Fri 8 - 5<br>Sat by appt.</div><div class="wd-o-box"><b>Like us on Facebook!</b>Follow us for specials</div><span class="wd-o-count">Visitors: 004521</span></div></div></div>
+<div class="wd-pane wd-new" aria-hidden="true"><span class="wd-tag" style="right: 14px; background: #e44443; color: #ffffff">Built for you</span><div class="rk rk-flip"><div class="rk-nav"><span class="rk-logo"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#1e2a30"/><path d="M7 24 L20 12 L33 24" fill="none" stroke="#b8622b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 29 L20 21.5 L28 29" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Ridgeline</b><small>Roofing Co.</small></span></span><span class="rk-links"><span>Roof repair</span><span>Replacement</span><span>Storm damage</span><span>Reviews</span></span><span class="rk-phone">(859) 555-0142</span><span class="rk-btn"><span class="rk-long">Book a free inspection</span><span class="rk-short">Call now</span></span><span class="rk-burger"></span></div><div class="rk-hero"><img src="/assets/img/wd-mock-hero-760.webp" srcset="/assets/img/wd-mock-hero-760.webp 760w, /assets/img/wd-mock-hero-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 1120px" width="1200" height="670" alt="" loading="lazy" decoding="async"><div class="rk-copy"><span class="rk-kicker">Lexington roofers since 2004</span><p class="rk-h">Roof repair you can count on.</p><p class="rk-sub">Free inspections, a written estimate within 48 hours and a lifetime workmanship warranty on every roof.</p><div class="rk-btns"><span class="rk-btn">Book a free inspection</span><span class="rk-btn rk-ghost">See our work</span></div><span class="rk-rating"><span class="rk-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.9 from 380+ Google reviews</span></div></div><div class="rk-trust"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L20 6 V12 C20 16.5 16.6 19.8 12 21 C7.4 19.8 4 16.5 4 12 V6 Z"/><path d="M8.5 12 L11 14.5 L15.5 9.5"/></svg>Licensed and insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.4 L7 21 L12 18.4 L17 21 L15.4 13.4"/></svg>Lifetime workmanship warranty</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10 H20.5 M8 3 V7 M16 3 V7 M8 14 H11"/></svg>Inspections this week</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12.5" rx="2"/><path d="M3 10.5 H21 M7 15 H10"/></svg>Financing available</span></div><div class="rk-cards"><div class="rk-card"><img src="/assets/img/wd-mock-repair-480.webp" width="480" height="358" alt="" loading="lazy" decoding="async"><b>Roof repair</b><span>Leaks, flashing and missing shingles, usually fixed the same week.</span></div><div class="rk-card"><img src="/assets/img/wd-mock-replace-480.webp" width="480" height="358" alt="" loading="lazy" decoding="async"><b>Roof replacement</b><span>Tear-off to final cleanup in one to two days for most homes.</span></div><div class="rk-card"><img src="/assets/img/wd-mock-storm-480.webp" width="480" height="358" alt="" loading="lazy" decoding="async"><b>Storm damage</b><span>Free hail and wind inspections, with photos for your insurer.</span></div></div></div></div>
 <div class="wd-handle" aria-hidden="true"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 6 L3 12 L9 18 M15 6 L21 12 L15 18"></path></svg></span></div>
 <input class="wd-range" type="range" min="0" max="100" step="1" value="50" onInput="{{baMove}}" aria-label="Drag to compare a generic template with a custom-built website">
 </div>
@@ -301,7 +310,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 <div class="e-split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: end"><div style="display: flex; flex-direction: column; gap: 14px"><span class="e-eb" style="color: #ff8a89">Responsive design</span><h2 class="e-h2">One site. Every screen.</h2></div><p class="e-lede" style="color: #cfc9c9">Tap a device. The same site rearranges itself so it reads and works just as well on a phone as it does on a desktop.</p></div>
 <div class="wd-devbtns"><button type="button" class="e-chip" onClick="{{dev0}}" aria-pressed="{{devP0}}" style="background: {{devB0}}; color: {{devF0}}; border-color: #ffffff">Desktop</button><button type="button" class="e-chip" onClick="{{dev1}}" aria-pressed="{{devP1}}" style="background: {{devB1}}; color: {{devF1}}; border-color: #ffffff">Tablet</button><button type="button" class="e-chip" onClick="{{dev2}}" aria-pressed="{{devP2}}" style="background: {{devB2}}; color: {{devF2}}; border-color: #ffffff">Phone</button></div>
 <div class="wd-dev" aria-hidden="true" style="width: {{devW}}">
-<div class="wd-site"><div class="wd-s-top"><b></b><span class="wd-s-nav"><i></i><i></i><i></i><i></i></span><span class="wd-s-burger"></span></div><div class="wd-s-hero"><div><p class="wd-s-h">Roof repair you can count on.</p><span class="wd-s-btn">Free estimate</span></div><div class="wd-s-img"></div></div><div class="wd-s-cards"><i></i><i></i><i></i></div></div>
+<div class="rk"><div class="rk-nav"><span class="rk-logo"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#1e2a30"/><path d="M7 24 L20 12 L33 24" fill="none" stroke="#b8622b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 29 L20 21.5 L28 29" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Ridgeline</b><small>Roofing Co.</small></span></span><span class="rk-links"><span>Roof repair</span><span>Replacement</span><span>Storm damage</span><span>Reviews</span></span><span class="rk-phone">(859) 555-0142</span><span class="rk-btn"><span class="rk-long">Book a free inspection</span><span class="rk-short">Call now</span></span><span class="rk-burger"></span></div><div class="rk-hero"><img src="/assets/img/wd-mock-hero-760.webp" srcset="/assets/img/wd-mock-hero-760.webp 760w, /assets/img/wd-mock-hero-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 1120px" width="1200" height="670" alt="" loading="lazy" decoding="async"><div class="rk-copy"><span class="rk-kicker">Lexington roofers since 2004</span><p class="rk-h">Roof repair you can count on.</p><p class="rk-sub">Free inspections, a written estimate within 48 hours and a lifetime workmanship warranty on every roof.</p><div class="rk-btns"><span class="rk-btn">Book a free inspection</span><span class="rk-btn rk-ghost">See our work</span></div><span class="rk-rating"><span class="rk-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.9 from 380+ Google reviews</span></div></div><div class="rk-trust"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L20 6 V12 C20 16.5 16.6 19.8 12 21 C7.4 19.8 4 16.5 4 12 V6 Z"/><path d="M8.5 12 L11 14.5 L15.5 9.5"/></svg>Licensed and insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.4 L7 21 L12 18.4 L17 21 L15.4 13.4"/></svg>Lifetime workmanship warranty</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10 H20.5 M8 3 V7 M16 3 V7 M8 14 H11"/></svg>Inspections this week</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12.5" rx="2"/><path d="M3 10.5 H21 M7 15 H10"/></svg>Financing available</span></div><div class="rk-cards"><div class="rk-card"><img src="/assets/img/wd-mock-repair-480.webp" width="480" height="358" alt="" loading="lazy" decoding="async"><b>Roof repair</b><span>Leaks, flashing and missing shingles, usually fixed the same week.</span></div><div class="rk-card"><img src="/assets/img/wd-mock-replace-480.webp" width="480" height="358" alt="" loading="lazy" decoding="async"><b>Roof replacement</b><span>Tear-off to final cleanup in one to two days for most homes.</span></div><div class="rk-card"><img src="/assets/img/wd-mock-storm-480.webp" width="480" height="358" alt="" loading="lazy" decoding="async"><b>Storm damage</b><span>Free hail and wind inspections, with photos for your insurer.</span></div></div></div>
 </div>
 <p aria-live="polite" style="margin: 0; text-align: center; font-size: 15px; color: #cfc9c9">{{devNote}}</p>
 </div>
