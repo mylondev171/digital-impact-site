@@ -1,6 +1,8 @@
 {
   "baseUrl": "https://www.digitalimpactmarketers.com",
   "ogImage": "/assets/img/og-1200x630.jpg",
+  "googleSiteVerification": "KCNIZYyorFEL8oHaME-HKNCGXnvR9ZvHgpgEBGdKNeI",
+  "ga4": "G-7QP22FNW0R",
   "ogImageAlt": "Digital Impact, a Lexington, Kentucky digital marketing and AI agency",
   "org": {
     "name": "Digital Impact",
@@ -76,8 +78,8 @@
       "llms": "Services",
       "summary": "Search engine optimization for Louisville, KY businesses."
     },
-    "fundamentals-of-seo": {
-      "name": "Fundamentals of SEO",
+    "seo-fundamentals": {
+      "name": "SEO Fundamentals",
       "parent": "services",
       "llms": "Services",
       "summary": "Plain-English guide to how search engines rank pages, the three legs of SEO, keyword targeting and local SEO."

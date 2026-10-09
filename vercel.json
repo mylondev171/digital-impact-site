@@ -71,6 +71,81 @@
       "source": "/aio-aeo-geo",
       "destination": "/aioaeogeo",
       "permanent": true
+    },
+    {
+      "source": "/fundamentals-of-seo",
+      "destination": "/seo-fundamentals",
+      "permanent": true
+    },
+    {
+      "source": "/untitled",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/seo",
+      "destination": "/seolexingtonky",
+      "permanent": true
+    },
+    {
+      "source": "/pay-per-click",
+      "destination": "/ppc-management",
+      "permanent": true
+    },
+    {
+      "source": "/web-design",
+      "destination": "/web-design-lexington-ky",
+      "permanent": true
+    },
+    {
+      "source": "/social-media",
+      "destination": "/social-media-marketing-lexington-ky",
+      "permanent": true
+    },
+    {
+      "source": "/creative",
+      "destination": "/creative-branding",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-old",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/ahistoryofwebdesign",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -79,7 +154,7 @@
       "has": [
         {
           "type": "host",
-          "value": "digital-impact-site.vercel.app"
+          "value": "(?<host>.*).vercel.app"
         }
       ],
       "headers": [

@@ -77,10 +77,21 @@ function pageSchemas(slug, meta, faq) {
   return out;
 }
 
+// Search Console verification and GA4, carried over from the old Webflow site.
+function trackingTags() {
+  const out = [];
+  if (site.googleSiteVerification) out.push('<meta name="google-site-verification" content="' + esc(site.googleSiteVerification) + '">');
+  if (site.ga4) {
+    out.push('<script async src="https://www.googletagmanager.com/gtag/js?id=' + esc(site.ga4) + '"></script>',
+      "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config'," + JSON.stringify(site.ga4) + ');</script>');
+  }
+  return out;
+}
+
 function headTags(slug, meta) {
   const url = urlFor(slug);
-  if ((site.pages[slug] || {}).noindex) return '<meta name="robots" content="noindex">';
-  return [
+  if ((site.pages[slug] || {}).noindex) return ['<meta name="robots" content="noindex">'].concat(trackingTags()).join('\n');
+  return trackingTags().concat([
     '<link rel="canonical" href="' + esc(url) + '">',
     '<meta property="og:type" content="website">',
     '<meta property="og:site_name" content="' + esc(site.org.name) + '">',
@@ -96,7 +107,7 @@ function headTags(slug, meta) {
     '<meta name="twitter:title" content="' + esc(meta.title) + '">',
     '<meta name="twitter:description" content="' + esc(meta.description) + '">',
     '<meta name="twitter:image" content="' + esc(BASE + site.ogImage) + '">'
-  ].join('\n');
+  ]).join('\n');
 }
 
 function normFaq(list) {
