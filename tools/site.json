@@ -106,7 +106,7 @@
       "name": "PPC management",
       "parent": "services",
       "llms": "Services",
-      "summary": "Google Ads and Bing Ads (pay-per-click) campaign management: how the ad auction works, ad types, what we manage and a brief history of PPC."
+      "summary": "Google Ads and Microsoft Ads (pay-per-click) campaign management: how the ad auction works, ad types, what we manage and a brief history of PPC."
     },
     "aiservices": {
       "name": "AI services",
