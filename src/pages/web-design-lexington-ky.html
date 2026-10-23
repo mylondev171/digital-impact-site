@@ -455,7 +455,7 @@ class Component extends DCLogic {
     };
     v.baPos = s.baPos;
     v.baMove = (e) => this.setState({ baPos: Number(e.target.value) });
-    const DEV = [['min(100%, 980px)', 'Desktop: three columns of services and the full menu.'], ['min(100%, 620px)', 'Tablet: the layout tightens to two columns.'], ['min(100%, 340px)', 'Phone: one column, a tap-friendly menu and the call to action up top.']];
+    const DEV = [['min(100%, 980px)', 'Example site on desktop: three columns of services and the full menu.'], ['min(100%, 620px)', 'On a tablet, the layout tightens to two columns.'], ['min(100%, 340px)', 'On a phone: one column, a tap-friendly menu and the call to action up top.']];
     v.devW = DEV[s.dev][0];
     v.devNote = DEV[s.dev][1];
     DEV.forEach((d, i) => {
