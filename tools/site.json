@@ -71,30 +71,55 @@
     "seolexingtonky": {
       "name": "SEO Lexington",
       "llms": "Services",
-      "summary": "Search engine optimization for Lexington, KY businesses: technical fixes, content and links."
+      "summary": "Search engine optimization for Lexington, KY businesses: technical fixes, content and links.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lexington, KY"
+        }
+      ]
     },
     "seolouisvilleky": {
       "name": "SEO Louisville",
       "llms": "Services",
-      "summary": "Search engine optimization for Louisville, KY businesses."
+      "summary": "Search engine optimization for Louisville, KY businesses.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Louisville, KY"
+        }
+      ]
     },
     "seo-fundamentals": {
       "name": "SEO Fundamentals",
       "parent": "services",
       "llms": "Services",
-      "summary": "Plain-English guide to how search engines rank pages, the three legs of SEO, keyword targeting and local SEO."
+      "summary": "Plain-English guide to how search engines rank pages, the three legs of SEO, keyword targeting and local SEO.",
+      "article": true
     },
     "web-design-lexington-ky": {
       "name": "Web design Lexington",
       "parent": "services",
       "llms": "Services",
-      "summary": "Custom, mobile-friendly website design, redesigns and builds for Lexington, KY businesses."
+      "summary": "Custom, mobile-friendly website design, redesigns and builds for Lexington, KY businesses.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lexington, KY"
+        }
+      ]
     },
     "social-media-marketing-lexington-ky": {
       "name": "Social media marketing Lexington",
       "parent": "services",
       "llms": "Services",
-      "summary": "Paid and organic social media on Facebook, Instagram, TikTok and LinkedIn for Lexington businesses."
+      "summary": "Paid and organic social media on Facebook, Instagram, TikTok and LinkedIn for Lexington businesses.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lexington, KY"
+        }
+      ]
     },
     "creative-branding": {
       "name": "Creative and branding",
@@ -140,17 +165,35 @@
     "aiolexingtonky": {
       "name": "AI search optimization Lexington",
       "llms": "Local pages",
-      "summary": "AI search optimization for Lexington businesses: visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews."
+      "summary": "AI search optimization for Lexington businesses: visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lexington, KY"
+        }
+      ]
     },
     "aiolouisvilleky": {
       "name": "AI search optimization Louisville",
       "llms": "Local pages",
-      "summary": "AI search optimization for Louisville businesses: visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews."
+      "summary": "AI search optimization for Louisville businesses: visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Louisville, KY"
+        }
+      ]
     },
     "aidigitalmarketinglexingtonky": {
       "name": "AI digital marketing Lexington",
       "llms": "Local pages",
-      "summary": "How Lexington businesses use AI across digital marketing, from content to paid ads."
+      "summary": "How Lexington businesses use AI across digital marketing, from content to paid ads.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lexington, KY"
+        }
+      ]
     },
     "about": {
       "name": "About and team",
@@ -170,7 +213,8 @@
     "ahistoryofwebdesign": {
       "name": "The history of web design",
       "llms": "Articles",
-      "summary": "Article: the history of web design from 1998 to 2025."
+      "summary": "Article: the history of web design from 1998 to 2025.",
+      "article": true
     },
     "privacy-policy": {
       "name": "Privacy policy"

@@ -21,6 +21,12 @@ const hash = (s) => crypto.createHash('sha1').update(s).digest('hex').slice(0, 1
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const decode = (s) => new JSDOM('<!doctype html><p>' + s + '</p>').window.document.querySelector('p').textContent;
 const urlFor = (slug) => (slug === 'index' ? BASE + '/' : BASE + '/' + slug);
+const { execSync } = require('child_process');
+// Last commit date of a page's source, for dateModified (falls back to today for uncommitted pages).
+const lastModified = (file) => {
+  try { return execSync('git log -1 --format=%cs -- "' + path.join('src', 'pages', file) + '"', { cwd: ROOT }).toString().trim() || new Date().toISOString().slice(0, 10); }
+  catch (e) { return new Date().toISOString().slice(0, 10); }
+};
 const ld = (obj) => '<script type="application/ld+json">' + JSON.stringify(obj).replace(/</g, '\\u003c') + '</script>';
 
 const dcLite = fs.readFileSync(path.join(ROOT, 'assets', 'js', 'dc-lite.js'), 'utf8');
@@ -49,7 +55,7 @@ function orgSchema() {
   };
 }
 
-function pageSchemas(slug, meta, faq) {
+function pageSchemas(slug, meta, faq, file) {
   const out = [orgSchema()];
   const url = urlFor(slug);
   const page = site.pages[slug] || {};
@@ -64,6 +70,32 @@ function pageSchemas(slug, meta, faq) {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url }))
+    });
+  }
+  if (page.article) {
+    out.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': url + '#article',
+      headline: meta.title.replace(/\s*[|-]\s*Digital Impact$/, ''),
+      description: meta.description,
+      url: url,
+      mainEntityOfPage: url,
+      image: BASE + site.ogImage,
+      dateModified: lastModified(file),
+      author: { '@id': BASE + '/#org' },
+      publisher: { '@id': BASE + '/#org' }
+    });
+  } else if (slug !== 'services' && ['Services', 'AI services', 'Local pages'].includes(page.llms)) {
+    out.push({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      '@id': url + '#service',
+      name: page.name,
+      description: decode(page.summary || meta.description),
+      url: url,
+      provider: { '@id': BASE + '/#org' },
+      areaServed: page.areaServed || site.org.areaServed
     });
   }
   if (faq.length) {
@@ -82,7 +114,8 @@ function trackingTags() {
   const out = [];
   if (site.googleSiteVerification) out.push('<meta name="google-site-verification" content="' + esc(site.googleSiteVerification) + '">');
   if (site.ga4) {
-    out.push('<script async src="https://www.googletagmanager.com/gtag/js?id=' + esc(site.ga4) + '"></script>',
+    out.push('<link rel="preconnect" href="https://www.google-analytics.com">',
+      '<script async src="https://www.googletagmanager.com/gtag/js?id=' + esc(site.ga4) + '"></script>',
       "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config'," + JSON.stringify(site.ga4) + ');</script>');
   }
   return out;
@@ -151,7 +184,7 @@ for (const file of fs.readdirSync(SRC).filter((f) => f.endsWith('.html')).sort()
       // Vercel Web Analytics (collects once Analytics is enabled on the Vercel project)
       '<script src="/_vercel/insights/script.js" defer></script>'
     ]);
-  const html = head + '\n' + headTags(slug, meta) + '\n' + pageSchemas(slug, meta, faq).map(ld).join('\n') +
+  const html = head + '\n' + headTags(slug, meta) + '\n' + pageSchemas(slug, meta, faq, file).map(ld).join('\n') +
     '\n</head>\n<body>\n<div id="app">' + markup + '</div>\n' + scripts.join('\n') + '\n</body>\n</html>\n';
   fs.writeFileSync(path.join(ROOT, file), html);
   built.push({ slug, meta, faq: faq.length, bytes: Buffer.byteLength(html) });

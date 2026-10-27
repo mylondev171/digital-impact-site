@@ -319,7 +319,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 
 <header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
 <a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
-<img class="e-logo" src="/assets/img/digital-impact-logo-544.webp" width="544" height="88" alt="Digital Impact" style="height: 44px; width: auto; display: block">
+<img class="e-logo" src="/assets/img/digital-impact-logo-544.webp" srcset="/assets/img/digital-impact-logo-272.webp 272w, /assets/img/digital-impact-logo-544.webp 544w" sizes="272px" width="544" height="88" alt="Digital Impact" style="height: 44px; width: auto; display: block">
 </a>
 <nav class="e-navlinks" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase">
 <div class="e-dd"><a class="e-navlink" href="/services">Services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="/services"><strong>All services</strong><span>SEO, web, PPC, creative and social</span></a><a href="/ppc-management"><strong>PPC management</strong><span>Google Ads and Microsoft Ads</span></a><a href="/seolexingtonky"><strong>SEO Lexington</strong><span>Local search in Lexington</span></a><a href="/seolouisvilleky"><strong>SEO Louisville</strong><span>Local search in Louisville</span></a><a href="/seo-fundamentals"><strong>SEO Fundamentals</strong><span>How search rankings work</span></a><a href="/web-design-lexington-ky"><strong>Web design</strong><span>Custom, mobile-friendly sites</span></a><a href="/social-media-marketing-lexington-ky"><strong>Social media</strong><span>Paid and organic social</span></a><a href="/creative-branding"><strong>Creative and branding</strong><span>Logos, identity, print and ads</span></a><a href="/aidigitalmarketinglexingtonky"><strong>AI digital marketing</strong><span>AI-powered campaigns</span></a></div></div>
@@ -343,7 +343,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 </sc-for>
 </nav>
 </sc-if>
-<button type="button" onClick="{{navToggle}}" aria-expanded="{{navExp}}" aria-label="Jump to a section" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 16px 10px 12px; background: #161515; border: 0; border-radius: 999px; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: #a39c9c; cursor: pointer">
+<button type="button" onClick="{{navToggle}}" aria-expanded="{{navExp}}" aria-label="Target: {{hud}}. Jump to a section" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 16px 10px 12px; background: #161515; border: 0; border-radius: 999px; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: #a39c9c; cursor: pointer">
 <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#e44443" stroke-width="1.8" aria-hidden="true"><circle cx="10" cy="10" r="7"></circle><line x1="10" y1="0" x2="10" y2="6"></line><line x1="10" y1="14" x2="10" y2="20"></line><line x1="0" y1="10" x2="6" y2="10"></line><line x1="14" y1="10" x2="20" y2="10"></line></svg>
 <span>Target:</span><span style="color: #ffffff">{{hud}}</span>
 <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="#ffffff" stroke-width="2.5" aria-hidden="true"><path d="M5 12 L10 7 L15 12"></path></svg>
@@ -497,7 +497,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 
 <div class="e-fan" data-scene="e14" data-mode="reveal" role="group" aria-label="Choose a service" style="margin-top: clamp(36px, 6vh, 64px)">
 
-<button type="button" class="e-fcard" onClick="{{c0go}}" aria-label="AI services" aria-pressed="{{c0p}}" style="z-index: {{c0z}}; transform: rotate(calc({{c0d}}deg * var(--e14f))); transition: {{c0tr}}">
+<button type="button" class="e-fcard" onClick="{{c0go}}" aria-pressed="{{c0p}}" style="z-index: {{c0z}}; transform: rotate(calc({{c0d}}deg * var(--e14f))); transition: {{c0tr}}">
 <span class="e-fmid" style="transform: scale({{c0s}})">
 <span class="e-finner" style="background: #161515; color: #ffffff">
 <span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">01</span><span class="e-eb" style="font-size: 12px; color: #a39c9c">Start here</span></span>
@@ -513,7 +513,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 </span>
 </button>
 
-<button type="button" class="e-fcard" onClick="{{c1go}}" aria-label="SEO and AEO" aria-pressed="{{c1p}}" style="z-index: {{c1z}}; transform: rotate(calc({{c1d}}deg * var(--e14f))); transition: {{c1tr}}">
+<button type="button" class="e-fcard" onClick="{{c1go}}" aria-pressed="{{c1p}}" style="z-index: {{c1z}}; transform: rotate(calc({{c1d}}deg * var(--e14f))); transition: {{c1tr}}">
 <span class="e-fmid" style="transform: scale({{c1s}})">
 <span class="e-finner" style="background: #e44443; color: #ffffff">
 <span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #161515">02</span><span class="e-eb" style="font-size: 12px; color: #161515">Since before Google</span></span>
@@ -536,7 +536,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 </span>
 </button>
 
-<button type="button" class="e-fcard" onClick="{{c2go}}" aria-label="Web development" aria-pressed="{{c2p}}" style="z-index: {{c2z}}; transform: rotate(calc({{c2d}}deg * var(--e14f))); transition: {{c2tr}}">
+<button type="button" class="e-fcard" onClick="{{c2go}}" aria-pressed="{{c2p}}" style="z-index: {{c2z}}; transform: rotate(calc({{c2d}}deg * var(--e14f))); transition: {{c2tr}}">
 <span class="e-fmid" style="transform: scale({{c2s}})">
 <span class="e-finner" style="background: #ffffff; color: #161515; box-shadow: 0 30px 60px rgba(22, 21, 21, .18), inset 0 0 0 2px #161515">
 <span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #c93534">03</span><span class="e-eb" style="font-size: 12px; color: #5f5959">Built to convert</span></span>
@@ -555,7 +555,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 </span>
 </button>
 
-<button type="button" class="e-fcard" onClick="{{c3go}}" aria-label="Pay-per-click" aria-pressed="{{c3p}}" style="z-index: {{c3z}}; transform: rotate(calc({{c3d}}deg * var(--e14f))); transition: {{c3tr}}">
+<button type="button" class="e-fcard" onClick="{{c3go}}" aria-pressed="{{c3p}}" style="z-index: {{c3z}}; transform: rotate(calc({{c3d}}deg * var(--e14f))); transition: {{c3tr}}">
 <span class="e-fmid" style="transform: scale({{c3s}})">
 <span class="e-finner" style="background: #161515; color: #ffffff">
 <span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #e44443">04</span><span class="e-eb" style="font-size: 12px; color: #a39c9c">Since its inception</span></span>
@@ -570,7 +570,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 </span>
 </button>
 
-<button type="button" class="e-fcard" onClick="{{c4go}}" aria-label="Creative" aria-pressed="{{c4p}}" style="z-index: {{c4z}}; transform: rotate(calc({{c4d}}deg * var(--e14f))); transition: {{c4tr}}">
+<button type="button" class="e-fcard" onClick="{{c4go}}" aria-pressed="{{c4p}}" style="z-index: {{c4z}}; transform: rotate(calc({{c4d}}deg * var(--e14f))); transition: {{c4tr}}">
 <span class="e-fmid" style="transform: scale({{c4s}})">
 <span class="e-finner" style="background: #e44443; color: #ffffff">
 <span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #161515">05</span><span class="e-eb" style="font-size: 12px; color: #161515">Ages well</span></span>
@@ -583,7 +583,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 </span>
 </button>
 
-<button type="button" class="e-fcard" onClick="{{c5go}}" aria-label="Social media" aria-pressed="{{c5p}}" style="z-index: {{c5z}}; transform: rotate(calc({{c5d}}deg * var(--e14f))); transition: {{c5tr}}">
+<button type="button" class="e-fcard" onClick="{{c5go}}" aria-pressed="{{c5p}}" style="z-index: {{c5z}}; transform: rotate(calc({{c5d}}deg * var(--e14f))); transition: {{c5tr}}">
 <span class="e-fmid" style="transform: scale({{c5s}})">
 <span class="e-finner" style="background: #7b0c13; color: #ffffff">
 <span style="display: flex; justify-content: space-between; align-items: center"><span class="e-x" style="font-size: 18px; color: #ffc2c1">06</span><span class="e-eb" style="font-size: 12px; color: #ffc2c1">Right people, right time</span></span>
@@ -1336,7 +1336,7 @@ nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-
 <footer style="margin: clamp(64px, 10vh, 112px) calc(-1 * clamp(20px, 5vw, 80px)) 0; position: relative; z-index: 45; padding: clamp(56px, 8vh, 88px) clamp(20px, 5vw, 80px) 28px; background: #161515; color: #cfc9c9">
 <div class="e-foot">
 <div class="e-footlead" style="display: flex; flex-direction: column; gap: 16px">
-<img src="/assets/img/digital-impact-logo-544.webp" width="544" height="88" alt="Digital Impact" style="height: 26px; width: auto; align-self: flex-start">
+<img src="/assets/img/digital-impact-logo-544.webp" srcset="/assets/img/digital-impact-logo-272.webp 272w, /assets/img/digital-impact-logo-544.webp 544w" sizes="161px" width="544" height="88" alt="Digital Impact" style="height: 26px; width: auto; align-self: flex-start">
 <p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: 17px; color: #ffffff">Because experience matters.</p>
 <a href="tel:8593968606" class="e-x" style="font-size: 26px; color: #ffffff; text-decoration: none">859.396.8606</a>
 <span style="font-size: 15px">Lexington, Kentucky. Serving Louisville and all of Kentucky.</span>
