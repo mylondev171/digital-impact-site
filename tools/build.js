@@ -114,9 +114,14 @@ function trackingTags() {
   const out = [];
   if (site.googleSiteVerification) out.push('<meta name="google-site-verification" content="' + esc(site.googleSiteVerification) + '">');
   if (site.ga4) {
-    out.push('<link rel="preconnect" href="https://www.google-analytics.com">',
-      '<script async src="https://www.googletagmanager.com/gtag/js?id=' + esc(site.ga4) + '"></script>',
-      "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config'," + JSON.stringify(site.ga4) + ');</script>');
+    // gtag.js (~175 KB) loads on the first interaction or 4 s after load, so it stays out of the
+    // first render (mobile LCP). Commands queue in dataLayer until then; the page_view keeps its time.
+    out.push("<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config'," + JSON.stringify(site.ga4) + ');' +
+      "(function(){var done=false,ev=['pointerdown','keydown','scroll','touchstart'];function load(){if(done)return;done=true;" +
+      "ev.forEach(function(e){removeEventListener(e,load)});var s=document.createElement('script');s.async=true;" +
+      "s.src='https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(site.ga4) + "';document.head.appendChild(s);}" +
+      "ev.forEach(function(e){addEventListener(e,load,{once:true,passive:true})});" +
+      "addEventListener('load',function(){setTimeout(load,4000)});})();</script>");
   }
   return out;
 }
