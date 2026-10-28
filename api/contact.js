@@ -38,6 +38,29 @@ async function sendEmail(d) {
   if (!r.ok) throw new Error(`Resend ${r.status}: ${(await r.text()).slice(0, 300)}`);
 }
 
+// reCAPTCHA v3. Off until RECAPTCHA_SECRET is set. Returns null when the visitor passes,
+// 'reject' when the token is missing or invalid, or a note when the score is too low.
+async function checkRecaptcha(d, token) {
+  const secret = process.env.RECAPTCHA_SECRET;
+  if (!secret) return null;
+  if (typeof token !== 'string' || !token) return 'reject';
+  let j;
+  try {
+    const r = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret, response: token.slice(0, 4000) }).toString()
+    });
+    j = await r.json();
+  } catch (e) {
+    console.error('recaptcha verify failed', e);
+    return null; // Google unreachable: let the lead through.
+  }
+  if (!j.success || j.action !== `submit_${d.form}`) return 'reject';
+  const min = parseFloat(process.env.RECAPTCHA_MIN_SCORE || '0.5');
+  return j.score < min ? `held by reCAPTCHA (score ${j.score})` : null;
+}
+
 async function saveCopy(d, emailError) {
   const r = await fetch(`${process.env.SUPABASE_URL}/rest/v1/website_submissions`, {
     method: 'POST',
@@ -65,8 +88,12 @@ module.exports = async (req, res) => {
   if (!d.first && !d.last) return res.status(400).json({ ok: false, error: 'Please enter your name.' });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return res.status(400).json({ ok: false, error: 'Please enter a valid email address.' });
 
-  let emailError = null;
-  try { await sendEmail(d); } catch (e) { emailError = e.message; console.error('email failed', e); }
+  const bot = await checkRecaptcha(d, body.recaptcha);
+  if (bot === 'reject') return res.status(400).json({ ok: false, error: 'Our spam check could not confirm this request. Please refresh the page and try again, or call us at 859.396.8606.' });
+
+  // A low score still lands in the CRM (email_error says why) but sends no email.
+  let emailError = bot;
+  if (!bot) try { await sendEmail(d); } catch (e) { emailError = e.message; console.error('email failed', e); }
   let saveError = null;
   try { await saveCopy(d, emailError); } catch (e) { saveError = e.message; console.error('save failed', e); }
 
