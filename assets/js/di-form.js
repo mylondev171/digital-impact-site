@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   // reCAPTCHA v3 site key (public). Empty = forms post without a token.
-  const RECAPTCHA_KEY = '';
+  const RECAPTCHA_KEY = '6LfQXgUuAAAAAF3d6SCNbpdqn3NatZ8NTqf8brpY';
   let recaptcha = null;
 
   // api.js is heavy, so it loads when a visitor first touches a form field, not with the page.
