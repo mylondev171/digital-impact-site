@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIG: Digital Impact Gives | Prototype B, Their Colors</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="dig-base.css">
+<style>
+:root { --red: #e44443; --red-txt: #c93534; --ink: #161515; --warm: #f6f3f2; --mute: #5d5656; }
+body { background: #fff; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.it { font-family: Merriweather, Georgia, serif; font-style: italic; text-transform: none; letter-spacing: -.01em; font-weight: 700; }
+
+/* ---------- HERO ---------- */
+.hero { position: relative; overflow: hidden; background: var(--warm); padding: calc(64px + clamp(60px, 10vh, 120px)) 0 clamp(60px, 9vh, 110px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(30px, 4vw, 70px); align-items: center; }
+.hero .e-eb { display: inline-flex; align-items: center; gap: 10px; color: var(--red-txt); }
+.hero .e-eb::before { content: ""; width: 10px; height: 10px; background: var(--red); }
+.hero h1 { margin: 22px 0 24px; font-size: clamp(48px, 6.4vw, 104px); }
+.hero h1 .it { display: block; color: var(--red-txt); font-size: .86em; line-height: 1.02; margin-top: .08em; }
+.hero h1 .ln { display: block; overflow: hidden; padding-bottom: .04em; }
+.hero h1 .ln > span { display: block; animation: up 1s cubic-bezier(.2,.8,.2,1) both; }
+.hero h1 .ln:nth-child(2) > span { animation-delay: .12s; }
+.hero h1 .ln:nth-child(3) > span { animation-delay: .24s; }
+@keyframes up { from { transform: translateY(105%); } to { transform: none; } }
+.hero .e-lede { color: #3b3636; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.prints { position: relative; height: clamp(360px, 40vw, 600px); perspective: 1400px; }
+.print { position: absolute; width: 74%; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 40px 80px rgba(22,21,21,.22), 0 6px 18px rgba(22,21,21,.12); transition: transform .5s cubic-bezier(.2,.8,.2,1); animation: deal 1.1s cubic-bezier(.2,.8,.2,1) both; }
+.print .bw-view { aspect-ratio: 16 / 10; }
+.print:nth-child(1) { left: 0; top: 4%; --r: -7deg; animation-delay: .25s; }
+.print:nth-child(2) { left: 13%; top: 20%; --r: 3deg; animation-delay: .4s; }
+.print:nth-child(3) { left: 26%; top: 37%; --r: -2deg; animation-delay: .55s; }
+.print { transform: translate(calc(var(--mx, 0) * var(--d, 10px)), calc(var(--my, 0) * var(--d, 10px))) rotate(var(--r)); }
+.print:nth-child(1) { --d: 10px; } .print:nth-child(2) { --d: 20px; } .print:nth-child(3) { --d: 32px; }
+@keyframes deal { from { opacity: 0; translate: 40px 80px; } to { opacity: 1; translate: 0 0; } }
+.print:hover { z-index: 5; }
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(20px, 4vw, 56px); margin-top: clamp(50px, 8vh, 90px); padding-top: 28px; border-top: 2px solid #e2dcda; }
+.logos .e-eb { color: #5d5656; }
+.logos img { height: 44px; width: auto; filter: grayscale(1) contrast(1.1); opacity: .75; transition: filter .3s, opacity .3s; }
+.logos a:hover img { filter: none; opacity: 1; }
+
+/* shared browser frame */
+.bw { position: relative; border-radius: 12px; overflow: hidden; background: #fff; }
+.bw-bar { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; background: #ece8e7; }
+.bw-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d8d2d0; }
+.bw-bar i:first-child { background: var(--red); }
+.bw-url { margin-left: 12px; padding: 3px 12px; border-radius: 6px; background: #fff; font-size: 12px; color: #5d5656; }
+.bw-view { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+.bw-view img { display: block; width: 100%; height: auto; will-change: transform; }
+
+/* ---------- STATEMENT ---------- */
+.statement { padding: clamp(90px, 15vh, 170px) 0; background: #fff; }
+.statement p { margin: 0; max-width: 24ch; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(34px, 5vw, 78px); line-height: .98; letter-spacing: -.035em; color: var(--ink); }
+.statement .fw { transition: opacity .12s linear; }
+.statement-sub { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: clamp(44px, 7vh, 80px); }
+.statement-sub div { padding: 22px 0 0; border-top: 3px solid var(--ink); font-size: 16px; line-height: 1.65; color: #3b3636; }
+.statement-sub strong { display: block; margin-bottom: 6px; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+
+/* ---------- CHAPTERS ---------- */
+.chapters { position: relative; background: #0653b2; transition: none; }
+.rail { position: fixed; left: 14px; top: 50%; z-index: 40; transform: translateY(-50%); display: flex; flex-direction: column; gap: 14px; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+.rail.on { opacity: 1; pointer-events: auto; }
+.rail a { display: flex; align-items: center; gap: 10px; text-decoration: none; color: currentColor; font-family: Raleway, Lato, sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .55; }
+.rail a i { width: 14px; height: 3px; background: currentColor; transition: width .3s ease; }
+.rail a[aria-current="true"] { opacity: 1; }
+.rail a[aria-current="true"] i { width: 30px; }
+.rail a span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.chapter { position: relative; min-height: 150vh; color: var(--fg); }
+.ch-inner { position: sticky; top: 0; min-height: 100vh; min-height: 100svh; box-sizing: border-box; padding: calc(64px + clamp(30px, 6vh, 70px)) 0 clamp(30px, 6vh, 70px); display: flex; align-items: center; }
+.ch-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(30px, 4.5vw, 80px); align-items: center; width: 100%; }
+.ch-num { display: flex; align-items: baseline; gap: 14px; font-family: Raleway, Lato, sans-serif; font-weight: 900; }
+.ch-num b { font-size: clamp(64px, 7vw, 110px); line-height: .8; letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 2px var(--accent); }
+.ch-num span { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--fg); opacity: .75; }
+.ch-logo { display: inline-flex; align-items: center; height: 54px; margin: 22px 0 16px; padding: 8px 14px; border-radius: 12px; background: #fff; }
+.ch-logo img { height: 100%; width: auto; display: block; }
+.ch-name { margin: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(30px, 3.3vw, 52px); line-height: .92; letter-spacing: -.035em; }
+.ch-line { margin: 16px 0 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(20px, 1.9vw, 28px); line-height: 1.3; color: var(--accent); max-width: 26ch; }
+.ch-body { margin: 16px 0 0; font-size: 17px; line-height: 1.7; max-width: 48ch; opacity: .9; }
+.ch-built { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+.ch-built li { padding: 7px 12px; border-radius: 999px; background: var(--chip); color: var(--chipfg); font-family: Raleway, Lato, sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.ch-quote { margin: 20px 0 0; padding: 14px 16px; border: 2px dashed currentColor; border-radius: 12px; font-size: 14px; line-height: 1.5; opacity: .75; max-width: 44ch; }
+.ch-visit { display: inline-flex; align-items: center; gap: 10px; min-height: 50px; margin-top: 24px; padding: 0 22px; background: var(--accent); color: var(--accentfg); text-decoration: none; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s; }
+.ch-visit:hover { transform: translateY(-2px); }
+.ch-media { position: relative; transform: translateY(calc((1 - clamp(0, var(--p, 0) * 3, 1)) * 50px)) scale(calc(.94 + clamp(0, var(--p, 0) * 3, 1) * .06)); }
+.ch-media .bw { box-shadow: 0 50px 100px rgba(0,0,0,.35); }
+.ch-phone { position: absolute; right: -3%; bottom: -8%; width: 23%; border: 7px solid #161515; border-radius: 26px; overflow: hidden; background: #161515; box-shadow: 0 30px 60px rgba(0,0,0,.4); transform: translateY(calc((1 - clamp(0, (var(--p, 0) - .1) * 3, 1)) * 60px)); }
+.ch-phone img { display: block; width: 100%; height: auto; }
+.chapter[data-c="wjcn"] { --fg: #fff; --accent: #5ee6fb; --accentfg: #06234b; --chip: rgba(255,255,255,.16); --chipfg: #fff; }
+.chapter[data-c="btg"] { --fg: #fff; --accent: #fac72e; --accentfg: #06234b; --chip: rgba(250,199,46,.16); --chipfg: #fde7a2; }
+.chapter[data-c="ll"] { --fg: #1a1d29; --accent: #22409e; --accentfg: #fff; --chip: rgba(34,64,158,.1); --chipfg: #22409e; }
+
+/* ---------- HOW ---------- */
+.how { padding: clamp(90px, 13vh, 150px) 0; background: #fff; }
+.how .e-eb { color: var(--red-txt); }
+.how h2 { margin: 16px 0 0; max-width: 18ch; }
+.how-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: clamp(40px, 6vh, 64px); }
+.how-card { display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4vw, 32px); border: 2.5px solid var(--ink); border-radius: 26px; transition: transform .25s ease, background .25s ease, color .25s ease; }
+.how-card:hover { transform: translateY(-6px); background: var(--ink); color: #fff; }
+.how-card:hover p { color: #cfc9c9; }
+.how-card b { font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; color: var(--red-txt); letter-spacing: .1em; }
+.how-card:hover b { color: #ff8a89; }
+.how-card strong { font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -.01em; }
+.how-card p { margin: 0; font-size: 15px; line-height: 1.65; color: #3b3636; }
+
+/* ---------- CLOSE ---------- */
+.close { position: relative; overflow: hidden; background: var(--red); color: #fff; padding: clamp(90px, 13vh, 150px) 0; }
+.close-grid { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.close .e-eb { color: #fff; opacity: .85; }
+.close h2 { margin: 16px 0 20px; font-size: clamp(44px, 6vw, 92px); }
+.close h2 .it { display: block; font-size: .78em; }
+.close .lede { margin: 0; font-size: 19px; line-height: 1.6; max-width: 42ch; }
+.close-contact { display: flex; flex-direction: column; gap: 6px; margin-top: 34px; padding-top: 24px; border-top: 2px solid rgba(255,255,255,.35); }
+.close-contact a { color: #fff; text-decoration: none; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 30px; font-feature-settings: "lnum" 1; }
+.close-contact span { font-size: 15px; }
+.close-ring { position: absolute; right: -12vw; top: -14vw; width: 46vw; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, transparent 0 18%, rgba(255,255,255,.08) 18% 30%, transparent 30% 44%, rgba(255,255,255,.06) 44% 58%, transparent 58% 72%, rgba(255,255,255,.05) 72% 86%, transparent 86%); pointer-events: none; }
+.formcard { background: #fff; color: var(--ink); padding: clamp(24px, 3vw, 40px); border-radius: 26px; box-shadow: 0 40px 90px rgba(80, 10, 10, .35); }
+.formcard h3 { margin: 0 0 20px; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: 22px; }
+.frow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 14px; }
+.formcard .e-field { margin-bottom: 14px; }
+.frow .e-field { margin-bottom: 0; }
+.e-field input, .e-field textarea { width: 100%; box-sizing: border-box; min-height: 48px; }
+.needs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 16px; padding: 0; border: 0; }
+.needs legend { margin-bottom: 8px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.need { min-height: 42px; padding: 0 14px; border: 2.5px solid var(--ink); border-radius: 999px; background: #fff; color: var(--ink); font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.need[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: #fff; }
+.proto-note { margin: 12px 0 0; font-size: 14px; color: var(--red-txt); font-weight: 700; }
+
+.protobar { position: fixed; left: 12px; bottom: 12px; z-index: 60; display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 14px; background: #161515; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,.35); font: 900 12px Raleway, Lato, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.protobar a { padding: 6px 10px; background: var(--red); color: #fff; text-decoration: none; }
+
+@media (max-width: 1100px) { .how-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rail { display: none; } }
+@media (max-width: 900px) {
+  .hero-grid, .ch-grid, .close-grid { grid-template-columns: minmax(0, 1fr); }
+  .prints { height: 74vw; }
+  .statement-sub { grid-template-columns: minmax(0, 1fr); }
+  .chapter { min-height: 0; }
+  .ch-inner { position: relative; min-height: 0; padding: 80px 0; }
+  .ch-media, .ch-phone { transform: none !important; }
+  .ch-media { margin-top: 10px; }
+  .ch-logo { height: 44px; }
+  .frow { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) { .how-grid { grid-template-columns: minmax(0, 1fr); } .protobar span { display: none; } }
+@media (prefers-reduced-motion: reduce) { .hero h1 .ln > span, .print { animation: none !important; } }
+</style>
+</head>
+<body>
+<a class="e-skip" href="#main">Skip to main content</a>
+<header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
+<a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
+<img class="e-logo" src="/assets/img/digital-impact-logo-544.webp" srcset="/assets/img/digital-impact-logo-272.webp 272w, /assets/img/digital-impact-logo-544.webp 544w" sizes="272px" width="544" height="88" alt="Digital Impact" style="height: 44px; width: auto; display: block">
+</a>
+<nav class="e-navlinks" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase">
+<div class="e-dd"><a class="e-navlink" href="/services">Services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="/services"><strong>All services</strong><span>SEO, web, PPC, creative and social</span></a><a href="/ppc-management"><strong>PPC management</strong><span>Google Ads and Microsoft Ads</span></a><a href="/seolexingtonky"><strong>SEO Lexington</strong><span>Local search in Lexington</span></a><a href="/seolouisvilleky"><strong>SEO Louisville</strong><span>Local search in Louisville</span></a><a href="/seo-fundamentals"><strong>SEO Fundamentals</strong><span>How search rankings work</span></a><a href="/web-design-lexington-ky"><strong>Web design</strong><span>Custom, mobile-friendly sites</span></a><a href="/social-media-marketing-lexington-ky"><strong>Social media</strong><span>Paid and organic social</span></a><a href="/creative-branding"><strong>Creative and branding</strong><span>Logos, identity, print and ads</span></a><a href="/aidigitalmarketinglexingtonky"><strong>AI digital marketing</strong><span>AI-powered campaigns</span></a></div></div>
+<div class="e-dd"><a class="e-navlink" href="/aiservices">AI services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="/aiservices"><strong>AI services</strong><span>Overview of our AI work</span></a><a href="/aiconsulting"><strong>AI consulting</strong><span>Strategy and roadmaps</span></a><a href="/aitransitionservices"><strong>AI transition services</strong><span>Move to AI-enhanced operations</span></a><a href="/aiappdevelopment"><strong>AI app development</strong><span>Custom AI applications</span></a><a href="/aioaeogeo"><strong>AIO / AEO / GEO</strong><span>Visibility in AI answers</span></a></div></div>
+<a class="e-navlink" href="/about">About</a>
+<a class="e-navlink" href="/contact">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px">
+<a class="e-navphone" href="tel:8593968606" aria-label="Call 859.396.8606"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#e44443" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg><span>859.396.8606</span></a>
+<a class="e-btn e-navq" href="/get-a-quote" style="min-height: 44px; background: #d23a39; color: #ffffff">Get a quote</a>
+<button type="button" class="e-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="e-eb">DIG &middot; Digital Impact Gives</span>
+          <h1 class="e-h1" id="hero-h"><span class="ln"><span>Good work</span></span><span class="ln"><span>deserves</span></span><span class="ln"><span class="it">to be seen.</span></span></h1>
+          <p class="e-lede">DIG is how Digital Impact puts its craft behind nonprofits doing remarkable work. Meet three of them, and the websites we built to help them do more of it.</p>
+          <div class="hero-cta">
+            <a class="e-btn" href="#wjcn" style="background:#161515;color:#fff">Meet the three</a>
+            <a class="e-ghost" href="#start" style="color:#161515">Tell us about your mission</a>
+          </div>
+        </div>
+        <div class="prints" id="prints" aria-hidden="true">
+          <div class="print"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-view"><img src="img/ll-long.webp" alt=""></div></div>
+          <div class="print"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-view"><img src="img/btg-long.webp" alt=""></div></div>
+          <div class="print"><div class="bw-bar"><i></i><i></i><i></i></div><div class="bw-view"><img src="img/wjcn-long.webp" alt=""></div></div>
+        </div>
+      </div>
+      <div class="logos">
+        <span class="e-eb">In this story</span>
+        <a href="#wjcn"><img src="img/wjcn-logo.png" alt="William Joseph Crisis Nursery"></a>
+        <a href="#btg"><img src="img/btg-logo.png" alt="Bridging the Gap" style="height:52px"></a>
+        <a href="#ll"><img src="img/ll-logo.png" alt="Love &amp; Lordship" style="height:34px"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement" aria-label="Why DIG exists">
+    <div class="wrap">
+      <p data-fill>The people doing the most good usually have the least time for their website. That's where we come in.</p>
+      <div class="statement-sub">
+        <div><strong>Design</strong>Sites that look as serious as the work behind them, built around the people they serve.</div>
+        <div><strong>Development</strong>Fast, secure, mobile-first builds with the forms, giving and events a nonprofit runs on.</div>
+        <div><strong>The technical stuff</strong>Domains, email, hosting, search and the hundred small things nobody on staff has time for.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chapters" id="chapters">
+    <nav class="rail" id="rail" aria-label="Chapters">
+      <a href="#wjcn" data-for="wjcn"><i></i><span>Crisis Nursery</span></a>
+      <a href="#btg" data-for="btg"><i></i><span>Bridging the Gap</span></a>
+      <a href="#ll" data-for="ll"><i></i><span>Love &amp; Lordship</span></a>
+    </nav>
+
+    <section class="chapter" id="wjcn" data-c="wjcn" data-bg="#0653b2" data-prog aria-labelledby="c1">
+      <div class="ch-inner"><div class="wrap ch-grid">
+        <div class="ch-copy">
+          <div class="ch-num"><b>01</b><span>Crisis nursery &middot; Kentucky</span></div>
+          <div class="ch-logo"><img src="img/wjcn-logo.png" alt="William Joseph Crisis Nursery logo"></div>
+          <h2 class="ch-name" id="c1">William Joseph Crisis Nursery</h2>
+          <p class="ch-line">&ldquo;A safe haven for children during times of need.&rdquo;</p>
+          <p class="ch-body">Emergency shelter and support for children ages 0 to 5 while their parents get through a crisis, plus support groups, supervised visitations and an infant pantry.</p>
+          <ul class="ch-built"><li>Website design</li><li>Development</li><li>Contact + prayer forms</li><li>Giving links</li></ul>
+          <p class="ch-quote">Placeholder: a sentence from the nursery's director about what the site changed.</p>
+          <a class="ch-visit" href="https://wjcrisisnursery.org" target="_blank" rel="noopener">Visit the site <span aria-hidden="true">&#8599;</span></a>
+        </div>
+        <div class="ch-media">
+          <div class="bw" data-screen data-from=".05" data-to=".95"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">wjcrisisnursery.org</span></div><div class="bw-view"><img src="img/wjcn-long.webp" alt="The William Joseph Crisis Nursery home page we built"></div></div>
+          <div class="ch-phone"><img src="img/wjcn-mobile.webp" alt="The same site on a phone"></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="chapter" id="btg" data-c="btg" data-bg="#06234b" data-prog aria-labelledby="c2">
+      <div class="ch-inner"><div class="wrap ch-grid">
+        <div class="ch-copy">
+          <div class="ch-num"><b>02</b><span>Community outreach &middot; Frankfort</span></div>
+          <div class="ch-logo"><img src="img/btg-logo.png" alt="Bridging the Gap logo"></div>
+          <h2 class="ch-name" id="c2">Bridging the Gap</h2>
+          <p class="ch-line">&ldquo;Bridging communities. Building hope.&rdquo;</p>
+          <p class="ch-body">Connecting people, resources and opportunity in Frankfort through education, outreach, partnerships and youth programs, with Roni Round Town as its voice in the community.</p>
+          <ul class="ch-built"><li>Website design</li><li>Development</li><li>Founder story</li><li>Roni Round Town hub</li></ul>
+          <p class="ch-quote">Placeholder: a sentence from Roni about what the site changed.</p>
+          <a class="ch-visit" href="https://bridgingthegapky.com" target="_blank" rel="noopener">Visit the site <span aria-hidden="true">&#8599;</span></a>
+        </div>
+        <div class="ch-media">
+          <div class="bw" data-screen data-from=".05" data-to=".95"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">bridgingthegapky.com</span></div><div class="bw-view"><img src="img/btg-long.webp" alt="The Bridging the Gap home page we built"></div></div>
+          <div class="ch-phone"><img src="img/btg-mobile.webp" alt="The same site on a phone"></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="chapter" id="ll" data-c="ll" data-bg="#ece3d6" data-prog aria-labelledby="c3">
+      <div class="ch-inner"><div class="wrap ch-grid">
+        <div class="ch-copy">
+          <div class="ch-num"><b>03</b><span>Ministry &middot; Kentucky to seven countries</span></div>
+          <div class="ch-logo" style="padding:0;overflow:hidden"><img src="img/ll-logo.png" alt="Love &amp; Lordship logo"></div>
+          <h2 class="ch-name" id="c3">Love &amp; Lordship</h2>
+          <p class="ch-line">&ldquo;Every life, every relationship built on the Love &amp; Lordship of Jesus Christ.&rdquo;</p>
+          <p class="ch-body">More than thirty years of teaching on life, marriage, family and church from Greg Williams, now reaching people across the USA and in seven countries.</p>
+          <ul class="ch-built"><li>Full redesign</li><li>2,500+ item teaching library</li><li>Events calendar</li><li>App launch page</li><li>332 articles moved over</li></ul>
+          <p class="ch-quote">Placeholder: a sentence from Greg Williams about what the site changed.</p>
+          <a class="ch-visit" href="https://loveandlordship.com" target="_blank" rel="noopener">Visit the site <span aria-hidden="true">&#8599;</span></a>
+        </div>
+        <div class="ch-media">
+          <div class="bw" data-screen data-from=".05" data-to=".95"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">loveandlordship.com</span></div><div class="bw-view"><img src="img/ll-long.webp" alt="The Love &amp; Lordship home page we built"></div></div>
+          <div class="ch-phone"><img src="img/ll-mobile.webp" alt="The same site on a phone"></div>
+        </div>
+      </div></div>
+    </section>
+  </div>
+
+  <section class="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <span class="e-eb">How we work together</span>
+      <h2 class="e-h2" id="how-h">From first call to a site you're proud of.</h2>
+      <div class="how-grid">
+        <div class="how-card"><b>01</b><strong>Listen</strong><p>We learn your mission, the people you serve and what's getting in the way online, before anyone opens a design file.</p></div>
+        <div class="how-card"><b>02</b><strong>Plan</strong><p>Pages, content and the essentials a nonprofit runs on: giving, volunteer sign-ups, events, contact and help requests.</p></div>
+        <div class="how-card"><b>03</b><strong>Build</strong><p>Custom design and development. Fast on any phone, easy to find on Google and in AI answers, built to last.</p></div>
+        <div class="how-card"><b>04</b><strong>Stand behind it</strong><p>Launch, training for your team, and a real person to call when something breaks or the next idea comes along.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" id="start" aria-labelledby="close-h">
+    <div class="close-ring" aria-hidden="true"></div>
+    <div class="wrap close-grid">
+      <div>
+        <span class="e-eb">Your turn</span>
+        <h2 class="e-h2" id="close-h">Tell us about <span class="it">your mission.</span></h2>
+        <p class="lede">A website that's out of date, forms that don't work, giving that's hard to find, or the technical work nobody on staff has time for. Tell us what you're up against and we'll tell you how we can help.</p>
+        <div class="close-contact">
+          <a href="tel:8593968606">859.396.8606</a>
+          <span>Lexington, Kentucky. Serving nonprofits across Kentucky.</span>
+        </div>
+      </div>
+      <form class="formcard" data-proto>
+        <h3>Start the conversation</h3>
+        <div class="frow"><label class="e-field">Your name<input name="name" autocomplete="name"></label><label class="e-field">Organization<input name="org" autocomplete="organization"></label></div>
+        <div class="frow"><label class="e-field">Email<input type="email" name="email" autocomplete="email"></label><label class="e-field">Phone (optional)<input type="tel" name="phone" autocomplete="tel"></label></div>
+        <label class="e-field">Current website, if you have one<input name="site" placeholder="yourorganization.org"></label>
+        <fieldset class="needs"><legend>What do you need help with?</legend>
+          <button type="button" class="need" aria-pressed="false">New website</button><button type="button" class="need" aria-pressed="false">Redesign</button><button type="button" class="need" aria-pressed="false">Giving &amp; forms</button><button type="button" class="need" aria-pressed="false">Events</button><button type="button" class="need" aria-pressed="false">Search &amp; visibility</button><button type="button" class="need" aria-pressed="false">Something else</button>
+        </fieldset>
+        <label class="e-field">Tell us about your mission<textarea name="msg" rows="4"></textarea></label>
+        <button class="e-btn" type="submit" style="background:#e44443;color:#fff;width:100%">Send it over</button>
+        <p class="proto-note" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer style="margin: 0; position: relative; z-index: 45; padding: clamp(56px, 8vh, 88px) clamp(20px, 5vw, 80px) 28px; background: #161515; color: #cfc9c9">
+<div class="e-foot">
+<div class="e-footlead" style="display: flex; flex-direction: column; gap: 16px">
+<img src="/assets/img/digital-impact-logo-544.webp" srcset="/assets/img/digital-impact-logo-272.webp 272w, /assets/img/digital-impact-logo-544.webp 544w" sizes="161px" width="544" height="88" alt="Digital Impact" style="height: 26px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: 17px; color: #ffffff">Because experience matters.</p>
+<a href="tel:8593968606" class="e-x" style="font-size: 26px; color: #ffffff; text-decoration: none">859.396.8606</a>
+<span style="font-size: 15px">Lexington, Kentucky. Serving Louisville and all of Kentucky.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; color: #ffffff"><a class="e-pill" href="https://www.facebook.com/profile.php?id=100093278650724">Facebook</a><a class="e-pill" href="https://www.linkedin.com/company/digital-impact-marketers/">LinkedIn</a></div>
+</div>
+<div><h3>Services</h3><ul><li><a href="/services">All services</a></li><li><a href="/ppc-management">PPC management</a></li><li><a href="/seolexingtonky">SEO Lexington</a></li><li><a href="/seolouisvilleky">SEO Louisville</a></li><li><a href="/seo-fundamentals">SEO Fundamentals</a></li><li><a href="/web-design-lexington-ky">Web design</a></li><li><a href="/social-media-marketing-lexington-ky">Social media</a></li><li><a href="/creative-branding">Creative and branding</a></li><li><a href="/aidigitalmarketinglexingtonky">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><a href="/aiservices">AI services</a></li><li><a href="/aiconsulting">AI consulting</a></li><li><a href="/aitransitionservices">AI transition services</a></li><li><a href="/aiappdevelopment">AI app development</a></li><li><a href="/aioaeogeo">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="/aiolexingtonky">AIO Lexington</a></li><li><a href="/aiolouisvilleky">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/get-a-quote">Get a quote</a></li><li><a href="/ahistoryofwebdesign">History of web design</a></li><li><a href="/privacy-policy">Privacy policy</a></li></ul></div>
+</div>
+<div class="e-footbar" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<span>© Digital Impact. All rights reserved.</span>
+<a href="/get-a-quote" style="color: #a39c9c">Get a quote</a>
+</div>
+</footer>
+
+<div class="protobar"><span>Prototype B &middot; Their Colors</span><a href="/dig-preview/dig-a">&larr; See A</a></div>
+
+<script>
+(function () {
+  // Mouse parallax on the hero prints.
+  var prints = document.getElementById('prints');
+  if (prints && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('mousemove', function (e) {
+      prints.style.setProperty('--mx', ((e.clientX / innerWidth) - .5).toFixed(3));
+      prints.style.setProperty('--my', ((e.clientY / innerHeight) - .5).toFixed(3));
+      [].forEach.call(prints.children, function (c) { c.style.setProperty('--mx', prints.style.getPropertyValue('--mx')); c.style.setProperty('--my', prints.style.getPropertyValue('--my')); });
+    });
+  }
+  // Background color morph across the chapters + rail state.
+  function hex(h) { h = h.replace('#', ''); return [0, 2, 4].map(function (i) { return parseInt(h.substr(i, 2), 16); }); }
+  var wrap = document.getElementById('chapters'), rail = document.getElementById('rail');
+  var chs = [].slice.call(wrap.querySelectorAll('.chapter'));
+  var cols = chs.map(function (c) { return hex(c.getAttribute('data-bg')); });
+  window.DIG_HOOKS = [function () {
+    var mid = innerHeight * .5, idx = 0, t = 0;
+    for (var i = 0; i < chs.length; i++) {
+      var r = chs[i].getBoundingClientRect();
+      if (r.top <= mid) { idx = i; t = 0; }
+    }
+    // blend toward the next chapter during the last 35% of the current one
+    var r0 = chs[idx].getBoundingClientRect();
+    if (idx < chs.length - 1) { var fade = r0.height * .35; t = Math.max(0, Math.min(1, (mid - (r0.bottom - fade)) / fade)); }
+    var a = cols[idx], b = cols[Math.min(idx + 1, cols.length - 1)];
+    var c = a.map(function (v, k) { return Math.round(v + (b[k] - v) * t); });
+    wrap.style.background = 'rgb(' + c.join(',') + ')';
+    var cur = t > .5 ? chs[Math.min(idx + 1, chs.length - 1)] : chs[idx];
+    var wr = wrap.getBoundingClientRect();
+    rail.classList.toggle('on', wr.top < mid && wr.bottom > mid);
+    rail.style.color = getComputedStyle(cur).getPropertyValue('--fg');
+    [].forEach.call(rail.querySelectorAll('a'), function (a2) { a2.setAttribute('aria-current', a2.getAttribute('data-for') === cur.id); });
+  }];
+})();
+</script>
+<script src="dig-proto.js"></script>
+</body>
+</html>

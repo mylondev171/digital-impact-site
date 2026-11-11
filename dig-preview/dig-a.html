@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIG: Digital Impact Gives | Prototype A, Dig In</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="dig-base.css">
+<style>
+:root { --red: #e44443; --red-txt: #c93534; --ink: #161515; --soil0: #2c2523; --soil1: #251f1e; --soil2: #1f1b1a; --soil3: #191616; --dust: #cfc9c9; --mute: #a39c9c; }
+body { background: var(--ink); }
+.grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .22; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+
+/* ---------- HERO ---------- */
+.hero { position: relative; height: 175vh; background: var(--ink); }
+.hero-stick { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.hero-sky { position: absolute; inset: 0 0 26% 0; background: radial-gradient(120% 90% at 70% 0%, #2a2323 0%, var(--ink) 60%); }
+.hero-ground { position: absolute; left: 0; right: 0; bottom: 0; height: 26%; background: linear-gradient(var(--soil0), var(--soil1)); }
+.hero-ground .seam { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,.06); }
+.hero-line { position: absolute; left: 0; right: 0; bottom: 26%; height: 4px; background: var(--red); transform-origin: center; }
+.hero-line::before, .hero-line::after { content: ""; position: absolute; top: 0; height: 4px; width: 50%; background: var(--red); transition: none; }
+.hero-word { position: absolute; left: clamp(14px, 4vw, 60px); bottom: 26%; height: clamp(150px, 31vw, 470px); overflow: hidden; display: flex; align-items: flex-end; }
+.hero-word span { display: block; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: clamp(170px, 36vw, 540px); line-height: .74; letter-spacing: -.06em; color: #fff; transform: translateY(calc(var(--p, 0) * 105%)); }
+.hero-word span:nth-child(1) { animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both .1s; }
+.hero-word span:nth-child(2) { animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both .22s; }
+.hero-word span:nth-child(3) { animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both .34s; }
+.hero-word span.dot { color: var(--red); animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both .5s; }
+@keyframes rise { from { translate: 0 110%; } to { translate: 0 0; } }
+.hero-meta { position: absolute; right: clamp(20px, 5vw, 80px); top: clamp(110px, 18vh, 180px); width: min(440px, 40vw); color: #fff; opacity: calc(1 - var(--p, 0) * 2.2); }
+.hero-meta .e-eb { color: #ff8a89; }
+.hero-meta h1 { margin: 14px 0 18px; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(30px, 3.1vw, 48px); line-height: .95; letter-spacing: -.03em; }
+.hero-meta p { margin: 0; font-size: 18px; line-height: 1.6; color: var(--dust); }
+.hero-meta .it { font-family: Merriweather, Georgia, serif; font-style: italic; color: #fff; }
+.hero-under { position: absolute; left: clamp(20px, 5vw, 80px); right: clamp(20px, 5vw, 80px); bottom: 7%; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; color: var(--mute); }
+.cue { display: inline-flex; align-items: center; gap: 12px; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: #fff; text-decoration: none; }
+.cue i { position: relative; display: block; width: 2px; height: 38px; background: rgba(255,255,255,.2); overflow: hidden; }
+.cue i::after { content: ""; position: absolute; left: 0; top: -40%; width: 2px; height: 40%; background: var(--red); animation: drip 1.6s ease-in infinite; }
+@keyframes drip { to { top: 100%; } }
+.pebble { position: absolute; border-radius: 46% 54% 42% 58% / 55% 45% 55% 45%; background: #3a302d; opacity: .55; }
+.speck { position: absolute; width: 5px; height: 5px; border-radius: 1px; background: #5a4a45; bottom: 26%; transform: translate(calc(var(--dx) * var(--p, 0)), calc(var(--dy) * var(--p, 0))) rotate(calc(var(--p, 0) * 300deg)); opacity: calc(var(--p, 0) * 4); }
+
+/* ---------- DEPTH GAUGE ---------- */
+.gauge { position: fixed; right: clamp(10px, 1.6vw, 26px); top: calc(50% + 32px); z-index: 40; transform: translateY(-50%); display: flex; flex-direction: column; align-items: flex-end; gap: 10px; opacity: 0; transition: opacity .4s ease; pointer-events: none; }
+.gauge.on { opacity: 1; }
+.gauge-read { font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 12px; letter-spacing: .14em; color: #fff; font-feature-settings: "lnum" 1, "tnum" 1; text-align: right; }
+.gauge-read b { display: block; font-size: 26px; letter-spacing: -.02em; color: #fff; }
+.gauge-read small { color: var(--mute); font-size: 10px; }
+.gauge-bar { position: relative; width: 2px; height: 34vh; background: rgba(255,255,255,.14); margin-right: 6px; }
+.gauge-bar em { position: absolute; left: -5px; width: 12px; height: 2px; background: rgba(255,255,255,.35); }
+.gauge-bar u { position: absolute; left: -6px; top: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 5px rgba(228,68,67,.22); transform: translateY(-50%); }
+.gauge-tag { font-family: Raleway, Lato, sans-serif; font-weight: 800; font-size: 10px; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; color: #ff8a89; max-width: 96px; text-align: right; }
+
+/* ---------- STRATA EDGES ---------- */
+.edge { display: block; width: 100%; height: clamp(40px, 6vw, 90px); margin-bottom: -1px; }
+
+/* ---------- MANIFESTO (topsoil) ---------- */
+.topsoil { position: relative; background: var(--soil0); padding: clamp(80px, 14vh, 160px) 0 clamp(90px, 14vh, 170px); }
+.topsoil .e-eb { color: #ff8a89; }
+.fillp { margin: 22px 0 0; max-width: 22ch; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(34px, 5.6vw, 88px); line-height: .96; letter-spacing: -.035em; color: #fff; }
+.fillp .fw { transition: opacity .12s linear; }
+.topsoil-foot { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: clamp(50px, 8vh, 90px); }
+.topsoil-foot div { padding-top: 18px; border-top: 2px solid rgba(255,255,255,.14); color: var(--dust); font-size: 16px; line-height: 1.6; }
+.topsoil-foot strong { display: block; margin-bottom: 6px; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
+
+/* ---------- LAYERS ---------- */
+.layer { position: relative; height: 260vh; }
+.layer[data-l="1"] { background: var(--soil1); }
+.layer[data-l="2"] { background: var(--soil2); }
+.layer[data-l="3"] { background: var(--soil3); }
+.layer-stick { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4vw, 70px); align-items: center; max-width: 1440px; margin: 0 auto; padding: 64px clamp(110px, 9vw, 150px) 0 clamp(20px, 5vw, 80px); box-sizing: border-box; }
+.l-copy { position: relative; z-index: 2; color: #fff; }
+.l-tag { display: flex; align-items: center; gap: 12px; color: #ff8a89; }
+.l-tag::before { content: ""; width: 26px; height: 3px; background: var(--red); }
+.l-logo { display: inline-flex; align-items: center; height: 58px; margin: 22px 0 18px; padding: 8px 14px; background: #fff; border-radius: 12px; }
+.l-logo img { height: 100%; width: auto; display: block; }
+.l-name { margin: 0; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(30px, 3.4vw, 54px); line-height: .92; letter-spacing: -.035em; }
+.l-mission { margin: 18px 0 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.55; color: #fff; max-width: 46ch; }
+.l-src { display: block; margin-top: 8px; font-size: 13px; color: var(--mute); }
+.l-built { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+.l-built li { padding: 7px 12px; border: 2px solid rgba(255,255,255,.22); font-family: Raleway, Lato, sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--dust); }
+.l-quote { margin: 22px 0 0; padding: 14px 16px; border: 2px dashed rgba(255,138,137,.55); color: #ff8a89; font-size: 14px; line-height: 1.5; max-width: 44ch; }
+.l-visit { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; color: #fff; text-decoration: none; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; box-shadow: inset 0 -3px 0 var(--red); padding-bottom: 6px; }
+.l-visit:hover { color: #ff8a89; }
+
+.l-dig { position: relative; height: 100%; }
+.l-groundline { position: absolute; left: -20vw; right: -20vw; bottom: 9%; height: 4px; background: var(--red); z-index: 3; }
+.l-groundline::after { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 40vh; background: inherit; background: linear-gradient(var(--soil-here), var(--soil-here)); }
+.layer[data-l="1"] { --soil-here: var(--soil1); }
+.layer[data-l="2"] { --soil-here: var(--soil2); }
+.layer[data-l="3"] { --soil-here: var(--soil3); }
+.l-rise { position: absolute; left: 0; right: 0; bottom: calc(9% + 4px); z-index: 2; transform: translateY(calc((1 - clamp(0, (var(--p, 0) - .04) * 3.2, 1)) * 105%)); }
+.bw { position: relative; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 40px 90px rgba(0,0,0,.55); }
+.bw-bar { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; background: #ece8e7; }
+.bw-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d8d2d0; }
+.bw-bar i:first-child { background: var(--red); }
+.bw-url { margin-left: 12px; padding: 3px 12px; border-radius: 6px; background: #fff; font-size: 12px; color: #5d5656; }
+.bw-view { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+.bw-view img { display: block; width: 100%; height: auto; will-change: transform; }
+.phone { position: absolute; right: -2%; bottom: -1%; width: 22%; border: 7px solid #161515; border-radius: 26px; overflow: hidden; background: #161515; box-shadow: 0 30px 60px rgba(0,0,0,.5); transform: translateY(calc((1 - clamp(0, (var(--p, 0) - .14) * 3.2, 1)) * 140%)); }
+.phone img { display: block; width: 100%; height: auto; }
+.crumb { position: absolute; z-index: 4; width: 8px; height: 8px; border-radius: 2px; background: #6b5a54; bottom: 9%; opacity: clamp(0, calc(1.4 - var(--p, 0) * 3), 1); transform: translate(calc(var(--dx) * clamp(0, var(--p, 0) * 3, 1)), calc(var(--dy) * clamp(0, var(--p, 0) * 3, 1))) rotate(calc(var(--p, 0) * 400deg)); }
+
+/* ---------- PROCESS (drill) ---------- */
+.drill { position: relative; background: var(--soil3); padding: clamp(80px, 12vh, 140px) 0; color: #fff; }
+.drill .e-eb { color: #ff8a89; }
+.drill h2 { margin: 16px 0 0; max-width: 16ch; }
+.drill-grid { position: relative; display: grid; grid-template-columns: 60px minmax(0, 1fr); gap: 0 28px; margin-top: clamp(40px, 7vh, 70px); }
+.drill-shaft { position: relative; grid-row: 1 / span 4; width: 4px; margin: 0 auto; background: rgba(255,255,255,.12); }
+.drill-shaft b { position: absolute; left: 0; top: 0; width: 4px; height: calc(var(--p, 0) * 140%); max-height: 100%; background: var(--red); }
+.drill-step { grid-column: 2; display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 20px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,.1); }
+.drill-step:last-child { border-bottom: 1px solid rgba(255,255,255,.1); }
+.drill-step strong { font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: clamp(22px, 2vw, 30px); text-transform: uppercase; letter-spacing: -.02em; }
+.drill-step strong span { display: block; margin-bottom: 6px; font-size: 13px; letter-spacing: .14em; color: #ff8a89; }
+.drill-step p { margin: 0; font-size: 17px; line-height: 1.7; color: var(--dust); max-width: 60ch; }
+
+/* ---------- BEDROCK ---------- */
+.bedrock { position: relative; overflow: hidden; background: var(--red); color: #fff; padding: clamp(90px, 13vh, 150px) 0 clamp(90px, 12vh, 140px); }
+.bedrock svg.shards { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.bed-grid { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.bedrock .e-eb { color: #fff; opacity: .85; }
+.bedrock h2 { margin: 16px 0 20px; font-size: clamp(44px, 6vw, 92px); }
+.bedrock .lede { margin: 0; font-size: 19px; line-height: 1.6; max-width: 42ch; }
+.bed-contact { display: flex; flex-direction: column; gap: 6px; margin-top: 34px; padding-top: 24px; border-top: 2px solid rgba(255,255,255,.35); }
+.bed-contact a { color: #fff; text-decoration: none; font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 30px; letter-spacing: -.01em; font-feature-settings: "lnum" 1; }
+.bed-contact span { font-size: 15px; }
+.formcard { background: #fff; color: var(--ink); padding: clamp(24px, 3vw, 40px); box-shadow: 0 40px 90px rgba(80, 10, 10, .35); }
+.formcard h3 { margin: 0 0 20px; font-family: Raleway, Lato, sans-serif; font-weight: 900; text-transform: uppercase; font-size: 22px; letter-spacing: -.01em; }
+.frow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 14px; }
+.formcard .e-field { margin-bottom: 14px; }
+.frow .e-field { margin-bottom: 0; }
+.e-field input, .e-field textarea { width: 100%; box-sizing: border-box; min-height: 48px; }
+.needs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 16px; padding: 0; border: 0; }
+.needs legend { margin-bottom: 8px; font-family: Raleway, Lato, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.need { min-height: 42px; padding: 0 14px; border: 2.5px solid var(--ink); background: #fff; color: var(--ink); font-family: Raleway, Lato, sans-serif; font-weight: 900; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.need[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.proto-note { margin: 12px 0 0; font-size: 14px; color: var(--red-txt); font-weight: 700; }
+
+/* ---------- PROTO BAR ---------- */
+.protobar { position: fixed; left: 12px; bottom: 12px; z-index: 60; display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 14px; background: #fff; color: var(--ink); box-shadow: 0 10px 30px rgba(0,0,0,.35); font: 900 12px Raleway, Lato, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.protobar a { padding: 6px 10px; background: var(--red); color: #fff; text-decoration: none; }
+
+@media (max-width: 900px) {
+  .hero { height: 140vh; }
+  .hero-meta { left: 20px; right: 20px; width: auto; top: 96px; }
+  .hero-meta h1 { font-size: clamp(26px, 7vw, 40px); }
+  .hero-meta p { font-size: 16px; }
+  .hero-word { height: clamp(120px, 40vw, 300px); }
+  .hero-word span { font-size: clamp(150px, 46vw, 380px); }
+  .hero-under .e-eb { display: none; }
+  .topsoil-foot { grid-template-columns: minmax(0, 1fr); }
+  .layer { height: 230vh; }
+  .layer-stick { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; align-items: start; gap: 8px; padding: 80px 20px 0; }
+  .l-logo { height: 42px; margin: 12px 0 10px; }
+  .l-mission { font-size: 15px; margin-top: 10px; }
+  .l-src, .l-quote, .l-built { display: none; }
+  .l-visit { margin-top: 12px; }
+  .phone { width: 28%; border-width: 5px; border-radius: 18px; }
+  .gauge { display: none; }
+  .drill-grid { grid-template-columns: 24px minmax(0, 1fr); gap: 0 16px; }
+  .drill-step { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .bed-grid { grid-template-columns: minmax(0, 1fr); }
+  .frow { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) { .protobar span { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-word span, .cue i::after { animation: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="e-skip" href="#main">Skip to main content</a>
+<header class="e-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px clamp(16px, 4vw, 56px); background: #161515">
+<a href="/" aria-label="Digital Impact home" style="display: flex; flex: none">
+<img class="e-logo" src="/assets/img/digital-impact-logo-544.webp" srcset="/assets/img/digital-impact-logo-272.webp 272w, /assets/img/digital-impact-logo-544.webp 544w" sizes="272px" width="544" height="88" alt="Digital Impact" style="height: 44px; width: auto; display: block">
+</a>
+<nav class="e-navlinks" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-family: Raleway, Lato, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase">
+<div class="e-dd"><a class="e-navlink" href="/services">Services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="/services"><strong>All services</strong><span>SEO, web, PPC, creative and social</span></a><a href="/ppc-management"><strong>PPC management</strong><span>Google Ads and Microsoft Ads</span></a><a href="/seolexingtonky"><strong>SEO Lexington</strong><span>Local search in Lexington</span></a><a href="/seolouisvilleky"><strong>SEO Louisville</strong><span>Local search in Louisville</span></a><a href="/seo-fundamentals"><strong>SEO Fundamentals</strong><span>How search rankings work</span></a><a href="/web-design-lexington-ky"><strong>Web design</strong><span>Custom, mobile-friendly sites</span></a><a href="/social-media-marketing-lexington-ky"><strong>Social media</strong><span>Paid and organic social</span></a><a href="/creative-branding"><strong>Creative and branding</strong><span>Logos, identity, print and ads</span></a><a href="/aidigitalmarketinglexingtonky"><strong>AI digital marketing</strong><span>AI-powered campaigns</span></a></div></div>
+<div class="e-dd"><a class="e-navlink" href="/aiservices">AI services <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="#e44443" stroke-width="2" style="margin-left: 6px" aria-hidden="true"><path d="M2 4 L6 8 L10 4"></path></svg></a><div class="e-ddm"><a href="/aiservices"><strong>AI services</strong><span>Overview of our AI work</span></a><a href="/aiconsulting"><strong>AI consulting</strong><span>Strategy and roadmaps</span></a><a href="/aitransitionservices"><strong>AI transition services</strong><span>Move to AI-enhanced operations</span></a><a href="/aiappdevelopment"><strong>AI app development</strong><span>Custom AI applications</span></a><a href="/aioaeogeo"><strong>AIO / AEO / GEO</strong><span>Visibility in AI answers</span></a></div></div>
+<a class="e-navlink" href="/about">About</a>
+<a class="e-navlink" href="/contact">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px">
+<a class="e-navphone" href="tel:8593968606" aria-label="Call 859.396.8606"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#e44443" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg><span>859.396.8606</span></a>
+<a class="e-btn e-navq" href="/get-a-quote" style="min-height: 44px; background: #d23a39; color: #ffffff">Get a quote</a>
+<button type="button" class="e-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" data-prog aria-labelledby="hero-h">
+    <div class="hero-stick">
+      <div class="hero-sky"></div>
+      <div class="hero-ground grain">
+        <span class="seam" style="top:22%"></span><span class="seam" style="top:51%"></span><span class="seam" style="top:78%"></span>
+        <span class="pebble" style="left:8%;top:30%;width:34px;height:18px"></span>
+        <span class="pebble" style="left:31%;top:62%;width:22px;height:13px"></span>
+        <span class="pebble" style="left:58%;top:38%;width:46px;height:22px"></span>
+        <span class="pebble" style="left:83%;top:70%;width:28px;height:15px"></span>
+      </div>
+      <div class="hero-word" aria-hidden="true"><span>D</span><span>I</span><span>G</span><span class="dot">.</span></div>
+      <div class="hero-line"></div>
+      <span class="speck" style="left:18%;--dx:-60px;--dy:-120px"></span>
+      <span class="speck" style="left:27%;--dx:30px;--dy:-170px"></span>
+      <span class="speck" style="left:41%;--dx:-20px;--dy:-90px"></span>
+      <span class="speck" style="left:49%;--dx:70px;--dy:-140px"></span>
+      <div class="hero-meta">
+        <span class="e-eb">Digital Impact Gives</span>
+        <h1 id="hero-h">We dig in for the people who show up for everyone else.</h1>
+        <p>DIG is how Digital Impact puts its craft to work for nonprofits. <span class="it">Three of them are below.</span> Keep scrolling and dig down to meet them.</p>
+      </div>
+      <div class="hero-under">
+        <a class="cue" href="#topsoil"><i></i>Start digging</a>
+        <span class="e-eb">Lexington, Kentucky</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPSOIL / MANIFESTO -->
+  <section class="topsoil grain" id="topsoil">
+    <div class="wrap">
+      <span class="e-eb">Surface level</span>
+      <p class="fillp" data-fill>The people doing the most good usually have the least time for their website. So we pick up the shovel.</p>
+      <div class="topsoil-foot">
+        <div><strong>Design</strong>Sites that look as serious as the work behind them, built around the people they serve.</div>
+        <div><strong>Development</strong>Fast, secure, mobile-first builds with the forms, giving and events a nonprofit runs on.</div>
+        <div><strong>The technical stuff</strong>Domains, email, hosting, search and the hundred small things nobody on staff has time for.</div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="background:var(--soil0)"><path d="M0 40 L90 58 L170 30 L260 52 L360 22 L470 48 L560 34 L650 60 L760 26 L880 50 L980 30 L1090 56 L1190 28 L1300 46 L1440 24 L1440 90 L0 90 Z" fill="#251f1e"/></svg>
+
+  <!-- LAYER 1 -->
+  <section class="layer" data-l="1" data-prog aria-labelledby="l1">
+    <div class="layer-stick">
+      <div class="l-copy">
+        <span class="l-tag e-eb">Layer 01 &middot; Crisis nursery, Kentucky</span>
+        <div class="l-logo"><img src="img/wjcn-logo.png" alt="William Joseph Crisis Nursery logo"></div>
+        <h2 class="l-name" id="l1">William Joseph Crisis Nursery</h2>
+        <p class="l-mission">&ldquo;A safe haven for children during times of crisis, offering support, love, healing and resources to families in need.&rdquo;<span class="l-src">From their mission statement</span></p>
+        <ul class="l-built"><li>Website design</li><li>Development</li><li>Services &amp; visitation info</li><li>Contact + prayer forms</li><li>Giving links</li></ul>
+        <p class="l-quote">Placeholder: a sentence from the nursery's director about what the site changed.</p>
+        <a class="l-visit" href="https://wjcrisisnursery.org" target="_blank" rel="noopener">Visit wjcrisisnursery.org <span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <div class="l-dig">
+        <div class="l-rise">
+          <div class="bw" data-screen data-from=".3" data-to=".95"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">wjcrisisnursery.org</span></div><div class="bw-view"><img src="img/wjcn-long.webp" alt="The William Joseph Crisis Nursery home page we built"></div></div>
+          <div class="phone"><img src="img/wjcn-mobile.webp" alt="The same site on a phone"></div>
+        </div>
+        <span class="crumb" style="left:20%;--dx:-50px;--dy:-130px"></span><span class="crumb" style="left:46%;--dx:40px;--dy:-170px"></span><span class="crumb" style="left:74%;--dx:80px;--dy:-110px"></span>
+        <div class="l-groundline"></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="background:var(--soil1)"><path d="M0 30 L120 50 L240 24 L330 46 L450 30 L540 62 L640 36 L740 54 L850 22 L950 44 L1060 30 L1150 58 L1260 32 L1360 50 L1440 34 L1440 90 L0 90 Z" fill="#1f1b1a"/></svg>
+
+  <!-- LAYER 2 -->
+  <section class="layer" data-l="2" data-prog aria-labelledby="l2">
+    <div class="layer-stick">
+      <div class="l-copy">
+        <span class="l-tag e-eb">Layer 02 &middot; Community outreach, Frankfort</span>
+        <div class="l-logo"><img src="img/btg-logo.png" alt="Bridging the Gap logo"></div>
+        <h2 class="l-name" id="l2">Bridging the Gap</h2>
+        <p class="l-mission">&ldquo;To empower communities through action, connection, and advocacy, creating meaningful impact in people's lives.&rdquo;<span class="l-src">From their mission statement</span></p>
+        <ul class="l-built"><li>Website design</li><li>Development</li><li>Founder story</li><li>Roni Round Town hub</li><li>Contact + giving</li></ul>
+        <p class="l-quote">Placeholder: a sentence from Roni about what the site changed.</p>
+        <a class="l-visit" href="https://bridgingthegapky.com" target="_blank" rel="noopener">Visit bridgingthegapky.com <span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <div class="l-dig">
+        <div class="l-rise">
+          <div class="bw" data-screen data-from=".3" data-to=".95"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">bridgingthegapky.com</span></div><div class="bw-view"><img src="img/btg-long.webp" alt="The Bridging the Gap home page we built"></div></div>
+          <div class="phone"><img src="img/btg-mobile.webp" alt="The same site on a phone"></div>
+        </div>
+        <span class="crumb" style="left:16%;--dx:-70px;--dy:-120px"></span><span class="crumb" style="left:52%;--dx:20px;--dy:-180px"></span><span class="crumb" style="left:80%;--dx:60px;--dy:-120px"></span>
+        <div class="l-groundline"></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="background:var(--soil2)"><path d="M0 44 L100 26 L210 50 L320 30 L410 56 L520 28 L630 48 L720 24 L830 52 L930 30 L1040 50 L1130 26 L1240 54 L1350 32 L1440 46 L1440 90 L0 90 Z" fill="#191616"/></svg>
+
+  <!-- LAYER 3 -->
+  <section class="layer" data-l="3" data-prog aria-labelledby="l3">
+    <div class="layer-stick">
+      <div class="l-copy">
+        <span class="l-tag e-eb">Layer 03 &middot; Ministry, Kentucky to seven countries</span>
+        <div class="l-logo" style="padding:0;overflow:hidden"><img src="img/ll-logo.png" alt="Love &amp; Lordship logo"></div>
+        <h2 class="l-name" id="l3">Love &amp; Lordship</h2>
+        <p class="l-mission">&ldquo;Every life, every relationship built on the Love &amp; Lordship of Jesus Christ.&rdquo;<span class="l-src">From their home page</span></p>
+        <ul class="l-built"><li>Full redesign</li><li>2,500+ item teaching library</li><li>Events calendar</li><li>App launch page</li><li>332 articles moved over</li></ul>
+        <p class="l-quote">Placeholder: a sentence from Greg Williams about what the site changed.</p>
+        <a class="l-visit" href="https://loveandlordship.com" target="_blank" rel="noopener">Visit loveandlordship.com <span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <div class="l-dig">
+        <div class="l-rise">
+          <div class="bw" data-screen data-from=".3" data-to=".95"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">loveandlordship.com</span></div><div class="bw-view"><img src="img/ll-long.webp" alt="The Love &amp; Lordship home page we built"></div></div>
+          <div class="phone"><img src="img/ll-mobile.webp" alt="The same site on a phone"></div>
+        </div>
+        <span class="crumb" style="left:24%;--dx:-40px;--dy:-150px"></span><span class="crumb" style="left:56%;--dx:50px;--dy:-120px"></span><span class="crumb" style="left:70%;--dx:90px;--dy:-170px"></span>
+        <div class="l-groundline"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="drill grain" data-prog="pass" aria-labelledby="drill-h">
+    <div class="wrap">
+      <span class="e-eb">How we dig in</span>
+      <h2 class="e-h2" id="drill-h">Four stops on the way down.</h2>
+      <div class="drill-grid">
+        <div class="drill-shaft" aria-hidden="true"><b></b></div>
+        <div class="drill-step"><strong><span>01</span>Listen</strong><p>We learn your mission, the people you serve and what's getting in the way online, before anyone opens a design file.</p></div>
+        <div class="drill-step"><strong><span>02</span>Plan</strong><p>Pages, content and the essentials a nonprofit runs on: giving, volunteer sign-ups, events, contact and prayer or help requests.</p></div>
+        <div class="drill-step"><strong><span>03</span>Build</strong><p>Custom design and development. Fast on any phone, easy to find on Google and in AI answers, and built to last.</p></div>
+        <div class="drill-step"><strong><span>04</span>Stand behind it</strong><p>Launch, training for your team, and a real person to call when something breaks or the next idea comes along.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEDROCK -->
+  <section class="bedrock" id="start" aria-labelledby="bed-h">
+    <svg class="shards" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <polygon points="0,0 260,0 140,180" fill="#d23a39" opacity=".55"/>
+      <polygon points="1440,0 1180,0 1300,240 1440,150" fill="#c93534" opacity=".5"/>
+      <polygon points="0,800 0,520 230,800" fill="#c93534" opacity=".45"/>
+      <polygon points="560,800 760,600 900,800" fill="#d23a39" opacity=".35"/>
+      <polygon points="1440,800 1440,560 1210,800" fill="#b83030" opacity=".4"/>
+      <polygon points="980,0 1100,0 1040,90" fill="#f06b6a" opacity=".35"/>
+    </svg>
+    <div class="wrap bed-grid">
+      <div>
+        <span class="e-eb">Bedrock</span>
+        <h2 class="e-h2" id="bed-h">Your mission is next.</h2>
+        <p class="lede">Tell us what's slowing your organization down online. A website that's out of date, forms that don't work, giving that's hard to find, or the technical work nobody on staff has time for. We'll dig in.</p>
+        <div class="bed-contact">
+          <a href="tel:8593968606">859.396.8606</a>
+          <span>Lexington, Kentucky. Serving nonprofits across Kentucky.</span>
+        </div>
+      </div>
+      <form class="formcard" data-proto>
+        <h3>Start the conversation</h3>
+        <div class="frow"><label class="e-field">Your name<input name="name" autocomplete="name"></label><label class="e-field">Organization<input name="org" autocomplete="organization"></label></div>
+        <div class="frow"><label class="e-field">Email<input type="email" name="email" autocomplete="email"></label><label class="e-field">Phone (optional)<input type="tel" name="phone" autocomplete="tel"></label></div>
+        <label class="e-field">Current website, if you have one<input name="site" placeholder="yourorganization.org"></label>
+        <fieldset class="needs"><legend>What do you need help with?</legend>
+          <button type="button" class="need" aria-pressed="false">New website</button><button type="button" class="need" aria-pressed="false">Redesign</button><button type="button" class="need" aria-pressed="false">Giving &amp; forms</button><button type="button" class="need" aria-pressed="false">Events</button><button type="button" class="need" aria-pressed="false">Search &amp; visibility</button><button type="button" class="need" aria-pressed="false">Something else</button>
+        </fieldset>
+        <label class="e-field">Tell us about your mission<textarea name="msg" rows="4"></textarea></label>
+        <button class="e-btn" type="submit" style="background:#161515;color:#fff;width:100%">Start the conversation</button>
+        <p class="proto-note" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<aside class="gauge" aria-hidden="true">
+  <div class="gauge-read"><small>DEPTH</small><b><span id="ft">0</span> FT</b></div>
+  <div class="gauge-tag" id="gtag">Surface</div>
+  <div class="gauge-bar"><em style="top:25%"></em><em style="top:50%"></em><em style="top:75%"></em><u id="gu"></u></div>
+</aside>
+
+<footer style="margin: 0; position: relative; z-index: 45; padding: clamp(56px, 8vh, 88px) clamp(20px, 5vw, 80px) 28px; background: #161515; color: #cfc9c9">
+<div class="e-foot">
+<div class="e-footlead" style="display: flex; flex-direction: column; gap: 16px">
+<img src="/assets/img/digital-impact-logo-544.webp" srcset="/assets/img/digital-impact-logo-272.webp 272w, /assets/img/digital-impact-logo-544.webp 544w" sizes="161px" width="544" height="88" alt="Digital Impact" style="height: 26px; width: auto; align-self: flex-start">
+<p style="margin: 0; font-family: Merriweather, Georgia, serif; font-style: italic; font-size: 17px; color: #ffffff">Because experience matters.</p>
+<a href="tel:8593968606" class="e-x" style="font-size: 26px; color: #ffffff; text-decoration: none">859.396.8606</a>
+<span style="font-size: 15px">Lexington, Kentucky. Serving Louisville and all of Kentucky.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; color: #ffffff"><a class="e-pill" href="https://www.facebook.com/profile.php?id=100093278650724">Facebook</a><a class="e-pill" href="https://www.linkedin.com/company/digital-impact-marketers/">LinkedIn</a></div>
+</div>
+<div><h3>Services</h3><ul><li><a href="/services">All services</a></li><li><a href="/ppc-management">PPC management</a></li><li><a href="/seolexingtonky">SEO Lexington</a></li><li><a href="/seolouisvilleky">SEO Louisville</a></li><li><a href="/seo-fundamentals">SEO Fundamentals</a></li><li><a href="/web-design-lexington-ky">Web design</a></li><li><a href="/social-media-marketing-lexington-ky">Social media</a></li><li><a href="/creative-branding">Creative and branding</a></li><li><a href="/aidigitalmarketinglexingtonky">AI digital marketing</a></li></ul></div><div><h3>AI services</h3><ul><li><a href="/aiservices">AI services</a></li><li><a href="/aiconsulting">AI consulting</a></li><li><a href="/aitransitionservices">AI transition services</a></li><li><a href="/aiappdevelopment">AI app development</a></li><li><a href="/aioaeogeo">AIO / AEO / GEO</a></li></ul></div><div><h3>Local AI search</h3><ul><li><a href="/aiolexingtonky">AIO Lexington</a></li><li><a href="/aiolouisvilleky">AIO Louisville</a></li></ul></div><div><h3>Company</h3><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/get-a-quote">Get a quote</a></li><li><a href="/ahistoryofwebdesign">History of web design</a></li><li><a href="/privacy-policy">Privacy policy</a></li></ul></div>
+</div>
+<div class="e-footbar" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 1280px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 22px; border-top: 1px solid #3b3636; font-size: 13px; color: #a39c9c">
+<span>© Digital Impact. All rights reserved.</span>
+<a href="/get-a-quote" style="color: #a39c9c">Get a quote</a>
+</div>
+</footer>
+
+<div class="protobar"><span>Prototype A &middot; Dig In</span><a href="/dig-preview/dig-b">See B &rarr;</a></div>
+
+<script>
+window.DIG_HOOKS = [function () {
+  var g = document.querySelector('.gauge'), hero = document.querySelector('.hero'), bed = document.querySelector('.bedrock');
+  var start = hero.offsetTop + hero.offsetHeight * .6, end = bed.offsetTop;
+  var y = window.scrollY + window.innerHeight * .5;
+  var p = Math.max(0, Math.min(1, (y - start) / (end - start)));
+  g.classList.toggle('on', window.scrollY > start - window.innerHeight * .5 && window.scrollY < end);
+  document.getElementById('ft').textContent = Math.round(p * 400);
+  document.getElementById('gu').style.top = (p * 100) + '%';
+  var tag = 'Surface', ls = document.querySelectorAll('.layer');
+  if (y > document.querySelector('.drill').offsetTop) tag = 'Almost there';
+  else for (var i = ls.length - 1; i >= 0; i--) { if (y > ls[i].offsetTop) { tag = ls[i].querySelector('.l-name').textContent; break; } }
+  document.getElementById('gtag').textContent = tag;
+}];
+</script>
+<script src="dig-proto.js"></script>
+</body>
+</html>
