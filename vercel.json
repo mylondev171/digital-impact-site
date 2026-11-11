@@ -3,8 +3,8 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/dig",
-      "destination": "/nonprofit-web-design",
+      "source": "/nonprofit-web-design",
+      "destination": "/dig",
       "permanent": true
     },
     {
