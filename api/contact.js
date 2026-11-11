@@ -1,6 +1,6 @@
 // Receives website form submissions, emails them to the team, and keeps a copy in Supabase.
 const LIMITS = { first: 100, last: 100, email: 254, phone: 40, company: 200, comments: 5000, page: 200, timeline: 60 };
-const FORMS = ['contact', 'quote', 'home'];
+const FORMS = ['contact', 'quote', 'home', 'nonprofit'];
 
 function clean(body) {
   const out = {};

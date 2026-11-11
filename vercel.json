@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/dig",
+      "destination": "/nonprofit-web-design",
+      "permanent": true
+    },
+    {
       "source": "/ppcmanagementlexingtonky",
       "destination": "/ppc-management",
       "permanent": true

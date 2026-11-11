@@ -200,6 +200,12 @@
       "llms": "Company",
       "summary": "Our history (online since 1998), approach and team, led by founder and CEO Don Johnson."
     },
+    "nonprofit-web-design": {
+      "name": "DIG - Digital Impact Gives",
+      "parent": "about",
+      "llms": "Services",
+      "summary": "DIG (Digital Impact Gives): web design, development and technical help for charities and nonprofits, with the sites we built for William Joseph Crisis Nursery, Love & Lordship and Bridging the Gap."
+    },
     "contact": {
       "name": "Contact",
       "llms": "Company",
