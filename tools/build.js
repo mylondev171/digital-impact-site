@@ -181,7 +181,12 @@ for (const file of fs.readdirSync(SRC).filter((f) => f.endsWith('.html')).sort()
   const extra = [];
   bodySrc.replace(/<script\b[^>]*\bsrc="([^"]+)"[^>]*><\/script>/g, (m, s) => { if (!/dc-lite\.js/.test(s)) extra.push(s.replace(/^(?!\/|https?:)/, '/')); return m; });
 
-  const head = src.slice(0, src.indexOf('</head>')).trimEnd();
+  let head = src.slice(0, src.indexOf('</head>')).trimEnd();
+  // OpenAI ads pixel, placed near the top of <head> (right after the viewport meta) on every page.
+  if (site.openaiPixel) {
+    const oai = '<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:' + JSON.stringify(site.openaiPixel) + ',debug:true});</script>';
+    head = /<meta name="viewport"[^>]*>/.test(head) ? head.replace(/(<meta name="viewport"[^>]*>)/, '$1\n' + oai) : head.replace(/<head>/, '<head>\n' + oai);
+  }
   const scripts = extra.map((s) => '<script src="' + s + '" defer></script>')
     .concat([
       '<script src="/assets/js/dc-lite.js?v=' + dcLiteV + '" defer></script>',
