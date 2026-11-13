@@ -134,7 +134,7 @@
       "llms": "Services",
       "summary": "Google Ads and Microsoft Ads (pay-per-click) campaign management: how the ad auction works, ad types, what we manage and a brief history of PPC."
     },
-    "ip-targeting-connected-tv": {
+    "connected-tv-ip-targeting": {
       "name": "IP targeting and connected TV",
       "parent": "services",
       "llms": "Services",

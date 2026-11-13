@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/ip-targeting-connected-tv",
+      "destination": "/connected-tv-ip-targeting",
+      "permanent": true
+    },
+    {
       "source": "/nonprofit-web-design",
       "destination": "/dig",
       "permanent": true
