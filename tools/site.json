@@ -134,6 +134,12 @@
       "llms": "Services",
       "summary": "Google Ads and Microsoft Ads (pay-per-click) campaign management: how the ad auction works, ad types, what we manage and a brief history of PPC."
     },
+    "ip-targeting-connected-tv": {
+      "name": "IP targeting and connected TV",
+      "parent": "services",
+      "llms": "Services",
+      "summary": "IP targeting and connected TV (CTV) advertising: TV, video and display ads served only to the homes and businesses you choose by address, connected to Google Ads search and measured with matchback reporting."
+    },
     "aiservices": {
       "name": "AI services",
       "llms": "AI services",
