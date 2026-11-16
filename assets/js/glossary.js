@@ -144,7 +144,7 @@
         // Prefer a term whose name matches, then any match.
         idx.some(function (t) { if (t.ok && term && t.name.indexOf(term) !== -1) { hit = t.el; return true; } return false; });
         if (!hit) idx.some(function (t) { if (t.ok) { hit = t.el; return true; } return false; });
-        if (hit) { setOpen(false); hit.scrollIntoView({ block: 'start' }); flash(hit); }
+        if (hit) { setOpen(false); jumpTo(hit); }
       } else if (e.key === 'Escape') { q.value = ''; apply(); }
     });
     clear.addEventListener('click', function () { q.value = ''; apply(); q.focus(); });
@@ -157,19 +157,19 @@
         if (b.classList.contains('gl-band') && bands[k]) {
           var first = null;
           idx.some(function (t) { if (t.ok) { first = t.el; return true; } return false; });
-          if (first) first.closest('.gl-sec').scrollIntoView({ block: 'start' });
+          if (first) jumpTo(first.closest('.gl-sec'));
         }
       });
     });
     document.getElementById('gl-reset').addEventListener('click', function () {
       q.value = ''; bands = {}; apply();
-      document.getElementById('how-to-read').scrollIntoView({ block: 'start' });
+      jumpTo(document.getElementById('how-to-read'));
     });
     [].forEach.call(document.querySelectorAll('[data-find]'), function (a) {
       a.addEventListener('click', function (e) {
         e.preventDefault();
         setOpen(true);
-        document.getElementById('how-to-read').scrollIntoView({ block: 'start' });
+        jumpTo(document.getElementById('how-to-read'));
         q.focus({ preventScroll: true });
       });
     });
@@ -178,15 +178,38 @@
       el.classList.add('flash');
       setTimeout(function () { el.classList.remove('flash'); }, 1600);
     }
-    // Links from the ranked lists and the top-priorities chart: clear filters hiding the target, then flash it.
+    var jumpTimers = [];
+    function jumpTo(el) {
+      jumpTimers.forEach(clearTimeout);
+      var go = function () { el.scrollIntoView({ block: 'start', behavior: 'instant' }); };
+      go();
+      jumpTimers = [50, 150, 300, 550, 900].map(function (ms) {
+        return setTimeout(function () {
+          var want = 64 + bar.offsetHeight + (parseFloat(getComputedStyle(el).scrollMarginTop) || 0);
+          if (Math.abs(el.getBoundingClientRect().top - want) > 6) go();
+        }, ms);
+      });
+      if (el.hasAttribute('data-term')) setTimeout(function () { flash(el); }, 300);
+    }
+    // In-page links (sub-nav, ranked lists, top-priorities chart, #hash on load) all go through jumpTo:
+    // off-screen sections use content-visibility, so their heights are estimates until rendered and a
+    // plain anchor jump can land short. jumpTo jumps, then re-aims a few times as the layout settles.
     document.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
       var a = e.target.closest && e.target.closest('a[href^="#"]');
       if (!a) return;
-      var el = document.getElementById(a.getAttribute('href').slice(1));
-      if (!el || !el.hasAttribute('data-term')) return;
-      if (el.hidden) { q.value = ''; bands = {}; apply(); }
-      setTimeout(function () { flash(el); }, 350);
+      var id = a.getAttribute('href').slice(1);
+      var el = id && document.getElementById(id);
+      if (!el || el === document.getElementById('main')) return;
+      e.preventDefault();
+      if (el.hasAttribute('data-term') && el.hidden) { q.value = ''; bands = {}; apply(); }
+      if (history.replaceState) history.replaceState(null, '', '#' + id);
+      jumpTo(el);
     });
+    if (location.hash.length > 1) {
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (target) setTimeout(function () { jumpTo(target); }, 0);
+    }
 
     // "Show all" on the ranked lists (phones only show the top 6).
     [].forEach.call(document.querySelectorAll('.gl-more'), function (b) {
