@@ -100,11 +100,13 @@
     },
     "seo-aeo-glossary": {
       "name": "SEO & AEO glossary",
-      "parent": "services",
+      "parent": "about",
       "llms": "Services",
       "summary": "Glossary of 122 SEO and AEO (AI search) terms in plain English, each scored 0 to 10 for how much it moves Google rankings and AI citations, with a video and a list of what to fix first.",
       "article": true,
       "glossary": true,
+      "ogImage": "/assets/img/glossary/og-seo-aeo-glossary.jpg",
+      "ogImageAlt": "SEO and AEO glossary: of 122 variables, 83 move the needle and 39 are over-hyped or risky",
       "video": {
         "name": "SEO and AEO impact scores: hype or helpful?",
         "description": "All 122 SEO and AEO variables sorted by how much they move Google rankings and AI citations: 83 score 5 and up, 39 score 4 or below.",

@@ -81,7 +81,7 @@ function pageSchemas(slug, meta, faq, file, terms) {
       description: meta.description,
       url: url,
       mainEntityOfPage: url,
-      image: BASE + site.ogImage,
+      image: BASE + (page.ogImage || site.ogImage),
       dateModified: lastModified(file),
       author: { '@id': BASE + '/#org' },
       publisher: { '@id': BASE + '/#org' }
@@ -154,6 +154,8 @@ function trackingTags() {
 
 function headTags(slug, meta) {
   const url = urlFor(slug);
+  const pg = site.pages[slug] || {};
+  const ogImg = BASE + (pg.ogImage || site.ogImage), ogAlt = pg.ogImageAlt || site.ogImageAlt;
   if ((site.pages[slug] || {}).noindex) return ['<meta name="robots" content="noindex">'].concat(trackingTags()).join('\n');
   return trackingTags().concat([
     '<link rel="canonical" href="' + esc(url) + '">',
@@ -163,14 +165,14 @@ function headTags(slug, meta) {
     '<meta property="og:title" content="' + esc(meta.title) + '">',
     '<meta property="og:description" content="' + esc(meta.description) + '">',
     '<meta property="og:url" content="' + esc(url) + '">',
-    '<meta property="og:image" content="' + esc(BASE + site.ogImage) + '">',
+    '<meta property="og:image" content="' + esc(ogImg) + '">',
     '<meta property="og:image:width" content="1200">',
     '<meta property="og:image:height" content="630">',
-    '<meta property="og:image:alt" content="' + esc(site.ogImageAlt) + '">',
+    '<meta property="og:image:alt" content="' + esc(ogAlt) + '">',
     '<meta name="twitter:card" content="summary_large_image">',
     '<meta name="twitter:title" content="' + esc(meta.title) + '">',
     '<meta name="twitter:description" content="' + esc(meta.description) + '">',
-    '<meta name="twitter:image" content="' + esc(BASE + site.ogImage) + '">'
+    '<meta name="twitter:image" content="' + esc(ogImg) + '">'
   ]).join('\n');
 }
 
