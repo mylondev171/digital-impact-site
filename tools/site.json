@@ -98,6 +98,22 @@
       "summary": "Plain-English guide to how search engines rank pages, the three legs of SEO, keyword targeting and local SEO.",
       "article": true
     },
+    "seo-aeo-glossary": {
+      "name": "SEO & AEO glossary",
+      "parent": "services",
+      "llms": "Services",
+      "summary": "Glossary of 122 SEO and AEO (AI search) terms in plain English, each scored 0 to 10 for how much it moves Google rankings and AI citations, with a video and a list of what to fix first.",
+      "article": true,
+      "glossary": true,
+      "video": {
+        "name": "SEO and AEO impact scores: hype or helpful?",
+        "description": "All 122 SEO and AEO variables sorted by how much they move Google rankings and AI citations: 83 score 5 and up, 39 score 4 or below.",
+        "contentUrl": "/assets/video/seo-aeo-impact-scores.mp4",
+        "thumbnailUrl": "/assets/img/glossary/scores-video-poster-1600.webp",
+        "uploadDate": "2026-11-13",
+        "duration": "PT3M51S"
+      }
+    },
     "web-design-lexington-ky": {
       "name": "Web design Lexington",
       "parent": "services",

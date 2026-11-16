@@ -55,7 +55,7 @@ function orgSchema() {
   };
 }
 
-function pageSchemas(slug, meta, faq, file) {
+function pageSchemas(slug, meta, faq, file, terms) {
   const out = [orgSchema()];
   const url = urlFor(slug);
   const page = site.pages[slug] || {};
@@ -96,6 +96,32 @@ function pageSchemas(slug, meta, faq, file) {
       url: url,
       provider: { '@id': BASE + '/#org' },
       areaServed: page.areaServed || site.org.areaServed
+    });
+  }
+  // Glossary pages: every [data-term] in the pre-rendered page becomes a DefinedTerm.
+  if (page.glossary && terms && terms.length) {
+    out.push({
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTermSet',
+      '@id': url + '#glossary',
+      name: page.name,
+      url: url,
+      hasDefinedTerm: terms.map((t) => ({ '@type': 'DefinedTerm', '@id': url + '#' + t.id, name: t.name, description: t.description, url: url + '#' + t.id, inDefinedTermSet: url + '#glossary' }))
+    });
+  }
+  if (page.video) {
+    const v = page.video;
+    out.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      '@id': url + '#video',
+      name: v.name,
+      description: v.description,
+      thumbnailUrl: BASE + v.thumbnailUrl,
+      contentUrl: BASE + v.contentUrl,
+      uploadDate: v.uploadDate,
+      duration: v.duration,
+      publisher: { '@id': BASE + '/#org' }
     });
   }
   if (faq.length) {
@@ -175,6 +201,11 @@ for (const file of fs.readdirSync(SRC).filter((f) => f.endsWith('.html')).sort()
   pre.window.eval(pageJs);
   const markup = pre.window.document.getElementById('app').innerHTML;
   const faq = normFaq(pre.window.__dc && pre.window.__dc.FAQ);
+  const terms = [...pre.window.document.querySelectorAll('#app [data-term]')].map((el) => ({
+    id: el.id,
+    name: el.querySelector('[data-term-name]').textContent.trim(),
+    description: (el.querySelector('.gl-def') || el.querySelector('p')).textContent.trim()
+  }));
 
   // Other scripts the page loads (e.g. the form handler), kept in source order.
   const bodySrc = src.slice(src.indexOf('<body'));
@@ -194,7 +225,7 @@ for (const file of fs.readdirSync(SRC).filter((f) => f.endsWith('.html')).sort()
       // Vercel Web Analytics (collects once Analytics is enabled on the Vercel project)
       '<script src="/_vercel/insights/script.js" defer></script>'
     ]);
-  const html = head + '\n' + headTags(slug, meta) + '\n' + pageSchemas(slug, meta, faq, file).map(ld).join('\n') +
+  const html = head + '\n' + headTags(slug, meta) + '\n' + pageSchemas(slug, meta, faq, file, terms).map(ld).join('\n') +
     '\n</head>\n<body>\n<div id="app">' + markup + '</div>\n' + scripts.join('\n') + '\n</body>\n</html>\n';
   fs.writeFileSync(path.join(ROOT, file), html);
   built.push({ slug, meta, faq: faq.length, bytes: Buffer.byteLength(html) });
